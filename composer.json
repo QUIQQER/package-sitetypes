@@ -1,5 +1,5 @@
 {
-    "name" : "quiqqer/standardtypes",
+    "name" : "quiqqer/sitetypes",
     "type" : "quiqqer-library",
     "description" : "Site types for QUIQQER.",
     "version" : "dev-dev",
