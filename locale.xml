@@ -34,32 +34,32 @@
             <en><![CDATA[Simple search]]></en>
         </locale>
         <locale name="admin.types.list">
-            <de><![CDATA[Liste]]></de>
-            <en><![CDATA[List]]></en>
+            <de><![CDATA[Standard Liste]]></de>
+            <en><![CDATA[Standard list]]></en>
         </locale>
         <locale name="admin.types.list.desc">
             <de><![CDATA[Liste]]></de>
             <en><![CDATA[List]]></en>
         </locale>
         <locale name="admin.types.content.list">
-            <de><![CDATA[Inhalts-Liste]]></de>
-            <en><![CDATA[Content list]]></en>
+            <de><![CDATA[Standard Inhalts-Liste]]></de>
+            <en><![CDATA[Standard content list]]></en>
         </locale>
         <locale name="admin.types.content.list.desc">
             <de><![CDATA[Inhalts-Liste]]></de>
             <en><![CDATA[Content list]]></en>
         </locale>
         <locale name="admin.types.sitemap">
-            <de><![CDATA[Sitemap]]></de>
-            <en><![CDATA[Sitemap]]></en>
+            <de><![CDATA[Standard Sitemap]]></de>
+            <en><![CDATA[Standard sitemap]]></en>
         </locale>
         <locale name="admin.types.sitemap.desc">
             <de><![CDATA[Sitemap]]></de>
             <en><![CDATA[Sitemap]]></en>
         </locale>
         <locale name="admin.types.sitemap-block">
-            <de><![CDATA[Sitemap]]></de>
-            <en><![CDATA[Sitemap]]></en>
+            <de><![CDATA[Standard Sitemap - Kategorien]]></de>
+            <en><![CDATA[Standard sitemap - Categories]]></en>
         </locale>
         <locale name="admin.types.sitemap-block.desc">
             <de><![CDATA[Block Sitemap]]></de>

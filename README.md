@@ -52,3 +52,4 @@ php var/composer/composer.phar --working-dir="var/composer/" require "quiqqer/si
 
 - Weiterleitung
 - Frame
+- Nicht in Sitemap anzeigen
