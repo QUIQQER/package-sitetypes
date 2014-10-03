@@ -29,7 +29,9 @@
     <article class="qui-sitetypes-list-entry">
 
         <h2>
-            <a href="{url site=$Child}">
+            <a href="{url site=$Child}"
+                title="{$Child->getAttribute('title')|escape:"html"}"
+            >
                 <span>{$Child->getAttribute('title')}</span>
             </a>
         </h2>
