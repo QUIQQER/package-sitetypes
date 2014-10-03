@@ -1,1 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <!-- javascript locale -->
+    <groups name="quiqqer/sitetypes" datatype="js">
+        <locale name="">
+            <de><![CDATA[]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+    </groups>
+
+    <!-- php + javascript locale -->
+    <groups name="quiqqer/sitetypes" datatype="php,js">
+        <locale name="">
+            <de><![CDATA[]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+    </groups>
+
+    <!-- -php locale -->
+    <groups name="quiqqer/sitetypes" datatype="php">
+
+        <locale name="list.more">
+            <de><![CDATA[mehr]]></de>
+            <en><![CDATA[more]]></en>
+        </locale>
+
+    </groups>
+
+</locales>
