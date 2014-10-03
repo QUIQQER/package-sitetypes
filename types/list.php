@@ -5,7 +5,7 @@
  */
 
 $start = 0;
-$max   = $Site->getAttribute( 'quiqqer.settings.blog.max' );
+$max   = $Site->getAttribute( 'quiqqer.settings.sitetypes.max' );
 
 if ( !$max ) {
     $max = 5;
@@ -16,10 +16,7 @@ if ( isset( $_REQUEST['sheet'] ) ) {
 }
 
 $count_children = $Site->getChildren(array(
-    'count'	=> 'count',
-    'where' => array(
-        'type' => 'quiqqer/blog:blog/entry'
-    )
+    'count'	=> 'count'
 ));
 
 if ( is_array( $count_children ) ) {
@@ -30,9 +27,6 @@ if ( is_array( $count_children ) ) {
 $sheets = ceil( $count_children / $max );
 
 $children = $Site->getChildren(array(
-    'where' => array(
-        'type' => 'quiqqer/blog:blog/entry'
-    ),
     'limit' => $start .','. $max
 ));
 
