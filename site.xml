@@ -17,14 +17,58 @@
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.list.desc" />
             </desc>
+
+            <!-- list attributes -->
+            <attributes>
+                <attribute>quiqqer.settings.sitetypes.list.max</attribute>
+            </attributes>
+
+            <!-- list settings -->
+            <settings>
+                <category name="sitetypes-list-settings">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.title" />
+                        </title>
+
+                        <input conf="quiqqer.settings.sitetypes.list.max" type="number">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.max" />
+                            </text>
+                        </input>
+                    </settings>
+                </category>
+            </settings>
         </type>
 
         <!-- Inhaltsliste -->
         <type type="types/list-content" icon="icon-list-alt">
-            <locale group="quiqqer/sitetypes" var="admin.types.list-content" />
+            <locale group="quiqqer/sitetypes" var="admin.types.content.list" />
             <desc>
-                <locale group="quiqqer/sitetypes" var="admin.types.list-content.desc" />
+                <locale group="quiqqer/sitetypes" var="admin.types.content.list.desc" />
             </desc>
+
+            <!-- list attributes -->
+            <attributes>
+                <attribute>quiqqer.settings.sitetypes.list.max</attribute>
+            </attributes>
+
+            <!-- list settings -->
+            <settings>
+                <category name="sitetypes-list-settings">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.title" />
+                        </title>
+
+                        <input conf="quiqqer.settings.sitetypes.list.max" type="number">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.max" />
+                            </text>
+                        </input>
+                    </settings>
+                </category>
+            </settings>
         </type>
 
         <!-- Sitemap -->
@@ -36,10 +80,10 @@
         </type>
 
         <!-- Sitemap Block -->
-        <type type="types/sitemap-bock">
-            <locale group="quiqqer/sitetypes" var="admin.types.sitemap-bock" />
+        <type type="types/sitemap-block">
+            <locale group="quiqqer/sitetypes" var="admin.types.sitemap-block" />
             <desc>
-                <locale group="quiqqer/sitetypes" var="admin.types.sitemap-bock.desc" />
+                <locale group="quiqqer/sitetypes" var="admin.types.sitemap-block.desc" />
             </desc>
         </type>
 

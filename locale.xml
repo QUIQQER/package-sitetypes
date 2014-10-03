@@ -24,6 +24,59 @@
             <en><![CDATA[more]]></en>
         </locale>
 
+        <!-- seitentype -->
+        <locale name="admin.types.search">
+            <de><![CDATA[Einfache Suche]]></de>
+            <en><![CDATA[Simple search]]></en>
+        </locale>
+        <locale name="admin.types.search.desc">
+            <de><![CDATA[Einfache Suche]]></de>
+            <en><![CDATA[Simple search]]></en>
+        </locale>
+        <locale name="admin.types.list">
+            <de><![CDATA[Liste]]></de>
+            <en><![CDATA[List]]></en>
+        </locale>
+        <locale name="admin.types.list.desc">
+            <de><![CDATA[Liste]]></de>
+            <en><![CDATA[List]]></en>
+        </locale>
+        <locale name="admin.types.content.list">
+            <de><![CDATA[Inhalts-Liste]]></de>
+            <en><![CDATA[Content list]]></en>
+        </locale>
+        <locale name="admin.types.content.list.desc">
+            <de><![CDATA[Inhalts-Liste]]></de>
+            <en><![CDATA[Content list]]></en>
+        </locale>
+        <locale name="admin.types.sitemap">
+            <de><![CDATA[Sitemap]]></de>
+            <en><![CDATA[Sitemap]]></en>
+        </locale>
+        <locale name="admin.types.sitemap.desc">
+            <de><![CDATA[Sitemap]]></de>
+            <en><![CDATA[Sitemap]]></en>
+        </locale>
+        <locale name="admin.types.sitemap-block">
+            <de><![CDATA[Sitemap]]></de>
+            <en><![CDATA[Sitemap]]></en>
+        </locale>
+        <locale name="admin.types.sitemap-block.desc">
+            <de><![CDATA[Block Sitemap]]></de>
+            <en><![CDATA[Block sitemap]]></en>
+        </locale>
+
+
+        <!-- settings -->
+        <locale name="quiqqer.sitetypes.list.settings.title">
+            <de><![CDATA[Listen Einstellungen]]></de>
+            <en><![CDATA[List settings]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.list.settings.max">
+            <de><![CDATA[Anzahl Kindseiten pro Seite]]></de>
+            <en><![CDATA[Number of children per page]]></en>
+        </locale>
+
     </groups>
 
 </locales>

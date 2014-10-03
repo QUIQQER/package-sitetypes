@@ -46,3 +46,9 @@ php var/composer/composer.phar --working-dir="var/composer/" require "quiqqer/si
 - Standard Inhaltsliste
 - Standard Sitemap
 - Standard Block Sitemap
+
+
+## ToDo
+
+- Weiterleitung
+- Frame

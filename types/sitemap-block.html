@@ -1,0 +1,58 @@
+
+{if $Template->getAttribute('content-header')}
+<section class="content-header grid-100 mobile-grid-100">
+    <header>
+        <h1>{$Site->getAttribute('title')}</h1>
+    </header>
+
+    {if $Site->getAttribute('short')}
+    <div class="content-short">
+        {$Site->getAttribute('short')}
+    </div>
+    {/if}
+</section>
+{/if}
+
+{if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
+<section class="content-body grid-100 mobile-grid-100">
+    {$Site->getAttribute('content')}
+</section>
+{/if}
+
+{assign var=Start value=$Project->firstChild()}
+{if $Start->hasChildren( true )}
+<section class="content-template grid-100 mobile-grid-100 qui-sitetypes-sitemap-block">
+
+    {assign var=children value=$Start->getChildren()}
+    {foreach from=$children item=Child}
+    <table class="qui-sitetypes-sitemap-block-category grid-50 mobile-grid-100">
+    <thead>
+        <tr>
+            <th>
+                <a href="{url site=$Child}"
+                   title="{$Child->getAttribute('title')|escape:"html"}"
+                >
+                    {$Child->getAttribute('title')}
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {if $Child->hasChildren( true )}
+        <tr>
+            <td>
+                <ul>
+                    {assign var=children value=$Child->getChildren()}
+                    {foreach from=$children item=Child}
+                        {include file=$childTpl site=$Child}
+                    {/foreach}
+                </ul>
+            </td>
+        </tr>
+        {/if}
+    </tbody>
+    </table>
+    {/foreach}
+
+</section>
+{/if}

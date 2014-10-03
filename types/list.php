@@ -5,7 +5,7 @@
  */
 
 $start = 0;
-$max   = $Site->getAttribute( 'quiqqer.settings.sitetypes.max' );
+$max   = $Site->getAttribute( 'quiqqer.settings.sitetypes.list.max' );
 
 if ( !$max ) {
     $max = 5;
