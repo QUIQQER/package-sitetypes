@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+
+    <types>
+
+        <!-- Suche -->
+        <type type="types/search" icon="icon-tag">
+            <locale group="quiqqer/sitetypes" var="admin.types.tag.listing" />
+            <desc>
+                <locale group="quiqqer/sitetypes" var="admin.types.tag.listing.desc" />
+            </desc>
+        </type>
+
+        <!-- Liste -->
+        <type type="types/list" icon="icon-tag">
+            <locale group="quiqqer/sitetypes" var="admin.types.tag.listing" />
+            <desc>
+                <locale group="quiqqer/sitetypes" var="admin.types.tag.listing.desc" />
+            </desc>
+        </type>
+
+        <!-- Inhaltsliste -->
+        <type type="types/list-content">
+            <locale group="quiqqer/sitetypes" var="admin.types.tag" />
+            <desc>
+                <locale group="quiqqer/sitetypes" var="admin.types.tag.desc" />
+            </desc>
+        </type>
+
+        <!-- Sitemap -->
+        <type type="types/sitemap">
+            <locale group="quiqqer/sitetypes" var="admin.types.tag.search" />
+            <desc>
+                <locale group="quiqqer/sitetypes" var="admin.types.tag.search.desc" />
+            </desc>
+        </type>
+
+        <!-- Sitemap Block -->
+        <type type="types/sitemap-bock">
+            <locale group="quiqqer/sitetypes" var="admin.types.tag.search" />
+            <desc>
+                <locale group="quiqqer/sitetypes" var="admin.types.tag.search.desc" />
+            </desc>
+        </type>
+
+    </types>
+
+</site>
