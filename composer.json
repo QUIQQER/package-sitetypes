@@ -2,7 +2,7 @@
     "name" : "quiqqer/standardtypes",
     "type" : "quiqqer-library",
     "description" : "Site types for QUIQQER.",
-    "version" : "dev-master",
+    "version" : "dev-dev",
     "license" : "GPL-2.0+",
 
     "authors" : [{
