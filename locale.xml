@@ -2,18 +2,12 @@
 <locales>
     <!-- javascript locale -->
     <groups name="quiqqer/sitetypes" datatype="js">
-        <locale name="">
-            <de><![CDATA[]]></de>
-            <en><![CDATA[]]></en>
-        </locale>
+
     </groups>
 
     <!-- php + javascript locale -->
     <groups name="quiqqer/sitetypes" datatype="php,js">
-        <locale name="">
-            <de><![CDATA[]]></de>
-            <en><![CDATA[]]></en>
-        </locale>
+
     </groups>
 
     <!-- -php locale -->
@@ -26,8 +20,8 @@
 
         <!-- seitentype -->
         <locale name="admin.types.search">
-            <de><![CDATA[Einfache Suche]]></de>
-            <en><![CDATA[Simple search]]></en>
+            <de><![CDATA[Standard Suche]]></de>
+            <en><![CDATA[Standard search]]></en>
         </locale>
         <locale name="admin.types.search.desc">
             <de><![CDATA[Einfache Suche]]></de>
@@ -64,6 +58,21 @@
         <locale name="admin.types.sitemap-block.desc">
             <de><![CDATA[Block Sitemap]]></de>
             <en><![CDATA[Block sitemap]]></en>
+        </locale>
+
+
+        <!-- search template -->
+        <locale name="tpl.search.button">
+            <de><![CDATA[Suche starten]]></de>
+            <en><![CDATA[Start search]]></en>
+        </locale>
+        <locale name="tpl.search.placeholder">
+            <de><![CDATA[Bitte hier Ihre Suche eingeben...]]></de>
+            <en><![CDATA[Please insert your search here...]]></en>
+        </locale>
+        <locale name="tpl.search.list.more">
+            <de><![CDATA[mehr]]></de>
+            <en><![CDATA[more]]></en>
         </locale>
 
 

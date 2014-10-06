@@ -10,11 +10,33 @@
     <types>
 
         <!-- Suche -->
-        <type type="types/search" icon="icon-tag">
+        <type type="types/search" icon="icon-search">
             <locale group="quiqqer/sitetypes" var="admin.types.search" />
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.search.desc" />
             </desc>
+
+            <!-- list attributes -->
+            <attributes>
+                <attribute>quiqqer.settings.sitetypes.list.max</attribute>
+            </attributes>
+
+            <!-- list settings -->
+            <settings>
+                <category name="sitetypes-list-settings">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.title" />
+                        </title>
+
+                        <input conf="quiqqer.settings.sitetypes.list.max" type="number">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.max" />
+                            </text>
+                        </input>
+                    </settings>
+                </category>
+            </settings>
         </type>
 
         <!-- Liste -->
