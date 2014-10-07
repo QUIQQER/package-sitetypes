@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <!-- javascript locale -->
+    <groups name="quiqqer/sitetypes" datatype="js">
+
+    </groups>
+
+    <!-- php + javascript locale -->
+    <groups name="quiqqer/sitetypes" datatype="php,js">
+
+    </groups>
+
+    <!-- -php locale -->
+    <groups name="quiqqer/sitetypes" datatype="php">
+
+        <locale name="list.more">
+            <de><![CDATA[mehr]]></de>
+            <en><![CDATA[more]]></en>
+        </locale>
+
+        <!-- seitentype -->
+        <locale name="admin.types.search">
+            <de><![CDATA[Standard Suche]]></de>
+            <en><![CDATA[Standard search]]></en>
+        </locale>
+        <locale name="admin.types.search.desc">
+            <de><![CDATA[Einfache Suche]]></de>
+            <en><![CDATA[Simple search]]></en>
+        </locale>
+        <locale name="admin.types.list">
+            <de><![CDATA[Standard Liste]]></de>
+            <en><![CDATA[Standard list]]></en>
+        </locale>
+        <locale name="admin.types.list.desc">
+            <de><![CDATA[Liste]]></de>
+            <en><![CDATA[List]]></en>
+        </locale>
+        <locale name="admin.types.content.list">
+            <de><![CDATA[Standard Inhalts-Liste]]></de>
+            <en><![CDATA[Standard content list]]></en>
+        </locale>
+        <locale name="admin.types.content.list.desc">
+            <de><![CDATA[Inhalts-Liste]]></de>
+            <en><![CDATA[Content list]]></en>
+        </locale>
+        <locale name="admin.types.sitemap">
+            <de><![CDATA[Standard Sitemap]]></de>
+            <en><![CDATA[Standard sitemap]]></en>
+        </locale>
+        <locale name="admin.types.sitemap.desc">
+            <de><![CDATA[Sitemap]]></de>
+            <en><![CDATA[Sitemap]]></en>
+        </locale>
+        <locale name="admin.types.sitemap-block">
+            <de><![CDATA[Standard Sitemap - Kategorien]]></de>
+            <en><![CDATA[Standard sitemap - Categories]]></en>
+        </locale>
+        <locale name="admin.types.sitemap-block.desc">
+            <de><![CDATA[Block Sitemap]]></de>
+            <en><![CDATA[Block sitemap]]></en>
+        </locale>
+
+
+        <!-- search template -->
+        <locale name="tpl.search.button">
+            <de><![CDATA[Suche starten]]></de>
+            <en><![CDATA[Start search]]></en>
+        </locale>
+        <locale name="tpl.search.placeholder">
+            <de><![CDATA[Bitte hier Ihre Suche eingeben...]]></de>
+            <en><![CDATA[Please insert your search here...]]></en>
+        </locale>
+        <locale name="tpl.search.list.more">
+            <de><![CDATA[mehr]]></de>
+            <en><![CDATA[more]]></en>
+        </locale>
+
+
+        <!-- settings -->
+        <locale name="quiqqer.sitetypes.list.settings.title">
+            <de><![CDATA[Listen Einstellungen]]></de>
+            <en><![CDATA[List settings]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.list.settings.max">
+            <de><![CDATA[Anzahl Kindseiten pro Seite]]></de>
+            <en><![CDATA[Number of children per page]]></en>
+        </locale>
+
+    </groups>
+
+</locales>

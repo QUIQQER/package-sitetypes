@@ -30,7 +30,7 @@
 
         <h2>
             <a href="{url site=$Child}"
-               title="{$Child->getAttribute('title')|escape:"html"}"
+                title="{$Child->getAttribute('title')|escape:"html"}"
             >
                 <span>{$Child->getAttribute('title')}</span>
             </a>
@@ -47,18 +47,18 @@
             <a href="{url site=$Child}"
                title="{$Child->getAttribute('title')|escape:"html"}"
                class="qui-sitetypes-list-entry-imagelink grid-25 hide-on-mobile content-image-placeholder"
-               {if $bg}style="background-image: url({$bg})"{/if}
+               style="background-image: url({$bg})"
             >
                 <span>{$Child->getAttribute('title')}</span>
             </a>
 
             <div class="qui-sitetypes-list-entry-short grid-75 mobile-grid-100">
                 {$Child->getAttribute('short')}
-                <a href="{url site=$Child}">
-                    {locale group="quiqqer/sitetypes" value="list.more"}
-                </a>
             </div>
 
+            <div class="qui-sitetypes-list-entry-content grid-100 mobile-grid-100 grid-parent">
+                {$Child->getAttribute('content')}
+            </div>
         </div>
     </article>
     {/foreach}

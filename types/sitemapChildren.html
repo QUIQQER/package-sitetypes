@@ -1,0 +1,13 @@
+<li>
+    <a href="{url site=$Child}" title="{$Child->getAttribute('title')|escape:"html"}">
+        {$Child->getAttribute('title')}
+    </a>
+    {if $Child->hasChildren()}
+    <ul>
+        {assign var=children value=$Child->getChildren()}
+        {foreach from=$children item=Child}
+            {include file=$childTpl Child=$Child}
+        {/foreach}
+    </ul>
+    {/if}
+</li>
