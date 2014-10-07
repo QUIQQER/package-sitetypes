@@ -67,7 +67,7 @@
                     <a href="{url site=$Child}"
                        title="{$Child->getAttribute('title')|escape:"html"}"
                        class="qui-search-result-list-entry-imagelink grid-25 hide-on-mobile content-image-placeholder"
-                       style="background-image: url({$bg})"
+                       {if $bg}style="background-image: url({$bg})"{/if}
                     >
                         <span>{$Child->getAttribute('title')}</span>
                     </a>
