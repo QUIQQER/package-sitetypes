@@ -1,5 +1,26 @@
 <?php
 
+/**
+ * 404 Error Site
+ */
+
+if ( \QUI::getRewrite()->getHeaderCode() === 404 )
+{
+    if ( isset( $_REQUEST[ '_url' ] ) )
+    {
+        $requestUrl = $_REQUEST[ '_url' ];
+        $requestUrl = Orthos::clear( $requestUrl );
+
+        $path = pathinfo( $requestUrl );
+
+        $_REQUEST[ 'search' ] = $path['filename'];
+    }
+}
+
+/**
+ * Search
+ */
+
 $searchValue = '';
 $start       = 0;
 $max         = $Site->getAttribute( 'quiqqer.settings.sitetypes.list.max' );
