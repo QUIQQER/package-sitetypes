@@ -4,6 +4,8 @@
  * 404 Error Site
  */
 
+use QUI\Utils\Security\Orthos;
+
 if ( \QUI::getRewrite()->getHeaderCode() === 404 )
 {
     if ( isset( $_REQUEST[ '_url' ] ) )
@@ -37,7 +39,7 @@ if ( isset( $_REQUEST[ 'sheet' ] ) ) {
 }
 
 if ( isset( $_REQUEST[ 'search' ] ) ) {
-    $searchValue = \QUI\Utils\Security\Orthos::clear( $_REQUEST[ 'search' ] );
+    $searchValue = Orthos::clear( $_REQUEST[ 'search' ] );
 }
 
 
