@@ -11,11 +11,9 @@ if ( \QUI::getRewrite()->getHeaderCode() === 404 )
     if ( isset( $_REQUEST[ '_url' ] ) )
     {
         $requestUrl = $_REQUEST[ '_url' ];
-        $requestUrl = Orthos::clear( $requestUrl );
+        $path       = pathinfo( $requestUrl );
 
-        $path = pathinfo( $requestUrl );
-
-        $_REQUEST[ 'search' ] = $path['filename'];
+        $_REQUEST[ 'search' ] = $path['dirname'] .' '. $path['filename'];
     }
 }
 
@@ -38,8 +36,21 @@ if ( isset( $_REQUEST[ 'sheet' ] ) ) {
     $start = ( (int)$_REQUEST[ 'sheet' ] - 1 ) * $max;
 }
 
-if ( isset( $_REQUEST[ 'search' ] ) ) {
-    $searchValue = Orthos::clear( $_REQUEST[ 'search' ] );
+if ( isset( $_REQUEST[ 'search' ] ) )
+{
+    if ( is_array( $_REQUEST[ 'search' ] ) )
+    {
+        $searchValue = implode( ' ', $_REQUEST[ 'search' ] );
+
+    } else
+    {
+        $searchValue = $_REQUEST[ 'search' ];
+    }
+
+    $searchValue = preg_replace( "/[^a-zA-Z0-9äöüß]/", " ", $searchValue );
+    $searchValue = Orthos::clear( $searchValue );
+    $searchValue = preg_replace( '#([ ]){2,}#', "$1", $searchValue );
+    $searchValue = trim( $searchValue );
 }
 
 
