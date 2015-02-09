@@ -7,7 +7,10 @@
 
     <!-- php + javascript locale -->
     <groups name="quiqqer/sitetypes" datatype="php,js">
-
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Standard Seitentypen]]></de>
+            <en><![CDATA[QUIQQER - Standard site types]]></en>
+        </locale>
     </groups>
 
     <!-- -php locale -->
