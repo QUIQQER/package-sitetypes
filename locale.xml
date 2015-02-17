@@ -8,8 +8,19 @@
     <!-- php + javascript locale -->
     <groups name="quiqqer/sitetypes" datatype="php,js">
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Standard Seitentypen]]></de>
+            <de><![CDATA[QUIQQER - Standard Seiten-Typen]]></de>
             <en><![CDATA[QUIQQER - Standard site types]]></en>
+        </locale>
+        <locale name="package.description" html="true">
+            <de><![CDATA[
+                <p>Nutzen Sie für den Anfang die Standard-Seitentypen.</p>
+                <p>Diese reichen im Normalfall vollkommen aus um ein Projekt zu erstellen.</p>
+                <p>So steht Ihnen eine normale Inhalts-Seite zur Verfügung, so wie die Standard-Suche, ein Impressum,
+                zwei verschiedene Listen-Typen und zwei verschiedene Sitemaps.</p>
+            ]]></de>
+            <en><![CDATA[
+
+            ]]></en>
         </locale>
     </groups>
 
