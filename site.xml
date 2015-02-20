@@ -108,6 +108,9 @@
             <!-- list attributes -->
             <attributes>
                 <attribute>quiqqer.settings.sitetypes.list.max</attribute>
+                <attribute>quiqqer.settings.sitetypes.list.showImages</attribute>
+                <attribute>quiqqer.settings.sitetypes.list.showHeader</attribute>
+                <attribute>quiqqer.settings.sitetypes.list.showSheets</attribute>
             </attributes>
 
             <!-- list settings -->
@@ -121,6 +124,30 @@
                         <input conf="quiqqer.settings.sitetypes.list.max" type="number">
                             <text>
                                 <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.max" />
+                            </text>
+                        </input>
+
+                        <input conf="quiqqer.settings.sitetypes.list.showHeader" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.list.settings.showHeader"
+                                        />
+                            </text>
+                        </input>
+
+                        <input conf="quiqqer.settings.sitetypes.list.showImages" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.list.settings.showImages"
+                                        />
+                            </text>
+                        </input>
+
+                        <input conf="quiqqer.settings.sitetypes.list.showSheets" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.list.settings.showSheets"
+                                        />
                             </text>
                         </input>
                     </settings>

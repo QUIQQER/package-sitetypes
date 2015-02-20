@@ -20,48 +20,5 @@
 {/if}
 
 <section class="content-template grid-100 mobile-grid-100">
-
-    {control control="\QUI\Controls\Sheets" Site=$Site sheets=$sheets}
-
-    {foreach from=$children item=Child}
-    {assign var=Child value=$Child->load()}
-
-    <article class="qui-sitetypes-list-entry">
-
-        <h2>
-            <a href="{url site=$Child}"
-                title="{$Child->getAttribute('title')|escape:"html"}"
-            >
-                <span>{$Child->getAttribute('title')}</span>
-            </a>
-        </h2>
-
-        <div class="qui-sitetypes-list-entry-content grid-100 mobile-grid-100 grid-parent">
-
-            {assign var=bg value=""}
-
-            {if $Child->getAttribute('image_site')}
-                {image src=$Child->getAttribute('image_site') width="300" type="resize" onlysrc=1 assign=bg}
-            {/if}
-
-            <a href="{url site=$Child}"
-               title="{$Child->getAttribute('title')|escape:"html"}"
-               class="qui-sitetypes-list-entry-imagelink grid-25 hide-on-mobile content-image-placeholder"
-               style="background-image: url({$bg})"
-            >
-                <span>{$Child->getAttribute('title')}</span>
-            </a>
-
-            <div class="qui-sitetypes-list-entry-short grid-75 mobile-grid-100">
-                {$Child->getAttribute('short')}
-            </div>
-
-            <div class="qui-sitetypes-list-entry-content grid-100 mobile-grid-100 grid-parent">
-                {$Child->getAttribute('content')}
-            </div>
-        </div>
-    </article>
-    {/foreach}
-
-    {control control="\QUI\Controls\Sheets" Site=$Site sheets=$sheets}
+    {$ChildrenList->create()}
 </section>
