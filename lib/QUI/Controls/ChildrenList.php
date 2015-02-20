@@ -23,13 +23,14 @@ class ChildrenList extends QUI\Control
     {
         // default options
         $this->setAttributes(array(
-            'class'      => 'qui-control-list',
-            'limit'      => 2,
-            'showSheets' => true,
-            'showImages' => true,
-            'showShort'  => true,
-            'showHeader' => true,
-            'Site'       => true
+            'class'       => 'qui-control-list',
+            'limit'       => 2,
+            'showSheets'  => true,
+            'showImages'  => true,
+            'showShort'   => true,
+            'showHeader'  => true,
+            'showContent' => true,
+            'Site'        => true
         ));
 
         parent::setAttributes($attributes);

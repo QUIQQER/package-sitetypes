@@ -47,11 +47,18 @@
             {if $this->getAttribute('showShort')}
             <div class="qui-control-list-entry-short{$noImageClass}">
                 {$Child->getAttribute('short')}
-                <a href="{url site=$Child}">
-                    {locale group="quiqqer/sitetypes" value="list.more"}
-                </a>
             </div>
             {/if}
+
+            {if $this->getAttribute('showContent')}
+                <div class="qui-control-list-entry-content">
+                    {$Child->getAttribute('content')}
+                </div>
+            {/if}
+
+            <a href="{url site=$Child}" class="content-button qui-control-list-entry-link">
+                {locale group="quiqqer/sitetypes" value="list.more"}
+            </a>
         </div>
     </article>
 {/foreach}
