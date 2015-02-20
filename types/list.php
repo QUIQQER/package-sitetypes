@@ -4,19 +4,13 @@
  * Site list
  */
 
-$max = $Site->getAttribute( 'quiqqer.settings.sitetypes.list.max' );
-
-if ( !$max ) {
-    $max = 5;
-}
-
 $ChildrenList = new \QUI\Controls\ChildrenList(array(
     'Site'        => $Site,
-    'limit'       => $max,
-    'showSheets'  => true,
-    'showImages'  => true,
+    'limit'       => $Site->getAttribute( 'quiqqer.settings.sitetypes.list.max' ),
+    'showSheets'  => $Site->getAttribute( 'quiqqer.settings.sitetypes.list.showSheets' ),
+    'showImages'  => $Site->getAttribute( 'quiqqer.settings.sitetypes.list.showImages' ),
     'showShort'   => true,
-    'showHeader'  => true,
+    'showHeader'  => $Site->getAttribute( 'quiqqer.settings.sitetypes.list.showHeader' ),
     'showContent' => false
 ));
 

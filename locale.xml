@@ -99,6 +99,19 @@
             <de><![CDATA[Anzahl Kindseiten pro Seite]]></de>
             <en><![CDATA[Number of children per page]]></en>
         </locale>
+        <locale name="quiqqer.sitetypes.list.settings.showHeader">
+            <de><![CDATA[Überschrift der Kinder anzeigen]]></de>
+            <en><![CDATA[Show the header of the children]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.list.settings.showImages">
+            <de><![CDATA[Seitenbilder der Kinder anzeigen]]></de>
+            <en><![CDATA[Show the page images of the children]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.list.settings.showSheets">
+            <de><![CDATA[Blätterfunktion anzeigen]]></de>
+            <en><![CDATA[Show sheets]]></en>
+        </locale>
+
 
     </groups>
 
