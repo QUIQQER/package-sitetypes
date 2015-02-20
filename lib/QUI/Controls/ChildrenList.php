@@ -56,10 +56,14 @@ class ChildrenList extends QUI\Control
         }
 
         $start = 0;
-        $max   = $this->getAttribute( 'limit' );
+        $limit = $this->getAttribute( 'limit' );
+
+        if ( !$limit ) {
+            $limit = 2;
+        }
 
         if ( isset( $_REQUEST['sheet'] ) ) {
-            $start = ( (int)$_REQUEST['sheet'] - 1 ) * $max;
+            $start = ( (int)$_REQUEST['sheet'] - 1 ) * $limit;
         }
 
         $count_children = $Site->getChildren(array(
@@ -71,10 +75,10 @@ class ChildrenList extends QUI\Control
         }
 
         // sheets
-        $sheets = ceil( $count_children / $max );
+        $sheets = ceil( $count_children / $limit );
 
         $children = $Site->getChildren(array(
-            'limit' => $start .','. $max
+            'limit' => $start .','. $limit
         ));
 
 
