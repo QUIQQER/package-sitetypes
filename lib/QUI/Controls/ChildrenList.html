@@ -1,0 +1,62 @@
+
+{if $this->getAttribute('showSheets')}
+    {control control="\QUI\Controls\Sheets" Site=$Site sheets=$sheets}
+{/if}
+
+<section class="qui-control-list-section">
+{foreach from=$children item=Child}
+{assign var=Child value=$Child->load()}
+    <article class="qui-control-list-entry">
+        {if $this->getAttribute('showHeader')}
+        <h2>
+            <a href="{url site=$Child}"
+               title="{$Child->getAttribute('title')|escape:"html"}"
+            >
+                <span>{$Child->getAttribute('title')}</span>
+            </a>
+        </h2>
+        {/if}
+
+        <div class="qui-control-list-entry-content">
+            {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
+            {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
+
+            {if $this->getAttribute('showImages')}
+                {assign var=noImageClass value=""}
+            {/if}
+
+            {if $this->getAttribute('showShort')}
+                {assign var=noShortClass value=""}
+            {/if}
+
+            {if $this->getAttribute('showImages')}
+                {assign var=bg value=""}
+                {if $Child->getAttribute('image_site')}
+                    {image src=$Child->getAttribute('image_site') width="300" type="resize" onlysrc=1 assign=bg}
+                {/if}
+
+                <a href="{url site=$Child}"
+                   title="{$Child->getAttribute('title')|escape:"html"}"
+                   class="qui-control-list-entry-imagelink content-image-placeholder{$noShortClass}"
+                   {if $bg}style="background-image: url('{$bg}')"{/if}
+                >
+                    <span>{$Child->getAttribute('title')}</span>
+                </a>
+            {/if}
+
+            {if $this->getAttribute('showShort')}
+            <div class="qui-control-list-entry-short{$noImageClass}">
+                {$Child->getAttribute('short')}
+                <a href="{url site=$Child}">
+                    {locale group="quiqqer/sitetypes" value="list.more"}
+                </a>
+            </div>
+            {/if}
+        </div>
+    </article>
+{/foreach}
+</section>
+
+{if $this->getAttribute('showSheets')}
+    {control control="\QUI\Controls\Sheets" Site=$Site sheets=$sheets}
+{/if}
