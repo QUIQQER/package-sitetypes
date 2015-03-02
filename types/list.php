@@ -14,6 +14,16 @@ $ChildrenList = new \QUI\Controls\ChildrenList(array(
     'showContent' => false
 ));
 
+try
+{
+    $ChildrenList->checkLimit();
+
+}  catch ( QUI\Exception $Exception )
+{
+    QUI::getRewrite()->showErrorHeader( 404, $Site->getUrlRewrited() );
+}
+
+
 $Engine->assign(array(
     'ChildrenList' => $ChildrenList
 ));

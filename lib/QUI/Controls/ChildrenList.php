@@ -93,6 +93,39 @@ class ChildrenList extends QUI\Control
     }
 
     /**
+     * Check if the limit can execute
+     *
+     * @throws QUI\Exception
+     */
+    public function checkLimit()
+    {
+        $Site   = $this->_getSite();
+
+        if ( !$Site ) {
+            return '';
+        }
+
+        $start = 0;
+        $limit = $this->getAttribute( 'limit' );
+
+        if ( !$limit ) {
+            $limit = 2;
+        }
+
+        if ( isset( $_REQUEST['sheet'] ) ) {
+            $start = ( (int)$_REQUEST['sheet'] - 1 ) * $limit;
+        }
+
+        $count_children = $Site->getChildren(array(
+            'count'	=> 'count'
+        ));
+
+        if ( $count_children < $start ) {
+            throw new QUI\Exception( 'Sites not found', 404 );
+        }
+    }
+
+    /**
      * @return mixed|QUI\Projects\Site
      */
     protected function _getSite()
