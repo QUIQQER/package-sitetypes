@@ -105,7 +105,7 @@ class ChildrenList extends QUI\Control
             return '';
         }
 
-        $start = 0;
+        $sheet = 1;
         $limit = $this->getAttribute( 'limit' );
 
         if ( !$limit ) {
@@ -113,14 +113,16 @@ class ChildrenList extends QUI\Control
         }
 
         if ( isset( $_REQUEST['sheet'] ) ) {
-            $start = ( (int)$_REQUEST['sheet'] - 1 ) * $limit;
+            $sheet = (int)$_REQUEST['sheet'];
         }
 
         $count_children = $Site->getChildren(array(
             'count'	=> 'count'
         ));
 
-        if ( $count_children < $start ) {
+        $sheets = ceil( $count_children / $limit );
+
+        if ( $sheets < $sheet || $sheet < 0) {
             throw new QUI\Exception( 'Sites not found', 404 );
         }
     }
