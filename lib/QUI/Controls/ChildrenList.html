@@ -3,10 +3,14 @@
     {control control="\QUI\Controls\Sheets" Site=$Site sheets=$sheets}
 {/if}
 
-<section class="qui-control-list-section">
+<section itemscope itemtype="{$this->getAttribute('itemtype')}"
+         class="qui-control-list-section"
+>
 {foreach from=$children item=Child}
-{assign var=Child value=$Child->load()}
-    <article class="qui-control-list-entry">
+    {assign var=_Child value=$Child->load()}
+    <article itemscope itemtype="{$this->getAttribute('child-itemtype')}"
+             class="qui-control-list-entry"
+    >
         {if $this->getAttribute('showHeader')}
         <h2>
             <a href="{url site=$Child}"
@@ -32,7 +36,12 @@
             {if $this->getAttribute('showImages')}
                 {assign var=bg value=""}
                 {if $Child->getAttribute('image_site')}
-                    {image src=$Child->getAttribute('image_site') width="300" type="resize" onlysrc=1 assign=bg}
+                    {image src=$Child->getAttribute('image_site')
+                           width="300"
+                           type="resize"
+                           onlysrc=1
+                           assign=bg
+                    }
                 {/if}
 
                 <a href="{url site=$Child}"
@@ -61,6 +70,10 @@
             </a>
         </div>
     </article>
+
+    {if !($Child@last)}
+    <hr />
+    {/if}
 {/foreach}
 </section>
 

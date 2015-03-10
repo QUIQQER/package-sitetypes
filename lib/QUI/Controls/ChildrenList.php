@@ -9,9 +9,9 @@ namespace QUI\Controls;
 use QUI;
 
 /**
- * Class Startpage2Box
+ * Class ChildrenList
  *
- * @package quiqqer/template-qui
+ * @package quiqqer/sitetypes
  */
 class ChildrenList extends QUI\Control
 {
@@ -25,12 +25,18 @@ class ChildrenList extends QUI\Control
         $this->setAttributes(array(
             'class'       => 'qui-control-list',
             'limit'       => 2,
+
             'showSheets'  => true,
             'showImages'  => true,
             'showShort'   => true,
             'showHeader'  => true,
             'showContent' => true,
-            'Site'        => true
+
+            'Site'  => true,
+            'where' => false,
+
+            'itemtype'       => 'http://schema.org/ItemList',
+            'child-itemtype' => 'http://schema.org/NewsArticle'
         ));
 
         parent::setAttributes($attributes);
@@ -67,7 +73,8 @@ class ChildrenList extends QUI\Control
         }
 
         $count_children = $Site->getChildren(array(
-            'count'	=> 'count'
+            'count'	=> 'count',
+            'where' => $this->getAttribute( 'where' )
         ));
 
         if ( is_array( $count_children ) ) {
@@ -78,6 +85,7 @@ class ChildrenList extends QUI\Control
         $sheets = ceil( $count_children / $limit );
 
         $children = $Site->getChildren(array(
+            'where' => $this->getAttribute( 'where' ),
             'limit' => $start .','. $limit
         ));
 

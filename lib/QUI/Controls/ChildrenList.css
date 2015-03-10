@@ -4,8 +4,13 @@
     padding: 20px 0 0;
 }
 
+.qui-control-list hr {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
 .qui-control-list-entry {
-    border-bottom: 1px solid #D0D3D3;
     clear: both;
     float: left;
     margin: 0;
@@ -28,7 +33,6 @@
         background: none;
         border: none;
         border-radius: none;
-        border-bottom: 1px solid #D0D3D3;
         padding: 10px 10px 30px 10px;
     }
 }
@@ -60,10 +64,16 @@
     background-size: cover;
     border: 1px solid #EEEEEE;
     float: left;
-    height: 100px;
     margin: 0;
     padding: 0;
     width: 33%;
+}
+
+.qui-control-list-entry-imagelink::before {
+    content: "";
+    display: block;
+    /* initial ratio of 3:2, the real ratio should be 66.666% */
+    padding-top: 67%;
 }
 
 .qui-control-list-entry-imagelink:hover {
@@ -80,6 +90,7 @@
     margin: 0;
     padding: 0;
 }
+
 
 .qui-control-list-entry-short {
     float: left;
