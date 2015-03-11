@@ -50,6 +50,25 @@
             <de><![CDATA[Einfache Suche]]></de>
             <en><![CDATA[Simple search]]></en>
         </locale>
+
+        <locale name="admin.types.contact">
+            <de><![CDATA[Standard Kontakt]]></de>
+            <en><![CDATA[Standard contact]]></en>
+        </locale>
+        <locale name="admin.types.contact.desc">
+            <de><![CDATA[Standard Kontakt]]></de>
+            <en><![CDATA[Standard contact]]></en>
+        </locale>
+
+        <locale name="admin.types.forwarding">
+            <de><![CDATA[Standard Weiterleitung]]></de>
+            <en><![CDATA[Standard Forwarding]]></en>
+        </locale>
+        <locale name="admin.types.contact.desc">
+            <de><![CDATA[Standard Weiterleitung]]></de>
+            <en><![CDATA[Standard Forwarding]]></en>
+        </locale>
+
         <locale name="admin.types.list">
             <de><![CDATA[Standard Liste]]></de>
             <en><![CDATA[Standard list]]></en>
@@ -58,6 +77,7 @@
             <de><![CDATA[Liste]]></de>
             <en><![CDATA[List]]></en>
         </locale>
+
         <locale name="admin.types.content.list">
             <de><![CDATA[Standard Inhalts-Liste]]></de>
             <en><![CDATA[Standard content list]]></en>
@@ -66,6 +86,7 @@
             <de><![CDATA[Inhalts-Liste]]></de>
             <en><![CDATA[Content list]]></en>
         </locale>
+
         <locale name="admin.types.sitemap">
             <de><![CDATA[Standard Sitemap]]></de>
             <en><![CDATA[Standard sitemap]]></en>
@@ -74,6 +95,7 @@
             <de><![CDATA[Sitemap]]></de>
             <en><![CDATA[Sitemap]]></en>
         </locale>
+
         <locale name="admin.types.sitemap-block">
             <de><![CDATA[Standard Sitemap - Kategorien]]></de>
             <en><![CDATA[Standard sitemap - Categories]]></en>
@@ -83,6 +105,25 @@
             <en><![CDATA[Block sitemap]]></en>
         </locale>
 
+        <!-- contact settings -->
+        <locale name="quiqqer.sitetypes.contact.settings.title">
+            <de><![CDATA[Kontaktformular-Einstellungen]]></de>
+            <en><![CDATA[Contact form settings]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.contact.settings.email.receiver">
+            <de><![CDATA[Empfänger E-Mail Adresse]]></de>
+            <en><![CDATA[Recipient e-mail address]]></en>
+        </locale>
+
+        <!-- forwarding settings -->
+        <locale name="quiqqer.sitetypes.forwarding.settings.title">
+            <de><![CDATA[Weiterleitungs-Einstellungen]]></de>
+            <en><![CDATA[Forwarding settings]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.contact.settings.forwarding">
+            <de><![CDATA[Zielseite]]></de>
+            <en><![CDATA[Target page]]></en>
+        </locale>
 
         <!-- search template -->
         <locale name="tpl.search.button">

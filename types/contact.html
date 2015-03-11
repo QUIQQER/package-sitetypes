@@ -1,0 +1,42 @@
+
+{if $Template->getAttribute('content-header')}
+<section class="content-header grid-100 mobile-grid-100">
+    <header>
+        <h1>{$Site->getAttribute('title')}</h1>
+    </header>
+
+    {if !isset( $successMessage ) && $Site->getAttribute('short')}
+    <div class="content-short">
+        {$Site->getAttribute('short')|nl2br}
+    </div>
+    {/if}
+</section>
+{/if}
+
+{if !isset( $successMessage ) &&
+    $Template->getAttribute('content-body') &&
+    $Site->getAttribute('content')
+}
+<section class="content-body grid-100 mobile-grid-100">
+    {$Site->getAttribute('content')}
+</section>
+{/if}
+
+<section class="content-template grid-100 mobile-grid-100">
+
+    {if isset( $successMessage )}
+    <div class="quiqqer-contact-message quiqqer-contact-message-success">
+        {$successMessage}
+    </div>
+    {/if}
+
+    {if isset( $errorMessage )}
+    <div class="quiqqer-contact-message quiqqer-contact-message-error">
+        {$errorMessage}
+    </div>
+    {/if}
+
+    {if $Contact}
+        {$Contact->create()}
+    {/if}
+</section>

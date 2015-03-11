@@ -39,6 +39,74 @@
             </settings>
         </type>
 
+        <!-- Kontakt / Contact -->
+        <type type="types/contact" icon="icon-envelope-alt">
+            <locale group="quiqqer/sitetypes" var="admin.types.contact" />
+            <desc>
+                <locale group="quiqqer/sitetypes" var="admin.types.contact.desc" />
+            </desc>
+
+            <!-- contact attributes -->
+            <attributes>
+                <attribute>quiqqer.settings.sitetypes.contact.email</attribute>
+            </attributes>
+
+            <!-- contact settings -->
+            <settings>
+                <category name="sitetypes-contact-settings">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/sitetypes"
+                                    var="quiqqer.sitetypes.contact.settings.title"
+                            />
+                        </title>
+
+                        <input conf="quiqqer.settings.sitetypes.contact.email" type="email">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.contact.settings.email.receiver"
+                                />
+                            </text>
+                        </input>
+                    </settings>
+                </category>
+            </settings>
+        </type>
+
+        <!-- Weiterleitung / Forwarding -->
+        <type type="types/forwarding" icon="icon-share-alt">
+            <locale group="quiqqer/sitetypes" var="admin.types.forwarding" />
+            <desc>
+                <locale group="quiqqer/sitetypes" var="admin.types.forwarding.desc" />
+            </desc>
+
+            <!-- forwarding attributes -->
+            <attributes>
+                <attribute>quiqqer.settings.sitetypes.forwarding</attribute>
+            </attributes>
+
+            <!-- contact settings -->
+            <settings>
+                <category name="sitetypes-contact-settings">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/sitetypes"
+                                    var="quiqqer.sitetypes.forwarding.settings.title"
+                            />
+                        </title>
+
+                        <input conf="quiqqer.settings.sitetypes.forwarding" class="project-site">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.contact.settings.forwarding"
+                                />
+                            </text>
+                        </input>
+                    </settings>
+                </category>
+            </settings>
+        </type>
+
         <!-- Liste -->
         <type type="types/list" icon="icon-list">
             <locale group="quiqqer/sitetypes" var="admin.types.list" />
