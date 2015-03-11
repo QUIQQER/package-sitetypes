@@ -31,6 +31,8 @@ class ChildrenList extends QUI\Control
             'showShort'   => true,
             'showHeader'  => true,
             'showContent' => true,
+            'showTime'    => false,
+            'showCreator' => false,
 
             'Site'  => true,
             'where' => false,

@@ -11,14 +11,50 @@
     <article itemscope itemtype="{$this->getAttribute('child-itemtype')}"
              class="qui-control-list-entry"
     >
-        {if $this->getAttribute('showHeader')}
-        <h2>
-            <a href="{url site=$Child}"
-               title="{$Child->getAttribute('title')|escape:"html"}"
-            >
-                <span>{$Child->getAttribute('title')}</span>
-            </a>
-        </h2>
+        {if $this->getAttribute('showHeader') ||
+            $this->getAttribute('showTime') ||
+            $this->getAttribute('showCreator')}
+        <header>
+            {if $this->getAttribute('showHeader')}
+            <h2>
+                <a href="{url site=$Child}"
+                   title="{$Child->getAttribute('title')|escape:"html"}"
+                >
+                    <span>{$Child->getAttribute('title')}</span>
+                </a>
+            </h2>
+            {/if}
+
+            {if $this->getAttribute('showTime') || $this->getAttribute('showCreator')}
+            <p class="qui-control-list-entry-date">
+                {user id=$Child->getAttribute('c_user') var=User}
+                {t}quiqqer/sitetypes list.created.by{/t}
+                <span class="qui-control-list-entry-date-author">
+                    {if $User->getId() && $User->getAttribute('firstname')}
+                        {$User->getAttribute('firstname')}
+                    {else if $User->getId()}
+                        {$User->getname()}
+                    {/if}
+                </span>
+
+                {t}quiqqer/sitetypes list.created.on{/t}
+                {if $Child->getAttribute('release_from') &&
+                    $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
+                <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
+                      itemprop="datePublished"
+                >
+                    {locale_date date=$Child->getAttribute('release_from')}
+                </time>
+                {else}
+                <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
+                      itemprop="datePublished"
+                >
+                    {locale_date date=$Child->getAttribute('c_date')}
+                </time>
+                {/if}
+            </p>
+            {/if}
+        </header>
         {/if}
 
         <div class="qui-control-list-entry-content">

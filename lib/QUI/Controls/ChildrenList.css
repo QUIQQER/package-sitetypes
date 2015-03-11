@@ -37,6 +37,10 @@
     }
 }
 
+.qui-control-list-entry header {
+    margin: 0;
+}
+
 .qui-control-list-entry h2 {
     float: left;
     margin: 0 0 20px 0;
@@ -45,16 +49,16 @@
 }
 
 .qui-control-list-entry-date {
-    color: #527686;
-    float: right;
-    font-size: 10px;
-    margin: 0 0 20px;
-    text-align: right;
+    clear: both;
+    color: rgba(128, 128, 128, 0.75);
+    font-size: 0.8em;
+    margin: 0;
 }
 
 .qui-control-list-entry-content {
     clear: both;
     float: left;
+    margin: 1.5em 0 0;
     width: 100%;
 }
 

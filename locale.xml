@@ -31,6 +31,15 @@
             <de><![CDATA[mehr]]></de>
             <en><![CDATA[more]]></en>
         </locale>
+        <locale name="list.created.by">
+            <de><![CDATA[von]]></de>
+            <en><![CDATA[by]]></en>
+        </locale>
+        <locale name="list.created.on">
+            <de><![CDATA[am]]></de>
+            <en><![CDATA[on]]></en>
+        </locale>
+
 
         <!-- seitentype -->
         <locale name="admin.types.search">
@@ -87,6 +96,10 @@
         <locale name="tpl.search.list.more">
             <de><![CDATA[mehr]]></de>
             <en><![CDATA[more]]></en>
+        </locale>
+        <locale name="tpl.search.no.results">
+            <de><![CDATA[Keine Ergebnisse gefunden. Bitte nutzen Sie einen anderen Suchbegriff.]]></de>
+            <en><![CDATA[No results found. Please use a different search.]]></en>
         </locale>
 
 
