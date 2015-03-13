@@ -1,0 +1,139 @@
+@CHARSET "UTF-8";
+
+.qui-control-list {
+    padding: 20px 0 0;
+}
+
+.qui-control-list hr {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.qui-control-list-entry {
+    clear: both;
+    float: left;
+    margin: 0;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.qui-control-list-entry:first-child {
+    padding: 20px 0 40px 0;
+}
+
+.qui-control-list-entry:last-child {
+    border-bottom: none;
+    padding: 40px 0 20px 0;
+}
+
+
+@media screen and (max-width: 767px) {
+    .qui-control-list-entry {
+        background: none;
+        border: none;
+        border-radius: none;
+        padding: 10px 10px 30px 10px;
+    }
+}
+
+.qui-control-list-entry header {
+    margin: 0;
+}
+
+.qui-control-list-entry h2 {
+    float: left;
+    margin: 0 0 20px 0;
+    padding: 0;
+    width: 100%;
+}
+
+.qui-control-list-entry-date {
+    clear: both;
+    color: rgba(128, 128, 128, 0.75);
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.qui-control-list-entry-content {
+    clear: both;
+    float: left;
+    margin: 1.5em 0 0;
+    width: 100%;
+}
+
+.qui-control-list-entry-imagelink {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #EEEEEE;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 33%;
+}
+
+.qui-control-list-entry-imagelink::before {
+    content: "";
+    display: block;
+    /* initial ratio of 3:2, the real ratio should be 66.666% */
+    padding-top: 67%;
+}
+
+.qui-control-list-entry-imagelink:hover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.qui-control-list-entry-imagelink span {
+    display: none;
+}
+
+.qui-control-list-entry-image {
+    margin: 0;
+    padding: 0;
+}
+
+
+.qui-control-list-entry-short {
+    float: left;
+    padding-left: 20px;
+    width: 66%;
+}
+
+.qui-control-list-entry-short-noImage {
+    padding-left: 0 !important;
+    width: 100%;
+}
+
+.qui-control-list-entry-image-noShort {
+    height: 200px;
+    width: 100%;
+}
+
+.qui-control-list-entry-link {
+    box-shadow: 0 0 2px #999;
+    clear: both;
+    cursor: pointer;
+    float: right;
+    font-size: 1.1em;
+    line-height: 30px;
+    margin: 20px 0 0 0;
+    padding: 0.65em 1.5em;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s ease 0s;
+}
+
+@media screen and (max-width: 767px) {
+
+    .qui-control-list-entry {
+        padding: 40px 0;
+    }
+
+    .qui-control-list-entry-link {
+        text-align: center;
+        width: 100%;
+    }
+}

@@ -7,7 +7,7 @@
 
     {if $Site->getAttribute('short')}
     <div class="content-short">
-        {$Site->getAttribute('short')}
+        {$Site->getAttribute('short')|nl2br}
     </div>
     {/if}
 </section>
@@ -25,12 +25,13 @@
 
     {assign var=children value=$Start->getChildren()}
     {foreach from=$children item=Child}
-    <table class="qui-sitetypes-sitemap-block-category grid-50 mobile-grid-100">
+    <table class="qui-sitetypes-sitemap-block-category">
     <thead>
         <tr>
-            <th>
+            <th class="control-background">
                 <a href="{url site=$Child}"
                    title="{$Child->getAttribute('title')|escape:"html"}"
+                   class="control-color"
                 >
                     {$Child->getAttribute('title')}
                 </a>

@@ -7,7 +7,7 @@
 
     {if $Site->getAttribute('short')}
     <div class="content-short">
-        {$Site->getAttribute('short')}
+        {$Site->getAttribute('short')|nl2br}
     </div>
     {/if}
 </section>
@@ -73,7 +73,7 @@
                     </a>
 
                     <div class="qui-search-result-list-entry-short grid-75 mobile-grid-100">
-                        {$Child->getAttribute('short')}
+                        {$Child->getAttribute('short')|nl2br}
                         <a href="{url site=$Child}">
                             {locale group="quiqqer/sitetypes" value="tpl.search.list.more"}
                         </a>

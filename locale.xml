@@ -7,7 +7,21 @@
 
     <!-- php + javascript locale -->
     <groups name="quiqqer/sitetypes" datatype="php,js">
+        <locale name="package.title">
+            <de><![CDATA[QUIQQER - Standard Seiten-Typen]]></de>
+            <en><![CDATA[QUIQQER - Standard site types]]></en>
+        </locale>
+        <locale name="package.description" html="true">
+            <de><![CDATA[
+                <p>Nutzen Sie für den Anfang die Standard-Seitentypen.</p>
+                <p>Diese reichen im Normalfall vollkommen aus um ein Projekt zu erstellen.</p>
+                <p>So steht Ihnen eine normale Inhalts-Seite zur Verfügung, so wie die Standard-Suche, ein Impressum,
+                zwei verschiedene Listen-Typen und zwei verschiedene Sitemaps.</p>
+            ]]></de>
+            <en><![CDATA[
 
+            ]]></en>
+        </locale>
     </groups>
 
     <!-- -php locale -->
@@ -17,6 +31,15 @@
             <de><![CDATA[mehr]]></de>
             <en><![CDATA[more]]></en>
         </locale>
+        <locale name="list.created.by">
+            <de><![CDATA[von]]></de>
+            <en><![CDATA[by]]></en>
+        </locale>
+        <locale name="list.created.on">
+            <de><![CDATA[am]]></de>
+            <en><![CDATA[on]]></en>
+        </locale>
+
 
         <!-- seitentype -->
         <locale name="admin.types.search">
@@ -27,6 +50,25 @@
             <de><![CDATA[Einfache Suche]]></de>
             <en><![CDATA[Simple search]]></en>
         </locale>
+
+        <locale name="admin.types.contact">
+            <de><![CDATA[Standard Kontakt]]></de>
+            <en><![CDATA[Standard contact]]></en>
+        </locale>
+        <locale name="admin.types.contact.desc">
+            <de><![CDATA[Standard Kontakt]]></de>
+            <en><![CDATA[Standard contact]]></en>
+        </locale>
+
+        <locale name="admin.types.forwarding">
+            <de><![CDATA[Standard Weiterleitung]]></de>
+            <en><![CDATA[Standard Forwarding]]></en>
+        </locale>
+        <locale name="admin.types.contact.desc">
+            <de><![CDATA[Standard Weiterleitung]]></de>
+            <en><![CDATA[Standard Forwarding]]></en>
+        </locale>
+
         <locale name="admin.types.list">
             <de><![CDATA[Standard Liste]]></de>
             <en><![CDATA[Standard list]]></en>
@@ -35,6 +77,7 @@
             <de><![CDATA[Liste]]></de>
             <en><![CDATA[List]]></en>
         </locale>
+
         <locale name="admin.types.content.list">
             <de><![CDATA[Standard Inhalts-Liste]]></de>
             <en><![CDATA[Standard content list]]></en>
@@ -43,6 +86,7 @@
             <de><![CDATA[Inhalts-Liste]]></de>
             <en><![CDATA[Content list]]></en>
         </locale>
+
         <locale name="admin.types.sitemap">
             <de><![CDATA[Standard Sitemap]]></de>
             <en><![CDATA[Standard sitemap]]></en>
@@ -51,6 +95,7 @@
             <de><![CDATA[Sitemap]]></de>
             <en><![CDATA[Sitemap]]></en>
         </locale>
+
         <locale name="admin.types.sitemap-block">
             <de><![CDATA[Standard Sitemap - Kategorien]]></de>
             <en><![CDATA[Standard sitemap - Categories]]></en>
@@ -60,6 +105,25 @@
             <en><![CDATA[Block sitemap]]></en>
         </locale>
 
+        <!-- contact settings -->
+        <locale name="quiqqer.sitetypes.contact.settings.title">
+            <de><![CDATA[Kontaktformular-Einstellungen]]></de>
+            <en><![CDATA[Contact form settings]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.contact.settings.email.receiver">
+            <de><![CDATA[Empfänger E-Mail Adresse]]></de>
+            <en><![CDATA[Recipient e-mail address]]></en>
+        </locale>
+
+        <!-- forwarding settings -->
+        <locale name="quiqqer.sitetypes.forwarding.settings.title">
+            <de><![CDATA[Weiterleitungs-Einstellungen]]></de>
+            <en><![CDATA[Forwarding settings]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.contact.settings.forwarding">
+            <de><![CDATA[Zielseite]]></de>
+            <en><![CDATA[Target page]]></en>
+        </locale>
 
         <!-- search template -->
         <locale name="tpl.search.button">
@@ -74,6 +138,10 @@
             <de><![CDATA[mehr]]></de>
             <en><![CDATA[more]]></en>
         </locale>
+        <locale name="tpl.search.no.results">
+            <de><![CDATA[Keine Ergebnisse gefunden. Bitte nutzen Sie einen anderen Suchbegriff.]]></de>
+            <en><![CDATA[No results found. Please use a different search.]]></en>
+        </locale>
 
 
         <!-- settings -->
@@ -85,6 +153,19 @@
             <de><![CDATA[Anzahl Kindseiten pro Seite]]></de>
             <en><![CDATA[Number of children per page]]></en>
         </locale>
+        <locale name="quiqqer.sitetypes.list.settings.showHeader">
+            <de><![CDATA[Überschrift der Kinder anzeigen]]></de>
+            <en><![CDATA[Show the header of the children]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.list.settings.showImages">
+            <de><![CDATA[Seitenbilder der Kinder anzeigen]]></de>
+            <en><![CDATA[Show the page images of the children]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.list.settings.showSheets">
+            <de><![CDATA[Blätterfunktion anzeigen]]></de>
+            <en><![CDATA[Show sheets]]></en>
+        </locale>
+
 
     </groups>
 

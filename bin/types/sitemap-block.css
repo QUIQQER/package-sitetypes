@@ -1,17 +1,24 @@
 @CHARSET "UTF-8";
 
-.qui-sitetypes-sitemap-block table {
-    margin-bottom: 20px;
+.qui-sitetypes-sitemap-block-category {
+    float: left;
+    margin-right: 20px;
+    width: calc( 50% - 20px );
 }
 
+.qui-sitetypes-sitemap-block table {
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+
 .qui-sitetypes-sitemap-block th {
-    background: #1183b7;
     padding: 5px 10px;
     text-align: left;
 }
 
 .qui-sitetypes-sitemap-block th a {
-    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .qui-sitetypes-sitemap-block th a:hover {
