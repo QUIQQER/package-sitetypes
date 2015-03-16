@@ -42,6 +42,15 @@
 
 
         <!-- seitentype -->
+        <locale name="admin.types.legalnotes">
+            <de><![CDATA[Impressum]]></de>
+            <en><![CDATA[Legal notes]]></en>
+        </locale>
+        <locale name="admin.types.legalnotes.desc">
+            <de><![CDATA[Impressum]]></de>
+            <en><![CDATA[Legal notes]]></en>
+        </locale>
+
         <locale name="admin.types.search">
             <de><![CDATA[Standard Suche]]></de>
             <en><![CDATA[Standard search]]></en>

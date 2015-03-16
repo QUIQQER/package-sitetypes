@@ -9,6 +9,14 @@
 
     <types>
 
+        <!-- Impressum -->
+        <type type="types/legalnotes" icon="icon-legal">
+            <locale group="quiqqer/sitetypes" var="admin.types.legalnotes" />
+            <desc>
+                <locale group="quiqqer/sitetypes" var="admin.types.legalnotes.desc" />
+            </desc>
+        </type>
+
         <!-- Suche -->
         <type type="types/search" icon="icon-search">
             <locale group="quiqqer/sitetypes" var="admin.types.search" />
