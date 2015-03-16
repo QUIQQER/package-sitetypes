@@ -24,12 +24,12 @@
                 <locale group="quiqqer/sitetypes" var="admin.types.search.desc" />
             </desc>
 
-            <!-- list attributes -->
+            <!-- search attributes -->
             <attributes>
                 <attribute>quiqqer.settings.sitetypes.list.max</attribute>
             </attributes>
 
-            <!-- list settings -->
+            <!-- search settings -->
             <settings>
                 <category name="sitetypes-list-settings">
                     <settings>
@@ -124,10 +124,10 @@
 
             <!-- list attributes -->
             <attributes>
-                <attribute>quiqqer.settings.sitetypes.list.max</attribute>
-                <attribute>quiqqer.settings.sitetypes.list.showImages</attribute>
-                <attribute>quiqqer.settings.sitetypes.list.showHeader</attribute>
-                <attribute>quiqqer.settings.sitetypes.list.showSheets</attribute>
+                <attribute default="0">quiqqer.settings.sitetypes.list.max</attribute>
+                <attribute default="1">quiqqer.settings.sitetypes.list.showImages</attribute>
+                <attribute default="1">quiqqer.settings.sitetypes.list.showHeader</attribute>
+                <attribute default="0">quiqqer.settings.sitetypes.list.showSheets</attribute>
             </attributes>
 
             <!-- list settings -->
@@ -183,10 +183,10 @@
 
             <!-- list attributes -->
             <attributes>
-                <attribute>quiqqer.settings.sitetypes.list.max</attribute>
-                <attribute>quiqqer.settings.sitetypes.list.showImages</attribute>
-                <attribute>quiqqer.settings.sitetypes.list.showHeader</attribute>
-                <attribute>quiqqer.settings.sitetypes.list.showSheets</attribute>
+                <attribute default="0">quiqqer.settings.sitetypes.list.max</attribute>
+                <attribute default="1">quiqqer.settings.sitetypes.list.showImages</attribute>
+                <attribute default="1">quiqqer.settings.sitetypes.list.showHeader</attribute>
+                <attribute default="0">quiqqer.settings.sitetypes.list.showSheets</attribute>
             </attributes>
 
             <!-- list settings -->
