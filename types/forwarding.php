@@ -28,7 +28,7 @@ try
 
 } catch ( QUI\Exception $Exception )
 {
-
+    \QUI\System\Log::writeRecursive( '' );
 }
 
 
