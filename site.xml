@@ -103,7 +103,10 @@
                             />
                         </title>
 
-                        <input conf="quiqqer.settings.sitetypes.forwarding" class="project-site">
+                        <input conf="quiqqer.settings.sitetypes.forwarding"
+                               class="project-site"
+                               data-external="1"
+                        >
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.contact.settings.forwarding"
