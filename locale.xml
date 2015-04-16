@@ -198,6 +198,15 @@
             <de><![CDATA[Impressum]]></de>
             <en><![CDATA[Legal notes]]></en>
         </locale>
+        <locale name="message.forwarding.to.itself">
+            <de><![CDATA[
+                Eine Weiterleitung kann nicht auf sich selbst verweisen.<br />
+                Die Einstellungen der Weiterleitung wurden daher nicht gespeichert.
+            ]]></de>
+            <en><![CDATA[
+
+            ]]></en>
+        </locale>
     </groups>
     <groups name="quiqqer/sitetypes" datatype="php,js ">
         <locale name="quiqqer/sitetypes:types/contact.title">

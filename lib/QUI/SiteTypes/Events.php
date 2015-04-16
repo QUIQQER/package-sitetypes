@@ -41,6 +41,10 @@ class Events
                          $WantedProject->getLang() == $Project->getLang() )
                     {
                         QUI::getMessagesHandler()->addAttention(
+                            QUI::getLocale()->get(
+                                'quiqqer/sitetypes',
+                                'message.forwarding.to.itself'
+                            )
                             'Eine Weiterleitung kann nicht auf sich selbst zeigen. '.
                             'Die Weiterleitungs-Einstellung wurden nicht gespeichert.'
                         );
