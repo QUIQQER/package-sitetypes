@@ -44,7 +44,7 @@ class Events
                             QUI::getLocale()->get(
                                 'quiqqer/sitetypes',
                                 'message.forwarding.to.itself'
-                            )
+                            ),
                             'Eine Weiterleitung kann nicht auf sich selbst zeigen. '.
                             'Die Weiterleitungs-Einstellung wurden nicht gespeichert.'
                         );
