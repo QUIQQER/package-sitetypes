@@ -1,3 +1,3 @@
 <?php
 
-$Engine->assign( 'childTpl', dirname( __FILE__ ) .'/sitemapChildren.html' );
+$Engine->assign('childTpl', dirname(__FILE__).'/sitemapChildren.html');

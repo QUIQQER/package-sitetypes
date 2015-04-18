@@ -1,39 +1,34 @@
 <?php
 
-$url     = URL_DIR;
-$siteUrl = $Site->getAttribute( 'quiqqer.settings.sitetypes.forwarding' );
+$url = URL_DIR;
+$siteUrl = $Site->getAttribute('quiqqer.settings.sitetypes.forwarding');
 
-try
-{
-    if ( \QUI\Projects\Site\Utils::isSiteLink( $siteUrl ) )
-    {
-        $Wanted = \QUI\Projects\Site\Utils::getSiteByLink( $siteUrl );
+try {
+    if (\QUI\Projects\Site\Utils::isSiteLink($siteUrl)) {
+        $Wanted = \QUI\Projects\Site\Utils::getSiteByLink($siteUrl);
 
         // so, we get the site with vhosts, and url dir
         $url = QUI::getRewrite()->getUrlFromSite(array(
             'site' => $Wanted
         ));
 
-    } else
-    {
-        $parts = parse_url( $siteUrl );
+    } else {
+        $parts = parse_url($siteUrl);
 
-        if ( !isset( $parts['scheme'] ) && strpos( $siteUrl, '//' ) !== 0 ) {
-            $siteUrl = '//'. $siteUrl;
+        if (!isset($parts['scheme']) && strpos($siteUrl, '//') !== 0) {
+            $siteUrl = '//'.$siteUrl;
         }
 
         // external
         $url = $siteUrl;
     }
 
-} catch ( QUI\Exception $Exception )
-{
-    \QUI\System\Log::writeRecursive( '' );
+} catch (QUI\Exception $Exception) {
+    \QUI\System\Log::writeRecursive('');
 }
 
 
-if ( isset( $url ) )
-{
+if (isset($url)) {
     // 303 = See Other
-    header( "Location: ". $url, true, 303 );
+    header("Location: ".$url, true, 303);
 }
