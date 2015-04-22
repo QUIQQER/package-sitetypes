@@ -2,30 +2,34 @@
 <locales>
     <groups name="quiqqer/sitetypes" datatype="php,js">
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Standard Seiten-Typen]]></de>
+            <de><![CDATA[QUIQQER - Standard-Seitentypen]]></de>
             <en><![CDATA[QUIQQER - Standard site types]]></en>
         </locale>
         <locale name="package.description" html="true">
-            <de><![CDATA[<p>Nutzen Sie für den Anfang die Standard-Seitentypen.</p>
-                <p>Diese reichen im Normalfall vollkommen aus um ein Projekt zu erstellen.</p>
-                <p>So steht Ihnen eine normale Inhalts-Seite zur Verfügung, so wie die Standard-Suche, ein Impressum,
-                zwei verschiedene Listen-Typen und zwei verschiedene Sitemaps.</p>]]></de>
+            <de><![CDATA[<p>Nutzen Sie f&uuml;r den Anfang die Standardseitentypen.</p>
+
+<p>Diese reichen im Normalfall vollkommen aus um ein kleines Projekt zu erstellen.</p>
+
+<p>So steht Ihnen eine normale Inhaltsseite zur Verf&uuml;gung, so wie die Standardsuche, ein Impressum, zwei verschiedene Listentypen und zwei verschiedene Sitemaps.</p>]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/contact.description">
-            <de><![CDATA[Mit dem Kontaktformular bieten Sie Ihren Nutzern an, Sie schnell und einfach zu Kontaktieren. Dazu legen Sie diesen Seitentyp in Ihrem Projekt an und lassen diese Seite entweder in der Navigation anzeigen, sodass Sie oben im Menü zu sehen ist, oder verlinken beispielweise im Footer auf die Seite. In den Einstellungen des Kontaktformulars legen Sie noch eine Support Email-Adresse fest, an welche die Anfragen gesendet werden sollen.]]></de>
+            <de><![CDATA[Mit dem Kontaktformular bieten Sie Ihren Nutzern an, Sie schnell und einfach zu Kontaktieren.
+Dazu legen Sie diesen Seitentyp in Ihrem Projekt an und lassen diese Seite entweder in der Navigation anzeigen, sodass Sie oben im Menü zu sehen ist, 
+oder verlinken beispielsweise im Footer auf die Seite. In den Einstellungen des Kontaktformulars legen Sie noch eine Support Email-Adresse fest, an welche die Anfragen gesendet werden sollen.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/forwarding.title">
-            <de><![CDATA[Standard Weiterleitung]]></de>
+            <de><![CDATA[Standard-Weiterleitung]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/forwarding.description">
-            <de><![CDATA[Nutzen Sie die Weiterleitung, um Nutzer bei einem Klick auf diese Seite zu einer anderen umzuleiten. Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer von Ihrer Weiterleitungs-Seite "Community" auf die externe Seite um.]]></de>
+            <de><![CDATA[Nutzen Sie die Weiterleitung, um Nutzer bei einem Klick auf diese Seite zu einer anderen umzuleiten.
+Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer von Ihrer Weiterleitungs-Seite "Community" auf die externe Seite um.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/list.title">
-            <de><![CDATA[Standard Liste]]></de>
+            <de><![CDATA[Standard-Liste]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/list.description">
@@ -33,19 +37,19 @@
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/list-content.title">
-            <de><![CDATA[Standard Inhalts-Liste]]></de>
+            <de><![CDATA[Standard-Inhaltsliste]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/list-content.description">
-            <de><![CDATA[Die Standard-Inhalts-Liste listet alle darunter angelegten Seiten zusammen mit dem Inhalt der seite auf.]]></de>
+            <de><![CDATA[Die Standard-Inhaltsliste listet alle darunter angelegten Seiten zusammen mit dem Inhalt der seite auf.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/sitemap.title">
-            <de><![CDATA[Standard Sitemap]]></de>
+            <de><![CDATA[Standard-Sitemap]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/sitemap.description">
-            <de><![CDATA[Eine Ssitmap listet sämtliche Seiten und Unterseiten Ihres Projekts auf. Im Prinzip eine vereinfachte Navigation Ihrer Webseite, in welcher der nutzer leichter einer gesuchte Seite finden kann.]]></de>
+            <de><![CDATA[Eine Sitmap listet sämtliche Seiten und Unterseiten Ihres Projekts auf. Im Prinzip eine vereinfachte Navigation Ihrer Webseite, in welcher der Nutzer leichter einer gesuchte Seite finden kann.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/sitemap-block.title">
@@ -53,11 +57,11 @@
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/sitemap-block.description">
-            <de><![CDATA[Eine Kategorie-Sitmap listet sämtliche Seiten und Unterseiten Ihres Projekts, sortiert nach Kategorien mit Überschreiften auf. Im Prinzip eine vereinfachte Navigation Ihrer Webseite, in welcher der nutzer leichter einer gesuchte Seite finden kann.]]></de>
+            <de><![CDATA[Eine Kategorie-Sitmap listet sämtliche Seiten und Unterseiten Ihres Projekts, sortiert nach Kategorien mit Überschriften auf. Im Prinzip eine vereinfachte Navigation Ihrer Webseite, in welcher der Nutzer leichter einer gesuchte Seite finden kann.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/legalnotes.title">
-            <de><![CDATA[Standard Impressum]]></de>
+            <de><![CDATA[Standard-Impressum]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/legalnotes.description">
@@ -65,7 +69,7 @@
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/search.title">
-            <de><![CDATA[Standard Suche]]></de>
+            <de><![CDATA[Standard-Suche]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/search.description">
@@ -79,7 +83,7 @@
             <en><![CDATA[more]]></en>
         </locale>
         <locale name="admin.types.search">
-            <de><![CDATA[Standard Suche]]></de>
+            <de><![CDATA[Standardsuche]]></de>
             <en><![CDATA[Standard search]]></en>
         </locale>
         <locale name="admin.types.search.desc">
@@ -87,7 +91,7 @@
             <en><![CDATA[Simple search]]></en>
         </locale>
         <locale name="admin.types.list">
-            <de><![CDATA[Standard Liste]]></de>
+            <de><![CDATA[Standardliste]]></de>
             <en><![CDATA[Standard list]]></en>
         </locale>
         <locale name="admin.types.list.desc">
@@ -95,15 +99,15 @@
             <en><![CDATA[List]]></en>
         </locale>
         <locale name="admin.types.content.list">
-            <de><![CDATA[Standard Inhalts-Liste]]></de>
+            <de><![CDATA[Standard-Inhaltsliste]]></de>
             <en><![CDATA[Standard content list]]></en>
         </locale>
         <locale name="admin.types.content.list.desc">
-            <de><![CDATA[Inhalts-Liste]]></de>
+            <de><![CDATA[Inhaltsliste]]></de>
             <en><![CDATA[Content list]]></en>
         </locale>
         <locale name="admin.types.sitemap">
-            <de><![CDATA[Standard Sitemap]]></de>
+            <de><![CDATA[Standard-Sitemap]]></de>
             <en><![CDATA[Standard sitemap]]></en>
         </locale>
         <locale name="admin.types.sitemap.desc">
@@ -111,12 +115,8 @@
             <en><![CDATA[Sitemap]]></en>
         </locale>
         <locale name="admin.types.sitemap-block">
-            <de><![CDATA[Standard Sitemap - Kategorien]]></de>
+            <de><![CDATA[Standard Kategorie-Sitemap]]></de>
             <en><![CDATA[Standard sitemap - Categories]]></en>
-        </locale>
-        <locale name="admin.types.sitemap-block.desc">
-            <de><![CDATA[Block Sitemap]]></de>
-            <en><![CDATA[Block sitemap]]></en>
         </locale>
         <locale name="tpl.search.button">
             <de><![CDATA[Suche starten]]></de>
@@ -131,7 +131,7 @@
             <en><![CDATA[more]]></en>
         </locale>
         <locale name="quiqqer.sitetypes.list.settings.title">
-            <de><![CDATA[Listen Einstellungen]]></de>
+            <de><![CDATA[Listeneinstellungen]]></de>
             <en><![CDATA[List settings]]></en>
         </locale>
         <locale name="quiqqer.sitetypes.list.settings.max">
@@ -159,15 +159,15 @@
             <en><![CDATA[on]]></en>
         </locale>
         <locale name="admin.types.contact">
-            <de><![CDATA[Standard Kontakt]]></de>
+            <de><![CDATA[Standardkontakt]]></de>
             <en><![CDATA[Standard contact]]></en>
         </locale>
         <locale name="admin.types.contact.desc">
-            <de><![CDATA[Standard Weiterleitung]]></de>
+            <de><![CDATA[Standard-Weiterleitung]]></de>
             <en><![CDATA[Standard Forwarding]]></en>
         </locale>
         <locale name="admin.types.forwarding">
-            <de><![CDATA[Standard Weiterleitung]]></de>
+            <de><![CDATA[Standard-Weiterleitung]]></de>
             <en><![CDATA[Standard Forwarding]]></en>
         </locale>
         <locale name="quiqqer.sitetypes.contact.settings.title">
@@ -175,7 +175,7 @@
             <en><![CDATA[Contact form settings]]></en>
         </locale>
         <locale name="quiqqer.sitetypes.contact.settings.email.receiver">
-            <de><![CDATA[Empfänger E-Mail Adresse]]></de>
+            <de><![CDATA[Empfänger E-Mail-Adresse]]></de>
             <en><![CDATA[Recipient e-mail address]]></en>
         </locale>
         <locale name="quiqqer.sitetypes.forwarding.settings.title">
@@ -190,6 +190,11 @@
             <de><![CDATA[Keine Ergebnisse gefunden. Bitte nutzen Sie einen anderen Suchbegriff.]]></de>
             <en><![CDATA[No results found. Please use a different search.]]></en>
         </locale>
+        <locale name="message.forwarding.to.itself">
+            <de><![CDATA[Eine Weiterleitung kann nicht auf sich selbst verweisen.<br />
+                Die Einstellungen der Weiterleitung wurden daher nicht gespeichert.]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
         <locale name="admin.types.legalnotes">
             <de><![CDATA[Impressum]]></de>
             <en><![CDATA[Legal notes]]></en>
@@ -198,19 +203,10 @@
             <de><![CDATA[Impressum]]></de>
             <en><![CDATA[Legal notes]]></en>
         </locale>
-        <locale name="message.forwarding.to.itself">
-            <de><![CDATA[
-                Eine Weiterleitung kann nicht auf sich selbst verweisen.<br />
-                Die Einstellungen der Weiterleitung wurden daher nicht gespeichert.
-            ]]></de>
-            <en><![CDATA[
-
-            ]]></en>
-        </locale>
     </groups>
     <groups name="quiqqer/sitetypes" datatype="php,js ">
         <locale name="quiqqer/sitetypes:types/contact.title">
-            <de><![CDATA[Standard Kontaktformular]]></de>
+            <de><![CDATA[Standard-Kontaktformular]]></de>
             <en><![CDATA[]]></en>
         </locale>
     </groups>
