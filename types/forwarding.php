@@ -1,5 +1,8 @@
 <?php
 
+use \Symfony\Component\HttpFoundation\RedirectResponse;
+use \Symfony\Component\HttpFoundation\Response;
+
 $url = URL_DIR;
 $siteUrl = $Site->getAttribute('quiqqer.settings.sitetypes.forwarding');
 
@@ -29,6 +32,7 @@ try {
 
 
 if (isset($url)) {
-    // 303 = See Other
-    header("Location: ".$url, true, 303);
+    $Redirect = new RedirectResponse($url);
+    $Redirect->setStatusCode(Response::HTTP_SEE_OTHER);
+    $Redirect->send();
 }
