@@ -35,11 +35,15 @@
         />
     </form>
 
-    <section class="content-template grid-100 mobile-grid-100 qui-search-result-list">
+    <section class="content-template grid-100 mobile-grid-100 grid-parent qui-search-result-list">
     {if empty($children)}
+        {if isset($smarty.request.search)}
         <div class="qui-search-result-list-message">
-            {locale group="quiqqer/sitetypes" value="tpl.search.no.results"}
+            <div class="content-message-attention">
+                {locale group="quiqqer/sitetypes" value="tpl.search.no.results"}
+            </div>
         </div>
+        {/if}
     {else}
         {control control="\QUI\Controls\Sheets" Site=$Site sheets=$sheets search=$searchValue}
 
