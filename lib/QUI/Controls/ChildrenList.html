@@ -83,9 +83,13 @@
                 <a href="{url site=$Child}"
                    title="{$Child->getAttribute('title')|escape:"html"}"
                    class="qui-control-list-entry-imagelink content-image-placeholder{$noShortClass}"
-                   {if $bg}style="background-image: url('{$bg}')"{/if}
                 >
-                    <span>{$Child->getAttribute('title')}</span>
+                    <div class="qui-control-list-entry-imagelink-fix"
+                         {if $bg}style="background-image: url('{$bg}')"{/if}
+                    >
+                        {if $bg}<img src="{$bg}" style="visibility: hidden;"/>{/if}
+                        <span>{$Child->getAttribute('title')}</span>
+                    </div>
                 </a>
             {/if}
 

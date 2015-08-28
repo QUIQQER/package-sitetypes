@@ -62,25 +62,42 @@
     width: 100%;
 }
 
+/* ----------- FIX --------------- */
+
 .qui-control-list-entry-imagelink {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     border: 1px solid #EEEEEE;
+    display: block;
     float: left;
     margin: 0;
     padding: 0;
-    width: 33%;
+    text-align: center;
+    width: 33%;;
 }
 
 .qui-control-list-entry-imagelink::before {
     content: "";
     display: block;
-    /* initial ratio of 3:2, the real ratio should be 66.666% */
-    padding-top: 67%;
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
 }
 
+.qui-control-list-entry-imagelink-fix {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    display: inline-block;
+    height: 0;
+    max-width: 100%;
+    overflow: hidden;
+    padding-top: 66.64%;
+    vertical-align: middle;
+}
+
+/* -------------------------- */
+
 .qui-control-list-entry-imagelink:hover {
+    background-color: transparent !important;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
