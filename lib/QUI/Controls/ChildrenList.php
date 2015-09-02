@@ -42,7 +42,7 @@ class ChildrenList extends QUI\Control
         parent::setAttributes($attributes);
 
         $this->addCSSFile(
-            dirname(__FILE__).'/ChildrenList.css'
+            dirname(__FILE__) . '/ChildrenList.css'
         );
     }
 
@@ -55,7 +55,7 @@ class ChildrenList extends QUI\Control
     public function getBody()
     {
         $Engine = QUI::getTemplateManager()->getEngine();
-        $Site = $this->_getSite();
+        $Site   = $this->_getSite();
 
         if (!$Site) {
             return '';
@@ -86,18 +86,19 @@ class ChildrenList extends QUI\Control
 
         $children = $Site->getChildren(array(
             'where' => $this->getAttribute('where'),
-            'limit' => $start.','.$limit
+            'limit' => $start . ',' . $limit
         ));
 
 
         $Engine->assign(array(
             'this'     => $this,
             'Site'     => $this->_getSite(),
+            'Project'  => $this->_getProject(),
             'sheets'   => $sheets,
             'children' => $children
         ));
 
-        return $Engine->fetch(dirname(__FILE__).'/ChildrenList.html');
+        return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.html');
     }
 
     /**
