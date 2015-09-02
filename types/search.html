@@ -66,7 +66,7 @@
 
                     {if $Child->getAttribute('image_site')}
                         {image src=$Child->getAttribute('image_site') width="300" type="resize" onlysrc=1 assign=bg}
-                    {else}
+                    {elseif $Placeholder}
                         {image image=$Placeholder
                             width="300"
                             type="resize"
