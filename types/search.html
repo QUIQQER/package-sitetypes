@@ -19,7 +19,7 @@
 </section>
 {/if}
 
-
+{assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
 <div class="content-template grid-100 mobile-grid-100 qui-search-result">
 
     <form action="{url site=$Site}" method="GET">
@@ -66,6 +66,13 @@
 
                     {if $Child->getAttribute('image_site')}
                         {image src=$Child->getAttribute('image_site') width="300" type="resize" onlysrc=1 assign=bg}
+                    {else}
+                        {image image=$Placeholder
+                            width="300"
+                            type="resize"
+                            onlysrc=1
+                            assign=bg
+                        }
                     {/if}
 
                     <a href="{url site=$Child}"
