@@ -6,12 +6,16 @@
 
 use QUI\Utils\Security\Orthos;
 
-if (\QUI::getRewrite()->getHeaderCode() === 404) {
+if (QUI::getRewrite()->getHeaderCode() === 404) {
     if (isset($_REQUEST['_url'])) {
         $requestUrl = $_REQUEST['_url'];
-        $path = pathinfo($requestUrl);
+        $path       = pathinfo($requestUrl);
 
-        $_REQUEST['search'] = $path['dirname'].' '.$path['filename'];
+        if (isset($path['dirname'])) {
+            $_REQUEST['search'] = $path['dirname'] . ' ' . $path['filename'];
+        } else {
+            $_REQUEST['search'] = $path['filename'];
+        }
     }
 }
 
@@ -20,11 +24,11 @@ if (\QUI::getRewrite()->getHeaderCode() === 404) {
  */
 
 $searchValue = '';
-$start = 0;
-$max = $Site->getAttribute('quiqqer.settings.sitetypes.list.max');
+$start       = 0;
+$max         = $Site->getAttribute('quiqqer.settings.sitetypes.list.max');
 
 $children = array();
-$sheets = 0;
+$sheets   = 0;
 
 if (!$max) {
     $max = 5;
@@ -58,7 +62,7 @@ if (!empty($searchValue)) {
                 'type'  => '%LIKE%'
             )
         ),
-        'limit' => $start.','.$max
+        'limit' => $start . ',' . $max
     ));
 
     // sheets and count
