@@ -130,7 +130,8 @@
 }
 
 .qui-control-list-entry-link {
-    float: right;
+    float: right !important;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 767px) {
