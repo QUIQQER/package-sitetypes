@@ -1,6 +1,6 @@
 
 {if $this->getAttribute('showSheets')}
-    {control control="\QUI\Controls\Sheets" Site=$Site sheets=$sheets}
+    {$Pagination->create()}
 {/if}
 
 {assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
@@ -127,5 +127,5 @@
 </section>
 
 {if $this->getAttribute('showSheets')}
-    {control control="\QUI\Controls\Sheets" Site=$Site sheets=$sheets}
+    {$Pagination->create()}
 {/if}

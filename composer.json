@@ -17,7 +17,8 @@
     },
 
     "require": {
-        "quiqqer/quiqqer" : "*@dev"
+        "quiqqer/quiqqer" : "*@dev",
+        "quiqqer/bricks"  : "*"
     },
 
     "autoload": {

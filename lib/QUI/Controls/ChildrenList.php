@@ -61,6 +61,10 @@ class ChildrenList extends QUI\Control
             return '';
         }
 
+        $Pagination = new QUI\Bricks\Controls\Pagination();
+        $Pagination->loadFromRequest();
+        $Pagination->setAttribute('Site', $Site);
+
         $start = 0;
         $limit = $this->getAttribute('limit');
 
@@ -89,13 +93,16 @@ class ChildrenList extends QUI\Control
             'limit' => $start . ',' . $limit
         ));
 
+        $Pagination->setAttribute('limit', $limit);
+        $Pagination->setAttribute('sheets', $sheets);
 
         $Engine->assign(array(
-            'this'     => $this,
-            'Site'     => $this->_getSite(),
-            'Project'  => $this->_getProject(),
-            'sheets'   => $sheets,
-            'children' => $children
+            'this'       => $this,
+            'Site'       => $this->_getSite(),
+            'Project'    => $this->_getProject(),
+            'sheets'     => $sheets,
+            'children'   => $children,
+            'Pagination' => $Pagination
         ));
 
         return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.html');
