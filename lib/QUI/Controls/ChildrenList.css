@@ -130,6 +130,7 @@
 }
 
 .qui-control-list-entry-link {
+    clear: both;
     float: right !important;
     margin-top: 20px;
 }
