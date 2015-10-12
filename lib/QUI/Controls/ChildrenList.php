@@ -17,26 +17,24 @@ class ChildrenList extends QUI\Control
 {
     /**
      * constructor
+     *
      * @param Array $attributes
      */
     public function __construct($attributes = array())
     {
         // default options
         $this->setAttributes(array(
-            'class'       => 'qui-control-list',
-            'limit'       => 2,
-
-            'showSheets'  => true,
-            'showImages'  => true,
-            'showShort'   => true,
-            'showHeader'  => true,
-            'showContent' => true,
-            'showTime'    => false,
-            'showCreator' => false,
-
-            'Site'  => true,
-            'where' => false,
-
+            'class'          => 'qui-control-list',
+            'limit'          => 2,
+            'showSheets'     => true,
+            'showImages'     => true,
+            'showShort'      => true,
+            'showHeader'     => true,
+            'showContent'    => true,
+            'showTime'       => false,
+            'showCreator'    => false,
+            'Site'           => true,
+            'where'          => false,
             'itemtype'       => 'http://schema.org/ItemList',
             'child-itemtype' => 'http://schema.org/NewsArticle'
         ));
@@ -59,47 +57,55 @@ class ChildrenList extends QUI\Control
         $Engine = QUI::getTemplateManager()->getEngine();
         $Site   = $this->_getSite();
 
-        if ( !$Site ) {
+        if (!$Site) {
             return '';
         }
 
-        $start = 0;
-        $limit = $this->getAttribute( 'limit' );
+        $Pagination = new QUI\Bricks\Controls\Pagination();
+        $Pagination->loadFromRequest();
+        $Pagination->setAttribute('Site', $Site);
 
-        if ( !$limit ) {
+        $start = 0;
+        $limit = $this->getAttribute('limit');
+
+        if (!$limit) {
             $limit = 2;
         }
 
-        if ( isset( $_REQUEST['sheet'] ) ) {
-            $start = ( (int)$_REQUEST['sheet'] - 1 ) * $limit;
+        if (isset($_REQUEST['sheet'])) {
+            $start = ((int)$_REQUEST['sheet'] - 1) * $limit;
         }
 
         $count_children = $Site->getChildren(array(
-            'count'	=> 'count',
-            'where' => $this->getAttribute( 'where' )
+            'count' => 'count',
+            'where' => $this->getAttribute('where')
         ));
 
-        if ( is_array( $count_children ) ) {
-            $count_children = count( $count_children );
+        if (is_array($count_children)) {
+            $count_children = count($count_children);
         }
 
         // sheets
-        $sheets = ceil( $count_children / $limit );
+        $sheets = ceil($count_children / $limit);
 
         $children = $Site->getChildren(array(
-            'where' => $this->getAttribute( 'where' ),
-            'limit' => $start .','. $limit
+            'where' => $this->getAttribute('where'),
+            'limit' => $start . ',' . $limit
         ));
 
+        $Pagination->setAttribute('limit', $limit);
+        $Pagination->setAttribute('sheets', $sheets);
 
         $Engine->assign(array(
-            'this'     => $this,
-            'Site'     => $this->_getSite(),
-            'sheets'   => $sheets,
-            'children' => $children
+            'this'       => $this,
+            'Site'       => $this->_getSite(),
+            'Project'    => $this->_getProject(),
+            'sheets'     => $sheets,
+            'children'   => $children,
+            'Pagination' => $Pagination
         ));
 
-        return $Engine->fetch( dirname( __FILE__ ) .'/ChildrenList.html' );
+        return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.html');
     }
 
     /**
@@ -109,31 +115,31 @@ class ChildrenList extends QUI\Control
      */
     public function checkLimit()
     {
-        $Site   = $this->_getSite();
+        $Site = $this->_getSite();
 
-        if ( !$Site ) {
-            return '';
+        if (!$Site) {
+            return;
         }
 
         $sheet = 1;
-        $limit = $this->getAttribute( 'limit' );
+        $limit = $this->getAttribute('limit');
 
-        if ( !$limit ) {
+        if (!$limit) {
             $limit = 2;
         }
 
-        if ( isset( $_REQUEST['sheet'] ) ) {
+        if (isset($_REQUEST['sheet'])) {
             $sheet = (int)$_REQUEST['sheet'];
         }
 
         $count_children = $Site->getChildren(array(
-            'count'	=> 'count'
+            'count' => 'count'
         ));
 
-        $sheets = ceil( $count_children / $limit );
+        $sheets = ceil($count_children / $limit);
 
-        if ( $sheets < $sheet || $sheet < 0) {
-            throw new QUI\Exception( 'Sites not found', 404 );
+        if ($sheets < $sheet || $sheet < 0) {
+            throw new QUI\Exception('Sites not found', 404);
         }
     }
 
@@ -142,16 +148,14 @@ class ChildrenList extends QUI\Control
      */
     protected function _getSite()
     {
-        if ( $this->getAttribute( 'Site' ) ) {
-            return $this->getAttribute( 'Site' );
+        if ($this->getAttribute('Site')) {
+            return $this->getAttribute('Site');
         }
 
         $Site = \QUI::getRewrite()->getSite();
 
-        $this->setAttribute( 'Site', $Site );
+        $this->setAttribute('Site', $Site);
 
         return $Site;
     }
 }
-
-

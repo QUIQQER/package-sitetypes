@@ -1,21 +1,38 @@
 <?php
 
-try
-{
-    $Wanted = \QUI\Projects\Site\Utils::getSiteByLink(
-        $Site->getAttribute( 'quiqqer.settings.sitetypes.forwarding' )
-    );
+use \Symfony\Component\HttpFoundation\RedirectResponse;
+use \Symfony\Component\HttpFoundation\Response;
 
-    // so, we get the site with vhosts, and url dir
-    $url = QUI::getRewrite()->getUrlFromSite(array(
-        'site' => $Wanted
-    ));
+$url = URL_DIR;
+$siteUrl = $Site->getAttribute('quiqqer.settings.sitetypes.forwarding');
 
-    if ( isset( $url ) ) {
-        header( "Location: ". $url, true, 302 );
+try {
+    if (\QUI\Projects\Site\Utils::isSiteLink($siteUrl)) {
+        $Wanted = \QUI\Projects\Site\Utils::getSiteByLink($siteUrl);
+
+        // so, we get the site with vhosts, and url dir
+        $url = QUI::getRewrite()->getUrlFromSite(array(
+            'site' => $Wanted
+        ));
+
+    } else {
+        $parts = parse_url($siteUrl);
+
+        if (!isset($parts['scheme']) && strpos($siteUrl, '//') !== 0) {
+            $siteUrl = '//'.$siteUrl;
+        }
+
+        // external
+        $url = $siteUrl;
     }
 
-} catch ( QUI\Exception $Exception )
-{
+} catch (QUI\Exception $Exception) {
+    \QUI\System\Log::writeRecursive('');
+}
 
+
+if (isset($url)) {
+    $Redirect = new RedirectResponse($url);
+    $Redirect->setStatusCode(Response::HTTP_SEE_OTHER);
+    $Redirect->send();
 }

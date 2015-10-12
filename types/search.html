@@ -1,6 +1,6 @@
 
 {if $Template->getAttribute('content-header')}
-<section class="content-header grid-100 mobile-grid-100">
+<section class="content-header grid-100 mobile-grid-100 grid-parent">
     <header>
         <h1>{$Site->getAttribute('title')}</h1>
     </header>
@@ -14,12 +14,12 @@
 {/if}
 
 {if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
-<section class="content-body grid-100 mobile-grid-100">
+<section class="content-body grid-100 mobile-grid-100 grid-parent">
     {$Site->getAttribute('content')}
 </section>
 {/if}
 
-
+{assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
 <div class="content-template grid-100 mobile-grid-100 qui-search-result">
 
     <form action="{url site=$Site}" method="GET">
@@ -35,11 +35,15 @@
         />
     </form>
 
-    <section class="content-template grid-100 mobile-grid-100 qui-search-result-list">
+    <section class="content-template grid-100 mobile-grid-100 grid-parent qui-search-result-list">
     {if empty($children)}
+        {if isset($smarty.request.search)}
         <div class="qui-search-result-list-message">
-            {locale group="quiqqer/sitetypes" value="tpl.search.no.results"}
+            <div class="content-message-attention">
+                {locale group="quiqqer/sitetypes" value="tpl.search.no.results"}
+            </div>
         </div>
+        {/if}
     {else}
         {control control="\QUI\Controls\Sheets" Site=$Site sheets=$sheets search=$searchValue}
 
@@ -62,6 +66,13 @@
 
                     {if $Child->getAttribute('image_site')}
                         {image src=$Child->getAttribute('image_site') width="300" type="resize" onlysrc=1 assign=bg}
+                    {elseif $Placeholder}
+                        {image image=$Placeholder
+                            width="300"
+                            type="resize"
+                            onlysrc=1
+                            assign=bg
+                        }
                     {/if}
 
                     <a href="{url site=$Child}"

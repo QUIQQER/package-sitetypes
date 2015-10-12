@@ -11,16 +11,24 @@
     padding-left: 0;
 }
 
-
 .qui-sitetypes-sitemap-block th {
     padding: 5px 10px;
     text-align: left;
 }
 
 .qui-sitetypes-sitemap-block th a {
-    text-decoration: none;
+    text-decoration: underline;
+    display: block;
 }
 
 .qui-sitetypes-sitemap-block th a:hover {
     text-decoration: none;
+}
+
+.qui-sitetypes-sitemap-block ul li {
+    width: calc(100% - 2em);
+}
+
+.qui-sitetypes-sitemap-block-category ul li a {
+    display: block;;
 }

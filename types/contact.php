@@ -7,11 +7,11 @@ $Contact = new Contact(array(
     'data-ajax' => 0
 ));
 
-if ( isset( $_POST['name'] ) &&
-     isset( $_POST['email'] ) &&
-     isset( $_POST['message'] ) )
-{
-    $reciever = $Site->getAttribute( 'quiqqer.settings.sitetypes.contact.email' );
+if (isset($_POST['name'])
+    && isset($_POST['email'])
+    && isset($_POST['message'])
+) {
+    $reciever = $Site->getAttribute('quiqqer.settings.sitetypes.contact.email');
 
     $Contact->setAttributes(array(
         'POST_NAME'    => $_POST['name'],
@@ -19,8 +19,7 @@ if ( isset( $_POST['name'] ) &&
         'POST_MESSAGE' => $_POST['message']
     ));
 
-    if ( !Orthos::checkMailSyntax( $_POST['email'] ) )
-    {
+    if (!Orthos::checkMailSyntax($_POST['email'])) {
         $Engine->assign(array(
             'errorMessage' => QUI::getLocale()->get(
                 'quiqqer/system',
@@ -28,17 +27,14 @@ if ( isset( $_POST['name'] ) &&
             )
         ));
 
-    } else
-    {
-        try
-        {
+    } else {
+        try {
             $Mail = new QUI\Mail\Mailer();
-            $Mail->addRecipient( $reciever );
-            $Mail->setSubject( $this->getAttribute('title') );
-            $Mail->setBody( $_POST['message'] );
+            $Mail->addRecipient($reciever);
+            $Mail->setSubject($this->getAttribute('title'));
+            $Mail->setBody($_POST['message']);
 
-            if ( $Mail->send() )
-            {
+            if ($Mail->send()) {
                 $Contact = false;
 
                 $Engine->assign(array(
@@ -49,9 +45,8 @@ if ( isset( $_POST['name'] ) &&
                 ));
             }
 
-        } catch ( QUI\Exception $Exception )
-        {
-            \QUI\System\Log::addWarning( $Exception->getMessage() );
+        } catch (QUI\Exception $Exception) {
+            \QUI\System\Log::addWarning($Exception->getMessage());
 
             $Engine->assign(array(
                 'errorMessage' => QUI::getLocale()->get(

@@ -1,6 +1,6 @@
 {
     "name" : "quiqqer/sitetypes",
-    "type" : "quiqqer-library",
+    "type" : "quiqqer-module",
     "description" : "Site types for QUIQQER.",
     "version" : "dev-master",
     "license" : "GPL-2.0+",
@@ -17,7 +17,8 @@
     },
 
     "require": {
-        "quiqqer/quiqqer" : "*@dev"
+        "quiqqer/quiqqer" : "*@dev",
+        "quiqqer/bricks"  : "*"
     },
 
     "autoload": {
