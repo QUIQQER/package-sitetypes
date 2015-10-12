@@ -1,55 +1,52 @@
-# QUIQQER Site Types Package
+QUIQQER Site Types Package
+========
 
-_German_
-
-Das Site Types Package erweitert QUIQQER um einige standard Seitentypen.
+Das Site Types Paket erweitert QUIQQER um einige standard Seitentypen.
 Mit diesen Seitentypen lassen sich schnell Webseiten erstellen.
 
 Das Plugin bietet alle wichtigen Seitentype für eine Websete / Homepage.
 
+Packetname:
 
-# Installation
-
-```json
-{
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://update.quiqqer.com/"
-        }
-    ]
-}
-
-```
-Package Name:
-
-+ quiqqer/sitetypes
+    quiqqer/sitetypes
 
 
-## Installation dev
-
-```json
-{
-    "type": "vcs",
-    "url": "git@dev.quiqqer.com:quiqqer/package-sitetypes.git"
-}
-```
-
-```bash
-php var/composer/composer.phar --working-dir="var/composer/" require "quiqqer/sitetypes:dev-dev"
-```
-
-## Seitentypen
+Features
+--------
 
 - Standard Suche
 - Standard Liste
 - Standard Inhaltsliste
 - Standard Sitemap
 - Standard Block Sitemap
-
-
-## ToDo
-
+- Impressum
+- Kontakt
 - Weiterleitung
-- Frame
-- Nicht in Sitemap anzeigen
+
+Installation
+------------
+
+Der Paketname ist: quiqqer/sitetypes
+
+
+Mitwirken
+----------
+
+- Issue Tracker: https://dev.quiqqer.com/quiqqer/package-sitetypes/issues
+- Source Code: https://dev.quiqqer.com/quiqqer/package-sitetypes/tree/master
+
+
+Support
+-------
+
+Falls Sie ein Fehler gefunden haben oder Verbesserungen wünschen,
+Dann können Sie gerne an support@pcsg.de eine E-Mail schreiben.
+
+
+License
+-------
+
+
+Entwickler
+--------
+
