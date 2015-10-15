@@ -29,6 +29,7 @@ $max         = $Site->getAttribute('quiqqer.settings.sitetypes.list.max');
 
 $children = array();
 $sheets   = 0;
+$count    = 0;
 
 if (!$max) {
     $max = 5;
@@ -84,7 +85,19 @@ if (!empty($searchValue)) {
 }
 
 
+$Pagination = new QUI\Bricks\Controls\Pagination(array(
+    'Site'      => $Site,
+    'count'     => $count,
+    'showLimit' => false,
+    'limit'     => $max,
+    'useAjax'   => false
+));
+
+$Pagination->loadFromRequest();
+$Pagination->setGetParams('search', $searchValue);
+
 $Engine->assign(array(
+    'Pagination'  => $Pagination,
     'sheets'      => $sheets,
     'children'    => $children,
     'searchValue' => $searchValue
