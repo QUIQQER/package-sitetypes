@@ -10,7 +10,9 @@
 >
 {foreach from=$children item=Child}
     {assign var=_Child value=$Child->load()}
-    <article itemscope itemtype="{$this->getAttribute('child-itemtype')}"
+    <article itemscope
+             itemprop="itemListElement"
+             itemtype="{$this->getAttribute('child-itemtype')}"
              class="qui-control-list-entry"
     >
         {if $this->getAttribute('showHeader') ||
