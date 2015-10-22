@@ -17,6 +17,7 @@
              class="qui-control-list-entry"
     >
         <meta itemprop="position" content="{$counter}" />
+        <meta itemprop="mainEntityOfPage" content="{url site=$Child rewrited=true}" />
         {assign var=counter value=$counter+1}
 
         {if $this->getAttribute('showHeader') ||
