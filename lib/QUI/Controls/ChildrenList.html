@@ -8,6 +8,7 @@
 <section itemscope itemtype="{$this->getAttribute('itemtype')}"
          class="qui-control-list-section"
 >
+    <meta itemprop="mainEntityOfPage" content="{url site=$this rewrited=true}" />
 {assign var=counter value=1}
 {foreach from=$children item=Child}
     {assign var=_Child value=$Child->load()}
@@ -17,7 +18,6 @@
              class="qui-control-list-entry"
     >
         <meta itemprop="position" content="{$counter}" />
-        <meta itemprop="mainEntityOfPage" content="{url site=$Child rewrited=true}" />
         {assign var=counter value=$counter+1}
 
         {if $this->getAttribute('showHeader') ||
