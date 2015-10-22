@@ -8,6 +8,7 @@
 <section itemscope itemtype="{$this->getAttribute('itemtype')}"
          class="qui-control-list-section"
 >
+{assign var=counter value=1}
 {foreach from=$children item=Child}
     {assign var=_Child value=$Child->load()}
     <article itemscope
@@ -15,6 +16,9 @@
              itemtype="{$this->getAttribute('child-itemtype')}"
              class="qui-control-list-entry"
     >
+        <meta itemprop="position" content="{$counter}" />
+        {assign var=counter value=$counter+1}
+
         {if $this->getAttribute('showHeader') ||
             $this->getAttribute('showTime') ||
             $this->getAttribute('showCreator')}
@@ -23,8 +27,9 @@
             <h2>
                 <a href="{url site=$Child}"
                    title="{$Child->getAttribute('title')|escape:"html"}"
+                   itemprop="url"
                 >
-                    <span>{$Child->getAttribute('title')}</span>
+                    <span itemprop="name">{$Child->getAttribute('title')}</span>
                 </a>
             </h2>
             {/if}
@@ -98,7 +103,7 @@
                     <div class="qui-control-list-entry-imagelink-fix"
                          {if $bg}style="background-image: url('{$bg}')"{/if}
                     >
-                        {if $bg}<img src="{$bg}" style="visibility: hidden;"/>{/if}
+                        {if $bg}<img itemprop="image" src="{$bg}" style="visibility: hidden;"/>{/if}
                         <span>{$Child->getAttribute('title')}</span>
                     </div>
                 </a>
@@ -116,7 +121,7 @@
                 </div>
             {/if}
 
-            <a href="{url site=$Child}" class="button qui-control-list-entry-link">
+            <a itemprop="url" href="{url site=$Child}" class="button qui-control-list-entry-link">
                 {locale group="quiqqer/sitetypes" value="list.more"}
             </a>
         </div>
