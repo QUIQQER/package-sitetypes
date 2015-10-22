@@ -8,7 +8,9 @@
 <section itemscope itemtype="{$this->getAttribute('itemtype')}"
          class="qui-control-list-section"
 >
+<link property="mainEntityOfPage" href="{url site=$Site}">
 {assign var=counter value=1}
+
 {foreach from=$children item=Child}
     {assign var=_Child value=$Child->load()}
     <article itemscope
