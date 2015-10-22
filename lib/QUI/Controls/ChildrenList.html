@@ -8,7 +8,7 @@
 <section itemscope itemtype="{$this->getAttribute('itemtype')}"
          class="qui-control-list-section"
 >
-    <meta itemprop="mainEntityOfPage" content="{url site=$this rewrited=true}" />
+    <meta itemprop="mainEntityOfPage" content="{url site=$Site rewrited=true}" />
 {assign var=counter value=1}
 {foreach from=$children item=Child}
     {assign var=_Child value=$Child->load()}
