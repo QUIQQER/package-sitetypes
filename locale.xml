@@ -119,6 +119,14 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Sitemap]]></de>
             <en><![CDATA[Sitemap]]></en>
         </locale>
+        <locale name="admin.types.sitemap.settings">
+            <de><![CDATA[Sitemap Einstellungen]]></de>
+            <en><![CDATA[Sitemap settings]]></en>
+        </locale>
+        <locale name="quiqqer.settings.sitetypes.dontShowInSitemap">
+            <de><![CDATA[Nicht in Sitemap anzeigen]]></de>
+            <en><![CDATA[Do not show in Sitemap]]></en>
+        </locale>
         <locale name="admin.types.sitemap-block">
             <de><![CDATA[Standard Kategorie-Sitemap]]></de>
             <en><![CDATA[Standard sitemap - Categories]]></en>
