@@ -1,4 +1,4 @@
-{if $Site->getAttribute('quiqqer.settings.sitetypes.dontShowInSitemap') === false}
+{if $Child->getAttribute('quiqqer.settings.sitetypes.dontShowInSitemap') === false}
 <li>
     <a href="{url site=$Child}" title="{$Child->getAttribute('title')|escape:"html"}">
         {$Child->getAttribute('title')}
