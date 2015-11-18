@@ -131,6 +131,21 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Standard Kategorie-Sitemap]]></de>
             <en><![CDATA[Standard sitemap - Categories]]></en>
         </locale>
+
+        <!-- Title & short -->
+        <locale name="admin.types.titleAndShort.settings">
+            <de><![CDATA[Überschrift und Kurzbeschreibung]]></de>
+            <en><![CDATA[Title and short descriptions]]></en>
+        </locale>
+        <locale name="admin.types.titleAndShort.settings.title">
+            <de><![CDATA[Überschrift anzeigen]]></de>
+            <en><![CDATA[Show title]]></en>
+        </locale>
+        <locale name="admin.types.titleAndShort.settings.short">
+            <de><![CDATA[Kurzbeschreibung anzeigen]]></de>
+            <en><![CDATA[Show short descriptions]]></en>
+        </locale>
+
         <locale name="tpl.search.button">
             <de><![CDATA[Suche starten]]></de>
             <en><![CDATA[Start search]]></en>
