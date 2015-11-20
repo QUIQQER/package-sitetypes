@@ -85,7 +85,7 @@
 .qui-control-list-entry-imagelink-fix {
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100% auto;
+    background-size: contain;
     display: inline-block;
     height: 0;
     max-width: 100%;
