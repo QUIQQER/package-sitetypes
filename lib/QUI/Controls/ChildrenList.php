@@ -18,7 +18,7 @@ class ChildrenList extends QUI\Control
     /**
      * constructor
      *
-     * @param Array $attributes
+     * @param array $attributes
      */
     public function __construct($attributes = array())
     {
@@ -39,7 +39,7 @@ class ChildrenList extends QUI\Control
             'child-itemtype' => 'http://schema.org/NewsArticle'
         ));
 
-        parent::setAttributes($attributes);
+        parent::__construct($attributes);
 
         $this->addCSSFile(
             dirname(__FILE__) . '/ChildrenList.css'
@@ -55,7 +55,7 @@ class ChildrenList extends QUI\Control
     public function getBody()
     {
         $Engine = QUI::getTemplateManager()->getEngine();
-        $Site   = $this->_getSite();
+        $Site   = $this->getSite();
 
         if (!$Site) {
             return '';
@@ -98,8 +98,8 @@ class ChildrenList extends QUI\Control
 
         $Engine->assign(array(
             'this'       => $this,
-            'Site'       => $this->_getSite(),
-            'Project'    => $this->_getProject(),
+            'Site'       => $this->getSite(),
+            'Project'    => $this->getProject(),
             'sheets'     => $sheets,
             'children'   => $children,
             'Pagination' => $Pagination
@@ -115,7 +115,7 @@ class ChildrenList extends QUI\Control
      */
     public function checkLimit()
     {
-        $Site = $this->_getSite();
+        $Site = $this->getSite();
 
         if (!$Site) {
             return;
@@ -146,7 +146,7 @@ class ChildrenList extends QUI\Control
     /**
      * @return mixed|QUI\Projects\Site
      */
-    protected function _getSite()
+    protected function getSite()
     {
         if ($this->getAttribute('Site')) {
             return $this->getAttribute('Site');
