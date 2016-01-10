@@ -1,18 +1,4 @@
 
-{if $Template->getAttribute('content-header')}
-<section class="content-header grid-100 mobile-grid-100 grid-parent">
-    <header>
-        <h1>{$Site->getAttribute('title')}</h1>
-    </header>
-
-    {if !isset( $successMessage ) && $Site->getAttribute('short')}
-    <div class="content-short">
-        {$Site->getAttribute('short')|nl2br}
-    </div>
-    {/if}
-</section>
-{/if}
-
 {if !isset( $successMessage ) &&
     $Template->getAttribute('content-body') &&
     $Site->getAttribute('content')

@@ -4,24 +4,61 @@
     <!-- global attributes -->
     <attributes>
         <attribute>quiqqer.settings.sitetypes.dontShowInSitemap</attribute>
+        <attribute>quiqqer.settings.sitetypes.dontShowTitle</attribute>
+        <attribute>quiqqer.settings.sitetypes.dontShowShort</attribute>
     </attributes>
 
+    <settings>
+        <category name="sitetypes-list-settings">
+            <settings>
+                <title>
+                    <locale group="quiqqer/sitetypes" var="admin.types.sitemap.settings"/>
+                </title>
+
+                <input conf="quiqqer.settings.sitetypes.dontShowInSitemap" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/sitetypes" var="quiqqer.settings.sitetypes.dontShowInSitemap"/>
+                    </text>
+                </input>
+            </settings>
+        </category>
+    </settings>
+    <settings>
+        <category name="sitetypes-titleAndShort-settings">
+            <settings>
+                <title>
+                    <locale group="quiqqer/sitetypes" var="admin.types.titleAndShort.settings"/>
+                </title>
+
+                <input conf="quiqqer.settings.sitetypes.dontShowTitle" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/sitetypes" var="admin.types.titleAndShort.settings.title"/>
+                    </text>
+                </input>
+                <input conf="quiqqer.settings.sitetypes.dontShowShort" type="checkbox">
+                    <text>
+                        <locale group="quiqqer/sitetypes" var="admin.types.titleAndShort.settings.short"/>
+                    </text>
+                </input>
+            </settings>
+        </category>
+    </settings>
 
     <types>
 
         <!-- Impressum -->
         <type type="types/legalnotes" icon="icon-legal">
-            <locale group="quiqqer/sitetypes" var="admin.types.legalnotes" />
+            <locale group="quiqqer/sitetypes" var="admin.types.legalnotes"/>
             <desc>
-                <locale group="quiqqer/sitetypes" var="admin.types.legalnotes.desc" />
+                <locale group="quiqqer/sitetypes" var="admin.types.legalnotes.desc"/>
             </desc>
         </type>
 
         <!-- Suche -->
         <type type="types/search" icon="icon-search">
-            <locale group="quiqqer/sitetypes" var="admin.types.search" />
+            <locale group="quiqqer/sitetypes" var="admin.types.search"/>
             <desc>
-                <locale group="quiqqer/sitetypes" var="admin.types.search.desc" />
+                <locale group="quiqqer/sitetypes" var="admin.types.search.desc"/>
             </desc>
 
             <!-- search attributes -->
@@ -34,12 +71,12 @@
                 <category name="sitetypes-list-settings">
                     <settings>
                         <title>
-                            <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.title" />
+                            <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.title"/>
                         </title>
 
                         <input conf="quiqqer.settings.sitetypes.list.max" type="number">
                             <text>
-                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.max" />
+                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.max"/>
                             </text>
                         </input>
                     </settings>
@@ -49,9 +86,9 @@
 
         <!-- Kontakt / Contact -->
         <type type="types/contact" icon="icon-envelope-alt">
-            <locale group="quiqqer/sitetypes" var="admin.types.contact" />
+            <locale group="quiqqer/sitetypes" var="admin.types.contact"/>
             <desc>
-                <locale group="quiqqer/sitetypes" var="admin.types.contact.desc" />
+                <locale group="quiqqer/sitetypes" var="admin.types.contact.desc"/>
             </desc>
 
             <!-- contact attributes -->
@@ -66,14 +103,14 @@
                         <title>
                             <locale group="quiqqer/sitetypes"
                                     var="quiqqer.sitetypes.contact.settings.title"
-                            />
+                                    />
                         </title>
 
                         <input conf="quiqqer.settings.sitetypes.contact.email" type="email">
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.contact.settings.email.receiver"
-                                />
+                                        />
                             </text>
                         </input>
                     </settings>
@@ -83,9 +120,9 @@
 
         <!-- Weiterleitung / Forwarding -->
         <type type="types/forwarding" icon="icon-share-alt">
-            <locale group="quiqqer/sitetypes" var="admin.types.forwarding" />
+            <locale group="quiqqer/sitetypes" var="admin.types.forwarding"/>
             <desc>
-                <locale group="quiqqer/sitetypes" var="admin.types.forwarding.desc" />
+                <locale group="quiqqer/sitetypes" var="admin.types.forwarding.desc"/>
             </desc>
 
             <!-- forwarding attributes -->
@@ -100,17 +137,17 @@
                         <title>
                             <locale group="quiqqer/sitetypes"
                                     var="quiqqer.sitetypes.forwarding.settings.title"
-                            />
+                                    />
                         </title>
 
                         <input conf="quiqqer.settings.sitetypes.forwarding"
                                class="project-site"
                                data-external="1"
-                        >
+                                >
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.contact.settings.forwarding"
-                                />
+                                        />
                             </text>
                         </input>
                     </settings>
@@ -120,9 +157,9 @@
 
         <!-- Liste -->
         <type type="types/list" icon="icon-list">
-            <locale group="quiqqer/sitetypes" var="admin.types.list" />
+            <locale group="quiqqer/sitetypes" var="admin.types.list"/>
             <desc>
-                <locale group="quiqqer/sitetypes" var="admin.types.list.desc" />
+                <locale group="quiqqer/sitetypes" var="admin.types.list.desc"/>
             </desc>
 
             <!-- list attributes -->
@@ -138,14 +175,14 @@
                 <category name="sitetypes-list-settings">
                     <settings>
                         <title>
-                            <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.title" />
+                            <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.title"/>
                         </title>
 
                         <input conf="quiqqer.settings.sitetypes.list.max" type="number">
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.list.settings.max"
-                                />
+                                        />
                             </text>
                         </input>
 
@@ -153,7 +190,7 @@
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.list.settings.showHeader"
-                                />
+                                        />
                             </text>
                         </input>
 
@@ -179,9 +216,9 @@
 
         <!-- Inhaltsliste -->
         <type type="types/list-content" icon="icon-list-alt">
-            <locale group="quiqqer/sitetypes" var="admin.types.content.list" />
+            <locale group="quiqqer/sitetypes" var="admin.types.content.list"/>
             <desc>
-                <locale group="quiqqer/sitetypes" var="admin.types.content.list.desc" />
+                <locale group="quiqqer/sitetypes" var="admin.types.content.list.desc"/>
             </desc>
 
             <!-- list attributes -->
@@ -197,12 +234,12 @@
                 <category name="sitetypes-list-settings">
                     <settings>
                         <title>
-                            <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.title" />
+                            <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.title"/>
                         </title>
 
                         <input conf="quiqqer.settings.sitetypes.list.max" type="number">
                             <text>
-                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.max" />
+                                <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.max"/>
                             </text>
                         </input>
 
@@ -236,17 +273,17 @@
 
         <!-- Sitemap -->
         <type type="types/sitemap">
-            <locale group="quiqqer/sitetypes" var="admin.types.sitemap" />
+            <locale group="quiqqer/sitetypes" var="admin.types.sitemap"/>
             <desc>
-                <locale group="quiqqer/sitetypes" var="admin.types.sitemap.desc" />
+                <locale group="quiqqer/sitetypes" var="admin.types.sitemap.desc"/>
             </desc>
         </type>
 
         <!-- Sitemap Block -->
         <type type="types/sitemap-block">
-            <locale group="quiqqer/sitetypes" var="admin.types.sitemap-block" />
+            <locale group="quiqqer/sitetypes" var="admin.types.sitemap-block"/>
             <desc>
-                <locale group="quiqqer/sitetypes" var="admin.types.sitemap-block.desc" />
+                <locale group="quiqqer/sitetypes" var="admin.types.sitemap-block.desc"/>
             </desc>
         </type>
 

@@ -30,9 +30,17 @@ if (isset($_POST['name'])
     } else {
         try {
             $Mail = new QUI\Mail\Mailer();
+            $Mail->setFrom($_POST['email']);
+            $Mail->setFromName($_POST['name']);
+
             $Mail->addRecipient($reciever);
             $Mail->setSubject($this->getAttribute('title'));
-            $Mail->setBody($_POST['message']);
+
+            $Mail->setBody(
+                "E-Mail: " . $_POST['email'] . "<br />" .
+                "Name: " . $_POST['name'] . "<br /><br />" .
+                $_POST['message']
+            );
 
             if ($Mail->send()) {
                 $Contact = false;

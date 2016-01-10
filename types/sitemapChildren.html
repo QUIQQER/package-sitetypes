@@ -1,3 +1,4 @@
+{if !$Child->getAttribute('quiqqer.settings.sitetypes.dontShowInSitemap')}
 <li>
     <a href="{url site=$Child}" title="{$Child->getAttribute('title')|escape:"html"}">
         {$Child->getAttribute('title')}
@@ -11,3 +12,4 @@
     </ul>
     {/if}
 </li>
+{/if}

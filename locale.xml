@@ -41,7 +41,8 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/list-content.description">
-            <de><![CDATA[Die Standard-Inhaltsliste listet alle darunter angelegten Seiten zusammen mit dem Inhalt der seite auf.]]></de>
+            <de>
+                <![CDATA[Die Standard-Inhaltsliste listet alle darunter angelegten Seiten zusammen mit dem Inhalt der seite auf.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/sitemap.title">
@@ -49,7 +50,8 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/sitemap.description">
-            <de><![CDATA[Eine Sitmap listet sämtliche Seiten und Unterseiten Ihres Projekts auf. Im Prinzip eine vereinfachte Navigation Ihrer Webseite, in welcher der Nutzer leichter einer gesuchte Seite finden kann.]]></de>
+            <de>
+                <![CDATA[Eine Sitmap listet sämtliche Seiten und Unterseiten Ihres Projekts auf. Im Prinzip eine vereinfachte Navigation Ihrer Webseite, in welcher der Nutzer leichter einer gesuchte Seite finden kann.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/sitemap-block.title">
@@ -57,7 +59,8 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/sitemap-block.description">
-            <de><![CDATA[Eine Kategorie-Sitmap listet sämtliche Seiten und Unterseiten Ihres Projekts, sortiert nach Kategorien mit Überschriften auf. Im Prinzip eine vereinfachte Navigation Ihrer Webseite, in welcher der Nutzer leichter einer gesuchte Seite finden kann.]]></de>
+            <de>
+                <![CDATA[Eine Kategorie-Sitmap listet sämtliche Seiten und Unterseiten Ihres Projekts, sortiert nach Kategorien mit Überschriften auf. Im Prinzip eine vereinfachte Navigation Ihrer Webseite, in welcher der Nutzer leichter einer gesuchte Seite finden kann.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/legalnotes.title">
@@ -65,7 +68,8 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/legalnotes.description">
-            <de><![CDATA[Grundsätzlich ist ein Impressum jedem Seitenbetreiber zu empfehlen, der seine Website nicht zu rein privaten Zwecken betreibt.]]></de>
+            <de>
+                <![CDATA[Grundsätzlich ist ein Impressum jedem Seitenbetreiber zu empfehlen, der seine Website nicht zu rein privaten Zwecken betreibt.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/search.title">
@@ -73,7 +77,8 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/search.description">
-            <de><![CDATA[Der Benutzer gibt in ein Eingabefeld ein Stichwort ein, nach dem er Ihre Homepage durchsuchen möchte. Das Modul durchsucht nun die Datenbank nach allen relevanten Einträgen.]]></de>
+            <de>
+                <![CDATA[Der Benutzer gibt in ein Eingabefeld ein Stichwort ein, nach dem er Ihre Homepage durchsuchen möchte. Das Modul durchsucht nun die Datenbank nach allen relevanten Einträgen.]]></de>
             <en><![CDATA[]]></en>
         </locale>
     </groups>
@@ -114,16 +119,39 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Sitemap]]></de>
             <en><![CDATA[Sitemap]]></en>
         </locale>
+        <locale name="admin.types.sitemap.settings">
+            <de><![CDATA[Sitemap Einstellungen]]></de>
+            <en><![CDATA[Sitemap settings]]></en>
+        </locale>
+        <locale name="quiqqer.settings.sitetypes.dontShowInSitemap">
+            <de><![CDATA[Nicht in Sitemap anzeigen]]></de>
+            <en><![CDATA[Do not show in Sitemap]]></en>
+        </locale>
         <locale name="admin.types.sitemap-block">
             <de><![CDATA[Standard Kategorie-Sitemap]]></de>
             <en><![CDATA[Standard sitemap - Categories]]></en>
         </locale>
+
+        <!-- Title & short -->
+        <locale name="admin.types.titleAndShort.settings">
+            <de><![CDATA[Überschrift und Kurzbeschreibung]]></de>
+            <en><![CDATA[Title and short descriptions]]></en>
+        </locale>
+        <locale name="admin.types.titleAndShort.settings.title">
+            <de><![CDATA[Überschrift anzeigen]]></de>
+            <en><![CDATA[Show title]]></en>
+        </locale>
+        <locale name="admin.types.titleAndShort.settings.short">
+            <de><![CDATA[Kurzbeschreibung anzeigen]]></de>
+            <en><![CDATA[Show short descriptions]]></en>
+        </locale>
+
         <locale name="tpl.search.button">
             <de><![CDATA[Suche starten]]></de>
             <en><![CDATA[Start search]]></en>
         </locale>
         <locale name="tpl.search.placeholder">
-            <de><![CDATA[Bitte hier Ihre Suche eingeben...]]></de>
+            <de><![CDATA[Bitte Suchbegriff eingeben]]></de>
             <en><![CDATA[Please insert your search here...]]></en>
         </locale>
         <locale name="tpl.search.list.more">
