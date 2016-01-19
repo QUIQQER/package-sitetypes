@@ -2,7 +2,7 @@
   "name": "quiqqer/sitetypes",
   "type": "quiqqer-module",
   "description": "Site types for QUIQQER.",
-  "version": "dev-dev",
+  "version": "1.0.0",
   "license": "GPL-2.0+",
   "authors": [
     {
