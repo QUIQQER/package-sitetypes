@@ -1,29 +1,27 @@
 {
-    "name" : "quiqqer/sitetypes",
-    "type" : "quiqqer-module",
-    "description" : "Site types for QUIQQER.",
-    "version" : "dev-master",
-    "license" : "GPL-2.0+",
-
-    "authors" : [{
-        "name": "Henning Leutz",
-        "email": "leutz@pcsg.de",
-        "homepage": "http://www.pcsg.de",
-        "role": "Developer"
-    }],
-
-    "support" : {
-        "email" : "support@pcsg.de"
-    },
-
-    "require": {
-        "quiqqer/quiqqer" : "*@dev",
-        "quiqqer/bricks"  : "*"
-    },
-
-    "autoload": {
-        "psr-0" : {
-            "QUI" : "lib/"
-        }
+  "name": "quiqqer/sitetypes",
+  "type": "quiqqer-module",
+  "description": "Site types for QUIQQER.",
+  "version": "dev-master",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Henning Leutz",
+      "email": "leutz@pcsg.de",
+      "homepage": "http://www.pcsg.de",
+      "role": "Developer"
     }
+  ],
+  "support": {
+    "email": "support@pcsg.de"
+  },
+  "require": {
+    "quiqqer/quiqqer": "*@dev",
+    "quiqqer/bricks": "*"
+  },
+  "autoload": {
+    "psr-0": {
+      "QUI": "src/"
+    }
+  }
 }

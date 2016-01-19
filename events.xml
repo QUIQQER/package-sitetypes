@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <events>
-    <event on="onSiteSaveBefore" fire="\QUI\SiteTypes\Events::onSiteSaveBefore" />
+    <event on="onSiteSaveBefore" fire="\QUI\SiteTypes\EventHandler::onSiteSaveBefore" />
+    <event on="onSiteInit" fire="\QUI\SiteTypes\EventHandler::onSiteInit" />
 </events>

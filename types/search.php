@@ -60,7 +60,7 @@ if (!empty($searchValue)) {
         'where' => array(
             'title' => array(
                 'value' => $searchValue,
-                'type'  => '%LIKE%'
+                'type' => '%LIKE%'
             )
         ),
         'limit' => $start . ',' . $max
@@ -72,7 +72,7 @@ if (!empty($searchValue)) {
         'where' => array(
             'title' => array(
                 'value' => $searchValue,
-                'type'  => '%LIKE%'
+                'type' => '%LIKE%'
             )
         )
     ));
@@ -86,20 +86,19 @@ if (!empty($searchValue)) {
 
 
 $Pagination = new QUI\Bricks\Controls\Pagination(array(
-    'Site'      => $Site,
-    'count'     => $count,
+    'Site' => $Site,
+    'count' => $count,
     'showLimit' => false,
-    'limit'     => $max,
-    'useAjax'   => false
+    'limit' => $max,
+    'useAjax' => false
 ));
 
 $Pagination->loadFromRequest();
 $Pagination->setGetParams('search', $searchValue);
 
 $Engine->assign(array(
-    'Pagination'  => $Pagination,
-    'sheets'      => $sheets,
-    'children'    => $children,
+    'Pagination' => $Pagination,
+    'sheets' => $sheets,
+    'children' => $children,
     'searchValue' => $searchValue
 ));
-

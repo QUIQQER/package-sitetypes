@@ -54,7 +54,7 @@ if (isset($_POST['name'])
             }
 
         } catch (QUI\Exception $Exception) {
-            \QUI\System\Log::addWarning($Exception->getMessage());
+            QUI\System\Log::addWarning($Exception->getMessage());
 
             $Engine->assign(array(
                 'errorMessage' => QUI::getLocale()->get(

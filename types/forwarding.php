@@ -3,11 +3,11 @@
 use \Symfony\Component\HttpFoundation\RedirectResponse;
 use \Symfony\Component\HttpFoundation\Response;
 
-$url = URL_DIR;
+$url     = false;
 $siteUrl = $Site->getAttribute('quiqqer.settings.sitetypes.forwarding');
 
 try {
-    if (\QUI\Projects\Site\Utils::isSiteLink($siteUrl)) {
+    if (QUI\Projects\Site\Utils::isSiteLink($siteUrl)) {
         $Wanted = \QUI\Projects\Site\Utils::getSiteByLink($siteUrl);
 
         // so, we get the site with vhosts, and url dir
@@ -19,7 +19,7 @@ try {
         $parts = parse_url($siteUrl);
 
         if (!isset($parts['scheme']) && strpos($siteUrl, '//') !== 0) {
-            $siteUrl = '//'.$siteUrl;
+            $siteUrl = '//' . $siteUrl;
         }
 
         // external
@@ -27,12 +27,15 @@ try {
     }
 
 } catch (QUI\Exception $Exception) {
-    \QUI\System\Log::writeRecursive('');
+    QUI\System\Log::writeRecursive('');
 }
 
 
-if (isset($url)) {
+if ($url) {
     $Redirect = new RedirectResponse($url);
     $Redirect->setStatusCode(Response::HTTP_SEE_OTHER);
+
+    echo $Redirect->getContent();
     $Redirect->send();
+    exit;
 }

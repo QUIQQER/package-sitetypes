@@ -24,18 +24,18 @@ class ChildrenList extends QUI\Control
     {
         // default options
         $this->setAttributes(array(
-            'class'          => 'qui-control-list',
-            'limit'          => 2,
-            'showSheets'     => true,
-            'showImages'     => true,
-            'showShort'      => true,
-            'showHeader'     => true,
-            'showContent'    => true,
-            'showTime'       => false,
-            'showCreator'    => false,
-            'Site'           => true,
-            'where'          => false,
-            'itemtype'       => 'http://schema.org/ItemList',
+            'class' => 'qui-control-list',
+            'limit' => 2,
+            'showSheets' => true,
+            'showImages' => true,
+            'showShort' => true,
+            'showHeader' => true,
+            'showContent' => true,
+            'showTime' => false,
+            'showCreator' => false,
+            'Site' => true,
+            'where' => false,
+            'itemtype' => 'http://schema.org/ItemList',
             'child-itemtype' => 'http://schema.org/NewsArticle'
         ));
 
@@ -97,11 +97,11 @@ class ChildrenList extends QUI\Control
         $Pagination->setAttribute('sheets', $sheets);
 
         $Engine->assign(array(
-            'this'       => $this,
-            'Site'       => $this->getSite(),
-            'Project'    => $this->getProject(),
-            'sheets'     => $sheets,
-            'children'   => $children,
+            'this' => $this,
+            'Site' => $this->getSite(),
+            'Project' => $this->getProject(),
+            'sheets' => $sheets,
+            'children' => $children,
             'Pagination' => $Pagination
         ));
 
