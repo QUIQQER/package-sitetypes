@@ -47,7 +47,7 @@
     <types>
 
         <!-- Impressum -->
-        <type type="types/legalnotes" icon="icon-legal">
+        <type type="types/legalnotes" icon="fa fa-legal">
             <locale group="quiqqer/sitetypes" var="admin.types.legalnotes"/>
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.legalnotes.desc"/>
@@ -55,7 +55,7 @@
         </type>
 
         <!-- Suche -->
-        <type type="types/search" icon="icon-search">
+        <type type="types/search" icon="fa fa-search">
             <locale group="quiqqer/sitetypes" var="admin.types.search"/>
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.search.desc"/>
@@ -85,7 +85,7 @@
         </type>
 
         <!-- Kontakt / Contact -->
-        <type type="types/contact" icon="icon-envelope-alt">
+        <type type="types/contact" icon="fa fa-envelope-alt">
             <locale group="quiqqer/sitetypes" var="admin.types.contact"/>
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.contact.desc"/>
@@ -119,7 +119,7 @@
         </type>
 
         <!-- Weiterleitung / Forwarding -->
-        <type type="types/forwarding" icon="icon-share-alt">
+        <type type="types/forwarding" icon="fa fa-share-alt">
             <locale group="quiqqer/sitetypes" var="admin.types.forwarding"/>
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.forwarding.desc"/>
@@ -156,7 +156,7 @@
         </type>
 
         <!-- Liste -->
-        <type type="types/list" icon="icon-list">
+        <type type="types/list" icon="fa fa-list">
             <locale group="quiqqer/sitetypes" var="admin.types.list"/>
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.list.desc"/>
@@ -215,7 +215,7 @@
         </type>
 
         <!-- Inhaltsliste -->
-        <type type="types/list-content" icon="icon-list-alt">
+        <type type="types/list-content" icon="fa fa-list-alt">
             <locale group="quiqqer/sitetypes" var="admin.types.content.list"/>
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.content.list.desc"/>
