@@ -152,7 +152,7 @@ class ChildrenList extends QUI\Control
             return $this->getAttribute('Site');
         }
 
-        $Site = \QUI::getRewrite()->getSite();
+        $Site = QUI::getRewrite()->getSite();
 
         $this->setAttribute('Site', $Site);
 

@@ -20,7 +20,7 @@ try {
     $ChildrenList->checkLimit();
 
 } catch (QUI\Exception $Exception) {
-    QUI::getRewrite()->showErrorHeader(404, $Site->getUrlRewritten());
+    QUI\System\Log::addWarning($Exception->getMessage());
 }
 
 
