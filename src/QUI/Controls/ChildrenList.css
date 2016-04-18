@@ -18,6 +18,9 @@
     width: 100%;
 }
 
+.qui-control-list-entry a {
+    text-decoration: none;
+}
 .qui-control-list-entry:first-child {
     padding: 20px 0 40px 0;
 }
