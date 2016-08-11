@@ -24,19 +24,20 @@ class ChildrenList extends QUI\Control
     {
         // default options
         $this->setAttributes(array(
-            'class' => 'qui-control-list',
-            'limit' => 2,
-            'showSheets' => true,
-            'showImages' => true,
-            'showShort' => true,
-            'showHeader' => true,
-            'showContent' => true,
-            'showTime' => false,
-            'showCreator' => false,
-            'Site' => true,
-            'where' => false,
-            'itemtype' => 'http://schema.org/ItemList',
-            'child-itemtype' => 'http://schema.org/NewsArticle'
+            'class'          => 'qui-control-list',
+            'limit'          => 2,
+            'showSheets'     => true,
+            'showImages'     => true,
+            'showShort'      => true,
+            'showHeader'     => true,
+            'showContent'    => true,
+            'showTime'       => false,
+            'showCreator'    => false,
+            'Site'           => true,
+            'where'          => false,
+            'itemtype'       => 'http://schema.org/ItemList',
+            'child-itemtype' => 'http://schema.org/NewsArticle',
+            'display'        => 'childrenlist'
         ));
 
         parent::__construct($attributes);
@@ -97,15 +98,22 @@ class ChildrenList extends QUI\Control
         $Pagination->setAttribute('sheets', $sheets);
 
         $Engine->assign(array(
-            'this' => $this,
-            'Site' => $this->getSite(),
-            'Project' => $this->getProject(),
-            'sheets' => $sheets,
-            'children' => $children,
+            'this'       => $this,
+            'Site'       => $this->getSite(),
+            'Project'    => $this->getProject(),
+            'sheets'     => $sheets,
+            'children'   => $children,
             'Pagination' => $Pagination
         ));
 
-        return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.html');
+        switch ($this->getAttribute('display')) {
+            default:
+            case 'childrenlist':
+                return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.html');
+
+            case 'authortop':
+                return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.AuthorTop.html');
+        }
     }
 
     /**
