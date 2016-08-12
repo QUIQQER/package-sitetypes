@@ -109,9 +109,11 @@ class ChildrenList extends QUI\Control
         switch ($this->getAttribute('display')) {
             default:
             case 'childrenlist':
+                $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.css');
                 return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.html');
 
             case 'authortop':
+                $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.AuthorTop.css');
                 return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.AuthorTop.html');
         }
     }
