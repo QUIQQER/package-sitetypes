@@ -1,10 +1,7 @@
 @CHARSET "UTF-8";
 
-/*.qui-control-list-entry-imagelink-fix {
-    outline: 2px solid #eee;
-}*/
-.test-list {
-    height: 100%;
+.qui-control-list-entry-imagelink {
+    width: 100%;
 }
 
 .qui-control-list {
@@ -19,15 +16,21 @@
     width: 100%;
     /*min-height: 240px;*/
     display: flex;
-    align-items: center;
+    align-items: stretch;
 }
 
 .qui-list-entry-image {
+    max-height: 300px;
     padding-right: 20px;
+    overflow: hidden;
+    text-align: center;
 }
 
 .qui-list-entry-content {
     padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
 }
 
 .qui-list-entry-short {
@@ -39,12 +42,13 @@
     border-top: 1px solid #e5e5e5;
     display: block;
     align-items: center;
-    line-height:40px;
+    line-height: 40px;
     margin-top: auto;
     font-size: 0.9em;
 }
 
 .qui-list-entry-content-footer-relase-date {
+    float: left;
     color: #999;
     font-style: italic;
 }
@@ -52,7 +56,6 @@
 .qui-control-list-entry-date-author {
     margin-right: 16px;
 }
-
 
 /* button link */
 .qui-list-entry-content-footer .list-entry-link {
@@ -63,13 +66,10 @@
     text-align: center;
     border-radius: 0;
     border: none;
-    background: #eee;
-    color: #666;
-}
-
-.qui-list-entry-content-footer a.list-entry-link:hover {
-    background: #e9e9e9;
-    color: #888;
+    position: relative;
+    /*background: #eee;*/
+    /*color: #666;*/
+    /*transition: all 0.3s;*/
 }
 
 .qui-control-list-entry-date {
@@ -78,42 +78,6 @@
     font-size: 0.8em;
     margin: 0;
 }
-
-
-/* ----------- Image fix --------------- */
-
-.qui-control-list-entry-imagelink {
-    border: 1px solid #EEEEEE;
-    display: block;
-    float: left;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.qui-control-list-entry-imagelink::before {
-    content: "";
-    display: block;
-    height: 100%;
-    vertical-align: middle;
-    width: 100%;
-}
-
-.qui-control-list-entry-imagelink-fix {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    display: inline-block;
-    height: 0;
-    max-width: 100%;
-    overflow: hidden;
-    padding-top: 66.64%;
-    vertical-align: middle;
-}
-
-/* -------------------------- */
-
-
 
 .qui-control-list-entry-imagelink span {
     display: none;
@@ -131,6 +95,11 @@
 
 @media screen and (max-width: 767px) {
 
+    .qui-list-entry {
+        display: block;
+        margin-bottom: 60px;
+    }
+
     .qui-control-list-entry {
         background: none;
         border: none;
@@ -142,6 +111,17 @@
         padding: 40px 0;
     }
 
+    .qui-list-entry-image {
+        max-height: 300px;
+    }
+
+    .qui-list-entry-image {
+        margin-bottom: 20px;
+    }
+
+    .qui-list-entry-content {
+        min-height: initial;
+    }
     .qui-list-entry-image,
     .qui-list-entry-content {
         padding: 0;
