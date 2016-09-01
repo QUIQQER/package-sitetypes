@@ -1,0 +1,145 @@
+@CHARSET "UTF-8";
+
+.qui-control-list-entry-imagelink {
+    width: 100%;
+}
+
+.qui-control-list {
+    padding: 20px 0 0;
+}
+
+.qui-list-entry {
+    clear: both;
+    float: left;
+    margin-bottom: 60px;
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+.qui-list-entry-box {
+    display: flex;
+    align-items: stretch;
+}
+
+.qui-list-entry-image {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+.qui-list-entry-content {
+    padding: 0;
+    margin-left: 40px;
+    margin-bottom: 1em;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    width: calc(60% - 40px);
+}
+
+.qui-list-entry-short {
+    margin-bottom: 20px;
+}
+
+.qui-list-entry-content-footer {
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    display: block;
+    align-items: center;
+    line-height: 40px;
+    margin-top: auto;
+    font-size: 0.9em;
+    padding: 0;
+}
+
+.qui-list-entry-content-footer-relase-date {
+    float: left;
+    color: #999;
+    font-style: italic;
+}
+
+.qui-control-list-entry-date-author {
+    margin-right: 16px;
+}
+
+/* button link */
+.qui-list-entry-content-footer .list-entry-link {
+    margin: 0;
+    float: right;
+    padding: 0;
+    min-width: 100px;
+    text-align: center;
+    border-radius: 0;
+    border: none;
+    position: relative;
+    /*background: #eee;*/
+    /*color: #666;*/
+    /*transition: all 0.3s;*/
+}
+
+.qui-control-list-entry-date {
+    clear: both;
+    color: rgba(128, 128, 128, 0.75);
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.qui-control-list-entry-imagelink span {
+    display: none;
+}
+
+.qui-control-list-entry-short-noImage {
+    padding-left: 0 !important;
+    width: 100%;
+}
+
+.qui-control-list-entry-image-noShort {
+    height: 200px;
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+
+    .qui-list-entry {
+        display: block;
+        margin-bottom: 60px;
+    }
+
+    .qui-list-entry-box {
+        display: block;
+    }
+
+    .qui-control-list-entry {
+        background: none;
+        border: none;
+        border-radius: 0;
+        padding: 10px 10px 30px 10px;
+    }
+
+    .qui-control-list-entry {
+        padding: 40px 0;
+    }
+
+    .qui-list-entry-image {
+        max-height: 300px;
+    }
+
+    .qui-list-entry-image {
+        margin-bottom: 20px;
+    }
+
+    .qui-list-entry-content {
+        min-height: initial;
+        width: 100%;
+        margin-left: 0;
+    }
+    .qui-list-entry-image,
+    .qui-list-entry-content {
+        padding: 0;
+    }
+}

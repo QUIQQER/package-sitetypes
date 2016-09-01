@@ -112,6 +112,10 @@ class ChildrenList extends QUI\Control
                 $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.css');
                 return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.html');
 
+            case 'longfooter':
+                $this->addCSSFile(dirname(__FILE__) . '/longfooter.css');
+                return $Engine->fetch(dirname(__FILE__) . '/longfooter.html');
+
             case 'authortop':
                 $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.AuthorTop.css');
                 return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.AuthorTop.html');
