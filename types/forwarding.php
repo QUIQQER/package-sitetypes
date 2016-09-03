@@ -14,7 +14,6 @@ try {
         $url = QUI::getRewrite()->getUrlFromSite(array(
             'site' => $Wanted
         ));
-
     } else {
         $parts = parse_url($siteUrl);
 
@@ -25,7 +24,6 @@ try {
         // external
         $url = $siteUrl;
     }
-
 } catch (QUI\Exception $Exception) {
     QUI\System\Log::writeRecursive('');
 }

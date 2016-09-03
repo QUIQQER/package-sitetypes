@@ -54,6 +54,14 @@
             </desc>
         </type>
 
+        <!-- Impressum -->
+        <type type="types/privacypolicy" icon="fa fa-legal">
+            <locale group="quiqqer/sitetypes" var="admin.types.privacypolicy"/>
+            <desc>
+                <locale group="quiqqer/sitetypes" var="admin.types.privacypolicy.desc"/>
+            </desc>
+        </type>
+
         <!-- Suche -->
         <type type="types/search" icon="fa fa-search">
             <locale group="quiqqer/sitetypes" var="admin.types.search"/>
@@ -103,14 +111,14 @@
                         <title>
                             <locale group="quiqqer/sitetypes"
                                     var="quiqqer.sitetypes.contact.settings.title"
-                                    />
+                            />
                         </title>
 
                         <input conf="quiqqer.settings.sitetypes.contact.email" type="email">
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.contact.settings.email.receiver"
-                                        />
+                                />
                             </text>
                         </input>
                     </settings>
@@ -137,17 +145,17 @@
                         <title>
                             <locale group="quiqqer/sitetypes"
                                     var="quiqqer.sitetypes.forwarding.settings.title"
-                                    />
+                            />
                         </title>
 
                         <input conf="quiqqer.settings.sitetypes.forwarding"
                                class="project-site"
                                data-external="1"
-                                >
+                        >
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.contact.settings.forwarding"
-                                        />
+                                />
                             </text>
                         </input>
                     </settings>
@@ -182,7 +190,7 @@
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.list.settings.max"
-                                        />
+                                />
                             </text>
                         </input>
 
@@ -190,7 +198,7 @@
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.list.settings.showHeader"
-                                        />
+                                />
                             </text>
                         </input>
 
@@ -198,7 +206,7 @@
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.list.settings.showImages"
-                                        />
+                                />
                             </text>
                         </input>
 
@@ -206,7 +214,7 @@
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.list.settings.showSheets"
-                                        />
+                                />
                             </text>
                         </input>
                     </settings>
@@ -247,7 +255,7 @@
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.list.settings.showHeader"
-                                        />
+                                />
                             </text>
                         </input>
 
@@ -255,7 +263,7 @@
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.list.settings.showImages"
-                                        />
+                                />
                             </text>
                         </input>
 
@@ -263,7 +271,7 @@
                             <text>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.list.settings.showSheets"
-                                        />
+                                />
                             </text>
                         </input>
                     </settings>
