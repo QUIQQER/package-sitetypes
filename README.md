@@ -4,7 +4,7 @@ QUIQQER Site Types Package
 Das Site Types Paket erweitert QUIQQER um einige standard Seitentypen.
 Mit diesen Seitentypen lassen sich schnell Webseiten erstellen.
 
-Das Plugin bietet alle wichtigen Seitentype für eine Websete / Homepage.
+Das Plugin bietet alle wichtigen Seitentype für eine Webseite / Homepage.
 
 Packetname:
 

@@ -48,7 +48,6 @@ class EventHandler
 
                         $Site->setAttribute('quiqqer.settings.sitetypes.forwarding', '');
                     }
-
                 } catch (QUI\Exception $Exception) {
                 }
             }

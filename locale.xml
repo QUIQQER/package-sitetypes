@@ -231,6 +231,14 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Impressum]]></de>
             <en><![CDATA[Legal notes]]></en>
         </locale>
+        <locale name="admin.types.privacypolicy">
+            <de><![CDATA[Datenschutz-Bestimmungen]]></de>
+            <en><![CDATA[Privacy policy]]></en>
+        </locale>
+        <locale name="admin.types.privacypolicy.desc">
+            <de><![CDATA[Datenschutz-Bestimmungen]]></de>
+            <en><![CDATA[Privacy policy]]></en>
+        </locale>
     </groups>
     <groups name="quiqqer/sitetypes" datatype="php,js ">
         <locale name="quiqqer/sitetypes:types/contact.title">

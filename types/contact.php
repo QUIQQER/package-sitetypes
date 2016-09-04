@@ -26,7 +26,6 @@ if (isset($_POST['name'])
                 'exception.not.correct.email'
             )
         ));
-
     } else {
         try {
             $Mail = new QUI\Mail\Mailer();
@@ -52,7 +51,6 @@ if (isset($_POST['name'])
                     )
                 ));
             }
-
         } catch (QUI\Exception $Exception) {
             QUI\System\Log::addWarning($Exception->getMessage());
 
