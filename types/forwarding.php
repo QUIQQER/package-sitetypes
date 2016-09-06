@@ -17,6 +17,10 @@ try {
     } else {
         $parts = parse_url($siteUrl);
 
+        if (!isset($parts['host']) || empty($parts['host'])) {
+            $siteUrl = HOST . $siteUrl;
+        }
+
         if (!isset($parts['scheme']) && strpos($siteUrl, '//') !== 0) {
             $siteUrl = '//' . $siteUrl;
         }
@@ -25,7 +29,6 @@ try {
         $url = $siteUrl;
     }
 } catch (QUI\Exception $Exception) {
-    QUI\System\Log::writeRecursive('');
 }
 
 
