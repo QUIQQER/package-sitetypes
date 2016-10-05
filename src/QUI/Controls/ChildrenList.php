@@ -113,8 +113,8 @@ class ChildrenList extends QUI\Control
                 return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.html');
 
             case 'longfooter':
-                $this->addCSSFile(dirname(__FILE__) . '/longfooter.css');
-                return $Engine->fetch(dirname(__FILE__) . '/longfooter.html');
+                $this->addCSSFile(dirname(__FILE__) . '/LongFooter.css');
+                return $Engine->fetch(dirname(__FILE__) . '/LongFooter.html');
 
             case 'authortop':
                 $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.AuthorTop.css');

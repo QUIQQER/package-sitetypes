@@ -38,30 +38,34 @@
 
             {if $this->getAttribute('showTime') || $this->getAttribute('showCreator')}
             <p class="qui-control-list-entry-date">
-                {user id=$Child->getAttribute('c_user') var=User}
-                {t}quiqqer/sitetypes list.created.by{/t}
-                <span class="qui-control-list-entry-date-author">
-                    {if $User->getId() && $User->getAttribute('firstname')}
-                        {$User->getAttribute('firstname')}
-                    {else if $User->getId()}
-                        {$User->getname()}
-                    {/if}
-                </span>
+                {if $this->getAttribute('showCreator')}
+                    {user id=$Child->getAttribute('c_user') var=User}
+                    {t}quiqqer/sitetypes list.created.by{/t}
+                    <span class="qui-control-list-entry-date-author">
+                        {if $User->getId() && $User->getAttribute('firstname')}
+                            {$User->getAttribute('firstname')}
+                        {else if $User->getId()}
+                            {$User->getname()}
+                        {/if}
+                    </span>
+                {/if}
 
-                {t}quiqqer/sitetypes list.created.on{/t}
-                {if $Child->getAttribute('release_from') &&
-                    $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
-                <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
-                      itemprop="datePublished"
-                >
-                    {locale_date date=$Child->getAttribute('release_from')}
-                </time>
-                {else}
-                <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
-                      itemprop="datePublished"
-                >
-                    {locale_date date=$Child->getAttribute('c_date')}
-                </time>
+                {if $this->getAttribute('showTime')}
+                    {t}quiqqer/sitetypes list.created.on{/t}
+                    {if $Child->getAttribute('release_from') &&
+                        $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
+                    <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
+                          itemprop="datePublished"
+                    >
+                        {locale_date date=$Child->getAttribute('release_from')}
+                    </time>
+                    {else}
+                    <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
+                          itemprop="datePublished"
+                    >
+                        {locale_date date=$Child->getAttribute('c_date')}
+                    </time>
+                    {/if}
                 {/if}
             </p>
             {/if}

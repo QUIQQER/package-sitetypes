@@ -70,9 +70,15 @@
             </div>
             {/if}
 
-            <div class="qui-list-entry-content-footer">
+            <div class="qui-list-entry-content-footer"
+                {if !$this->getAttribute('showCreator') && !$this->getAttribute('showTime')}
+                style="border-bottom: none; border-top: none;"
+                {/if}
+                >
+                {if $this->getAttribute('showCreator') || $this->getAttribute('showTime')}
                 <div class="qui-list-entry-content-footer-relase-date" >
 
+                    {if $this->getAttribute('showCreator')}
                     <span class="qui-control-list-entry-date-author">
                         {user id=$Child->getAttribute('c_user') var=User}
                         <span class="fa fa-user"></span>
@@ -82,23 +88,27 @@
                             {$User->getname()}
                         {/if}
                     </span>
+                    {/if}
 
-                    {if $Child->getAttribute('release_from') &&
-                    $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
-                    <span class="fa fa-calendar"></span>
-                    <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
-                    itemprop="datePublished"
-                    >
-                    {locale_date date=$Child->getAttribute('release_from')}
-                    </time>
-                    {else}
-                    <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
-                    itemprop="datePublished"
-                    >
-                    {locale_date date=$Child->getAttribute('c_date')}
-                    </time>
+                    {if $this->getAttribute('showTime')}
+                        {if $Child->getAttribute('release_from') &&
+                        $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
+                        <span class="fa fa-calendar"></span>
+                        <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
+                        itemprop="datePublished"
+                        >
+                        {locale_date date=$Child->getAttribute('release_from')}
+                        </time>
+                        {else}
+                        <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
+                        itemprop="datePublished"
+                        >
+                        {locale_date date=$Child->getAttribute('c_date')}
+                        </time>
+                        {/if}
                     {/if}
                 </div>
+                {/if}
 
                 <a itemprop="url" href="{url site=$Child}" class="button list-entry-link">
                     {locale group="quiqqer/sitetypes" value="list.more"}
@@ -108,9 +118,6 @@
         </div>
 
     </article>
-
-
-
     {/foreach}
 </section>
 
