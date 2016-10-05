@@ -13,7 +13,8 @@ $ChildrenList = new QUI\Controls\ChildrenList(array(
     'showHeader'     => $Site->getAttribute('quiqqer.settings.sitetypes.list.showHeader'),
     'showContent'    => false,
     'itemtype'       => 'http://schema.org/ItemList',
-    'child-itemtype' => 'http://schema.org/ListItem"'
+    'child-itemtype' => 'http://schema.org/ListItem',
+    'display'        => $Site->getAttribute('quiqqer.settings.sitetypes.list.template')
 ));
 
 try {

@@ -178,6 +178,34 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Blätterfunktion anzeigen]]></de>
             <en><![CDATA[Show sheets]]></en>
         </locale>
+
+        <!-- list template -->
+        <locale name="list.template">
+            <de><![CDATA[Layout]]></de>
+            <en><![CDATA[Layout]]></en>
+            <pl><![CDATA[Layout]]></pl>
+        </locale>
+        <locale name="list.template.childrenList">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+            <pl><![CDATA[Standardowy widok]]></pl>
+        </locale>
+        <locale name="list.template.longFooter">
+            <de><![CDATA[Langes Footer]]></de>
+            <en><![CDATA[Long footer]]></en>
+            <pl><![CDATA[Dłuższą stopka]]></pl>
+        </locale>
+        <locale name="list.template.authorTop">
+            <de><![CDATA[Autor und Datum oben]]></de>
+            <en><![CDATA[Author and date top]]></en>
+            <pl><![CDATA[Autor i data na górze]]></pl>
+        </locale>
+        <locale name="list.template.icons">
+            <de><![CDATA[Icons]]></de>
+            <en><![CDATA[Icons]]></en>
+            <pl><![CDATA[Ikony]]></pl>
+        </locale>
+
         <locale name="list.created.by">
             <de><![CDATA[von]]></de>
             <en><![CDATA[by]]></en>

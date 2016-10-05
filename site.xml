@@ -172,6 +172,7 @@
 
             <!-- list attributes -->
             <attributes>
+                <attribute default="0">quiqqer.settings.sitetypes.list.template</attribute>
                 <attribute default="0">quiqqer.settings.sitetypes.list.max</attribute>
                 <attribute default="1">quiqqer.settings.sitetypes.list.showImages</attribute>
                 <attribute default="1">quiqqer.settings.sitetypes.list.showHeader</attribute>
@@ -185,6 +186,24 @@
                         <title>
                             <locale group="quiqqer/sitetypes" var="quiqqer.sitetypes.list.settings.title"/>
                         </title>
+
+                        <select conf="quiqqer.settings.sitetypes.list.template">
+                            <text>
+                                <locale group="quiqqer/sitetypes" var="list.template" />
+                            </text>
+                            <option value="childrenlist">
+                                <locale group="quiqqer/sitetypes" var="list.template.childrenList" />
+                            </option>
+                            <option value="longfooter">
+                                <locale group="quiqqer/sitetypes" var="list.template.longFooter" />
+                            </option>
+                            <option value="authortop">
+                                <locale group="quiqqer/sitetypes" var="list.template.authorTop" />
+                            </option>
+                            <option value="icons">
+                                <locale group="quiqqer/sitetypes" var="list.template.icons" />
+                            </option>
+                        </select>
 
                         <input conf="quiqqer.settings.sitetypes.list.max" type="number">
                             <text>

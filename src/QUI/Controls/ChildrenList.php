@@ -42,9 +42,7 @@ class ChildrenList extends QUI\Control
 
         parent::__construct($attributes);
 
-        $this->addCSSFile(
-            dirname(__FILE__) . '/ChildrenList.css'
-        );
+
     }
 
     /**
@@ -113,12 +111,16 @@ class ChildrenList extends QUI\Control
                 return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.html');
 
             case 'longfooter':
-                $this->addCSSFile(dirname(__FILE__) . '/LongFooter.css');
-                return $Engine->fetch(dirname(__FILE__) . '/LongFooter.html');
+                $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.LongFooter.css');
+                return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.LongFooter.html');
 
             case 'authortop':
                 $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.AuthorTop.css');
                 return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.AuthorTop.html');
+
+            case 'icons':
+                $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.Icons.css');
+                return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.Icons.html');
         }
     }
 
