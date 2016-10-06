@@ -76,7 +76,10 @@
                         {if $this->getAttribute('showTime')}
                             {if $Child->getAttribute('release_from') &&
                                 $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
-                                <span class="fa fa-calendar"></span>
+                                <span class="fa fa-calendar
+                                        {if $this->getAttribute('showCreator') &&
+                                        $this->getAttribute('showTime')} qui-list-entry-icon-spacing{/if}
+                                "></span>
                                 <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
                                 itemprop="datePublished"
                                 >

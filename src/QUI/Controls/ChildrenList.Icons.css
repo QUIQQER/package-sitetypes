@@ -49,6 +49,10 @@
     font-size: 0.9em;
 }
 
+.qui-list-entry-icon-spacing {
+    margin-left: 20px;
+}
+
 .qui-list-entry-footer-link {
     display: inline-block;
     margin-top: 10px;
