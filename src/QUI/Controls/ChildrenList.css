@@ -84,8 +84,12 @@
     display: none;
 }
 
+.qui-list-entry-image span.quiqqer-icon {
+    font-size: 120px;
+}
+
 .qui-control-list-entry-short-noImage {
-    padding-left: 0 !important;
+    margin-left: 0 !important;
     width: 100%;
 }
 

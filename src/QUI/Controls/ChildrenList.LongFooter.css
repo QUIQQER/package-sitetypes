@@ -32,6 +32,10 @@
     position: relative;
 }
 
+.qui-list-entry-image span.quiqqer-icon {
+    font-size: 120px;
+}
+
 .qui-list-entry-content {
     padding: 0;
     margin-left: 40px;

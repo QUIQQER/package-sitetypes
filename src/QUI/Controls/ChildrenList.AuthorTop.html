@@ -71,6 +71,7 @@
             {/if}
         </header>
         {/if}
+        {$Site->getAttribute('type')}
 
         <div class="qui-control-list-entry-content">
             {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
@@ -103,6 +104,7 @@
                 {/if}
 
                 {if $Site->getAttribute('type') != 'quiqqer/sitetypes:types/list-content'}
+
                 <a href="{url site=$Child}"
                    title="{$Child->getAttribute('title')|escape:"html"}"
                    class="qui-control-list-entry-imagelink content-image-placeholder{$noShortClass}"

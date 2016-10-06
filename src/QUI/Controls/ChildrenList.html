@@ -19,44 +19,34 @@
         {assign var=counter value=$counter+1}
 
         <!-- entry image -->
+
+        {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
+        {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
+
+        {if $this->getAttribute('showImages')}
+            {assign var=noImageClass value=""}
+        {/if}
+
+        {if $this->getAttribute('showShort')}
+            {assign var=noShortClass value=""}
+        {/if}
+
+        {if $this->getAttribute('showImages')}
         <div class="qui-list-entry-image grid-40 grid-container">
-            {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
-            {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
-
-            {if $this->getAttribute('showImages')}
-                {assign var=noImageClass value=""}
-            {/if}
-
-            {if $this->getAttribute('showShort')}
-                {assign var=noShortClass value=""}
-            {/if}
-
-            {if $this->getAttribute('showImages')}
-                 {assign var=bg value=""}
                 {if $Child->getAttribute('image_site')}
                     {image src=$Child->getAttribute('image_site')
                            width="500"
                            type="resize"
-                           onlysrc=1
-                           assign=bg
                     }
-                {elseif $Placeholder}
-                    {image image=$Placeholder
-                           width="300"
-                           type="resize"
-                           onlysrc=1
-                           assign=bg
-                    }
+                {else}
+                    <img itemprop="image" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
+                         class="news-list-image"/>
                 {/if}
-
-                {if $Site->getAttribute('type') != 'quiqqer/sitetypes:types/list-content'}
-                    <img itemprop="image" src="{$bg}" class="news-list-image"/>
-                {/if}
-            {/if}
         </div>
-
+        {/if}
         <!-- entry content -->
-        <div class="qui-list-entry-content grid-60 grid-container">
+        <div class="qui-list-entry-content
+                    {if !$noImageClass}grid-60{/if} grid-container {$noImageClass}">
 
             {if $this->getAttribute('showHeader')}
             <h2>
