@@ -2,25 +2,26 @@
 {assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
 
 <section itemscope itemtype="{$this->getAttribute('itemtype')}"
-         class="qui-control-list-section grid-children"
+         class="qui-control-list-section qui-list-icons grid-children"
 >
 
     <link property="mainEntityOfPage" href="{url site=$Site}">
 
     {assign var=counter value=1}
 
-    <div class="list-row grid-children-container">
+    <div class="qui-list-row grid-children-container">
     {foreach from=$children item=Child key=key}
     {assign var=_Child value=$Child->load()}
         <article itemscope
                  itemprop="itemListElement"
                  itemtype="{$this->getAttribute('child-itemtype')}"
-                 class="qui-list-entry grid-33"
+                 class="qui-list-entry grid-33 mobile-grid-100"
         >
             <meta itemprop="position" content="{$counter}" />
             {assign var=counter value=$counter+1}
 
             <!-- entry image -->
+            {if $this->getAttribute('showImages')}
             <div class="qui-list-entry-image">
                 {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
                 {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
@@ -41,32 +42,28 @@
                     <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="width: 100%; height: auto;" />
                 {/if}
             </div>
+            {/if}
 
             <!-- entry content -->
             <div class="qui-list-entry-content">
 
                 {if $this->getAttribute('showHeader')}
-                <h2>
+                <h4>
                     <span itemprop="name">{$Child->getAttribute('title')}</span>
-                </h2>
+                </h4>
                 {/if}
 
                 {if $this->getAttribute('showShort')}
-                <div class="qui-list-entry-short{$noImageClass}">
+                <p class="qui-list-entry-short">
                     {$Child->getAttribute('short')|nl2br}
-                </div>
+                </p>
                 {/if}
 
-                <div class="qui-list-entry-content-footer"
-                     {if !$this->getAttribute('showCreator') && !$this->getAttribute('showTime')}
-                    style="border-bottom: none; border-top: none;"
-                    {/if}
-                    >
+                <div class="qui-list-entry-footer">
                     {if $this->getAttribute('showCreator') || $this->getAttribute('showTime')}
-                    <div class="qui-list-entry-content-footer-relase-date" >
+                    <p class="qui-list-entry-footer-author-and-date">
 
                         {if $this->getAttribute('showCreator')}
-                        <span class="qui-control-list-entry-date-author">
                             {user id=$Child->getAttribute('c_user') var=User}
                             <span class="fa fa-user"></span>
                             {if $User->getId() && $User->getAttribute('firstname')}
@@ -74,42 +71,44 @@
                             {else if $User->getId()}
                                 {$User->getname()}
                             {/if}
-                        </span>
                         {/if}
 
                         {if $this->getAttribute('showTime')}
-                        {if $Child->getAttribute('release_from') &&
-                        $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
-                        <span class="fa fa-calendar"></span>
-                        <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
-                        itemprop="datePublished"
-                        >
-                        {locale_date date=$Child->getAttribute('release_from')}
-                        </time>
-                        {else}
-                        <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
-                        itemprop="datePublished"
-                        >
-                        {locale_date date=$Child->getAttribute('c_date')}
-                        </time>
+                            {if $Child->getAttribute('release_from') &&
+                                $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
+                                <span class="fa fa-calendar"></span>
+                                <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
+                                itemprop="datePublished"
+                                >
+                                {locale_date date=$Child->getAttribute('release_from')}
+                                </time>
+                            {else}
+                                <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
+                                itemprop="datePublished"
+                                >
+                                {locale_date date=$Child->getAttribute('c_date')}
+                                </time>
+                            {/if}
                         {/if}
-                        {/if}
-                    </div>
+                    </p>
                     {/if}
-
-                    <a itemprop="url" href="{url site=$Child}" class="button list-entry-link">
-                        {locale group="quiqqer/sitetypes" value="list.more"}
+                    <a itemprop="url" href="{url site=$Child}" class="qui-list-entry-footer-link">
+                        <i class="fa fa-angle-right " ></i>
+                        {locale group="quiqqer/sitetypes" value="list.icons.more"}
                     </a>
                 </div>
-
             </div>
 
         </article>
         {assign var=modKey value=$key+1}
         {if $modKey && $modKey % 3 === 0 && !$Child@last}
     </div>
-    <div class="list-row grid-children-container">
+    <div class="qui-list-row">
         {/if}
 
     {/foreach}
 </section>
+
+{if $this->getAttribute('showSheets')}
+{$Pagination->create()}
+{/if}

@@ -1,128 +1,77 @@
 @CHARSET "UTF-8";
 
-.list-row {
-    clear: both;
-    background: #ffeeee;
-}
-
-.qui-control-list {
-    padding: 20px 0 0;
+.qui-list-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 6em;
 }
 
 .qui-list-entry {
-    margin-bottom: 80px;
-    padding: 0;
-    /*min-height: 240px;*/
-    border: 1px solid #444;
+    display: flex;
+    flex-direction:column;
 }
 
 .qui-list-entry-image {
-    max-height: 300px;
+    align-items: center;
+    display: flex;
+    height: 240px;
+    justify-content: center;
+    margin-bottom: 20px;
     overflow: hidden;
-    padding: 0;
-    text-align: center;
 }
 
+.qui-list-entry-image .quiqqer-icon {
+    font-size: 120px;
+}
 .qui-list-entry-content {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    margin-left: 40px;
-    min-height: 240px;
-    padding: 0;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+.qui-list-entry-content h3,
+.qui-list-entry-content h4 {
+    font-weight: bold;
 }
 
 .qui-list-entry-short {
     margin-bottom: 20px;
 }
 
-.qui-list-entry-content-footer {
-    border-bottom: 1px solid #e5e5e5;
-    border-top: 1px solid #e5e5e5;
-    display: block;
-    align-items: center;
-    line-height: 40px;
+.qui-list-entry-footer {
     margin-top: auto;
+}
+
+.qui-list-entry-footer-author-and-date {
+    font-style: italic;
     font-size: 0.9em;
 }
 
-.qui-list-entry-content-footer-relase-date {
-    float: left;
-    color: #999;
-    font-style: italic;
+.qui-list-entry-footer-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.1em;
 }
 
-.qui-control-list-entry-date-author {
-    margin-right: 16px;
+/* pagination */
+
+.quiqqer-sheets-desktop {
+    display: flex;
+    justify-content: center;
 }
 
-/* button link */
-.qui-list-entry-content-footer .list-entry-link {
-    margin: 0;
-    float: right;
-    padding: 0;
-    min-width: 100px;
-    text-align: center;
-    border-radius: 0;
-    border: none;
-    position: relative;
-    /*background: #eee;*/
-    /*color: #666;*/
-    /*transition: all 0.3s;*/
-}
-
-.qui-control-list-entry-date {
-    clear: both;
-    color: rgba(128, 128, 128, 0.75);
-    font-size: 0.8em;
-    margin: 0;
-}
-
-.qui-control-list-entry-imagelink span {
-    display: none;
-}
-
-.qui-control-list-entry-short-noImage {
-    padding-left: 0 !important;
-    width: 100%;
-}
-
-.qui-control-list-entry-image-noShort {
-    height: 200px;
-    width: 100%;
-}
 
 @media screen and (max-width: 767px) {
-
+    
+    .qui-list-row {
+        display: block;
+        margin-bottom: 0;
+    }
+    
     .qui-list-entry {
         display: block;
         margin-bottom: 60px;
-    }
-
-    .qui-control-list-entry {
-        background: none;
-        border: none;
-        border-radius: 0;
-        padding: 10px 10px 30px 10px;
-    }
-
-    .qui-control-list-entry {
-        padding: 40px 0;
-    }
-
-    .qui-list-entry-image {
-        max-height: 300px;
-    }
-
-    .qui-list-entry-image {
-        margin-bottom: 20px;
-    }
-
-    .qui-list-entry-content {
-        min-height: initial;
-        margin-left: 0;
-    }
-    .qui-list-entry-image,
-    .qui-list-entry-content {
-        padding: 0;
     }
 }

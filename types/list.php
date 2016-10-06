@@ -7,6 +7,8 @@
 $ChildrenList = new QUI\Controls\ChildrenList(array(
     'Site'           => $Site,
     'limit'          => $Site->getAttribute('quiqqer.settings.sitetypes.list.max'),
+    'showCreator'    => $Site->getAttribute('quiqqer.settings.sitetypes.list.showCreator'),
+    'showTime'       => $Site->getAttribute('quiqqer.settings.sitetypes.list.showTime'),
     'showSheets'     => $Site->getAttribute('quiqqer.settings.sitetypes.list.showSheets'),
     'showImages'     => $Site->getAttribute('quiqqer.settings.sitetypes.list.showImages'),
     'showShort'      => true,

@@ -86,6 +86,12 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
         <locale name="list.more">
             <de><![CDATA[mehr]]></de>
             <en><![CDATA[more]]></en>
+            <pl><![CDATA[więcej]]></pl>
+        </locale>
+        <locale name="list.icons.more">
+            <de><![CDATA[Weiter]]></de>
+            <en><![CDATA[More]]></en>
+            <pl><![CDATA[Dalej]]></pl>
         </locale>
         <locale name="admin.types.search">
             <de><![CDATA[Standardsuche]]></de>
@@ -204,6 +210,19 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Icons]]></de>
             <en><![CDATA[Icons]]></en>
             <pl><![CDATA[Ikony]]></pl>
+        </locale>
+
+        <!-- show author -->
+        <locale name="quiqqer.sitetypes.list.settings.showCreator">
+            <de><![CDATA[Autor anzeigen]]></de>
+            <en><![CDATA[Show author]]></en>
+            <pl><![CDATA[Pokaż autora]]></pl>
+        </locale>
+        <!-- show date -->
+        <locale name="quiqqer.sitetypes.list.settings.showTime">
+            <de><![CDATA[Datum anzeigen]]></de>
+            <en><![CDATA[Show date]]></en>
+            <pl><![CDATA[Pokaż datę]]></pl>
         </locale>
 
         <locale name="list.created.by">
