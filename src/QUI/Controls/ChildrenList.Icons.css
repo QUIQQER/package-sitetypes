@@ -3,7 +3,7 @@
 .qui-list-row {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 6em;
+    margin-bottom: 5em;
 }
 
 .qui-list-entry {
@@ -14,14 +14,14 @@
 .qui-list-entry-image {
     align-items: center;
     display: flex;
-    height: 240px;
+    height: 180px;
     justify-content: center;
     margin-bottom: 20px;
     overflow: hidden;
 }
 
 .qui-list-entry-image .quiqqer-icon {
-    font-size: 120px;
+    font-size: 100px;
 }
 .qui-list-entry-content {
     text-align: center;
@@ -37,11 +37,13 @@
 }
 
 .qui-list-entry-short {
+    font-size: 0.9em;
     margin-bottom: 20px;
 }
 
 .qui-list-entry-footer {
     margin-top: auto;
+    font-size: 0.9em;
 }
 
 .qui-list-entry-footer-author-and-date {
@@ -75,7 +77,13 @@
     }
     
     .qui-list-entry {
+        border-bottom: 1px solid #eee;
         display: block;
-        margin-bottom: 60px;
+        margin: 0;
+        padding: 30px;
+    }
+
+    .qui-list-entry:last-child {
+        border-bottom: none;
     }
 }
