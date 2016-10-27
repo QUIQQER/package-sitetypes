@@ -286,6 +286,16 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Datenschutz-Bestimmungen]]></de>
             <en><![CDATA[Privacy policy]]></en>
         </locale>
+
+        <!-- brick standard list -->
+        <locale name="standard.list.title">
+            <de><![CDATA[Datenschutz-Bestimmungen]]></de>
+            <en><![CDATA[Privacy policy]]></en>
+        </locale>
+        <locale name="standard.list.description">
+            <de><![CDATA[Datenschutz-Bestimmungen]]></de>
+            <en><![CDATA[Privacy policy]]></en>
+        </locale>
     </groups>
     <groups name="quiqqer/sitetypes" datatype="php,js ">
         <locale name="quiqqer/sitetypes:types/contact.title">

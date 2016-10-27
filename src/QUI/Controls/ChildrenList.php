@@ -7,6 +7,7 @@
 namespace QUI\Controls;
 
 use QUI;
+use QUI\Projects\Site\Utils;
 
 /**
  * Class ChildrenList
@@ -24,20 +25,21 @@ class ChildrenList extends QUI\Control
     {
         // default options
         $this->setAttributes(array(
-            'class'          => 'qui-control-list',
-            'limit'          => 2,
-            'showSheets'     => true,
-            'showImages'     => true,
-            'showShort'      => true,
-            'showHeader'     => true,
-            'showContent'    => true,
-            'showTime'       => false,
-            'showCreator'    => false,
-            'Site'           => true,
-            'where'          => false,
-            'itemtype'       => 'http://schema.org/ItemList',
-            'child-itemtype' => 'http://schema.org/NewsArticle',
-            'display'        => 'childrenlist'
+            'class'           => 'qui-control-list',
+            'limit'           => 2,
+            'showSheets'      => true,
+            'showImages'      => true,
+            'showShort'       => true,
+            'showHeader'      => true,
+            'showContent'     => true,
+            'showTime'        => false,
+            'showCreator'     => false,
+            'Site'            => true,
+            'parentInputList' => false, // @todo comment
+            'where'           => false,
+            'itemtype'        => 'http://schema.org/ItemList',
+            'child-itemtype'  => 'http://schema.org/NewsArticle',
+            'display'         => 'childrenlist'
         ));
 
         parent::__construct($attributes);
@@ -62,8 +64,14 @@ class ChildrenList extends QUI\Control
         $Pagination->loadFromRequest();
         $Pagination->setAttribute('Site', $Site);
 
-        $start = 0;
-        $limit = $this->getAttribute('limit');
+        $start   = 0;
+        $limit   = $this->getAttribute('limit');
+        $parents = $this->getAttribute('parentInputList');
+        $Project = $Site->getProject();
+
+        if (!$parents) {
+            $parents = $Site->getId();
+        }
 
         if (!$limit) {
             $limit = 2;
@@ -73,10 +81,14 @@ class ChildrenList extends QUI\Control
             $start = ((int)$_REQUEST['sheet'] - 1) * $limit;
         }
 
-        $count_children = $Site->getChildren(array(
-            'count' => 'count',
-            'where' => $this->getAttribute('where')
+        $count_children = Utils::getSitesByInputList($Project, $parents, array(
+            'count' => 'count'
         ));
+
+//        $count_children = $Site->getChildren(array(
+//            'count' => 'count',
+//            'where' => $this->getAttribute('where')
+//        ));
 
         if (is_array($count_children)) {
             $count_children = count($count_children);
@@ -84,8 +96,13 @@ class ChildrenList extends QUI\Control
 
         // sheets
         $sheets = ceil($count_children / $limit);
+//
+//        $children = $Site->getChildren(array(
+//            'where' => $this->getAttribute('where'),
+//            'limit' => $start . ',' . $limit
+//        ));
 
-        $children = $Site->getChildren(array(
+        $children = Utils::getSitesByInputList($Project, $parents, array(
             'where' => $this->getAttribute('where'),
             'limit' => $start . ',' . $limit
         ));
@@ -102,28 +119,53 @@ class ChildrenList extends QUI\Control
             'Pagination' => $Pagination
         ));
 
+
         switch ($this->getAttribute('display')) {
             default:
             case 'childrenlist':
-                $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.css');
-
-                return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.html');
+                $css      = dirname(__FILE__) . '/ChildrenList.css';
+                $template = dirname(__FILE__) . '/ChildrenList.html';
+                break;
 
             case 'longfooter':
-                $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.LongFooter.css');
-
-                return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.LongFooter.html');
+                $css      = dirname(__FILE__) . '/ChildrenList.LongFooter.css';
+                $template = dirname(__FILE__) . '/ChildrenList.LongFooter.html';
+                break;
 
             case 'authortop':
-                $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.AuthorTop.css');
-
-                return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.AuthorTop.html');
+                $css      = dirname(__FILE__) . '/ChildrenList.AuthorTop.css';
+                $template = dirname(__FILE__) . '/ChildrenList.AuthorTop.html';
+                break;
 
             case 'icons':
-                $this->addCSSFile(dirname(__FILE__) . '/ChildrenList.Icons.css');
+                $css      = dirname(__FILE__) . '/ChildrenList.Icons.css';
+                $template = dirname(__FILE__) . '/ChildrenList.Icons.html';
+                break;
 
-                return $Engine->fetch(dirname(__FILE__) . '/ChildrenList.Icons.html');
+            case 'simpleArticleList':
+                $css      = dirname(__FILE__) . '/ChildrenList.SimpleArticleList.css';
+                $template = dirname(__FILE__) . '/ChildrenList.SimpleArticleList.html';
+                break;
+
+            case 'advancedArticleList':
+                $css      = dirname(__FILE__) . '/ChildrenList.AdvancedArticleList.css';
+                $template = dirname(__FILE__) . '/ChildrenList.AdvancedArticleList.html';
+                break;
+
+            case 'listWithBorder':
+                $css      = dirname(__FILE__) . '/ChildrenList.ListWithBorder.css';
+                $template = dirname(__FILE__) . '/ChildrenList.ListWithBorder.html';
+                break;
+
+            case 'standardList':
+                $css      = dirname(__FILE__) . '/ChildrenList.StandardList.css';
+                $template = dirname(__FILE__) . '/ChildrenList.StandardList.html';
+                break;
         }
+
+        $this->addCSSFile($css);
+
+        return $Engine->fetch($template);
     }
 
     /**
