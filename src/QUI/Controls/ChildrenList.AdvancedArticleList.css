@@ -1,0 +1,98 @@
+
+.control-news-list-content {
+    padding: 1em 0;
+    font-size: 0.9em;
+}
+
+.control-news-list-wrapper {
+    display: block;
+    border-bottom: 1px solid #eee;
+    padding: 14px 0;
+}
+
+.control-news-list-wrapper:first-child {
+    padding-top: 0;
+}
+
+.control-news-list-wrapper:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+h3.control-news-list-title {
+    padding-bottom: 0;
+    line-height: 2em;
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+.control-news-list {
+    align-items: center;
+    font-size: 1em;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+}
+
+.control-news-list-show-short {
+    padding-bottom: 6px;
+}
+
+.control-news-list-time {
+    margin-right: 10px;
+}
+
+.control-news-list-header {
+    padding: 0;
+    display: flex;
+    align-content: space-between;
+    flex-grow: 1;
+    flex-direction: column;
+    line-height: 1.1em;
+    font-weight: 400;
+}
+
+.control-news-list-link {
+    width: 100%;
+    line-height: 1.1em;
+}
+
+.control-news-list-author {
+    font-size: 10px;
+    margin-top: 0;
+    opacity: 0.6;
+    line-height: 1em;
+}
+
+.control-news-list-time {
+    border-left: 5px solid #eee;
+    padding: 0 10px;
+    color: #ccc;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.control-news-list-time-no-date {
+    padding: 0;
+}
+
+.control-news-list-day,
+.control-news-list-month {
+    display: block;
+    text-align: center;
+    line-height: 1.1em;
+}
+
+.control-news-list-day {
+    font-size: 1.6em;
+}
+
+.control-news-list-wrapper:hover .control-news-list-time {
+    color: #555;
+    border-color: #777;
+}
+
+.control-news-list-short {
+    padding: 0;
+    font-size: 0.9em;
+}
