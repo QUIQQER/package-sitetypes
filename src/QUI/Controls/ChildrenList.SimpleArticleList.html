@@ -3,8 +3,11 @@
     {$this->getAttribute('content')}
 </div>
 {/if}
-
-<h3 class="control-news-list-title">Letzte News</h3>
+{if $this->getAttribute('showTitle')}
+<h3 class="control-news-list-title">
+    {$Brick->getAttribute('title')}
+</h3>
+{/if}
 
 {foreach from=$children item=Child}
 
