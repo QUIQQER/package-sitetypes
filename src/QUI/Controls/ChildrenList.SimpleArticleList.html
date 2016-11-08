@@ -3,11 +3,13 @@
     {$this->getAttribute('content')}
 </div>
 {/if}
-{if $this->getAttribute('showTitle')}
+{if $this->getAttribute('showBrickTitle')}
 <h3 class="control-news-list-title">
-    {$Brick->getAttribute('title')}
+    {$this->getAttribute('showBrickTitle')}
 </h3>
 {/if}
+
+{$this->getAttribute('content')}
 
 {foreach from=$children item=Child}
 

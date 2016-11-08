@@ -73,7 +73,7 @@
         {/if}
 
         <div class="qui-control-list-entry-content">
-            {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
+            {*assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
             {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
 
             {if $this->getAttribute('showImages')}
@@ -82,10 +82,10 @@
 
             {if $this->getAttribute('showShort')}
                 {assign var=noShortClass value=""}
-            {/if}
+            {/if*}
 
-            {if $this->getAttribute('showImages')}
-                {assign var=bg value=""}
+            {*if $this->getAttribute('showImages')}
+                {*assign var=bg value=""}
                 {if $Child->getAttribute('image_site')}
                     {image src=$Child->getAttribute('image_site')
                            width="300"
@@ -100,23 +100,47 @@
                         onlysrc=1
                         assign=bg
                     }
-                {/if}
+                {/if*}
 
-                {if $Site->getAttribute('type') != 'quiqqer/sitetypes:types/list-content'}
+                {*if $Site->getAttribute('type') != 'quiqqer/sitetypes:types/list-content'*}
+
+            {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
+            {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
+
+            {if $this->getAttribute('showImages')}
+            {assign var=noImageClass value=""}
+            {/if}
+
+            {if $this->getAttribute('showShort')}
+            {assign var=noShortClass value=""}
+            {/if}
+
 
                 <a href="{url site=$Child}"
                    title="{$Child->getAttribute('title')|escape:"html"}"
                    class="qui-control-list-entry-imagelink content-image-placeholder{$noShortClass}"
                 >
-                    <div class="qui-control-list-entry-imagelink-fix"
+              {*      <div class="qui-control-list-entry-imagelink-fix"
                          {if $bg}style="background-image: url('{$bg}')"{/if}
                     >
                         {if $bg}<img itemprop="image" src="{$bg}" style="visibility: hidden;"/>{/if}
                         <span>{$Child->getAttribute('title')}</span>
                     </div>
-                </a>
-                {/if}
+*}
+        <div class="qui-list-entry-image grid-container">
+            {if $Child->getAttribute('image_site')}
+            {image src=$Child->getAttribute('image_site')
+            width="500"
+            type="resize"
+            }
+            {else}
+            <img itemprop="qui-list-entry-image-img" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
+                 class="list-image"/>
             {/if}
+        </div>
+                </a>
+                {*/if}
+            {*/if*}
 
             {if $this->getAttribute('showShort')}
             <div class="qui-control-list-entry-short{$noImageClass}">

@@ -3,9 +3,13 @@
     {$this->getAttribute('content')}
 </div>
 {/if}
-{assign var=noDateClass value="-no-date"}
-<h3 class="control-news-list-title">{locale group="quiqqer/news" var="news.sectionTitle"}</h3>
+{if $this->getAttribute('showBrickTitle')}
+    <h3 class="control-news-list-title">
+        {$this->getAttribute('showBrickTitle')}
+    </h3>
+{/if}
 
+{assign var=noDateClass value="-no-date"}
 {foreach from=$children item=Child}
 
 <a href="{url site=$Child}" class="mainFontColor control-news-list-wrapper">

@@ -199,7 +199,7 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
         <locale name="list.template.longFooter">
             <de><![CDATA[Langes Footer]]></de>
             <en><![CDATA[Long footer]]></en>
-            <pl><![CDATA[Dłuższą stopka]]></pl>
+            <pl><![CDATA[Długa stopka]]></pl>
         </locale>
         <locale name="list.template.authorTop">
             <de><![CDATA[Autor und Datum oben]]></de>

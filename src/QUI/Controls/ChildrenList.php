@@ -32,6 +32,7 @@ class ChildrenList extends QUI\Control
             'showShort'       => true,
             'showHeader'      => true,
             'showContent'     => true,
+            'showTitle'     => true,
             'showTime'        => false,
             'showCreator'     => false,
             'Site'            => true, /* @todo false oder true. warum? */
@@ -86,6 +87,7 @@ class ChildrenList extends QUI\Control
             // for bricks
             $count_children = Utils::getSitesByInputList($Project, $parents, array(
                 'count' => 'count',
+                'order' => $this->getAttribute('order')
             ));
         } else {
             // for site types
@@ -108,7 +110,8 @@ class ChildrenList extends QUI\Control
             // for bricks
             $children = Utils::getSitesByInputList($Project, $parents, array(
                 'where' => $this->getAttribute('where'),
-                'limit' => $start . ',' . $limit
+                'limit' => $start . ',' . $limit,
+                'order' => $this->getAttribute('order')
             ));
         } else {
             // for site types
@@ -132,17 +135,17 @@ class ChildrenList extends QUI\Control
 
         switch ($this->getAttribute('display')) {
             default:
-            case 'childrenlist':
+            case 'childrenList':
                 $css      = dirname(__FILE__) . '/ChildrenList.css';
                 $template = dirname(__FILE__) . '/ChildrenList.html';
                 break;
 
-            case 'longfooter':
+            case 'longFooter':
                 $css      = dirname(__FILE__) . '/ChildrenList.LongFooter.css';
                 $template = dirname(__FILE__) . '/ChildrenList.LongFooter.html';
                 break;
 
-            case 'authortop':
+            case 'authorTop':
                 $css      = dirname(__FILE__) . '/ChildrenList.AuthorTop.css';
                 $template = dirname(__FILE__) . '/ChildrenList.AuthorTop.html';
                 break;

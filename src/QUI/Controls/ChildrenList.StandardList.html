@@ -3,10 +3,11 @@
     {$this->getAttribute('content')}
 </div>
 {/if}
-
+{if $this->getAttribute('showBrickTitle')}
 <div class="control-news-list-title-wrapper">
-    <h3 class="control-news-list-title">{locale group="quiqqer/news" var="news.sectionTitle"}</h3>
+    <h3 class="control-news-list-title">{$this->getAttribute('showBrickTitle')}</h3>
 </div>
+{/if}
 
 {foreach from=$children item=Child}
 
@@ -20,19 +21,19 @@
         {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
 
         {if $this->getAttribute('showImages')}
-        {assign var=noImageClass value=""}
+            {assign var=noImageClass value=""}
         {/if}
 
         {if $this->getAttribute('showShort')}
-        {assign var=noShortClass value=""}
+            {assign var=noShortClass value=""}
         {/if}
 
         {if $Child->getAttribute('image_site')}
-        {image src=$Child->getAttribute('image_site')
-        style="height: auto;"
-        maxwidth="380"}
+            {image src=$Child->getAttribute('image_site')
+                style="height: auto;"
+                maxwidth="380"}
         {else}
-        <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="height: auto;" />
+            <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="height: auto;" />
         {/if}
     </div>
     {/if}

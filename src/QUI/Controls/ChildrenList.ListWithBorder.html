@@ -4,9 +4,13 @@
 </div>
 {/if}
 
+{if $this->getAttribute('showBrickTitle')}
 <div class="control-news-list-title-wrapper">
-    <h3 class="control-news-list-title">{locale group="quiqqer/news" var="news.sectionTitle"}</h3>
+    <h3 class="control-news-list-title">
+        {$this->getAttribute('showBrickTitle')}
+    </h3>
 </div>
+{/if}
 <div class="control-news-list-border">
 
     {foreach from=$children item=Child}

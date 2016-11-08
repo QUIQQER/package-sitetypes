@@ -20,6 +20,7 @@
 
 .qui-control-list-entry a {
     text-decoration: none;
+    color: inherit;
 }
 .qui-control-list-entry:first-child {
     padding: 20px 0 40px 0;
@@ -106,8 +107,16 @@
     background-size: cover;
 }
 
-.qui-control-list-entry-imagelink span {
+/*.qui-control-list-entry-imagelink span {
     display: none;
+}*/
+
+.qui-list-entry-image span.quiqqer-icon {
+    font-size: 120px;
+}
+
+.qui-list-entry-image {
+    padding-left: 0;
 }
 
 .qui-control-list-entry-image {
