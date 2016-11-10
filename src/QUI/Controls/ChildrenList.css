@@ -62,15 +62,12 @@
 .qui-list-entry-content-footer .list-entry-link {
     margin: 0;
     float: right;
-    padding: 0;
+    padding: 0 10px;
     min-width: 100px;
     text-align: center;
     border-radius: 0;
     border: none;
     position: relative;
-    /*background: #eee;*/
-    /*color: #666;*/
-    /*transition: all 0.3s;*/
 }
 
 .qui-control-list-entry-date {
