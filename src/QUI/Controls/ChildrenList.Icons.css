@@ -6,9 +6,13 @@
     margin-bottom: 5em;
 }
 
+.qui-list-row:last-child {
+    margin-bottom: 0;
+}
+
 .qui-list-entry {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 .qui-list-entry-image {
@@ -23,6 +27,7 @@
 .qui-list-entry-image .quiqqer-icon {
     font-size: 100px;
 }
+
 .qui-list-entry-content {
     text-align: center;
     display: flex;
@@ -68,14 +73,13 @@
     justify-content: center;
 }
 
-
 @media screen and (max-width: 767px) {
-    
+
     .qui-list-row {
         display: block;
         margin-bottom: 0;
     }
-    
+
     .qui-list-entry {
         border-bottom: 1px solid #eee;
         display: block;
