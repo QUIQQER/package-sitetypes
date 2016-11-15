@@ -32,7 +32,6 @@ class ChildrenList extends QUI\Control
             'showShort'       => true,
             'showHeader'      => true,
             'showContent'     => true,
-            'showTitle'     => true,
             'showTime'        => false,
             'showCreator'     => false,
             'Site'            => true, /* @todo false oder true. warum? */
