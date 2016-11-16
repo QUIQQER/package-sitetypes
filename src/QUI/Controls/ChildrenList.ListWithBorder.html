@@ -1,13 +1,14 @@
-{if $this->getAttribute('content')}
-<div class="control-news-list-content">
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
     {$this->getAttribute('content')}
 </div>
 {/if}
 
-{if $this->getAttribute('brickListTitle')}
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
 <div class="control-news-list-title-wrapper">
     <h3 class="control-news-list-title">
-        {$this->getAttribute('brickListTitle')}
+        {$this->getAttribute('frontendTitle')}
     </h3>
 </div>
 {/if}

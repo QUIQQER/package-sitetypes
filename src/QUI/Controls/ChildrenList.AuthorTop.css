@@ -20,6 +20,9 @@
 
 .qui-control-list-entry a {
     text-decoration: none;
+}
+
+a.qui-control-list-entry-imagelink {
     color: inherit;
 }
 .qui-control-list-entry:first-child {
@@ -36,7 +39,7 @@
     .qui-control-list-entry {
         background: none;
         border: none;
-        border-radius: none;
+        border-radius: 0;
         padding: 10px 10px 30px 10px;
     }
 }
@@ -145,7 +148,6 @@
     clear: both;
     float: right !important;
     margin-top: 20px;
-    outline: 2px solid red;
 }
 
 @media screen and (max-width: 767px) {

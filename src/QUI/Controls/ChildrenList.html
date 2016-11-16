@@ -1,8 +1,19 @@
-
 {assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
 
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
 <section itemscope itemtype="{$this->getAttribute('itemtype')}"
-         class="qui-control-list-section"
+         class="qui-control-list-section control-template"
 >
     <link property="mainEntityOfPage" href="{url site=$Site}">
 
@@ -15,7 +26,7 @@
              itemtype="{$this->getAttribute('child-itemtype')}"
              class="qui-list-entry"
     >
-        <meta itemprop="position" content="{$counter}" />
+        <meta itemprop="position" content="{$counter}"/>
         {assign var=counter value=$counter+1}
 
         <!-- entry image -->
@@ -24,24 +35,24 @@
         {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
 
         {if $this->getAttribute('showImages')}
-            {assign var=noImageClass value=""}
+        {assign var=noImageClass value=""}
         {/if}
 
         {if $this->getAttribute('showShort')}
-            {assign var=noShortClass value=""}
+        {assign var=noShortClass value=""}
         {/if}
 
         {if $this->getAttribute('showImages')}
         <div class="qui-list-entry-image grid-40 grid-container">
-                {if $Child->getAttribute('image_site')}
-                    {image src=$Child->getAttribute('image_site')
-                           width="500"
-                           type="resize"
-                    }
-                {else}
-                    <img itemprop="qui-list-entry-image-img" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
-                         class="list-image"/>
-                {/if}
+            {if $Child->getAttribute('image_site')}
+            {image src=$Child->getAttribute('image_site')
+            width="500"
+            type="resize"
+            }
+            {else}
+            <img itemprop="qui-list-entry-image-img" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
+                 class="list-image"/>
+            {/if}
         </div>
         {/if}
         <!-- entry content -->
@@ -61,12 +72,12 @@
             {/if}
 
             <div class="qui-list-entry-content-footer"
-                {if !$this->getAttribute('showCreator') && !$this->getAttribute('showTime')}
+                 {if !$this->getAttribute('showCreator') && !$this->getAttribute('showTime')}
                 style="border-bottom: none; border-top: none;"
                 {/if}
                 >
                 {if $this->getAttribute('showCreator') || $this->getAttribute('showTime')}
-                <div class="qui-list-entry-content-footer-relase-date" >
+                <div class="qui-list-entry-content-footer-relase-date">
 
                     {if $this->getAttribute('showCreator')}
                     <span class="qui-control-list-entry-date-author">
@@ -81,21 +92,23 @@
                     {/if}
 
                     {if $this->getAttribute('showTime')}
-                        {if $Child->getAttribute('release_from') &&
-                            $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
-                            <span class="fa fa-calendar"></span>
-                            <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
-                            itemprop="datePublished"
-                            >
-                            {locale_date date=$Child->getAttribute('release_from')}
-                            </time>
-                        {else}
-                            <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
-                            itemprop="datePublished"
-                            >
-                            {locale_date date=$Child->getAttribute('c_date')}
-                            </time>
-                        {/if}
+                    {if $Child->getAttribute('release_from') &&
+                    $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
+                    <span class="fa fa-calendar"></span>
+                    <time datetime="{$Child->getAttribute('release_from')|date_format:" c
+                    "}"
+                    itemprop="datePublished"
+                    >
+                    {locale_date date=$Child->getAttribute('release_from')}
+                    </time>
+                    {else}
+                    <time datetime="{$Child->getAttribute('c_date')|date_format:" c
+                    "}"
+                    itemprop="datePublished"
+                    >
+                    {locale_date date=$Child->getAttribute('c_date')}
+                    </time>
+                    {/if}
                     {/if}
                 </div>
                 {/if}
@@ -108,7 +121,6 @@
         </div>
 
     </article>
-
 
 
     {/foreach}

@@ -1,7 +1,4 @@
 
-.control-news-list-content {
-    padding: 1em 0;
-}
 
 .control-news-list-wrapper {
     display: block;
@@ -18,17 +15,9 @@
     border-bottom: none;
 }
 
-h3.control-news-list-title {
-    padding-bottom: 0;
-    line-height: 2em;
-    font-weight: 600;
-    font-size: 1.4em;
-}
-
 .control-news-list {
     align-items: center;
     font-size: 1em;
-    background: #fff;
     display: flex;
     flex-direction: row;
 }

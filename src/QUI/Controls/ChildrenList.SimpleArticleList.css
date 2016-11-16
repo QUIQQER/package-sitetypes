@@ -1,31 +1,6 @@
-.control-news-list-border {
-    padding: 20px;
-    border: 1px solid #eee;
-}
-
-.control-news-list-content {
-    padding: 1em 0;
-}
-
-.control-news-list-title-wrapper {
-    border-top: 1px solid #eee;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
-    background: #eee;
-    font-weight: 600;
-    padding: 0 20px;
-}
-
-h3.control-news-list-title {
-    padding-bottom: 0;
-    line-height: 2em;
-    font-weight: 600;
-    font-size: 1.4em;
-}
 
 .control-news-list {
     font-size: 0.9em;
-    background: #fff;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
     display: flex;

@@ -34,12 +34,13 @@ class ChildrenList extends QUI\Control
             'showContent'     => true,
             'showTime'        => false,
             'showCreator'     => false,
-            'Site'            => true, /* @todo false oder true. warum? */
-            'parentInputList' => false, // @todo comment
+            'Site'            => false,
+            'parentInputList' => false,
             'where'           => false,
             'itemtype'        => 'http://schema.org/ItemList',
             'child-itemtype'  => 'http://schema.org/NewsArticle',
-            'display'         => 'childrenlist'
+            'display'         => 'childrenlist',
+            'nodeName'        => 'section'
         ));
 
         parent::__construct($attributes);
@@ -56,7 +57,7 @@ class ChildrenList extends QUI\Control
         $Engine = QUI::getTemplateManager()->getEngine();
         $Site   = $this->getSite();
 
-        if (!$Site) {
+        if (!$Site && !$this->getAttribute('parentInputList')) {
             return '';
         }
 

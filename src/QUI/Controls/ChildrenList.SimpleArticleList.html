@@ -1,15 +1,15 @@
-{if $this->getAttribute('content')}
-<div class="control-news-list-content">
+
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h2>{$this->getAttribute('frontendTitle')}</h2>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
     {$this->getAttribute('content')}
 </div>
 {/if}
-{if $this->getAttribute('brickListTitle')}
-<h3 class="control-news-list-title">
-    {$this->getAttribute('brickListTitle')}
-</h3>
-{/if}
-
-{$this->getAttribute('content')}
 
 {foreach from=$children item=Child}
 
