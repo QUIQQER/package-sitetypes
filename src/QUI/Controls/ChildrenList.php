@@ -40,7 +40,9 @@ class ChildrenList extends QUI\Control
             'itemtype'        => 'http://schema.org/ItemList',
             'child-itemtype'  => 'http://schema.org/NewsArticle',
             'display'         => 'childrenlist',
-            'nodeName'        => 'section'
+            'nodeName'        => 'section',
+            'children'        => false // list of sites to display,
+            // if children is set, Site or parentInputList would be used
         ));
 
         parent::__construct($attributes);
@@ -105,7 +107,6 @@ class ChildrenList extends QUI\Control
         // sheets
         $sheets = ceil($count_children / $limit);
 
-
         if ($this->getAttribute('parentInputList')) {
             // for bricks
             $children = Utils::getSitesByInputList($Project, $parents, array(
@@ -113,6 +114,8 @@ class ChildrenList extends QUI\Control
                 'limit' => $start . ',' . $limit,
                 'order' => $this->getAttribute('order')
             ));
+        } elseif ($this->getAttribute('children')) {
+            $children = $this->getAttribute('children');
         } else {
             // for site types
             $children = $Site->getChildren(array(
@@ -120,6 +123,7 @@ class ChildrenList extends QUI\Control
                 'limit' => $start . ',' . $limit
             ));
         }
+
 
         $Pagination->setAttribute('limit', $limit);
         $Pagination->setAttribute('sheets', $sheets);
