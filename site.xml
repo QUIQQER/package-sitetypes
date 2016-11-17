@@ -4,8 +4,6 @@
     <!-- global attributes -->
     <attributes>
         <attribute>quiqqer.settings.sitetypes.dontShowInSitemap</attribute>
-        <attribute>quiqqer.settings.sitetypes.dontShowTitle</attribute>
-        <attribute>quiqqer.settings.sitetypes.dontShowShort</attribute>
     </attributes>
 
     <settings>
@@ -18,26 +16,6 @@
                 <input conf="quiqqer.settings.sitetypes.dontShowInSitemap" type="checkbox">
                     <text>
                         <locale group="quiqqer/sitetypes" var="quiqqer.settings.sitetypes.dontShowInSitemap"/>
-                    </text>
-                </input>
-            </settings>
-        </category>
-    </settings>
-    <settings>
-        <category name="sitetypes-titleAndShort-settings">
-            <settings>
-                <title>
-                    <locale group="quiqqer/sitetypes" var="admin.types.titleAndShort.settings"/>
-                </title>
-
-                <input conf="quiqqer.settings.sitetypes.dontShowTitle" type="checkbox">
-                    <text>
-                        <locale group="quiqqer/sitetypes" var="admin.types.titleAndShort.settings.title"/>
-                    </text>
-                </input>
-                <input conf="quiqqer.settings.sitetypes.dontShowShort" type="checkbox">
-                    <text>
-                        <locale group="quiqqer/sitetypes" var="admin.types.titleAndShort.settings.short"/>
                     </text>
                 </input>
             </settings>
