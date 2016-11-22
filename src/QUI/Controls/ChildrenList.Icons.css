@@ -15,6 +15,14 @@
     flex-direction: column;
 }
 
+.qui-list-entry-link {
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    outline: 0 none;
+}
+
 .qui-list-entry-image {
     align-items: center;
     display: flex;
@@ -61,7 +69,8 @@
     margin-left: 20px;
 }
 
-.qui-list-entry-footer-link {
+.qui-list-entry-footer-button {
+    font-weight: 300;
     display: inline-block;
     font-size: 1.1em;
 }

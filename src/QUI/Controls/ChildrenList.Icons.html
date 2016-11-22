@@ -34,85 +34,87 @@
 
             <!-- entry image -->
             {if $this->getAttribute('showImages')}
-            <div class="qui-list-entry-image">
-                {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
-                {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
 
-                {if $this->getAttribute('showImages')}
-                    {assign var=noImageClass value=""}
+            <a href="{url site=$Child}" class="qui-list-entry-link mainFontColor">
+                <div class="qui-list-entry-image">
+                    {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
+                    {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
+
+                    {if $this->getAttribute('showImages')}
+                        {assign var=noImageClass value=""}
+                    {/if}
+
+                    {if $this->getAttribute('showShort')}
+                        {assign var=noShortClass value=""}
+                    {/if}
+
+                    {if $Child->getAttribute('image_site')}
+                        {image src=$Child->getAttribute('image_site')
+                        style="width: 100%; height: auto;"
+                        maxwidth="280"}
+                    {else}
+                        <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="width: 100%; height: auto;" />
+                    {/if}
+                </div>
                 {/if}
 
-                {if $this->getAttribute('showShort')}
-                    {assign var=noShortClass value=""}
-                {/if}
+                <!-- entry content -->
+                <div class="qui-list-entry-content">
 
-                {if $Child->getAttribute('image_site')}
-                    {image src=$Child->getAttribute('image_site')
-                    style="width: 100%; height: auto;"
-                    maxwidth="280"}
-                {else}
-                    <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="width: 100%; height: auto;" />
-                {/if}
-            </div>
-            {/if}
+                    {if $this->getAttribute('showHeader')}
+                    <h4>
+                        <span itemprop="name">{$Child->getAttribute('title')}</span>
+                    </h4>
+                    {/if}
 
-            <!-- entry content -->
-            <div class="qui-list-entry-content">
-
-                {if $this->getAttribute('showHeader')}
-                <h4>
-                    <span itemprop="name">{$Child->getAttribute('title')}</span>
-                </h4>
-                {/if}
-
-                {if $this->getAttribute('showShort')}
-                <p class="qui-list-entry-short">
-                    {$Child->getAttribute('short')|nl2br}
-                </p>
-                {/if}
-
-                <div class="qui-list-entry-footer">
-                    {if $this->getAttribute('showCreator') || $this->getAttribute('showTime')}
-                    <p class="qui-list-entry-footer-author-and-date">
-
-                        {if $this->getAttribute('showCreator')}
-                            {user id=$Child->getAttribute('c_user') var=User}
-                            <span class="fa fa-user"></span>
-                            {if $User->getId() && $User->getAttribute('firstname')}
-                                {$User->getAttribute('firstname')}
-                            {else if $User->getId()}
-                                {$User->getname()}
-                            {/if}
-                        {/if}
-
-                        {if $this->getAttribute('showTime')}
-                            {if $Child->getAttribute('release_from') &&
-                                $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
-                                <span class="fa fa-calendar
-                                        {if $this->getAttribute('showCreator') &&
-                                        $this->getAttribute('showTime')} qui-list-entry-icon-spacing{/if}
-                                "></span>
-                                <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
-                                itemprop="datePublished"
-                                >
-                                {locale_date date=$Child->getAttribute('release_from')}
-                                </time>
-                            {else}
-                                <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
-                                itemprop="datePublished"
-                                >
-                                {locale_date date=$Child->getAttribute('c_date')}
-                                </time>
-                            {/if}
-                        {/if}
+                    {if $this->getAttribute('showShort')}
+                    <p class="qui-list-entry-short">
+                        {$Child->getAttribute('short')|nl2br}
                     </p>
                     {/if}
-                    <a itemprop="url" href="{url site=$Child}"
-                       class="qui-list-entry-footer-link button">
-                        {locale group="quiqqer/sitetypes" value="list.icons.more"}
-                    </a>
+
+                    <div class="qui-list-entry-footer">
+                        {if $this->getAttribute('showCreator') || $this->getAttribute('showTime')}
+                        <p class="qui-list-entry-footer-author-and-date">
+
+                            {if $this->getAttribute('showCreator')}
+                                {user id=$Child->getAttribute('c_user') var=User}
+                                <span class="fa fa-user"></span>
+                                {if $User->getId() && $User->getAttribute('firstname')}
+                                    {$User->getAttribute('firstname')}
+                                {else if $User->getId()}
+                                    {$User->getname()}
+                                {/if}
+                            {/if}
+
+                            {if $this->getAttribute('showTime')}
+                                {if $Child->getAttribute('release_from') &&
+                                    $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
+                                    <span class="fa fa-calendar
+                                            {if $this->getAttribute('showCreator') &&
+                                            $this->getAttribute('showTime')} qui-list-entry-icon-spacing{/if}
+                                    "></span>
+                                    <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
+                                    itemprop="datePublished"
+                                    >
+                                    {locale_date date=$Child->getAttribute('release_from')}
+                                    </time>
+                                {else}
+                                    <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
+                                    itemprop="datePublished"
+                                    >
+                                    {locale_date date=$Child->getAttribute('c_date')}
+                                    </time>
+                                {/if}
+                            {/if}
+                        </p>
+                        {/if}
+                        <button itemprop="url" class="qui-list-entry-footer-button button">
+                            {locale group="quiqqer/sitetypes" value="list.icons.more"}
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </a>
 
         </article>
         {assign var=modKey value=$key+1}
