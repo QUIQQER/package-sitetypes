@@ -23,10 +23,10 @@
 
     <a href="{url site=$Child}" class="mainFontColor control-news-list-link">
         <header class="control-news-list-header">
-            {$Child->getAttribute('title')}
+            <h4>{$Child->getAttribute('title')}</h4>
         </header>
         {if $this->getAttribute('showCreator')}
-        <span class="control-news-list-author">
+        <span class="control-news-list-author colorFont">
             {user id=$Child->getAttribute('c_user') var=User}
             <span class="fa fa-user news-list-time-icon"></span>
             {if $User->getId() && $User->getAttribute('firstname')}

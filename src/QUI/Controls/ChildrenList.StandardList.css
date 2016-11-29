@@ -16,6 +16,8 @@
 
 .control-news-list-image {
     margin-bottom: 1em;
+    max-height: 260px;
+    overflow: hidden;
     text-align: center;
 }
 
