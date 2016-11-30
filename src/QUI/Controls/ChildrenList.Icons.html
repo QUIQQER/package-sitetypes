@@ -35,8 +35,9 @@
             <!-- entry image -->
             {if $this->getAttribute('showImages')}
 
-            <a href="{url site=$Child}" class="qui-list-entry-link mainFontColor">
                 <div class="qui-list-entry-image">
+                    <a href="{url site=$Child}" class="mainFontColor">
+
                     {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
                     {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
 
@@ -55,6 +56,7 @@
                     {else}
                         <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="width: 100%; height: auto;" />
                     {/if}
+                        </a>
                 </div>
                 {/if}
 
@@ -109,12 +111,15 @@
                             {/if}
                         </p>
                         {/if}
-                        <button itemprop="url" class="qui-list-entry-footer-button button">
+                        <a href="{url site=$Child}" class="qui-list-entry-footer-button button">
+
+                        <!--<button itemprop="url" class="qui-list-entry-footer-button button">-->
                             {locale group="quiqqer/sitetypes" value="list.icons.more"}
-                        </button>
+                        <!--</button>-->
+                        </a>
                     </div>
                 </div>
-            </a>
+
 
         </article>
         {assign var=modKey value=$key+1}
