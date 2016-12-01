@@ -14,6 +14,15 @@
     border-bottom: none;
 }
 
+.qui-list-entry-header-link,
+.qui-list-entry-header-link:hover {
+    color: inherit;
+}
+
+.control-news-list h1 {
+    font-size: 1.5em;
+}
+
 .control-news-list-image {
     margin-bottom: 1em;
     max-height: 260px;
@@ -26,7 +35,7 @@
 }
 
 .control-news-list header {
-    padding-bottom: 4px;
+    padding-bottom: 10px;
 }
 
 .control-news-list-short {

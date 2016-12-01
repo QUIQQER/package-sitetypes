@@ -7,9 +7,9 @@
 
 {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
 <div class="control-news-list-title-wrapper">
-    <h3 class="control-news-list-title">
+    <h1 class="control-news-list-title">
         {$this->getAttribute('frontendTitle')}
-    </h3>
+    </h1>
 </div>
 {/if}
 <div class="control-news-list-border">
@@ -18,10 +18,10 @@
 
     <article class="control-news-list">
 
-        <a href="{url site=$Child}" class="mainFontColor">
         <!-- entry image -->
         {if $this->getAttribute('showImages')}
         <div class="control-news-list-image">
+            <a href="{url site=$Child}" class="qui-list-entry-header-link">
             {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
             {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
 
@@ -39,13 +39,16 @@
             {else}
             <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="height: auto;" />
             {/if}
+            </a>
         </div>
         {/if}
 
         <header>
-            <h4>
-                {$Child->getAttribute('title')}
-            </h4>
+            <h1>
+                <a href="{url site=$Child}" class="qui-list-entry-header-link">
+                    {$Child->getAttribute('title')}
+                </a>
+            </h1>
         </header>
 
         {if $this->getAttribute('showShort')}
@@ -109,7 +112,6 @@
 
         </div>
         {/if}
-        </a>
     </article>
 
     {/foreach}

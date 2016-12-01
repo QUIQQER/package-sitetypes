@@ -153,7 +153,7 @@
                 <attribute default="childrenlist">quiqqer.settings.sitetypes.list.template</attribute>
                 <attribute default="6">quiqqer.settings.sitetypes.list.max</attribute>
                 <attribute default="0">quiqqer.settings.sitetypes.list.showCreator</attribute>
-                <attribute default="0">quiqqer.settings.sitetypes.list.showTime</attribute>
+                <attribute default="0">quiqqer.settings.sitetypes.list.showDate</attribute>
                 <attribute default="1">quiqqer.settings.sitetypes.list.showImages</attribute>
                 <attribute default="1">quiqqer.settings.sitetypes.list.showHeader</attribute>
                 <attribute default="0">quiqqer.settings.sitetypes.list.showSheets</attribute>
@@ -181,8 +181,17 @@
                             <option value="authorTop">
                                 <locale group="quiqqer/sitetypes" var="list.template.authorTop" />
                             </option>
-                            <option value="icons">
-                                <locale group="quiqqer/sitetypes" var="list.template.icons" />
+                            <option value="1er">
+                                <locale group="quiqqer/sitetypes" var="list.template.1er" />
+                            </option>
+                            <option value="2er">
+                                <locale group="quiqqer/sitetypes" var="list.template.2er" />
+                            </option>
+                            <option value="3er">
+                                <locale group="quiqqer/sitetypes" var="list.template.3er" />
+                            </option>
+                            <option value="4er">
+                                <locale group="quiqqer/sitetypes" var="list.template.4er" />
                             </option>
                         </select>
 
@@ -201,10 +210,10 @@
                             </text>
                         </input>
 
-                        <input conf="quiqqer.settings.sitetypes.list.showTime" type="checkbox">
+                        <input conf="quiqqer.settings.sitetypes.list.showDate" type="checkbox">
                             <text>
                                 <locale group="quiqqer/sitetypes"
-                                        var="quiqqer.sitetypes.list.settings.showTime" />
+                                        var="quiqqer.sitetypes.list.settings.showDate" />
                             </text>
                         </input>
 

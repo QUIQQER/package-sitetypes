@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+.control-news-list h1 {
+    font-size: 1.2em;
+}
+
 .control-news-list:first-child {
     padding-top: 0;
 }

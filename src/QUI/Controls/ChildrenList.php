@@ -31,8 +31,8 @@ class ChildrenList extends QUI\Control
             'showImages'      => true,
             'showShort'       => true,
             'showHeader'      => true,
-            'showContent'     => true,
-            'showTime'        => false,
+            'showContent'     => false,
+            'showDate'        => false,
             'showCreator'     => false,
             'Site'            => false,
             'parentInputList' => false,
@@ -154,9 +154,24 @@ class ChildrenList extends QUI\Control
                 $template = dirname(__FILE__) . '/ChildrenList.AuthorTop.html';
                 break;
 
-            case 'icons':
-                $css      = dirname(__FILE__) . '/ChildrenList.Icons.css';
-                $template = dirname(__FILE__) . '/ChildrenList.Icons.html';
+            case '1er':
+                $css      = dirname(__FILE__) . '/ChildrenList.1er.css';
+                $template = dirname(__FILE__) . '/ChildrenList.1er.html';
+                break;
+
+            case '2er':
+                $css      = dirname(__FILE__) . '/ChildrenList.2er.css';
+                $template = dirname(__FILE__) . '/ChildrenList.2er.html';
+                break;
+
+            case '3er':
+                $css      = dirname(__FILE__) . '/ChildrenList.3er.css';
+                $template = dirname(__FILE__) . '/ChildrenList.3er.html';
+                break;
+
+            case '4er':
+                $css      = dirname(__FILE__) . '/ChildrenList.4er.css';
+                $template = dirname(__FILE__) . '/ChildrenList.4er.html';
                 break;
 
             case 'simpleArticleList':

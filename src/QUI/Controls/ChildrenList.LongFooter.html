@@ -62,9 +62,13 @@
             <div class="qui-list-entry-content grid-60 grid-container">
 
                 {if $this->getAttribute('showHeader')}
-                <h2>
-                    <span itemprop="name">{$Child->getAttribute('title')}</span>
-                </h2>
+                <header>
+                    <h1 itemprop="name">
+                        <a itemprop="url" href="{url site=$Child}" class="qui-list-entry-header-link">
+                            {$Child->getAttribute('title')}
+                        </a>
+                    </h1>
+                </header>
                 {/if}
 
                 {if $this->getAttribute('showShort')}
@@ -78,11 +82,11 @@
         </div>
 
         <div class="qui-list-entry-content-footer grid-100"
-            {if !$this->getAttribute('showCreator') && !$this->getAttribute('showTime')}
+            {if !$this->getAttribute('showCreator') && !$this->getAttribute('showDate')}
             style="border-top: none; border-bottom: none;"
             {/if}>
 
-            {if $this->getAttribute('showCreator') || $this->getAttribute('showTime')}
+            {if $this->getAttribute('showCreator') || $this->getAttribute('showDate')}
             <div class="qui-list-entry-content-footer-relase-date" >
 
                 {if $this->getAttribute('showCreator')}
@@ -97,7 +101,7 @@
                 </span>
                 {/if}
 
-                {if $this->getAttribute('showTime')}
+                {if $this->getAttribute('showDate')}
                     {if $Child->getAttribute('release_from') &&
                     $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
                     <span class="fa fa-calendar"></span>

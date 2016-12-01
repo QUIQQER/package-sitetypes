@@ -40,6 +40,14 @@
     font-weight: 400;
 }
 
+.control-news-list h1 {
+    font-size: 1.2em;
+}
+
+.qui-list-entry-header-link,
+.qui-list-entry-header-link:hover {
+    color: inherit;
+}
 .control-news-list-link {
     width: 100%;
     line-height: 1.1em;

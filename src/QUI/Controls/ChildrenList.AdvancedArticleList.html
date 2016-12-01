@@ -1,7 +1,7 @@
 
 {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
 <header class="control-header">
-    <h2>{$this->getAttribute('frontendTitle')}</h2>
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
 </header>
 {/if}
 
@@ -14,7 +14,7 @@
 {assign var=noDateClass value="-no-date"}
 {foreach from=$children item=Child}
 
-<a href="{url site=$Child}" class="mainFontColor control-news-list-wrapper">
+<div class="mainFontColor control-news-list-wrapper">
     <div class="control-news-list
                 {if $this->getAttribute('showShort')} control-news-list-show-short {/if}"
          {if !$this->getAttribute('showDate')}style="align-items: stretch;"{/if}>
@@ -39,7 +39,11 @@
 
         <span href="{url site=$Child}" class="mainFontColor control-news-list-link">
             <header class="control-news-list-header">
-                <h4>{$Child->getAttribute('title')}</h4>
+                <h1>
+                    <a href="{url site=$Child}" class="qui-list-entry-header-link">
+                        {$Child->getAttribute('title')}
+                    </a>
+                </h1>
             </header>
             {if $this->getAttribute('showCreator')}
             <span class="control-news-list-author">
@@ -61,5 +65,5 @@
     </div>
     {/if}
 
-</a>
+</div>
 {/foreach}

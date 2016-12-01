@@ -192,10 +192,26 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[Author and date top]]></en>
             <pl><![CDATA[Autor i data na górze]]></pl>
         </locale>
-        <locale name="list.template.icons">
-            <de><![CDATA[Icons]]></de>
-            <en><![CDATA[Icons]]></en>
-            <pl><![CDATA[Ikony]]></pl>
+
+        <locale name="list.template.1er">
+            <de><![CDATA[1 Box pro Reihe]]></de>
+            <en><![CDATA[1 box in a row]]></en>
+            <pl><![CDATA[1 kontener w rzędzie]]></pl>
+        </locale>
+        <locale name="list.template.2er">
+            <de><![CDATA[2 Boxen pro Reihe]]></de>
+            <en><![CDATA[2 boxes in a row]]></en>
+            <pl><![CDATA[2 kontenery w rzędzie]]></pl>
+        </locale>
+        <locale name="list.template.3er">
+            <de><![CDATA[3 Boxen pro Reihe]]></de>
+            <en><![CDATA[3 boxes in a row]]></en>
+            <pl><![CDATA[3 kontenery w rzędzie]]></pl>
+        </locale>
+        <locale name="list.template.4er">
+            <de><![CDATA[4 Boxen pro Reihe]]></de>
+            <en><![CDATA[4 boxes in a row]]></en>
+            <pl><![CDATA[4 treści w rzędzie]]></pl>
         </locale>
 
         <!-- show author -->
@@ -205,7 +221,7 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <pl><![CDATA[Pokaż autora]]></pl>
         </locale>
         <!-- show date -->
-        <locale name="quiqqer.sitetypes.list.settings.showTime">
+        <locale name="quiqqer.sitetypes.list.settings.showDate">
             <de><![CDATA[Datum anzeigen]]></de>
             <en><![CDATA[Show date]]></en>
             <pl><![CDATA[Pokaż datę]]></pl>

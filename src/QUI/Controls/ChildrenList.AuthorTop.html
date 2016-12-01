@@ -39,14 +39,14 @@
             $this->getAttribute('showCreator')}
         <header>
             {if $this->getAttribute('showHeader')}
-            <h2>
+            <h1>
                 <a href="{url site=$Child}"
                    title="{$Child->getAttribute('title')|escape:"html"}"
                    itemprop="url"
                 >
                     <span itemprop="name">{$Child->getAttribute('title')}</span>
                 </a>
-            </h2>
+            </h1>
             {/if}
 
             {if $this->getAttribute('showTime') || $this->getAttribute('showCreator')}
@@ -114,8 +114,7 @@
             {/if}
         </div>
                 </a>
-                {*/if}
-            {*/if*}
+
 
             {if $this->getAttribute('showShort')}
             <div class="qui-control-list-entry-short{$noImageClass}">

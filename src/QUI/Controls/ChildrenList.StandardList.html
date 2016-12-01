@@ -1,7 +1,7 @@
 
 {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
 <header class="control-header">
-    <h2>{$this->getAttribute('frontendTitle')}</h2>
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
 </header>
 {/if}
 
@@ -14,36 +14,39 @@
 {foreach from=$children item=Child}
 
 <article class="control-news-list">
-    <a href="{url site=$Child}" class="mainFontColor">
 
     <!-- entry image -->
     {if $this->getAttribute('showImages')}
     <div class="control-news-list-image">
-        {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
-        {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
+        <a href="{url site=$Child}" class="qui-list-entry-header-link">
+            {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
+            {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
 
-        {if $this->getAttribute('showImages')}
-            {assign var=noImageClass value=""}
-        {/if}
+            {if $this->getAttribute('showImages')}
+                {assign var=noImageClass value=""}
+            {/if}
 
-        {if $this->getAttribute('showShort')}
-            {assign var=noShortClass value=""}
-        {/if}
+            {if $this->getAttribute('showShort')}
+                {assign var=noShortClass value=""}
+            {/if}
 
-        {if $Child->getAttribute('image_site')}
-            {image src=$Child->getAttribute('image_site')
-                style="height: auto;"
-                maxwidth="380"}
-        {else}
-            <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="height: auto;" />
-        {/if}
+            {if $Child->getAttribute('image_site')}
+                {image src=$Child->getAttribute('image_site')
+                    style="height: auto;"
+                    maxwidth="380"}
+            {else}
+                <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="height: auto;" />
+            {/if}
+        </a>
     </div>
     {/if}
 
     <header>
-        <h4>
-            {$Child->getAttribute('title')}
-        </h4>
+        <h1>
+            <a href="{url site=$Child}" class="qui-list-entry-header-link">
+                {$Child->getAttribute('title')}
+            </a>
+        </h1>
     </header>
 
     {if $this->getAttribute('showShort')}
@@ -107,7 +110,6 @@
 
     </div>
     {/if}
-    </a>
 </article>
 
 {/foreach}

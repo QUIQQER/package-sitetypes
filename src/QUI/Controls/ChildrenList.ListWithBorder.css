@@ -16,11 +16,20 @@
     padding: 0 20px;
 }
 
-h3.control-news-list-title {
+.qui-list-entry-header-link,
+.qui-list-entry-header-link:hover {
+    color: inherit;
+}
+
+h1.control-news-list-title {
     padding-bottom: 0;
     line-height: 2em;
     font-weight: 600;
     font-size: 1.4em;
+}
+
+.control-news-list h1 {
+    font-size: 1.5em;
 }
 
 .control-news-list {
@@ -48,7 +57,7 @@ h3.control-news-list-title {
 }
 
 .control-news-list header {
-    padding-bottom: 4px;
+    padding-bottom: 10px;
 }
 
 .control-news-list-short {

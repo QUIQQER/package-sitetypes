@@ -36,6 +36,11 @@
     font-size: 120px;
 }
 
+.qui-list-entry-header-link,
+.qui-list-entry-header-link:hover {
+    color: inherit;
+}
+
 .qui-list-entry-content {
     padding: 0;
     margin-left: 40px;
@@ -44,6 +49,10 @@
     display: flex;
     flex-direction: column;
     width: calc(60% - 40px);
+}
+
+.qui-list-entry-content h1 {
+    font-size: 2em;
 }
 
 .qui-list-entry-short {
