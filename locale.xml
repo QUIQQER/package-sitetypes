@@ -86,6 +86,12 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
         <locale name="list.more">
             <de><![CDATA[mehr]]></de>
             <en><![CDATA[more]]></en>
+            <pl><![CDATA[więcej]]></pl>
+        </locale>
+        <locale name="list.icons.more">
+            <de><![CDATA[Weiter]]></de>
+            <en><![CDATA[More]]></en>
+            <pl><![CDATA[Dalej]]></pl>
         </locale>
         <locale name="admin.types.search">
             <de><![CDATA[Standardsuche]]></de>
@@ -132,20 +138,6 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[Standard sitemap - Categories]]></en>
         </locale>
 
-        <!-- Title & short -->
-        <locale name="admin.types.titleAndShort.settings">
-            <de><![CDATA[Überschrift und Kurzbeschreibung]]></de>
-            <en><![CDATA[Title and short descriptions]]></en>
-        </locale>
-        <locale name="admin.types.titleAndShort.settings.title">
-            <de><![CDATA[Überschrift anzeigen]]></de>
-            <en><![CDATA[Show title]]></en>
-        </locale>
-        <locale name="admin.types.titleAndShort.settings.short">
-            <de><![CDATA[Kurzbeschreibung anzeigen]]></de>
-            <en><![CDATA[Show short descriptions]]></en>
-        </locale>
-
         <locale name="tpl.search.button">
             <de><![CDATA[Suche starten]]></de>
             <en><![CDATA[Start search]]></en>
@@ -178,6 +170,63 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Blätterfunktion anzeigen]]></de>
             <en><![CDATA[Show sheets]]></en>
         </locale>
+
+        <!-- list template -->
+        <locale name="list.template">
+            <de><![CDATA[Layout]]></de>
+            <en><![CDATA[Layout]]></en>
+            <pl><![CDATA[Layout]]></pl>
+        </locale>
+        <locale name="list.template.childrenList">
+            <de><![CDATA[Standard]]></de>
+            <en><![CDATA[Default]]></en>
+            <pl><![CDATA[Standardowy widok]]></pl>
+        </locale>
+        <locale name="list.template.longFooter">
+            <de><![CDATA[Langes Footer]]></de>
+            <en><![CDATA[Long footer]]></en>
+            <pl><![CDATA[Długa stopka]]></pl>
+        </locale>
+        <locale name="list.template.authorTop">
+            <de><![CDATA[Autor und Datum oben]]></de>
+            <en><![CDATA[Author and date top]]></en>
+            <pl><![CDATA[Autor i data na górze]]></pl>
+        </locale>
+
+        <locale name="list.template.1er">
+            <de><![CDATA[1 Box pro Reihe]]></de>
+            <en><![CDATA[1 box in a row]]></en>
+            <pl><![CDATA[1 kontener w rzędzie]]></pl>
+        </locale>
+        <locale name="list.template.2er">
+            <de><![CDATA[2 Boxen pro Reihe]]></de>
+            <en><![CDATA[2 boxes in a row]]></en>
+            <pl><![CDATA[2 kontenery w rzędzie]]></pl>
+        </locale>
+        <locale name="list.template.3er">
+            <de><![CDATA[3 Boxen pro Reihe]]></de>
+            <en><![CDATA[3 boxes in a row]]></en>
+            <pl><![CDATA[3 kontenery w rzędzie]]></pl>
+        </locale>
+        <locale name="list.template.4er">
+            <de><![CDATA[4 Boxen pro Reihe]]></de>
+            <en><![CDATA[4 boxes in a row]]></en>
+            <pl><![CDATA[4 treści w rzędzie]]></pl>
+        </locale>
+
+        <!-- show author -->
+        <locale name="quiqqer.sitetypes.list.settings.showCreator">
+            <de><![CDATA[Autor anzeigen]]></de>
+            <en><![CDATA[Show author]]></en>
+            <pl><![CDATA[Pokaż autora]]></pl>
+        </locale>
+        <!-- show date -->
+        <locale name="quiqqer.sitetypes.list.settings.showDate">
+            <de><![CDATA[Datum anzeigen]]></de>
+            <en><![CDATA[Show date]]></en>
+            <pl><![CDATA[Pokaż datę]]></pl>
+        </locale>
+
         <locale name="list.created.by">
             <de><![CDATA[von]]></de>
             <en><![CDATA[by]]></en>
@@ -236,6 +285,16 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[Privacy policy]]></en>
         </locale>
         <locale name="admin.types.privacypolicy.desc">
+            <de><![CDATA[Datenschutz-Bestimmungen]]></de>
+            <en><![CDATA[Privacy policy]]></en>
+        </locale>
+
+        <!-- brick standard list -->
+        <locale name="standard.list.title">
+            <de><![CDATA[Datenschutz-Bestimmungen]]></de>
+            <en><![CDATA[Privacy policy]]></en>
+        </locale>
+        <locale name="standard.list.description">
             <de><![CDATA[Datenschutz-Bestimmungen]]></de>
             <en><![CDATA[Privacy policy]]></en>
         </locale>

@@ -5,7 +5,7 @@
 }
 
 .qui-control-list {
-    padding: 20px 0 0;
+    /*padding: 20px 0 0;*/
 }
 
 .qui-list-entry {
@@ -32,6 +32,15 @@
     position: relative;
 }
 
+.qui-list-entry-image span.quiqqer-icon {
+    font-size: 120px;
+}
+
+.qui-list-entry-header-link,
+.qui-list-entry-header-link:hover {
+    color: inherit;
+}
+
 .qui-list-entry-content {
     padding: 0;
     margin-left: 40px;
@@ -40,6 +49,10 @@
     display: flex;
     flex-direction: column;
     width: calc(60% - 40px);
+}
+
+.qui-list-entry-content h1 {
+    font-size: 2em;
 }
 
 .qui-list-entry-short {
@@ -71,15 +84,12 @@
 .qui-list-entry-content-footer .list-entry-link {
     margin: 0;
     float: right;
-    padding: 0;
+    padding: 0 10px;
     min-width: 100px;
     text-align: center;
     border-radius: 0;
     border: none;
     position: relative;
-    /*background: #eee;*/
-    /*color: #666;*/
-    /*transition: all 0.3s;*/
 }
 
 .qui-control-list-entry-date {

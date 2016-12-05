@@ -1,0 +1,69 @@
+
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
+{assign var=noDateClass value="-no-date"}
+{foreach from=$children item=Child}
+
+<div class="mainFontColor control-news-list-wrapper">
+    <div class="control-news-list
+                {if $this->getAttribute('showShort')} control-news-list-show-short {/if}"
+         {if !$this->getAttribute('showDate')}style="align-items: stretch;"{/if}>
+        <time class="control-news-list-time
+                    {if !$this->getAttribute('showDate')} control-news-list-time-no-date{/if}
+
+                    mainColorHover"
+              datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
+              itemprop="datePublished"
+              >
+            {if $this->getAttribute('showDate')}
+                <span class="control-news-list-day">
+                    {$Child->getAttribute('release_from')|date_format:"%d"}
+                </span>
+                <span class="control-news-list-month">
+                    {$Child->getAttribute('release_from')|date_format:"%b"}
+                </span>
+            {else}
+                <br />
+            {/if}
+        </time>
+
+        <span href="{url site=$Child}" class="mainFontColor control-news-list-link">
+            <header class="control-news-list-header">
+                <h1>
+                    <a href="{url site=$Child}" class="qui-list-entry-header-link">
+                        {$Child->getAttribute('title')}
+                    </a>
+                </h1>
+            </header>
+            {if $this->getAttribute('showCreator')}
+            <span class="control-news-list-author">
+                {user id=$Child->getAttribute('c_user') var=User}
+                <span class="fa fa-user news-list-time-icon"></span>
+                {if $User->getId() && $User->getAttribute('firstname')}
+                {$User->getAttribute('firstname')}
+                {else if $User->getId()}
+                {$User->getname()}
+                {/if}
+            </span>
+            {/if}
+        </span>
+    </div>
+
+    {if $this->getAttribute('showShort')}
+    <div class="control-news-list-short">
+        {$Child->getAttribute('short')}
+    </div>
+    {/if}
+
+</div>
+{/foreach}

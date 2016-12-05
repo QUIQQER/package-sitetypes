@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
 .qui-control-list {
-    padding: 20px 0 0;
+    /*padding: 20px 0 0;*/
 }
 
 .qui-control-list hr {
@@ -21,6 +21,11 @@
 .qui-control-list-entry a {
     text-decoration: none;
 }
+
+a.qui-control-list-entry-imagelink {
+    color: inherit;
+}
+
 .qui-control-list-entry:first-child {
     padding: 20px 0 40px 0;
 }
@@ -35,7 +40,7 @@
     .qui-control-list-entry {
         background: none;
         border: none;
-        border-radius: none;
+        border-radius: 0;
         padding: 10px 10px 30px 10px;
     }
 }
@@ -106,8 +111,16 @@
     background-size: cover;
 }
 
-.qui-control-list-entry-imagelink span {
+/*.qui-control-list-entry-imagelink span {
     display: none;
+}*/
+
+.qui-list-entry-image span.quiqqer-icon {
+    font-size: 120px;
+}
+
+.qui-list-entry-image {
+    padding-left: 0;
 }
 
 .qui-control-list-entry-image {
@@ -136,7 +149,6 @@
     clear: both;
     float: right !important;
     margin-top: 20px;
-    outline: 2px solid red;
 }
 
 @media screen and (max-width: 767px) {

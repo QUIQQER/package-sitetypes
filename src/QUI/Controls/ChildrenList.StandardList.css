@@ -1,0 +1,70 @@
+
+.control-news-list {
+    font-size: 0.9em;
+    padding: 2em 0;
+    border-bottom: 1px solid #eee;
+}
+
+.control-news-list:first-child {
+    padding-top: 0;
+}
+
+.control-news-list:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.qui-list-entry-header-link,
+.qui-list-entry-header-link:hover {
+    color: inherit;
+}
+
+.control-news-list h1 {
+    font-size: 1.5em;
+}
+
+.control-news-list-image {
+    margin-bottom: 1em;
+    max-height: 260px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.control-news-list-image .quiqqer-icon {
+    font-size: 100px;
+}
+
+.control-news-list header {
+    padding-bottom: 10px;
+}
+
+.control-news-list-short {
+    line-height: 1.5em;
+}
+
+
+/* author and date */
+
+.control-news-list-time {
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.qui-control-list-entry-date-author {
+    font-style: italic;
+}
+
+.control-news-list-time-wrapper {
+    display: inline-block;
+    text-align: right;
+}
+
+.news-list-time-icon {
+    margin-right: 1px;
+}
+
+.control-news-list-span:first-child {
+    margin-right: 8px;
+}
