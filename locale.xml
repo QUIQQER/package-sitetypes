@@ -192,6 +192,16 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[Author and date top]]></en>
             <pl><![CDATA[Autor i data na górze]]></pl>
         </locale>
+        <locale name="list.template.simpleArticleList">
+            <de><![CDATA[Einfache Artikel-Liste]]></de>
+            <en><![CDATA[Simple article list]]></en>
+            <pl><![CDATA[Prosta lista artykułów (sidebar)]]></pl>
+        </locale>
+        <locale name="list.template.advancedArticleList">
+            <de><![CDATA[Erweiterte Artikel-Liste]]></de>
+            <en><![CDATA[Advanced article list]]></en>
+            <pl><![CDATA[Rozszerzona lista wpisów]]></pl>
+        </locale>
 
         <locale name="list.template.1er">
             <de><![CDATA[1 Box pro Reihe]]></de>
