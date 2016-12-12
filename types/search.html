@@ -1,12 +1,12 @@
 
 {if $Template->getAttribute('content-body') && $Site->getAttribute('content')}
-<section class="content-body grid-100 mobile-grid-100 grid-parent">
+<section class="content-body">
     {$Site->getAttribute('content')}
 </section>
 {/if}
 
 {assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
-<div class="content-template grid-100 mobile-grid-100 qui-search-result">
+<div class="content-template qui-search-result">
 
     <form action="{url site=$Site}" method="GET">
         <input type="text" name="search"
@@ -31,7 +31,10 @@
         </div>
         {/if}
     {else}
-        {$Pagination->create()}
+
+        {$ChildrenList->create()}
+
+        {*$Pagination->create()}
 
         {foreach from=$children item=Child}
         {assign var=Child value=$Child->load()}
@@ -78,7 +81,7 @@
 
                 </div>
             </article>
-        {/foreach}
+        {/foreach*}
 
         {$Pagination->create()}
     {/if}

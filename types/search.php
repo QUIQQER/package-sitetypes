@@ -95,9 +95,28 @@ $Pagination = new QUI\Bricks\Controls\Pagination(array(
 $Pagination->loadFromRequest();
 $Pagination->setGetParams('search', $searchValue);
 
+$ChildrenList = new QUI\Controls\ChildrenList(array(
+    'showTitle'      => false,
+    'Site'           => $Site,
+    'limit'          => $max,
+    'showDate'       => $Site->getAttribute('quiqqer.settings.sitetypes.list.showDate'),
+    'showCreator'    => $Site->getAttribute('quiqqer.settings.sitetypes.list.showCreator'),
+    'showTime'       => true,
+    'showSheets'     => true,
+    'showImages'     => $Site->getAttribute('quiqqer.settings.sitetypes.list.showImages'),
+    'showShort'      => true,
+    'showHeader'     => true,
+    'showContent'    => false,
+    'itemtype'       => 'http://schema.org/ItemList',
+    'child-itemtype' => 'http://schema.org/ListItem',
+    'display'        => $Site->getAttribute('quiqqer.settings.sitetypes.list.template'),
+    'children'       => $children
+));
+
 $Engine->assign(array(
     'Pagination'  => $Pagination,
     'sheets'      => $sheets,
     'children'    => $children,
-    'searchValue' => $searchValue
+    'searchValue' => $searchValue,
+    'ChildrenList'    => $ChildrenList
 ));
