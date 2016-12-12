@@ -51,12 +51,12 @@
 
                     {if $Child->getAttribute('image_site')}
                         {image src=$Child->getAttribute('image_site')
-                        style="width: 100%; height: auto;"
-                        maxwidth="280"}
+                            style="width: 100%; height: auto;"
+                            width="460"}
                     {else}
                         <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="width: 100%; height: auto;" />
                     {/if}
-                        </a>
+                    </a>
                 </div>
                 {/if}
 
@@ -100,9 +100,7 @@
                                             {if $this->getAttribute('showCreator') &&
                                             $this->getAttribute('showDate')} qui-list-entry-icon{/if}
                                     "></span>
-                                    <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
-                                    itemprop="datePublished"
-                                    >
+                                    <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}" itemprop="datePublished">
                                     {locale_date date=$Child->getAttribute('release_from')}
                                     </time>
                                 {else}
