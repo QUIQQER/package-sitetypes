@@ -104,11 +104,7 @@
                 >
         <div class="qui-list-entry-image grid-container">
             {if $Child->getAttribute('image_site')}
-            {image src=$Child->getAttribute('image_site')
-            style="width: 100%; height: auto;"
-            width="500"
-            type="resize"
-            }
+                {image src=$Child->getAttribute('image_site') width="500" type="resize"}
             {else}
             <img itemprop="qui-list-entry-image-img" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
                  class="list-image"/>

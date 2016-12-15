@@ -47,11 +47,7 @@
 
                 {if $this->getAttribute('showImages')}
                     {if $Child->getAttribute('image_site')}
-                        {image src=$Child->getAttribute('image_site')
-                        style="width: 100%; height: auto;"
-                        width="500"
-                        type="resize"
-                    }
+                        {image src=$Child->getAttribute('image_site') width="500" type="resize"}
                     {else}
                         <img itemprop="image" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
                              class="news-list-image"/>

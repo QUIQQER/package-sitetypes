@@ -50,9 +50,7 @@
                     {/if}
 
                     {if $Child->getAttribute('image_site')}
-                        {image src=$Child->getAttribute('image_site')
-                        style="width: 100%; height: auto;"
-                        width="400"}
+                        {image src=$Child->getAttribute('image_site') width="640"}
                     {else}
                         <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="width: 100%; height: auto;" />
                     {/if}
