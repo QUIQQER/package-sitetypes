@@ -92,3 +92,13 @@
     padding: 0;
     font-size: 0.9em;
 }
+
+/* hyphenate / word break */
+.control-news-list header {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word; /* Non standard for webkit */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
