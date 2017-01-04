@@ -93,6 +93,12 @@
     font-size: 0.9em;
 }
 
+.control-news-list-show-more {
+    font-weight: 500;
+    /*text-decoration: underline;*/
+    white-space: nowrap;
+}
+
 /* hyphenate / word break */
 .control-news-list header {
     -ms-word-break: break-all;
