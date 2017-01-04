@@ -116,6 +116,7 @@
     }
 
     .qui-list-entry-image {
-        height: 200px;
+        height: auto;
+        max-height: 150px;
     }
 }
