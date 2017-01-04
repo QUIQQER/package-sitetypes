@@ -94,8 +94,8 @@
 }
 
 .control-news-list-show-more {
+    display: inline-block;
     font-weight: 500;
-    /*text-decoration: underline;*/
     white-space: nowrap;
 }
 
