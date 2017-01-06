@@ -177,12 +177,12 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[Layout]]></en>
             <pl><![CDATA[Layout]]></pl>
         </locale>
-        <locale name="list.template.standardList">
+        <locale name="list.template.imageTop">
             <de><![CDATA[Bild oben]]></de>
             <en><![CDATA[Picture top]]></en>
             <pl><![CDATA[Zdjęcie na górze]]></pl>
         </locale>
-        <locale name="list.template.listWithBorder">
+        <locale name="list.template.imageTopBorder">
             <de><![CDATA[Bild oben (mit Rahmen)]]></de>
             <en><![CDATA[Picture top (with border)]]></en>
             <pl><![CDATA[Zdjęcie na górze (z ramką)]]></pl>
@@ -245,6 +245,12 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Datum anzeigen]]></de>
             <en><![CDATA[Show date]]></en>
             <pl><![CDATA[Pokaż datę]]></pl>
+        </locale>
+        <!-- show time -->
+        <locale name="quiqqer.sitetypes.list.settings.showTime">
+            <de><![CDATA[Uhrzeit anzeigen]]></de>
+            <en><![CDATA[Show time]]></en>
+            <pl><![CDATA[Pokaż godzinę]]></pl>
         </locale>
 
         <locale name="list.created.by">

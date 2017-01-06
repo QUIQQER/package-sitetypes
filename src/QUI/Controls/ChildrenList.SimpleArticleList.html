@@ -13,22 +13,22 @@
 
 {foreach from=$children item=Child}
 
-<div class="control-news-list">
-    <time class="control-news-list-time"
+<div class="qui-control-childrenlist-simpleArticleList">
+    <time class="qui-control-childrenlist-simpleArticleList-time"
           datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
           itemprop="datePublished"
           >
         {$Child->getAttribute('release_from')|date_format:"%d/%m/%y"}
     </time>
 
-    <a href="{url site=$Child}" class="control-news-list-link">
-        <header class="control-news-list-header">
+    <a href="{url site=$Child}" class="qui-control-childrenlist-simpleArticleList-link">
+        <header class="qui-control-childrenlist-simpleArticleList-header">
             <h1>{$Child->getAttribute('title')}</h1>
         </header>
         {if $this->getAttribute('showCreator')}
-        <span class="control-news-list-author colorFont fontColor">
+        <span class="qui-control-childrenlist-simpleArticleList-author colorFont fontColor">
             {user id=$Child->getAttribute('c_user') var=User}
-            <span class="fa fa-user news-list-time-icon"></span>
+            <span class="fa fa-user"></span>
             {if $User->getId() && $User->getAttribute('firstname')}
             {$User->getAttribute('firstname')}
             {else if $User->getId()}
@@ -37,7 +37,7 @@
         </span>
         {/if}
     </a>
-    <i class="fa fa-caret-right mainColor control-news-list-icon"></i>
+    <span class="fa fa-caret-right mainColor qui-control-childrenlist-simpleArticleList-icon"></span>
 
 </div>
 
