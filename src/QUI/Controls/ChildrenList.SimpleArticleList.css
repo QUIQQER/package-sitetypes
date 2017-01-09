@@ -1,0 +1,70 @@
+
+.qui-control-childrenlist-simpleArticleList {
+    font-size: 0.9em;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.qui-control-childrenlist-simpleArticleList h1 {
+    font-size: 1.2em;
+}
+
+.qui-control-childrenlist-simpleArticleList:first-child {
+    padding-top: 0;
+}
+
+.qui-control-childrenlist-simpleArticleList:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.qui-control-childrenlist-simpleArticleList-time {
+    margin-right: 10px;
+}
+
+.qui-control-childrenlist-simpleArticleList-header {
+    padding: 0;
+    display: flex;
+    align-content: space-between;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+a.qui-control-childrenlist-simpleArticleList-link {
+    width: 100%;
+    line-height: 1.1em;
+}
+
+.qui-control-childrenlist-simpleArticleList-header {
+    font-weight: 600;
+}
+
+.qui-control-childrenlist-simpleArticleList-author {
+    font-size: 10px;
+    margin-top: 0;
+    opacity: 0.6;
+    line-height: 1em;
+}
+
+.qui-control-childrenlist-simpleArticleList-icon {
+    font-size: 26px;
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
+.qui-control-childrenlist-simpleArticleList:hover .qui-control-childrenlist-simpleArticleList-icon {
+    opacity: 1;
+}
+
+/* hyphenate / word break */
+.qui-control-childrenlist-simpleArticleList header {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word; /* Non standard for webkit */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}

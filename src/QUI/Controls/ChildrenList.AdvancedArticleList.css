@@ -1,0 +1,105 @@
+.qui-control-childrenlist-advancedArticleList-wrapper {
+    display: block;
+    border-bottom: 1px solid #eee;
+    padding: 14px 0;
+}
+
+.qui-control-childrenlist-advancedArticleList-wrapper:first-child {
+    padding-top: 0;
+}
+
+.qui-control-childrenlist-advancedArticleList-wrapper:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.qui-control-childrenlist-advancedArticleList {
+    align-items: center;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+.qui-control-childrenlist-advancedArticleList-show-short {
+    padding-bottom: 6px;
+}
+
+.qui-control-childrenlist-advancedArticleList-header {
+    padding: 0;
+    display: flex;
+    align-content: space-between;
+    flex-grow: 1;
+    flex-direction: column;
+    line-height: 1.1em;
+    font-weight: 400;
+}
+
+.qui-control-childrenlist-advancedArticleList h1 {
+    font-size: 1.2em;
+}
+
+.qui-list-entry-header-link,
+.qui-list-entry-header-link:hover {
+    color: inherit;
+}
+.qui-control-childrenlist-advancedArticleList-link {
+    width: 100%;
+    line-height: 1.1em;
+}
+
+.qui-control-childrenlist-advancedArticleList-author {
+    font-size: 10px;
+    margin-top: 0;
+    opacity: 0.6;
+    line-height: 1em;
+}
+
+.qui-control-childrenlist-advancedArticleList-time {
+    border-left: 5px solid #eee;
+    padding: 0 10px;
+    color: #ccc;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.qui-control-childrenlist-advancedArticleList-time-no-date {
+    padding: 0;
+}
+
+.qui-control-childrenlist-advancedArticleList-day,
+.qui-control-childrenlist-advancedArticleList-month {
+    display: block;
+    text-align: center;
+    line-height: 1.1em;
+}
+
+.qui-control-childrenlist-advancedArticleList-day {
+    font-size: 1.6em;
+}
+
+.qui-control-childrenlist-advancedArticleList-wrapper:hover .qui-control-childrenlist-advancedArticleList-time {
+    color: #555;
+    border-color: #777;
+}
+
+.qui-control-childrenlist-advancedArticleList-short {
+    padding: 0;
+    font-size: 0.9em;
+}
+
+.qui-control-childrenlist-advancedArticleList-show-more {
+    display: inline-block;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* hyphenate / word break */
+.qui-control-childrenlist-advancedArticleList header {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word; /* Non standard for webkit */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
