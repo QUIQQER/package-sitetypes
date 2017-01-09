@@ -19,7 +19,7 @@
 {/if}
 
 <section itemscope itemtype="{$this->getAttribute('itemtype')}"
-         class="qui-control-list-section"
+         class="qui-control-childrenlist-authorTop-section"
 >
 <link property="mainEntityOfPage" href="{url site=$Site}">
 {assign var=counter value=1}
@@ -29,7 +29,7 @@
     <article itemscope
              itemprop="itemListElement"
              itemtype="{$this->getAttribute('child-itemtype')}"
-             class="qui-control-list-entry"
+             class="qui-control-childrenlist-authorTop-entry"
     >
         <meta itemprop="position" content="{$counter}" />
         {assign var=counter value=$counter+1}
@@ -50,11 +50,11 @@
             {/if}
 
             {if $this->getAttribute('showTime') || $this->getAttribute('showCreator')}
-            <p class="qui-control-list-entry-date">
+            <p class="qui-control-childrenlist-authorTop-entry-date">
                 {if $this->getAttribute('showCreator')}
                     {user id=$Child->getAttribute('c_user') var=User}
                     {t}quiqqer/sitetypes list.created.by{/t}
-                    <span class="qui-control-list-entry-date-author">
+                    <span class="qui-control-childrenlist-authorTop-entry-date-author">
                         {if $User->getId() && $User->getAttribute('firstname')}
                             {$User->getAttribute('firstname')}
                         {else if $User->getId()}
@@ -85,9 +85,9 @@
         </header>
         {/if}
 
-        <div class="qui-control-list-entry-content">
-            {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
-            {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
+        <div class="qui-control-childrenlist-authorTop-entry-content">
+            {assign var=noImageClass value=" qui-control-childrenlist-authorTop-entry-short-noImage"}
+            {assign var=noShortClass value=" qui-control-childrenlist-authorTop-entry-image-noShort"}
 
             {if $this->getAttribute('showImages')}
             {assign var=noImageClass value=""}
@@ -100,32 +100,32 @@
 
                 <a href="{url site=$Child}"
                    title="{$Child->getAttribute('title')|escape:"html"}"
-                   class="qui-control-list-entry-imagelink content-image-placeholder{$noShortClass}"
+                   class="qui-control-childrenlist-authorTop-entry-imagelink content-image-placeholder{$noShortClass}"
                 >
-        <div class="qui-list-entry-image grid-container">
-            {if $Child->getAttribute('image_site')}
-                {image src=$Child->getAttribute('image_site') width="500" type="resize"}
-            {else}
-            <img itemprop="qui-list-entry-image-img" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
-                 class="list-image"/>
-            {/if}
-        </div>
+                    <div class="qui-control-childrenlist-authorTop-entry-image grid-container">
+                        {if $Child->getAttribute('image_site')}
+                            {image src=$Child->getAttribute('image_site') width="500" type="resize"}
+                        {else}
+                        <img itemprop="image" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
+                             class="qui-control-childrenlist-authorTop-entry-image-img"/>
+                        {/if}
+                    </div>
                 </a>
 
 
             {if $this->getAttribute('showShort')}
-            <div class="qui-control-list-entry-short{$noImageClass}">
+            <div class="qui-control-childrenlist-authorTop-entry-short{$noImageClass}">
                 {$Child->getAttribute('short')|nl2br}
             </div>
             {/if}
 
             {if $this->getAttribute('showContent')}
-                <div class="qui-control-list-entry-content">
+                <div class="qui-control-childrenlist-authorTop-entry-content">
                     {$Child->getAttribute('content')}
                 </div>
             {/if}
 
-            <a itemprop="url" href="{url site=$Child}" class="button qui-control-list-entry-link">
+            <a itemprop="url" href="{url site=$Child}" class="button qui-control-childrenlist-authorTop-entry-link">
                 {locale group="quiqqer/sitetypes" value="list.more"}
             </a>
         </div>

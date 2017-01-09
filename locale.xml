@@ -77,7 +77,7 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/search.description">
-            <de>
+            <de>sta
                 <![CDATA[Der Benutzer gibt in ein Eingabefeld ein Stichwort ein, nach dem er Ihre Homepage durchsuchen möchte. Das Modul durchsucht nun die Datenbank nach allen relevanten Einträgen.]]></de>
             <en><![CDATA[]]></en>
         </locale>
@@ -177,6 +177,16 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[Layout]]></en>
             <pl><![CDATA[Layout]]></pl>
         </locale>
+        <locale name="list.template.imageTop">
+            <de><![CDATA[Bild oben]]></de>
+            <en><![CDATA[Picture top]]></en>
+            <pl><![CDATA[Zdjęcie na górze]]></pl>
+        </locale>
+        <locale name="list.template.imageTopBorder">
+            <de><![CDATA[Bild oben (mit Rahmen)]]></de>
+            <en><![CDATA[Picture top (with border)]]></en>
+            <pl><![CDATA[Zdjęcie na górze (z ramką)]]></pl>
+        </locale>
         <locale name="list.template.childrenList">
             <de><![CDATA[Standard]]></de>
             <en><![CDATA[Default]]></en>
@@ -235,6 +245,12 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Datum anzeigen]]></de>
             <en><![CDATA[Show date]]></en>
             <pl><![CDATA[Pokaż datę]]></pl>
+        </locale>
+        <!-- show time -->
+        <locale name="quiqqer.sitetypes.list.settings.showTime">
+            <de><![CDATA[Uhrzeit anzeigen]]></de>
+            <en><![CDATA[Show time]]></en>
+            <pl><![CDATA[Pokaż godzinę]]></pl>
         </locale>
 
         <locale name="list.created.by">

@@ -6,24 +6,24 @@
 {/if}
 
 {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
-<div class="control-news-list-title-wrapper">
-    <h1 class="control-news-list-title">
+<div class="qui-control-childrenlist-imageTopBorder-titleWrapper">
+    <h1 class="qui-control-childrenlist-imageTopBorder-titleWrapper-title">
         {$this->getAttribute('frontendTitle')}
     </h1>
 </div>
 {/if}
-<div class="control-news-list-border">
+<div class="qui-control-childrenlist-imageTopBorder-border">
 
     {foreach from=$children item=Child}
 
-    <article class="control-news-list">
+    <article class="qui-control-childrenlist-imageTopBorder">
 
         <!-- entry image -->
         {if $this->getAttribute('showImages')}
-        <div class="control-news-list-image">
-            <a href="{url site=$Child}" class="qui-list-entry-header-link">
-            {assign var=noImageClass value=" qui-control-list-entry-short-noImage"}
-            {assign var=noShortClass value=" qui-control-list-entry-image-noShort"}
+        <div class="qui-control-childrenlist-imageTopBorder-image">
+            <a href="{url site=$Child}" class="qui-control-childrenlist-imageTopBorderentry-header-link">
+            {assign var=noImageClass value=" qui-control-childrenlist-imageTopBorder-entry-short-noImage"}
+            {assign var=noShortClass value=" qui-control-childrenlist-imageTopBorder-entry-image-noShort"}
 
             {if $this->getAttribute('showImages')}
             {assign var=noImageClass value=""}
@@ -34,7 +34,7 @@
             {/if}
 
             {if $Child->getAttribute('image_site')}
-                {image src=$Child->getAttribute('image_site') width="460"}
+                {image src=$Child->getAttribute('image_site') width="800"}
             {else}
             <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="height: auto;" />
             {/if}
@@ -44,26 +44,25 @@
 
         <header>
             <h1>
-                <a href="{url site=$Child}" class="qui-list-entry-header-link">
+                <a href="{url site=$Child}" class="qui-control-childrenlist-imageTopBorder-entry-header-link">
                     {$Child->getAttribute('title')}
                 </a>
             </h1>
         </header>
 
         {if $this->getAttribute('showShort')}
-        <div class="control-news-list-short">
+        <div class="qui-control-childrenlist-imageTopBorder-short">
             {$Child->getAttribute('short')}
         </div>
         {/if}
 
-        {if $this->getAttribute('showDate') ||
-        $this->getAttribute('showDate') ||
+        {if $this->getAttribute('showDate') || $this->getAttribute('showDate') ||
         $this->getAttribute('showTime')}
-        <div class="control-news-list-time">
+        <div class="qui-control-childrenlist-imageTopBorder-footer">
 
             {if $this->getAttribute('showCreator')}
-            <div class="control-news-list-time-wrapper">
-                <span class="qui-control-list-entry-date-author control-news-list-span">
+            <div class="qui-control-childrenlist-imageTopBorder-footer-wrapper">
+                <span class="qui-control-childrenlist-imageTopBorder-footer-wrapper-author">
                     {user id=$Child->getAttribute('c_user') var=User}
                     <span class="fa fa-user news-list-time-icon"></span>
                     {if $User->getId() && $User->getAttribute('firstname')}
@@ -76,32 +75,30 @@
             {/if}
 
             {if $this->getAttribute('showDate') || $this->getAttribute('showTime')}
-            <div class="control-news-list-time-wrapper">
+            <div class="qui-control-childrenlist-imageTopBorder-footer-wrapper-time">
                 {if $Child->getAttribute('release_from') &&
                 $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
                 <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
                     itemprop="datePublished"
                     >
                     {if $this->getAttribute('showDate')}
-                    <span class="control-news-list-span">
-                        <span class="fa fa-calendar news-list-time-icon"></span>
-                        {*locale_date date=$Child->getAttribute('release_from')|date_format:"%d/%m/%Y - %H:%M:%S"*}
-                        {*$Child->getAttribute('release_from')|date_format:$this->getAttribute('dateFormat')*}
-                        {$Child->getAttribute('release_from')|date_format:"%d/%m/%Y"}
-                    </span>
+                        <span class="qui-control-childrenlist-imageTopBorder-footer-wrapper-date">
+                            <span class="fa fa-calendar"></span>
+                            {$Child->getAttribute('release_from')|date_format:"%d/%m/%Y"}
+                        </span>
                     {/if}
+
                     {if $this->getAttribute('showTime')}
-                    <span class="control-news-list-span">
-                        <span class="fa fa-clock-o news-list-time-icon"></span>
-                        {$Child->getAttribute('release_from')|date_format:"%H:%M"}
-                    </span>
+                        <span class="qui-control-childrenlist-imageTopBorder-footer-wrapper-time">
+                            <span class="fa fa-clock-o"></span>
+                            {$Child->getAttribute('release_from')|date_format:"%H:%M"}
+                        </span>
                     {/if}
-                </time>
+                    </time>
                 {else}
                 <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}"
-                    itemprop="datePublished"
-                    >
-                    <span class="fa fa-calendar news-list-time-icon"></span>
+                    itemprop="datePublished">
+                    <span class="fa fa-calendar"></span>
                     {locale_date date=$Child->getAttribute('c_date')}
                 </time>
 

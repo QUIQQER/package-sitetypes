@@ -110,4 +110,9 @@
     .qui-list-row:last-child .qui-list-entry:last-child {
         border-bottom: none;
     }
+
+    .qui-list-entry-image {
+        height: auto;
+        max-height: 150px;
+    }
 }

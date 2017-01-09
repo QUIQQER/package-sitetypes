@@ -1,15 +1,5 @@
 @CHARSET "UTF-8";
 
-.qui-control-list {
-    /*padding: 20px 0 0;*/
-}
-
-.qui-control-list hr {
-    clear: both;
-    float: left;
-    width: 100%;
-}
-
 .qui-control-list-entry {
     clear: both;
     float: left;
@@ -18,26 +8,26 @@
     width: 100%;
 }
 
-.qui-control-list-entry a {
+.qui-control-childrenlist-authorTop-entry a {
     text-decoration: none;
 }
 
-a.qui-control-list-entry-imagelink {
+a.qui-control-childrenlist-authorTop-entry-imagelink {
     color: inherit;
 }
 
-.qui-control-list-entry:first-child {
+.qui-control-childrenlist-authorTop-entry:first-child {
     padding: 20px 0 40px 0;
 }
 
-.qui-control-list-entry:last-child {
+.qui-control-childrenlist-authorTop-entry:last-child {
     border-bottom: none;
     padding: 40px 0 20px 0;
 }
 
 
 @media screen and (max-width: 767px) {
-    .qui-control-list-entry {
+    .qui-control-childrenlist-authorTop-entry {
         background: none;
         border: none;
         border-radius: 0;
@@ -45,25 +35,25 @@ a.qui-control-list-entry-imagelink {
     }
 }
 
-.qui-control-list-entry header {
+.qui-control-childrenlist-authorTop-entry header {
     margin: 0;
 }
 
-.qui-control-list-entry h2 {
+.qui-control-childrenlist-authorTop-entry h2 {
     float: left;
     margin: 0 0 20px 0;
     padding: 0;
     width: 100%;
 }
 
-.qui-control-list-entry-date {
+.qui-control-childrenlist-authorTop-entry-date {
     clear: both;
     color: rgba(128, 128, 128, 0.75);
     font-size: 0.8em;
     margin: 0;
 }
 
-.qui-control-list-entry-content {
+.qui-control-childrenlist-authorTop-entry-content {
     clear: both;
     float: left;
     margin: 1.5em 0 0;
@@ -72,7 +62,7 @@ a.qui-control-list-entry-imagelink {
 
 /* ----------- FIX --------------- */
 
-.qui-control-list-entry-imagelink {
+.qui-control-childrenlist-authorTop-entry-imagelink {
     border: 1px solid #EEEEEE;
     display: block;
     float: left;
@@ -82,7 +72,7 @@ a.qui-control-list-entry-imagelink {
     width: 33%;;
 }
 
-.qui-control-list-entry-imagelink::before {
+.qui-control-childrenlist-authorTop-entry::before {
     content: "";
     display: block;
     height: 100%;
@@ -90,7 +80,7 @@ a.qui-control-list-entry-imagelink {
     width: 100%;
 }
 
-.qui-control-list-entry-imagelink-fix {
+.qui-control-childrenlist-authorTop-entry-fix {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -104,7 +94,7 @@ a.qui-control-list-entry-imagelink {
 
 /* -------------------------- */
 
-.qui-control-list-entry-imagelink:hover {
+.qui-control-childrenlist-authorTop-entry-imagelink:hover {
     background-color: transparent !important;
     background-position: center center;
     background-repeat: no-repeat;
@@ -115,37 +105,32 @@ a.qui-control-list-entry-imagelink {
     display: none;
 }*/
 
-.qui-list-entry-image span.quiqqer-icon {
+.qui-control-childrenlist-authorTop-entry-image span.quiqqer-icon {
     font-size: 120px;
 }
 
-.qui-list-entry-image {
-    padding-left: 0;
-}
-
-.qui-control-list-entry-image {
+.qui-control-childrenlist-authorTop-entry-image {
     margin: 0;
     padding: 0;
 }
 
-
-.qui-control-list-entry-short {
+.qui-control-childrenlist-authorTop-entry-short {
     float: left;
     padding-left: 20px;
     width: 66%;
 }
 
-.qui-control-list-entry-short-noImage {
+.qui-control-childrenlist-authorTop-entry-noImage {
     padding-left: 0 !important;
     width: 100%;
 }
 
-.qui-control-list-entry-image-noShort {
+.qui-control-childrenlist-authorTop-entry-noShort {
     height: 200px;
     width: 100%;
 }
 
-.qui-control-list-entry-link {
+.qui-control-childrenlist-authorTop-entry-link {
     clear: both;
     float: right !important;
     margin-top: 20px;

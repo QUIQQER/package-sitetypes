@@ -124,7 +124,6 @@ class ChildrenList extends QUI\Control
             ));
         }
 
-
         $Pagination->setAttribute('limit', $limit);
         $Pagination->setAttribute('sheets', $sheets);
 
@@ -184,14 +183,14 @@ class ChildrenList extends QUI\Control
                 $template = dirname(__FILE__) . '/ChildrenList.AdvancedArticleList.html';
                 break;
 
-            case 'listWithBorder':
-                $css      = dirname(__FILE__) . '/ChildrenList.ListWithBorder.css';
-                $template = dirname(__FILE__) . '/ChildrenList.ListWithBorder.html';
+            case 'imageTopBorder':
+                $css      = dirname(__FILE__) . '/ChildrenList.ImageTopBorder.css';
+                $template = dirname(__FILE__) . '/ChildrenList.ImageTopBorder.html';
                 break;
 
-            case 'standardList':
-                $css      = dirname(__FILE__) . '/ChildrenList.StandardList.css';
-                $template = dirname(__FILE__) . '/ChildrenList.StandardList.html';
+            case 'imageTop':
+                $css      = dirname(__FILE__) . '/ChildrenList.ImageTop.css';
+                $template = dirname(__FILE__) . '/ChildrenList.ImageTop.html';
                 break;
         }
 

@@ -1,0 +1,100 @@
+
+.qui-control-childrenlist-imageTopBorder-titleWrapper {
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    background: #eee;
+    font-weight: 600;
+    padding: 0 20px;
+}
+
+h1.qui-control-childrenlist-imageTopBorder-titleWrapper-title {
+    padding-bottom: 0;
+    line-height: 2em;
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+
+.qui-control-childrenlist-imageTopBorder-border {
+    padding: 20px;
+    border: 1px solid #eee;
+}
+
+.qui-control-childrenlist-imageTopBorder h1 {
+    font-size: 1.5em;
+}
+
+.qui-control-childrenlist-imageTopBorder {
+    font-size: 0.9em;
+    padding: 1em 0;
+    border-bottom: 1px solid #eee;
+}
+
+.qui-control-childrenlist-imageTopBorder:first-child {
+    padding-top: 0;
+}
+
+.qui-control-childrenlist-imageTopBorder:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.qui-control-childrenlist-imageTopBorder-entry-header-link,
+.qui-control-childrenlist-imageTopBorder-entry-header-link:hover {
+    color: inherit;
+}
+
+.qui-control-childrenlist-imageTopBorder-image {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.qui-control-childrenlist-imageTopBorder-image .quiqqer-icon {
+    font-size: 100px;
+}
+
+.qui-control-childrenlist-imageTopBorder header {
+    padding-bottom: 10px;
+}
+
+.qui-control-childrenlist-imageTopBorder-short {
+    line-height: 1.5em;
+}
+
+
+/* author and date */
+
+.qui-control-childrenlist-imageTopBorder-footer {
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.qui-control-childrenlist-imageTopBorder-footer-wrapper {
+    display: inline-block;
+    text-align: right;
+}
+
+.qui-control-childrenlist-imageTopBorder-footer-wrapper-author {
+    font-style: italic;
+}
+
+.news-list-time-icon {
+    margin-right: 1px;
+}
+
+.qui-control-childrenlist-imageTopBorder-footer-wrapper-time {
+    margin-left: 16px;
+}
+
+/* hyphenate / word break */
+.qui-control-childrenlist-imageTopBorder header {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word; /* Non standard for webkit */
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}

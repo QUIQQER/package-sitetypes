@@ -1,5 +1,5 @@
 
-.control-news-list {
+.qui-control-childrenlist-simpleArticleList {
     font-size: 0.9em;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
@@ -8,24 +8,24 @@
     align-items: center;
 }
 
-.control-news-list h1 {
+.qui-control-childrenlist-simpleArticleList h1 {
     font-size: 1.2em;
 }
 
-.control-news-list:first-child {
+.qui-control-childrenlist-simpleArticleList:first-child {
     padding-top: 0;
 }
 
-.control-news-list:last-child {
+.qui-control-childrenlist-simpleArticleList:last-child {
     padding-bottom: 0;
     border-bottom: none;
 }
 
-.control-news-list-time {
+.qui-control-childrenlist-simpleArticleList-time {
     margin-right: 10px;
 }
 
-.control-news-list-header {
+.qui-control-childrenlist-simpleArticleList-header {
     padding: 0;
     display: flex;
     align-content: space-between;
@@ -33,34 +33,34 @@
     flex-direction: column;
 }
 
-a.control-news-list-link {
+a.qui-control-childrenlist-simpleArticleList-link {
     width: 100%;
     line-height: 1.1em;
 }
 
-.control-news-list-header {
+.qui-control-childrenlist-simpleArticleList-header {
     font-weight: 600;
 }
 
-.control-news-list-author {
+.qui-control-childrenlist-simpleArticleList-author {
     font-size: 10px;
     margin-top: 0;
     opacity: 0.6;
     line-height: 1em;
 }
 
-.control-news-list-icon {
+.qui-control-childrenlist-simpleArticleList-icon {
     font-size: 26px;
     opacity: 0.5;
     transition: all 0.3s;
 }
 
-.control-news-list:hover .control-news-list-icon {
+.qui-control-childrenlist-simpleArticleList:hover .qui-control-childrenlist-simpleArticleList-icon {
     opacity: 1;
 }
 
 /* hyphenate / word break */
-.control-news-list header {
+.qui-control-childrenlist-simpleArticleList header {
     -ms-word-break: break-all;
     word-break: break-all;
     word-break: break-word; /* Non standard for webkit */
