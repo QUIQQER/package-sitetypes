@@ -298,6 +298,14 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Datenschutz-Bestimmungen]]></de>
             <en><![CDATA[Privacy policy]]></en>
         </locale>
+        <locale name="admin.types.generalTermsAndConditions">
+            <de><![CDATA[Allgemeine Geschäftsbedingungen]]></de>
+            <en><![CDATA[General terms and conditions]]></en>
+        </locale>
+        <locale name="admin.types.generalTermsAndConditions.desc">
+            <de><![CDATA[Allgemeine Geschäftsbedingungen]]></de>
+            <en><![CDATA[General terms and conditions]]></en>
+        </locale>
 
         <!-- brick standard list -->
         <locale name="standard.list.title">
