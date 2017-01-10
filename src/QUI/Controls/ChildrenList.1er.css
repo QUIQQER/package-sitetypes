@@ -20,7 +20,7 @@
     border-bottom: none;
 }
 
-.qui-control-childrenlist-1er-entry:hover .qui-control-childrenlist-1er-entry-footer-button {
+.qui-control-childrenlist-1er-entry:hover .qui-control-childrenlist-1er-entry-content-footer-button {
     opacity: 0.8;
 }
 
@@ -41,11 +41,6 @@
     font-size: 180px;
 }
 
-.qui-control-childrenlist-1er-entry-headerLink,
-.qui-control-childrenlist-1er-entry-headerLink:hover {
-    color: inherit;
-}
-
 .qui-control-childrenlist-1er-entry-content {
     text-align: center;
     display: flex;
@@ -54,32 +49,45 @@
     flex-grow: 1;
 }
 
+.qui-control-childrenlist-1er-entry-content-headerLink,
+.qui-control-childrenlist-1er-entry-content-headerLink:hover {
+    color: inherit;
+}
+
 .qui-control-childrenlist-1er-entry-content h1 {
     font-weight: bold;
     font-size: 1.3em;
 }
 
-.qui-control-childrenlist-1er-entry-short {
+.qui-control-childrenlist-1er-entry-content-short {
     font-size: 0.9em;
     margin-bottom: 20px;
 }
 
-.qui-control-childrenlist-1er-entry-footer {
+.qui-control-childrenlist-1er-entry-content-footer {
     margin-top: auto;
     font-size: 0.9em;
 }
 
-.qui-control-childrenlist-1er-entry-footer-author-and-date {
+.qui-control-childrenlist-1er-entry-content-footer-authorDate {
     font-style: italic;
     font-size: 0.9em;
     margin-bottom: 30px;
 }
 
-.qui-control-childrenlist-1er-entry-icon {
-    margin-left: 20px;
+.qui-control-childrenlist-1er-entry-content-footer-author,
+.qui-control-childrenlist-1er-entry-content-footer-date,
+.qui-control-childrenlist-1er-entry-content-footer-time {
+    margin-right: 15px;
 }
 
-.qui-control-childrenlist-1er-entry-footer-button {
+.qui-control-childrenlist-1er-entry-content-footer-author:last-child,
+.qui-control-childrenlist-1er-entry-content-footer-date:last-child,
+.qui-control-childrenlist-1er-entry-content-footer-time:last-child {
+    margin-right: 0;
+}
+
+.qui-control-childrenlist-1er-entry-content-footer-button {
     font-weight: 300;
     display: inline-block;
     font-size: 1.1em;
