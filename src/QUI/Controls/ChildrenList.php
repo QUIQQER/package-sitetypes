@@ -38,8 +38,9 @@ class ChildrenList extends QUI\Control
             'parentInputList' => false,
             'where'           => false,
             'itemtype'        => 'http://schema.org/ItemList',
-            'child-itemtype'  => 'http://schema.org/NewsArticle',
-            'display'         => 'childrenlist',
+            'child-itemtype'  => 'https://schema.org/ListItem',
+            'child-itemprop'  => 'itemListElement',
+            'display'         => 'childrenlist', // layout / design
             'nodeName'        => 'section',
             'children'        => false // list of sites to display,
             // if children is set, Site or parentInputList would be used
