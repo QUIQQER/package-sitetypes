@@ -101,8 +101,8 @@ $ChildrenList = new QUI\Controls\ChildrenList(array(
     'limit'          => $max,
     'showDate'       => $Site->getAttribute('quiqqer.settings.sitetypes.list.showDate'),
     'showCreator'    => $Site->getAttribute('quiqqer.settings.sitetypes.list.showCreator'),
-    'showTime'       => true,
-    'showSheets'     => true,
+    'showTime'       => false,
+    'showSheets'     => false,
     'showImages'     => $Site->getAttribute('quiqqer.settings.sitetypes.list.showImages'),
     'showShort'      => true,
     'showHeader'     => true,
@@ -110,7 +110,7 @@ $ChildrenList = new QUI\Controls\ChildrenList(array(
     'itemtype'       => 'http://schema.org/ItemList',
     'child-itemtype' => 'http://schema.org/ListItem',
     'display'        => $Site->getAttribute('quiqqer.settings.sitetypes.list.template'),
-    'children'       => $children
+    'children'       => $children,
 ));
 
 $Engine->assign(array(
