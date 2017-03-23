@@ -234,6 +234,20 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <pl><![CDATA[4 treści w rzędzie]]></pl>
         </locale>
 
+        <!-- show images -->
+        <locale name="quiqqer.sitetypes.list.settings.showImages">
+            <de><![CDATA[Bild anzeigen]]></de>
+            <en><![CDATA[Show image]]></en>
+            <pl><![CDATA[Pokaż zdjęcie]]></pl>
+        </locale>
+
+        <!-- show short -->
+        <locale name="quiqqer.sitetypes.list.settings.showShort">
+            <de><![CDATA[Kurzbeschreibung anzeigen]]></de>
+            <en><![CDATA[Show short description]]></en>
+            <pl><![CDATA[Pokaż krótki opis newsa]]></pl>
+        </locale>
+
         <!-- show author -->
         <locale name="quiqqer.sitetypes.list.settings.showCreator">
             <de><![CDATA[Autor anzeigen]]></de>

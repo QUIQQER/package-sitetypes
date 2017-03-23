@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.qui-control-childrenlist-simpleArticleList h1 {
+.qui-control-childrenlist-simpleArticleList header {
     font-size: 1.2em;
 }
 
@@ -34,12 +34,13 @@
 }
 
 a.qui-control-childrenlist-simpleArticleList-link {
+    color: inherit;
+    line-height: 1.5em;
     width: 100%;
-    line-height: 1.1em;
 }
 
 .qui-control-childrenlist-simpleArticleList-header {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .qui-control-childrenlist-simpleArticleList-author {

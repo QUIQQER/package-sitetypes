@@ -11,34 +11,44 @@
 </div>
 {/if}
 
-{foreach from=$children item=Child}
+<div itemscope itemtype="{$this->getAttribute('itemtype')}">
 
-<div class="qui-control-childrenlist-simpleArticleList">
-    <time class="qui-control-childrenlist-simpleArticleList-time"
-          datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
-          itemprop="datePublished"
-          >
-        {$Child->getAttribute('release_from')|date_format:"%d/%m/%y"}
-    </time>
+    {assign var=counter value=1}
 
-    <a href="{url site=$Child}" class="qui-control-childrenlist-simpleArticleList-link">
-        <header class="qui-control-childrenlist-simpleArticleList-header">
-            <h1>{$Child->getAttribute('title')}</h1>
-        </header>
-        {if $this->getAttribute('showCreator')}
-        <span class="qui-control-childrenlist-simpleArticleList-author colorFont fontColor">
-            {user id=$Child->getAttribute('c_user') var=User}
-            <span class="fa fa-user"></span>
-            {if $User->getId() && $User->getAttribute('firstname')}
-            {$User->getAttribute('firstname')}
-            {else if $User->getId()}
-            {$User->getname()}
-            {/if}
-        </span>
-        {/if}
-    </a>
-    <span class="fa fa-caret-right mainColor qui-control-childrenlist-simpleArticleList-icon"></span>
+    {foreach from=$children item=Child}
+        <div class="qui-control-childrenlist-simpleArticleList"
+             itemscope
+             itemtype="{$this->getAttribute('child-itemtype')}"
+             itemprop="{$this->getAttribute('child-itemprop')}">
+
+            <meta itemprop="position" content="{$counter}"/>
+            {assign var=counter value=$counter+1}
+
+            <time class="qui-control-childrenlist-simpleArticleList-time"
+                  pubdate datetime="{$Child->getAttribute('release_from')|date_format:"c"}">
+                {$Child->getAttribute('release_from')|date_format:"%d/%m/%y"}
+            </time>
+
+            <a href="{url site=$Child}" class="qui-control-childrenlist-simpleArticleList-link"
+                itemprop="url">
+                <header class="qui-control-childrenlist-simpleArticleList-header">
+                    <span itemprop="name">{$Child->getAttribute('title')}</span>
+                </header>
+                {if $this->getAttribute('showCreator')}
+                <span class="qui-control-childrenlist-simpleArticleList-author colorFont fontColor">
+                    {user id=$Child->getAttribute('c_user') var=User}
+                    <span class="fa fa-user"></span>
+                    {if $User->getId() && $User->getAttribute('firstname')}
+                        <span itemprop="author">{$User->getAttribute('firstname')}</span>
+                    {else if $User->getId()}
+                        <span itemprop="author">{$User->getname()}</span>
+                    {/if}
+                </span>
+                {/if}
+            </a>
+            <span class="fa fa-caret-right mainColor qui-control-childrenlist-simpleArticleList-icon"></span>
+
+        </div>
+    {/foreach}
 
 </div>
-
-{/foreach}

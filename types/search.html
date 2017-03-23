@@ -22,6 +22,7 @@
     </form>
 
     <section class="content-template grid-100 mobile-grid-100 grid-parent qui-search-result-list">
+        {$Pagination->create()}
     {if empty($children)}
         {if isset($smarty.request.search)}
         <div class="qui-search-result-list-message">
@@ -34,9 +35,9 @@
 
         {$ChildrenList->create()}
 
-        {*$Pagination->create()}
+        {$Pagination->create()}
 
-        {foreach from=$children item=Child}
+        {*foreach from=$children item=Child}
         {assign var=Child value=$Child->load()}
 
             <article class="qui-search-result-list-entry">
@@ -83,7 +84,6 @@
             </article>
         {/foreach*}
 
-        {$Pagination->create()}
     {/if}
 
     </section>
