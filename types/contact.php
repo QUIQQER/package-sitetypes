@@ -33,7 +33,7 @@ if (isset($_POST['name'])
             $Mail->setFromName($_POST['name']);
 
             $Mail->addRecipient($reciever);
-            $Mail->setSubject($this->getAttribute('title'));
+            $Mail->setSubject($Site->getAttribute('title'));
 
             $Mail->setBody(
                 "E-Mail: " . $_POST['email'] . "<br />" .

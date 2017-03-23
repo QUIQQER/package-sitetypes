@@ -65,4 +65,37 @@ class EventHandler
             $Site->setAttribute('nocache', 1);
         }
     }
+
+    /**
+     * event: on template get header
+     *
+     * @param QUI\Template $TemplateManager
+     */
+    public static function onTemplateGetHeader(QUI\Template $TemplateManager)
+    {
+        $privacyPolicyUrl = '';
+
+        try {
+            /* @var $Project QUI\Projects\Project */
+            $Project = $TemplateManager->getAttribute('Project');
+
+            $sites = $Project->getSites(array(
+                'where' => array(
+                    'type' => 'quiqqer/sitetypes:types/privacypolicy'
+                ),
+                'limit' => 1
+            ));
+
+            if (isset($sites[0])) {
+                $privacyPolicyUrl = $sites[0]->getUrlRewritten();
+            }
+        } catch (QUI\Exception $Exception) {
+        }
+
+        $header = '<script type="text/javascript">';
+        $header .= 'var QUIQQER_PRIVACY_POLICY_URL = "' . $privacyPolicyUrl . '";';
+        $header .= '</script>';
+
+        $TemplateManager->extendHeader($header);
+    }
 }
