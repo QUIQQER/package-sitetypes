@@ -126,7 +126,7 @@
         </type>
 
         <!-- Kontakt / Contact -->
-        <type type="types/contact" icon="fa fa-envelope-alt">
+        <type type="types/contact" icon="fa fa-envelope-open-o">
             <locale group="quiqqer/sitetypes" var="admin.types.contact"/>
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.contact.desc"/>
@@ -377,7 +377,7 @@
         </type>
 
         <!-- Sitemap -->
-        <type type="types/sitemap">
+        <type type="types/sitemap" icon="fa fa-sitemap">
             <locale group="quiqqer/sitetypes" var="admin.types.sitemap"/>
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.sitemap.desc"/>
@@ -385,7 +385,7 @@
         </type>
 
         <!-- Sitemap Block -->
-        <type type="types/sitemap-block">
+        <type type="types/sitemap-block" icon="fa fa-bars">
             <locale group="quiqqer/sitetypes" var="admin.types.sitemap-block"/>
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.sitemap-block.desc"/>
