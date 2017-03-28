@@ -81,6 +81,38 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
                 <![CDATA[Der Benutzer gibt in ein Eingabefeld ein Stichwort ein, nach dem er Ihre Homepage durchsuchen möchte. Das Modul durchsucht nun die Datenbank nach allen relevanten Einträgen.]]></de>
             <en><![CDATA[]]></en>
         </locale>
+        <locale name="quiqqer/sitetypes:types/contact.title">
+            <de><![CDATA[Standard-Kontaktformular]]></de>
+            <en><![CDATA[]]></en>
+        </locale>
+        <locale name="quiqqer/sitetypes:types/generalTermsAndConditions.title">
+            <de><![CDATA[Nutzungsbedingungen / AGB]]></de>
+            <en><![CDATA[Terms of use]]></en>
+        </locale>
+        <locale name="quiqqer/sitetypes:types/generalTermsAndConditions.description" html="true">
+            <de><![CDATA[
+            Dieser Seitentyp stellt für die Nutzer Nutzungsbedingungen zur Verfügung,welche der Nutzer bei der Anmeldung bestätigen muss.
+            Der Seitentyp dient dem QUIQQER System dazu automatisch auf die Inhalte dieses Typs zuzugreifen und diese an geeigneter Stelle anzuzeigen
+            ]]></de>
+            <en><![CDATA[
+            This page type provides the user with conditions of use, which the user has to confirm when signing up.
+            The page type automatically serves the QUIQQER system to access the content of this type and display it in a suitable place
+            ]]></en>
+        </locale>
+        <locale name="quiqqer/sitetypes:types/privacypolicy.title">
+            <de><![CDATA[Datenschutzbestimmungen]]></de>
+            <en><![CDATA[Privacy Policy]]></en>
+        </locale>
+        <locale name="quiqqer/sitetypes:types/privacypolicy.description" html="true">
+            <de><![CDATA[
+            Dieser Seitentyp stellt für die Nutzer Datenschutzbestimmungen zur Verfügung, welche der Nutzer bei der Anmeldung bestätigen muss.
+            Der Seitentyp dient dem QUIQQER System dazu automatisch auf die Inhalte dieses Typs zuzugreifen und diese an geeigneter Stelle anzuzeigen.
+            ]]></de>
+            <en><![CDATA[
+            This page type provides the users with data protection regulations, which must be confirmed by the user when signing up.
+             The page type automatically serves the QUIQQER system to access the content of this type and display it in a suitable place.
+            ]]></en>
+        </locale>
     </groups>
     <groups name="quiqqer/sitetypes" datatype="php">
         <locale name="list.more">
@@ -345,12 +377,6 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
         <locale name="standard.list.description">
             <de><![CDATA[Datenschutz-Bestimmungen]]></de>
             <en><![CDATA[Privacy policy]]></en>
-        </locale>
-    </groups>
-    <groups name="quiqqer/sitetypes" datatype="php,js ">
-        <locale name="quiqqer/sitetypes:types/contact.title">
-            <de><![CDATA[Standard-Kontaktformular]]></de>
-            <en><![CDATA[]]></en>
         </locale>
     </groups>
 </locales>
