@@ -22,7 +22,9 @@
     </form>
 
     <section class="content-template grid-100 mobile-grid-100 grid-parent qui-search-result-list">
+    {if !empty($children)}
         {$Pagination->create()}
+    {/if}
     {if empty($children)}
         {if isset($smarty.request.search)}
         <div class="qui-search-result-list-message">
