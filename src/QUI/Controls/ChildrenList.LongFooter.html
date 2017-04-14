@@ -33,30 +33,32 @@
         <div class="qui-control-childrenlist-longFooter-entry-box">
 
             <!-- entry image -->
+
+            {assign var=noImageClass value=" qui-control-childrenlist-longFooter-entry-short-noImage"}
+            {assign var=noShortClass value=" qui-control-childrenlist-longFooter-entry-image-noShort"}
+
+            {if $this->getAttribute('showImages')}
+                {assign var=noImageClass value=""}
+            {/if}
+
+            {if $this->getAttribute('showShort')}
+                {assign var=noShortClass value=""}
+            {/if}
+
+            {if $this->getAttribute('showImages')}
             <div class="qui-control-childrenlist-longFooter-entry-image grid-40 grid-container">
-                {assign var=noImageClass value=" qui-control-childrenlist-longFooter-entry-short-noImage"}
-                {assign var=noShortClass value=" qui-control-childrenlist-longFooter-entry-image-noShort"}
-
-                {if $this->getAttribute('showImages')}
-                    {assign var=noImageClass value=""}
-                {/if}
-
-                {if $this->getAttribute('showShort')}
-                    {assign var=noShortClass value=""}
-                {/if}
-
-                {if $this->getAttribute('showImages')}
-                    {if $Child->getAttribute('image_site')}
-                        {image src=$Child->getAttribute('image_site') width="500" type="resize"}
-                    {else}
-                        <img itemprop="image" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
-                             class="qui-control-childrenlist-longFooter-entry-image-img"/>
-                    {/if}
+                {if $Child->getAttribute('image_site')}
+                    {image src=$Child->getAttribute('image_site') width="500" type="resize"}
+                {else}
+                    <img itemprop="image" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
+                         class="qui-control-childrenlist-longFooter-entry-image-img"/>
                 {/if}
             </div>
+            {/if}
 
             <!-- entry content -->
-            <div class="qui-control-childrenlist-longFooter-entry-content grid-60 grid-container">
+            <div class="qui-control-childrenlist-longFooter-entry-content
+                        {if !$noImageClass}grid-60{/if} grid-container {$noImageClass}">
 
                 {if $this->getAttribute('showHeader')}
                 <header>
