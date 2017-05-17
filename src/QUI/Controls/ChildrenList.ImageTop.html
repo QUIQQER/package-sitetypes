@@ -83,7 +83,7 @@
                 {if $this->getAttribute('showDate')}
                     <span class="qui-control-childrenlist-imageTop-footer-wrapper-date">
                         <span class="fa fa-calendar"></span>
-                        {$Child->getAttribute('release_from')|date_format:"%d/%m/%Y"}
+                        {locale_date date=$Child->getAttribute('release_from')}
                     </span>
                 {/if}
 

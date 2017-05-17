@@ -49,9 +49,9 @@
                 {user id=$Child->getAttribute('c_user') var=User}
                 <span class="fa fa-user"></span>
                 {if $User->getId() && $User->getAttribute('firstname')}
-                {$User->getAttribute('firstname')}
+                    {$User->getAttribute('firstname')}
                 {else if $User->getId()}
-                {$User->getname()}
+                    {$User->getname()}
                 {/if}
             </span>
             {/if}
