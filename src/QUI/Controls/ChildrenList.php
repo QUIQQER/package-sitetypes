@@ -41,6 +41,8 @@ class ChildrenList extends QUI\Control
             'child-itemtype'  => 'https://schema.org/ListItem',
             'child-itemprop'  => 'itemListElement',
             'display'         => 'childrenlist', // layout / design
+            'displayTemplate' => false, // Custom children template (path to html file); overwrites "display"
+            'displayCss'      => false, // Custom children template css (path to css file); overwrites "display"
             'nodeName'        => 'section',
             'children'        => false // list of sites to display,
             // if children is set, Site or parentInputList would be used
@@ -136,6 +138,19 @@ class ChildrenList extends QUI\Control
             'children'   => $children,
             'Pagination' => $Pagination
         ));
+
+        // load custom template (if set)
+        if ($this->getAttribute('displayTemplate')
+            && file_exists($this->getAttribute('displayTemplate'))
+        ) {
+            if ($this->getAttribute('displayCss')
+                && file_exists($this->getAttribute('displayCss'))
+            ) {
+                $this->addCSSFile($this->getAttribute('displayCss'));
+            }
+
+            return $Engine->fetch($this->getAttribute('displayTemplate'));
+        }
 
         switch ($this->getAttribute('display')) {
             default:
