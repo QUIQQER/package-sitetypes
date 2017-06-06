@@ -30,11 +30,7 @@
                 {assign var=noShortClass value=""}
             {/if}
 
-            {if $Child->getAttribute('image_site')}
-                {image src=$Child->getAttribute('image_site') width="800"}
-            {else}
-                <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="height: auto;" />
-            {/if}
+            {image src=$Child->getAttribute('image_site') width="800"}
         </a>
     </div>
     {/if}

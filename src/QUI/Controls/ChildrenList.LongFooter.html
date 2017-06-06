@@ -33,7 +33,6 @@
         <div class="qui-control-childrenlist-longFooter-entry-box">
 
             <!-- entry image -->
-
             {assign var=noImageClass value=" qui-control-childrenlist-longFooter-entry-short-noImage"}
             {assign var=noShortClass value=" qui-control-childrenlist-longFooter-entry-image-noShort"}
 
@@ -47,12 +46,7 @@
 
             {if $this->getAttribute('showImages')}
             <div class="qui-control-childrenlist-longFooter-entry-image grid-40 grid-container">
-                {if $Child->getAttribute('image_site')}
-                    {image src=$Child->getAttribute('image_site') width="500" type="resize"}
-                {else}
-                    <img itemprop="image" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
-                         class="qui-control-childrenlist-longFooter-entry-image-img"/>
-                {/if}
+                {image src=$Child->getAttribute('image_site') width="500" type="resize"}
             </div>
             {/if}
 

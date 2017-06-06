@@ -44,12 +44,7 @@
 
         {if $this->getAttribute('showImages')}
         <div class="qui-control-childrenlist-default-entry-image grid-40 grid-container">
-            {if $Child->getAttribute('image_site')}
-                {image src=$Child->getAttribute('image_site') width="500" type="resize"}
-            {else}
-            <img itemprop="qui-control-childrenlist-default-entry-image-img" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
-                 class="list-image"/>
-            {/if}
+            {image src=$Child->getAttribute('image_site') width="500" type="resize"}
         </div>
         {/if}
         <!-- entry content -->
