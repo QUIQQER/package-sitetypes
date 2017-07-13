@@ -103,12 +103,12 @@
                    class="qui-control-childrenlist-authorTop-entry-imagelink content-image-placeholder{$noShortClass}"
                 >
                     <div class="qui-control-childrenlist-authorTop-entry-image grid-container">
-                        {if $Child->getAttribute('image_site')}
+                        {*if $Child->getAttribute('image_site')*}
                             {image src=$Child->getAttribute('image_site') width="500" type="resize"}
-                        {else}
+                        {*else}
                         <img itemprop="image" src="{$Child->getProject()->getMedia()->getPlaceholder()}"
                              class="qui-control-childrenlist-authorTop-entry-image-img"/>
-                        {/if}
+                        {/if*}
                     </div>
                 </a>
 

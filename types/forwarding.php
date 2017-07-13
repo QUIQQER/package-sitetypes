@@ -11,7 +11,9 @@ try {
         $Wanted = \QUI\Projects\Site\Utils::getSiteByLink($siteUrl);
 
         // so, we get the site with vhosts, and url dir
-        $url = QUI::getRewrite()->getUrlFromSite(array(
+        $Output = new QUI\Output();
+
+        $url = $Output->getSiteUrl(array(
             'site' => $Wanted
         ));
     } else {

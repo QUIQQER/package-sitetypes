@@ -26,7 +26,7 @@
 
             <time class="qui-control-childrenlist-simpleArticleList-time"
                   pubdate datetime="{$Child->getAttribute('release_from')|date_format:"c"}">
-                {$Child->getAttribute('release_from')|date_format:"%d/%m/%y"}
+                {locale_date date=$Child->getAttribute('release_from') format="%d/%m/%Y"}
             </time>
 
             <a href="{url site=$Child}" class="qui-control-childrenlist-simpleArticleList-link"

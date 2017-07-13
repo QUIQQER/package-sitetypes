@@ -33,11 +33,8 @@
             {assign var=noShortClass value=""}
             {/if}
 
-            {if $Child->getAttribute('image_site')}
-                {image src=$Child->getAttribute('image_site') width="800"}
-            {else}
-            <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="height: auto;" />
-            {/if}
+            {image src=$Child->getAttribute('image_site') width="800"}
+
             </a>
         </div>
         {/if}
@@ -84,7 +81,7 @@
                     {if $this->getAttribute('showDate')}
                         <span class="qui-control-childrenlist-imageTopBorder-footer-wrapper-date">
                             <span class="fa fa-calendar"></span>
-                            {$Child->getAttribute('release_from')|date_format:"%d/%m/%Y"}
+                            {locale_date date=$Child->getAttribute('release_from')}
                         </span>
                     {/if}
 

@@ -37,12 +37,7 @@
 
                 <div class="qui-control-childrenlist-2er-entry-image">
                     <a href="{url site=$Child}" class="mainFontColor">
-
-                    {if $Child->getAttribute('image_site')}
                         {image src=$Child->getAttribute('image_site') width="640"}
-                    {else}
-                        <img src="{$Child->getProject()->getMedia()->getPlaceholder()}" style="width: 100%; height: auto;" />
-                    {/if}
                     </a>
                 </div>
                 {/if}
