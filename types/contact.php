@@ -1,9 +1,9 @@
 <?php
 
 use QUI\Utils\Security\Orthos;
-use QUI\Controls\Contact;
+use QUI\Bricks\Controls\SimpleContact;
 
-$Contact = new Contact(array(
+$Contact = new SimpleContact(array(
     'data-ajax' => 0
 ));
 
