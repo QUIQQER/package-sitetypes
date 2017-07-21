@@ -13,8 +13,8 @@ $ChildrenList = new QUI\Controls\ChildrenList(array(
     'showTime'       => $Site->getAttribute('quiqqer.settings.sitetypes.list.showTime'),
     'showSheets'     => $Site->getAttribute('quiqqer.settings.sitetypes.list.showSheets'),
     'showImages'     => $Site->getAttribute('quiqqer.settings.sitetypes.list.showImages'),
-    'showShort'      => true,
     'showHeader'     => $Site->getAttribute('quiqqer.settings.sitetypes.list.showHeader'),
+    'showShort'      => $Site->getAttribute('quiqqer.settings.sitetypes.list.showShort'),
     'showContent'    => false,
     'itemtype'       => 'http://schema.org/ItemList',
     'child-itemtype' => 'http://schema.org/ListItem',
@@ -26,7 +26,6 @@ try {
 } catch (QUI\Exception $Exception) {
     QUI\System\Log::addWarning($Exception->getMessage());
 }
-
 
 $Engine->assign(array(
     'ChildrenList' => $ChildrenList

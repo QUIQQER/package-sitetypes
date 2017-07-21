@@ -209,6 +209,11 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <en><![CDATA[Layout]]></en>
             <pl><![CDATA[Layout]]></pl>
         </locale>
+        <locale name="list.template.cardRows">
+            <de><![CDATA[Cards]]></de>
+            <en><![CDATA[Cards]]></en>
+            <pl><![CDATA[Cards]]></pl>
+        </locale>
         <locale name="list.template.imageTop">
             <de><![CDATA[Bild oben]]></de>
             <en><![CDATA[Picture top]]></en>
