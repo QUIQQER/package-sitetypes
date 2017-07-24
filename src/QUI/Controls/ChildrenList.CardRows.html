@@ -53,8 +53,8 @@
 
                 </h2>
 
-                {if $this->getAttribute('showCreator') &&
-                    $this->getAttribute('showDate') &&
+                {if $this->getAttribute('showCreator') ||
+                    $this->getAttribute('showDate') ||
                     $this->getAttribute('showDate')}
                 <p class="qui-control-childrenlist-cardRows-entry-content-header-footprint">
                     {if $this->getAttribute('showCreator')}
