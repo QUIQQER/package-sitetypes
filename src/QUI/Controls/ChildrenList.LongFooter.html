@@ -46,7 +46,9 @@
 
             {if $this->getAttribute('showImages')}
             <div class="qui-control-childrenlist-longFooter-entry-image grid-40 grid-container">
-                {image src=$Child->getAttribute('image_site') width="500" type="resize"}
+                <a itemprop="url" href="{url site=$Child}">
+                    {image src=$Child->getAttribute('image_site') width="500" type="resize"}
+                </a>
             </div>
             {/if}
 

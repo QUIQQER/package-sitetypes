@@ -25,9 +25,31 @@
     position: relative;
 }
 
-.qui-control-childrenlist-longFooter-entry span.quiqqer-icon {
-    font-size: 120px;
+.qui-control-childrenlist-longFooter-entry-image a {
+    height: 100%;
+    display: block;
+    color: inherit;
 }
+
+.qui-control-childrenlist-longFooter-entry-image img {
+    max-height: 100%;
+}
+
+/* vertical align fontawesome icon */
+.qui-control-childrenlist-longFooter-entry-image .fa:after {
+    content: '';
+    vertical-align: middle;
+    height: 100%;
+    display: inline-block;
+    width: 0;
+}
+
+.qui-control-childrenlist-longFooter-entry-image .fa {
+    font-size: 120px;
+    height: 100%;
+    padding: 20px 0;
+}
+
 
 .qui-control-childrenlist-longFooter-entry-content {
     padding: 0;

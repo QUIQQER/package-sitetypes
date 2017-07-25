@@ -16,6 +16,29 @@
     padding: 0;
     text-align: center;
 }
+.qui-control-childrenlist-default-entry-image a {
+    height: 100%;
+    display: block;
+    color: inherit;
+}
+
+.qui-control-childrenlist-default-entry-image img {
+    max-height: 100%;
+}
+
+/* vertical align fontawesome icon */
+.qui-control-childrenlist-default-entry-image .fa:after {
+    content: '';
+    vertical-align: middle;
+    height: 100%;
+    display: inline-block;
+    width: 0;
+}
+
+.qui-control-childrenlist-default-entry-image .fa {
+    font-size: 120px;
+    height: 100%;
+}
 
 .qui-control-childrenlist-default-entry-content-headerLink,
 .qui-control-childrenlist-default-entry-content-headerLink:hover {
