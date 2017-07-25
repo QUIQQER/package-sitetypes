@@ -2,6 +2,8 @@
     display: block;
     border-bottom: 1px solid #eee;
     padding: 14px 0;
+    float: none;
+    clear: both;
 }
 
 .qui-control-childrenlist-advancedArticleList-wrapper:first-child {

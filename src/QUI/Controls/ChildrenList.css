@@ -1,5 +1,10 @@
 @CHARSET "UTF-8";
 
+.qui-control-childrenlist-default {
+    clear: both;
+    float: none;
+}
+
 .qui-control-childrenlist-default-entry {
     clear: both;
     float: left;
@@ -148,9 +153,12 @@
         padding: 10px 10px 30px 10px;
         /*padding: 40px 0;*/
     }
+    .qui-control-childrenlist-longFooter-entry:first-of-type {
+        margin-top: 60px;
+    }
 
     .qui-control-childrenlist-default-entry-image {
-        max-height: 300px;
+        max-height: initial;
         margin-bottom: 20px;
     }
 

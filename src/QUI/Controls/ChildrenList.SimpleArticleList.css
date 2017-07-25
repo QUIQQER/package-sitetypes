@@ -1,4 +1,9 @@
 
+.qui-control-childrenlist-simpleArticleList-wrapper {
+    clear: both;
+    float: none;
+}
+
 .qui-control-childrenlist-simpleArticleList {
     font-size: 0.9em;
     padding: 10px 0;

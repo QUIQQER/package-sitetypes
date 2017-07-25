@@ -1,5 +1,10 @@
 @CHARSET "UTF-8";
 
+.qui-control-childrenlist-cardRows {
+    clear: both;
+    float: none;
+}
+
 .qui-control-childrenlist-cardRows-entry {
     border-bottom: 2px solid #eee;
     margin-bottom: 3em;
