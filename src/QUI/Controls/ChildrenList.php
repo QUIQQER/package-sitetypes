@@ -81,7 +81,7 @@ class ChildrenList extends QUI\Control
         }
 
         if (!$limit) {
-            $limit = 2;
+            $limit = 6;
         }
 
 
