@@ -25,28 +25,33 @@ class ChildrenList extends QUI\Control
     {
         // default options
         $this->setAttributes(array(
-            'class'           => 'qui-control-list',
-            'limit'           => 2,
-            'showSheets'      => true,
-            'showImages'      => true,
-            'showShort'       => true,
-            'showHeader'      => true,
-            'showContent'     => false,
-            'showDate'        => false,
-            'showTime'        => false,
-            'showCreator'     => false,
-            'Site'            => false,
-            'parentInputList' => false,
-            'where'           => false,
-            'itemtype'        => 'http://schema.org/ItemList',
-            'child-itemtype'  => 'https://schema.org/ListItem',
-            'child-itemprop'  => 'itemListElement',
-            'display'         => 'childrenlist', // layout / design
-            'displayTemplate' => false, // Custom children template (path to html file); overwrites "display"
-            'displayCss'      => false, // Custom children template css (path to css file); overwrites "display"
-            'nodeName'        => 'section',
-            'children'        => false // list of sites to display,
-            // if children is set, Site or parentInputList would be used
+            'class'                      => 'qui-control-list',
+            'limit'                      => 2,
+            'showSheets'                 => true,
+            'showImages'                 => true,
+            'showShort'                  => true,
+            'showHeader'                 => true,
+            'showContent'                => false,
+            'showDate'                   => false,
+            'showTime'                   => false,
+            'showCreator'                => false,
+            'Site'                       => false,
+            'parentInputList'            => false,
+            'where'                      => false,
+            'itemtype'                   => 'http://schema.org/ItemList',
+            'child-itemtype'             => 'https://schema.org/ListItem',
+            'child-itemprop'             => 'itemListElement',
+            // layout / design
+            'display'                    => 'childrenlist',
+            // Custom children template (path to html file); overwrites "display"
+            'displayTemplate'            => false,
+            // Custom children template css (path to css file); overwrites "display"
+            'displayCss'                 => false,
+            'nodeName'                   => 'section',
+            // list of sites to display,
+            'children'                   => false,
+            // load all children of list site if the 'children' attribute is empty
+            'loadAllChildrenOnEmptyList' => true
         ));
 
         parent::__construct($attributes);
@@ -109,7 +114,8 @@ class ChildrenList extends QUI\Control
         }
 
         // sheets
-        $sheets = ceil($count_children / $limit);
+        $sheets                     = ceil($count_children / $limit);
+        $loadAllChildrenOnEmptyList = $this->getAttribute('loadAllChildrenOnEmptyList');
 
         if ($this->getAttribute('parentInputList')) {
             // for bricks
@@ -118,7 +124,8 @@ class ChildrenList extends QUI\Control
                 'limit' => $start . ',' . $limit,
                 'order' => $this->getAttribute('order')
             ));
-        } elseif ($this->getAttribute('children')) {
+        } elseif ($this->getAttribute('children')
+                  || !$loadAllChildrenOnEmptyList) {
             $children = $this->getAttribute('children');
         } else {
             // for site types
