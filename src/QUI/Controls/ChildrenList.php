@@ -116,11 +116,18 @@ class ChildrenList extends QUI\Control
         // sheets
         $sheets                     = ceil($count_children / $limit);
         $loadAllChildrenOnEmptyList = $this->getAttribute('loadAllChildrenOnEmptyList');
+        $where                      = $this->getAttribute('where');
+
+        if (empty($where)) {
+            $where = array();
+        }
+
+        $where['active'] = 1;
 
         if ($this->getAttribute('parentInputList')) {
             // for bricks
             $children = Utils::getSitesByInputList($Project, $parents, array(
-                'where' => $this->getAttribute('where'),
+                'where' => $where,
                 'limit' => $start . ',' . $limit,
                 'order' => $this->getAttribute('order')
             ));
@@ -130,7 +137,7 @@ class ChildrenList extends QUI\Control
         } else {
             // for site types
             $children = $Site->getChildren(array(
-                'where' => $this->getAttribute('where'),
+                'where' => $where,
                 'limit' => $start . ',' . $limit
             ));
         }
