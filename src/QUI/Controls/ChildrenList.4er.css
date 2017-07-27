@@ -120,7 +120,8 @@
         border-bottom: 1px solid #eee;
         display: block;
         margin: 0;
-        padding: 30px;
+        padding-bottom: 30px;
+        padding-top: 30px;
     }
 
     .qui-control-childrenlist-4er-entry-image {

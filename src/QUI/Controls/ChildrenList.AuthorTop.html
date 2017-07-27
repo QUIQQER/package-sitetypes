@@ -1,5 +1,5 @@
 
-{if $this->getAttribute('showSheets')}
+{if $this->getAttribute('showSheets') && $sheets > 1}
     {$Pagination->create()}
 {/if}
 
@@ -137,6 +137,6 @@
 {/foreach}
 </section>
 
-{if $this->getAttribute('showSheets')}
+{if $this->getAttribute('showSheets') && $sheets > 1}
     {$Pagination->create()}
 {/if}

@@ -11,12 +11,13 @@
 </div>
 {/if}
 
-<div itemscope itemtype="{$this->getAttribute('itemtype')}">
+<div itemscope itemtype="{$this->getAttribute('itemtype')}"
+     class="qui-control-childrenlist-simpleArticleList-wrapper">
 
     {assign var=counter value=1}
 
     {foreach from=$children item=Child}
-        <div class="qui-control-childrenlist-simpleArticleList"
+        <article class="qui-control-childrenlist-simpleArticleList"
              itemscope
              itemtype="{$this->getAttribute('child-itemtype')}"
              itemprop="{$this->getAttribute('child-itemprop')}">
@@ -48,7 +49,7 @@
             </a>
             <span class="fa fa-caret-right mainColor qui-control-childrenlist-simpleArticleList-icon"></span>
 
-        </div>
+        </article>
     {/foreach}
 
 </div>

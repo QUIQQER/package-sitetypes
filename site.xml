@@ -91,6 +91,9 @@
                             <option value="advancedArticleList">
                                 <locale group="quiqqer/sitetypes" var="list.template.advancedArticleList"/>
                             </option>
+                            <option value="cardRows">
+                                <locale group="quiqqer/sitetypes" var="list.template.cardRows"/>
+                            </option>
                         </select>
 
                         <input conf="quiqqer.settings.sitetypes.list.max" type="number">
@@ -212,7 +215,8 @@
                 <attribute default="0">quiqqer.settings.sitetypes.list.showTime</attribute>
                 <attribute default="1">quiqqer.settings.sitetypes.list.showImages</attribute>
                 <attribute default="1">quiqqer.settings.sitetypes.list.showHeader</attribute>
-                <attribute default="0">quiqqer.settings.sitetypes.list.showSheets</attribute>
+                <attribute default="1">quiqqer.settings.sitetypes.list.showShort</attribute>
+                <attribute default="1">quiqqer.settings.sitetypes.list.showSheets</attribute>
             </attributes>
 
             <!-- list settings -->
@@ -228,6 +232,9 @@
                             <text>
                                 <locale group="quiqqer/sitetypes" var="list.template"/>
                             </text>
+                            <option value="cardRows">
+                                <locale group="quiqqer/sitetypes" var="list.template.cardRows"/>
+                            </option>
                             <option value="imageTop">
                                 <locale group="quiqqer/sitetypes" var="list.template.imageTop"/>
                             </option>
@@ -291,6 +298,14 @@
                             </text>
                         </input>
 
+                        <input conf="quiqqer.settings.sitetypes.list.showImages" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.list.settings.showImages"
+                                />
+                            </text>
+                        </input>
+
                         <input conf="quiqqer.settings.sitetypes.list.showHeader" type="checkbox">
                             <text>
                                 <locale group="quiqqer/sitetypes"
@@ -299,10 +314,10 @@
                             </text>
                         </input>
 
-                        <input conf="quiqqer.settings.sitetypes.list.showImages" type="checkbox">
+                        <input conf="quiqqer.settings.sitetypes.list.showShort" type="checkbox">
                             <text>
                                 <locale group="quiqqer/sitetypes"
-                                        var="quiqqer.sitetypes.list.settings.showImages"
+                                        var="quiqqer.sitetypes.list.settings.showShort"
                                 />
                             </text>
                         </input>
