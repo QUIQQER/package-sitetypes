@@ -45,7 +45,8 @@
         {if $this->getAttribute('showImages')}
         <div class="qui-control-childrenlist-default-entry-image grid-40 grid-container">
             <a itemprop="url" href="{url site=$Child}">
-                {image src=$Child->getAttribute('image_site') width="500" type="resize"}
+                {image src=$Child->getAttribute('image_site') width="500" type="resize"
+                title="{$Child->getAttribute('title')}"}
             </a>
         </div>
         {/if}
@@ -56,7 +57,7 @@
             {if $this->getAttribute('showHeader')}
             <header>
                 <h1 itemprop="name">
-                    <a itemprop="url" href="{url site=$Child}"
+                    <a itemprop="url" href="{url site=$Child}" title="{$Child->getAttribute('title')}"
                        class="qui-control-childrenlist-default-entry-content-headerLink">
                         {$Child->getAttribute('title')}
                     </a>

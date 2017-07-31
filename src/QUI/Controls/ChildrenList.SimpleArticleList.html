@@ -30,8 +30,10 @@
                 {locale_date date=$Child->getAttribute('release_from') format="%d/%m/%Y"}
             </time>
 
-            <a href="{url site=$Child}" class="qui-control-childrenlist-simpleArticleList-link"
-                itemprop="url">
+            <a href="{url site=$Child}"
+               class="qui-control-childrenlist-simpleArticleList-link"
+               title="{$Child->getAttribute('title')|escape:"html"}"
+               itemprop="url">
                 <header class="qui-control-childrenlist-simpleArticleList-header">
                     <span itemprop="name">{$Child->getAttribute('title')}</span>
                 </header>
