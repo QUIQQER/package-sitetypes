@@ -59,7 +59,7 @@
             <attributes>
                 <attribute default="childrenlist">quiqqer.settings.sitetypes.list.template</attribute>
                 <attribute>quiqqer.settings.sitetypes.list.max</attribute>
-                <attribute default="1">quiqqer.settings.sitetypes.list.showCreator</attribute>
+                <attribute default="0">quiqqer.settings.sitetypes.list.showCreator</attribute>
                 <attribute default="1">quiqqer.settings.sitetypes.list.showDate</attribute>
                 <attribute default="1">quiqqer.settings.sitetypes.list.showImages</attribute>
             </attributes>
