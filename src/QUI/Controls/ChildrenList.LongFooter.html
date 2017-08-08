@@ -47,7 +47,10 @@
             {if $this->getAttribute('showImages')}
             <div class="qui-control-childrenlist-longFooter-entry-image grid-40 grid-container">
                 <a itemprop="url" href="{url site=$Child}">
-                    {image src=$Child->getAttribute('image_site') width="500" type="resize"}
+                    {image src=$Child->getAttribute('image_site')
+                    width="500"
+                    type="resize"
+                    title="{$Child->getAttribute('title')|escape:"html"}"}
                 </a>
             </div>
             {/if}
@@ -59,7 +62,9 @@
                 {if $this->getAttribute('showHeader')}
                 <header>
                     <h1 itemprop="name">
-                        <a itemprop="url" href="{url site=$Child}" class="qui-control-childrenlist-longFooter-entry-content-headerLink">
+                        <a itemprop="url" href="{url site=$Child}"
+                           class="qui-control-childrenlist-longFooter-entry-content-headerLink"
+                           title="{$Child->getAttribute('title')|escape:"html"}">
                             {$Child->getAttribute('title')}
                         </a>
                     </h1>
@@ -124,7 +129,9 @@
             </div>
             {/if}
 
-            <a itemprop="url" href="{url site=$Child}" class="button qui-control-childrenlist-longFooter-entry-content-footer-link">
+            <a itemprop="url" href="{url site=$Child}"
+               class="button qui-control-childrenlist-longFooter-entry-content-footer-link"
+               title="{$Child->getAttribute('title')|escape:"html"}">
                 {locale group="quiqqer/sitetypes" value="list.more"}
             </a>
         </div>

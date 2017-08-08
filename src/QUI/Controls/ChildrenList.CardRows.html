@@ -33,7 +33,10 @@
         {if $this->getAttribute('showImages')}
         <div class="qui-control-childrenlist-cardRows-entry-image grid-25 grid-container">
             <a itemprop="url" href="{url site=$Child}">
-                {image src=$Child->getAttribute('image_site') width="500" type="resize"}
+                {image src=$Child->getAttribute('image_site')
+                width="500"
+                type="resize"
+                title="{$Child->getAttribute('title')|escape:"html"}"}
             </a>
         </div>
         {/if}
@@ -46,8 +49,8 @@
             <header class="qui-control-childrenlist-cardRows-entry-content-header
                            {if !$this->getAttribute('showShort')} no-padding {/if}">
                 <h2 itemprop="name">
-                    <a itemprop="url" href="{url site=$Child}">
-
+                    <a itemprop="url" href="{url site=$Child}"
+                       title="{$Child->getAttribute('title')|escape:"html"}">
                     {$Child->getAttribute('title')}
                     </a>
 
@@ -103,7 +106,7 @@
             {if $this->getAttribute('showShort')}
             <div class="qui-control-childrenlist-cardRows-entry-content-short">
                 {$Child->getAttribute('short')|nl2br}
-                <a itemprop="url" href="{url site=$Child}">
+                <a itemprop="url" href="{url site=$Child}" title="{$Child->getAttribute('title')|escape:"html"}">
                     <span>{locale group="quiqqer/sitetypes" value="list.more"}</span>
                 </a>
             </div>

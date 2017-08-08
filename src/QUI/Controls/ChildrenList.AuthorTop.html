@@ -43,6 +43,7 @@
                 <a href="{url site=$Child}"
                    title="{$Child->getAttribute('title')|escape:"html"}"
                    itemprop="url"
+                   title="{$Child->getAttribute('title')}"
                 >
                     <span itemprop="name">{$Child->getAttribute('title')}</span>
                 </a>
@@ -125,7 +126,9 @@
                 </div>
             {/if}
 
-            <a itemprop="url" href="{url site=$Child}" class="button qui-control-childrenlist-authorTop-entry-link">
+            <a itemprop="url" href="{url site=$Child}"
+               class="button qui-control-childrenlist-authorTop-entry-link"
+               title="{$Child->getAttribute('title')|escape:"html"}">
                 {locale group="quiqqer/sitetypes" value="list.more"}
             </a>
         </div>

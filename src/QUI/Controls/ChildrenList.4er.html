@@ -37,7 +37,8 @@
 
                 <div class="qui-control-childrenlist-4er-entry-image">
                     <a href="{url site=$Child}" class="mainFontColor">
-                        {image src=$Child->getAttribute('image_site') width="640"}
+                        {image src=$Child->getAttribute('image_site') width="640"
+                        title="{$Child->getAttribute('title')|escape:"html"}"}
                     </a>
                 </div>
                 {/if}
@@ -49,6 +50,7 @@
                     <header>
                         <h1 itemprop="name">
                             <a itemprop="url" href="{url site=$Child}"
+                               title="{$Child->getAttribute('title')|escape:"html"}"
                                class="qui-control-childrenlist-4er-entry-content-headerLink">
                                 {$Child->getAttribute('title')}
                             </a>
@@ -105,6 +107,7 @@
                         </p>
                         {/if}
                         <a href="{url site=$Child}"
+                           title="{$Child->getAttribute('title')|escape:"html"}"
                            class="qui-control-childrenlist-4er-entry-content-footer-button button">
                             {locale group="quiqqer/sitetypes" value="list.icons.more"}
                         </a>

@@ -11,8 +11,8 @@
     margin-bottom: 80px;
     padding: 0;
     width: 100%;
-    display: flex;
-    align-items: stretch;
+    /*display: flex;*/
+    /*align-items: stretch;*/
 }
 
 .qui-control-childrenlist-default-entry-image {
@@ -51,11 +51,10 @@
 }
 
 .qui-control-childrenlist-default-entry-content {
-    display: flex;
-    flex-direction: column;
-    margin-left: 40px;
+    /*display: flex;*/
+    /*flex-direction: column;*/
     min-height: 240px;
-    padding: 0;
+    padding: 0 0 0 40px;
 }
 
 .qui-control-childrenlist-default-entry-content-short {
@@ -150,8 +149,6 @@
         background: none;
         border: none;
         border-radius: 0;
-        padding: 10px 10px 30px 10px;
-        /*padding: 40px 0;*/
     }
     .qui-control-childrenlist-longFooter-entry:first-of-type {
         margin-top: 60px;

@@ -39,7 +39,9 @@
         <span href="{url site=$Child}" class="mainFontColor qui-control-childrenlist-advancedArticleList-link">
             <header class="qui-control-childrenlist-advancedArticleList-header">
                 <h1>
-                    <a href="{url site=$Child}" class="qui-control-childrenlist-advancedArticleList-header-link">
+                    <a href="{url site=$Child}"
+                       title="{$Child->getAttribute('title')|escape:"html"}"
+                       class="qui-control-childrenlist-advancedArticleList-header-link">
                         {$Child->getAttribute('title')}
                     </a>
                 </h1>
@@ -61,7 +63,9 @@
     {if $this->getAttribute('showShort')}
     <div class="qui-control-childrenlist-advancedArticleList-short">
         {$Child->getAttribute('short')}
-        <a itemprop="url" href="{url site=$Child}" class="qui-control-childrenlist-advancedArticleList-show-more">
+        <a itemprop="url" href="{url site=$Child}"
+           title="{$Child->getAttribute('title')|escape:"html"}"
+           class="qui-control-childrenlist-advancedArticleList-show-more">
             {locale group="quiqqer/sitetypes" value="list.more"} <i class="fa fa-angle-double-right"></i>
         </a>
     </div>

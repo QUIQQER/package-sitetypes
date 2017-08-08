@@ -30,14 +30,18 @@
                 {assign var=noShortClass value=""}
             {/if}
 
-            {image src=$Child->getAttribute('image_site') width="800"}
+            {image src=$Child->getAttribute('image_site')
+            width="800"
+            title="{$Child->getAttribute('title')|escape:"html"}"}
         </a>
     </div>
     {/if}
 
     <header>
         <h1>
-            <a href="{url site=$Child}" class="qui-control-childrenlist-imageTop-entry-headerLink">
+            <a href="{url site=$Child}"
+               class="qui-control-childrenlist-imageTop-entry-headerLink"
+               title="{$Child->getAttribute('title')|escape:"html"}">
                 {$Child->getAttribute('title')}
             </a>
         </h1>
@@ -46,7 +50,9 @@
     {if $this->getAttribute('showShort')}
     <div class="qui-control-childrenlist-imageTop-short">
         {$Child->getAttribute('short')}
-        <a itemprop="url" href="{url site=$Child}" class="qui-control-childrenlist-imageTop-show-more">
+        <a itemprop="url" href="{url site=$Child}"
+           class="qui-control-childrenlist-imageTop-show-more"
+           title="{$Child->getAttribute('title')|escape:"html"}">
             {locale group="quiqqer/sitetypes" value="list.more"} <i class="fa fa-angle-double-right"></i>
         </a>
     </div>

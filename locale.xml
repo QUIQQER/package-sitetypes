@@ -230,7 +230,7 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <pl><![CDATA[Standardowy widok]]></pl>
         </locale>
         <locale name="list.template.longFooter">
-            <de><![CDATA[Langes Footer]]></de>
+            <de><![CDATA[Langer Footer]]></de>
             <en><![CDATA[Long footer]]></en>
             <pl><![CDATA[Długa stopka]]></pl>
         </locale>

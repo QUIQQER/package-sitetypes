@@ -33,7 +33,9 @@
             {assign var=noShortClass value=""}
             {/if}
 
-            {image src=$Child->getAttribute('image_site') width="800"}
+            {image src=$Child->getAttribute('image_site')
+                width="800"
+                title="{$Child->getAttribute('title')|escape:"html"}"}
 
             </a>
         </div>
@@ -41,7 +43,9 @@
 
         <header>
             <h1>
-                <a href="{url site=$Child}" class="qui-control-childrenlist-imageTopBorder-entry-header-link">
+                <a href="{url site=$Child}"
+                   class="qui-control-childrenlist-imageTopBorder-entry-header-link"
+                   title="{$Child->getAttribute('title')|escape:"html"}">
                     {$Child->getAttribute('title')}
                 </a>
             </h1>
