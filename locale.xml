@@ -2,8 +2,8 @@
 <locales>
     <groups name="quiqqer/sitetypes" datatype="php,js">
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Standard-Seitentypen]]></de>
-            <en><![CDATA[QUIQQER - Standard site types]]></en>
+            <de><![CDATA[QUIQQER - Allgemeine Standard-Seitentypen]]></de>
+            <en><![CDATA[QUIQQER - Appropriated standard site types]]></en>
         </locale>
         <locale name="package.description" html="true">
             <de><![CDATA[<p>Nutzen Sie f&uuml;r den Anfang die Standardseitentypen.</p>
