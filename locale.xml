@@ -6,12 +6,8 @@
             <en><![CDATA[QUIQQER - Appropriated standard site types]]></en>
         </locale>
         <locale name="package.description" html="true">
-            <de><![CDATA[<p>Nutzen Sie f&uuml;r den Anfang die Standardseitentypen.</p>
-
-<p>Diese reichen im Normalfall vollkommen aus um ein kleines Projekt zu erstellen.</p>
-
-<p>So steht Ihnen eine normale Inhaltsseite zur Verf&uuml;gung, so wie die Standardsuche, ein Impressum, zwei verschiedene Listentypen und zwei verschiedene Sitemaps.</p>]]></de>
-            <en><![CDATA[]]></en>
+            <de><![CDATA[Das Site Types Paket erweitert QUIQQER um einige standard Seitentypen. Mit diesen Seitentypen lassen sich schnell Webseiten erstellen. Das Plugin bietet alle wichtigen Seitentype für eine Webseite / Homepage.]]></de>
+            <en><![CDATA[The SiteTypes package extends QUIQQER with some standard page types. With these side types, websites can be quickly created. The plugin offers all the important page styles for a website / homepage.]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/contact.description">
             <de><![CDATA[Mit dem Kontaktformular bieten Sie Ihren Nutzern an, Sie schnell und einfach zu Kontaktieren.

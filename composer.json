@@ -1,7 +1,7 @@
 {
   "name": "quiqqer/sitetypes",
   "type": "quiqqer-module",
-  "description": "Site types for QUIQQER.",
+  "description": "The SiteTypes package extends QUIQQER with some standard page types. With these side types, websites can be quickly created. The plugin offers all the important page styles for a website / homepage.",
   "version": "dev-dev",
   "license": "GPL-2.0+",
   "authors": [
