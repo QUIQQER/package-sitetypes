@@ -1,3 +1,5 @@
+![Default site type](bin/images/Readme.jpg)
+
 Default site types
 ========
 
