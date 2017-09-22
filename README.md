@@ -1,12 +1,12 @@
-QUIQQER Site Types Package
+Default site types
 ========
 
-Das Site Types Paket erweitert QUIQQER um einige standard Seitentypen.
-Mit diesen Seitentypen lassen sich schnell Webseiten erstellen.
+The SiteTypes package extends QUIQQER with some standard page types. 
+With these side types, websites can be quickly created. 
+The plugin offers all the important page styles for a website / homepage.
 
-Das Plugin bietet alle wichtigen Seitentype für eine Webseite / Homepage.
 
-Packetname:
+Package name:
 
     quiqqer/sitetypes
 
@@ -14,22 +14,22 @@ Packetname:
 Features
 --------
 
-- Standard Suche
-- Standard Liste
-- Standard Inhaltsliste
+- Standard Search
+- Standard List
 - Standard Sitemap
 - Standard Block Sitemap
-- Impressum
-- Kontakt
-- Weiterleitung
+- Imprint
+- Simple Contact
+- Forwarding
+
 
 Installation
 ------------
 
-Der Paketname ist: quiqqer/sitetypes
+The package name is: quiqqer/sitetypes
 
 
-Mitwirken
+Contribute
 ----------
 
 - Issue Tracker: https://dev.quiqqer.com/quiqqer/package-sitetypes/issues
@@ -39,14 +39,14 @@ Mitwirken
 Support
 -------
 
-Falls Sie ein Fehler gefunden haben oder Verbesserungen wünschen,
-Dann können Sie gerne an support@pcsg.de eine E-Mail schreiben.
+If you have found errors, wishes or suggestions for improvement,
+you can contact us by email at support@pcsg.de.
+
+We will try to meet your needs or send them to the responsible developers
+of the project.
 
 
 License
 -------
 
-
-Entwickler
---------
-
+GPL-3.0+
