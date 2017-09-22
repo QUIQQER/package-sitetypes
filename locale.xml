@@ -2,21 +2,21 @@
 <locales>
     <groups name="quiqqer/sitetypes" datatype="php,js">
         <locale name="package.title">
-            <de><![CDATA[QUIQQER - Allgemeine Standard-Seitentypen]]></de>
-            <en><![CDATA[QUIQQER - Appropriated standard site types]]></en>
+            <de><![CDATA[QUIQQER - Allgemeine Seitentypen]]></de>
+            <en><![CDATA[QUIQQER - Default site types]]></en>
         </locale>
         <locale name="package.description" html="true">
-            <de><![CDATA[<p>Nutzen Sie f&uuml;r den Anfang die Standardseitentypen.</p>
-
-<p>Diese reichen im Normalfall vollkommen aus um ein kleines Projekt zu erstellen.</p>
-
-<p>So steht Ihnen eine normale Inhaltsseite zur Verf&uuml;gung, so wie die Standardsuche, ein Impressum, zwei verschiedene Listentypen und zwei verschiedene Sitemaps.</p>]]></de>
+            <de><![CDATA[
+            <p>Nutzen Sie f&uuml;r den Anfang die Standardseitentypen.</p>
+            <p>Diese reichen im Normalfall vollkommen aus um ein kleines Projekt zu erstellen.</p>
+            <p>So steht Ihnen eine normale Inhaltsseite zur Verf&uuml;gung, so wie die Standardsuche, ein Impressum, zwei verschiedene Listentypen und zwei verschiedene Sitemaps.</p>]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/contact.description">
-            <de><![CDATA[Mit dem Kontaktformular bieten Sie Ihren Nutzern an, Sie schnell und einfach zu Kontaktieren.
-Dazu legen Sie diesen Seitentyp in Ihrem Projekt an und lassen diese Seite entweder in der Navigation anzeigen, sodass Sie oben im Menü zu sehen ist, 
-oder verlinken beispielsweise im Footer auf die Seite. In den Einstellungen des Kontaktformulars legen Sie noch eine Support Email-Adresse fest, an welche die Anfragen gesendet werden sollen.]]></de>
+            <de><![CDATA[
+            Mit dem Kontaktformular bieten Sie Ihren Nutzern an, Sie schnell und einfach zu Kontaktieren.
+            Dazu legen Sie diesen Seitentyp in Ihrem Projekt an und lassen diese Seite entweder in der Navigation anzeigen, sodass Sie oben im Menü zu sehen ist,
+            oder verlinken beispielsweise im Footer auf die Seite. In den Einstellungen des Kontaktformulars legen Sie noch eine Support Email-Adresse fest, an welche die Anfragen gesendet werden sollen.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/forwarding.title">
@@ -24,8 +24,9 @@ oder verlinken beispielsweise im Footer auf die Seite. In den Einstellungen des 
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/forwarding.description">
-            <de><![CDATA[Nutzen Sie die Weiterleitung, um Nutzer bei einem Klick auf diese Seite zu einer anderen umzuleiten.
-Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer von Ihrer Weiterleitungs-Seite "Community" auf die externe Seite um.]]></de>
+            <de><![CDATA[
+            Nutzen Sie die Weiterleitung, um Nutzer bei einem Klick auf diese Seite zu einer anderen umzuleiten.
+            Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer von Ihrer Weiterleitungs-Seite "Community" auf die externe Seite um.]]></de>
             <en><![CDATA[]]></en>
         </locale>
         <locale name="quiqqer/sitetypes:types/list.title">

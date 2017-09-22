@@ -12,7 +12,7 @@ if (QUI::getRewrite()->getHeaderCode() === 404) {
         $path       = pathinfo($requestUrl);
 
         if (isset($path['dirname'])) {
-            $_REQUEST['search'] = $path['dirname'] . ' ' . $path['filename'];
+            $_REQUEST['search'] = $path['dirname'].' '.$path['filename'];
         } else {
             $_REQUEST['search'] = $path['filename'];
         }
@@ -55,25 +55,30 @@ if (isset($_REQUEST['search'])) {
 
 // search
 if (!empty($searchValue)) {
-    $children = $Project->getSites(array(
-        'where' => array(
-            'title' => array(
-                'value' => $searchValue,
-                'type'  => '%LIKE%'
-            )
+    $whereOr = array(
+        'title'   => array(
+            'value' => $searchValue,
+            'type'  => '%LIKE%'
         ),
-        'limit' => $start . ',' . $max
+        'short'   => array(
+            'value' => $searchValue,
+            'type'  => '%LIKE%'
+        ),
+        'content' => array(
+            'value' => $searchValue,
+            'type'  => '%LIKE%'
+        )
+    );
+
+    $children = $Project->getSites(array(
+        'where_or' => $whereOr,
+        'limit'    => $start.','.$max
     ));
 
     // sheets and count
     $count = $Project->getSites(array(
-        'count' => 'count',
-        'where' => array(
-            'title' => array(
-                'value' => $searchValue,
-                'type'  => '%LIKE%'
-            )
-        )
+        'count'    => 'count',
+        'where_or' => $whereOr
     ));
 
     if (is_array($count)) {
@@ -114,9 +119,9 @@ $ChildrenList = new QUI\Controls\ChildrenList(array(
 ));
 
 $Engine->assign(array(
-    'Pagination'  => $Pagination,
-    'sheets'      => $sheets,
-    'children'    => $children,
-    'searchValue' => $searchValue,
-    'ChildrenList'    => $ChildrenList
+    'Pagination'   => $Pagination,
+    'sheets'       => $sheets,
+    'children'     => $children,
+    'searchValue'  => $searchValue,
+    'ChildrenList' => $ChildrenList
 ));
