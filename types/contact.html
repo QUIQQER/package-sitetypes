@@ -9,19 +9,6 @@
 {/if}
 
 <section class="content-template grid-100 mobile-grid-100 grid-parent">
-
-    {if isset( $successMessage )}
-    <div class="quiqqer-contact-message quiqqer-contact-message-success">
-        {$successMessage}
-    </div>
-    {/if}
-
-    {if isset( $errorMessage )}
-    <div class="quiqqer-contact-message quiqqer-contact-message-error">
-        {$errorMessage}
-    </div>
-    {/if}
-
     {if $Contact}
         {$Contact->create()}
     {/if}
