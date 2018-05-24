@@ -138,6 +138,7 @@
             <!-- contact attributes -->
             <attributes>
                 <attribute>quiqqer.settings.sitetypes.contact.email</attribute>
+                <attribute default="1">quiqqer.settings.sitetypes.contact.showPrivacyPolicyCheckbox</attribute>
             </attributes>
 
             <!-- contact settings -->
@@ -157,6 +158,20 @@
                                 />
                             </text>
                         </input>
+
+                        <input conf="quiqqer.settings.sitetypes.contact.showPrivacyPolicyCheckbox" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.contact.settings.showPrivacyPolicyCheckbox"
+                                />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.sitetypes.contact.settings.showPrivacyPolicyCheckbox.description"
+                                />
+                            </description>
+                        </input>
+
                     </settings>
                 </category>
             </settings>

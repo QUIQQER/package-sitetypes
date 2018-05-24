@@ -338,6 +338,14 @@
             <de><![CDATA[Empfänger E-Mail-Adresse]]></de>
             <en><![CDATA[Recipient e-mail address]]></en>
         </locale>
+        <locale name="quiqqer.sitetypes.contact.settings.showPrivacyPolicyCheckbox">
+            <de><![CDATA[Zeige Datenschutzbestimmungen-Checkbox]]></de>
+            <en><![CDATA[Show Privacy Policy checkbos]]></en>
+        </locale>
+        <locale name="quiqqer.sitetypes.contact.settings.showPrivacyPolicyCheckbox.description" html="true">
+            <de><![CDATA[Zeige Datenschutzbestimmungen-Checkbox im Kontaktformular (es empfiehlt sich, zusätzlich eine Seite vom Typ <b>"Datenschutz-Bestimmungen"</b> anzulegen!)]]></de>
+            <en><![CDATA[Show Privacy Policy checkbox in the contact form (it is recommended to additionally create a Site of type <b>"Privacy Policy"</b>!)]]></en>
+        </locale>
         <locale name="quiqqer.sitetypes.forwarding.settings.title">
             <de><![CDATA[Weiterleitungs-Einstellungen]]></de>
             <en><![CDATA[Forwarding settings]]></en>

@@ -2,12 +2,13 @@
 
 use QUI\Bricks\Controls\SimpleContact;
 
-$Contact = new SimpleContact(array(
-    'data-ajax' => 0,
-    'mailTo'    => $Site->getAttribute('quiqqer.settings.sitetypes.contact.email')
-));
+$Contact = new SimpleContact([
+    'data-ajax'                 => 0,
+    'mailTo'                    => $Site->getAttribute('quiqqer.settings.sitetypes.contact.email'),
+    'showPrivacyPolicyCheckbox' => boolval($Site->getAttribute('quiqqer.settings.sitetypes.contact.showPrivacyPolicyCheckbox'))
+]);
 
 
-$Engine->assign(array(
+$Engine->assign([
     'Contact' => $Contact
-));
+]);
