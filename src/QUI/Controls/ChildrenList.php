@@ -228,6 +228,11 @@ class ChildrenList extends QUI\Control
                 $css      = dirname(__FILE__) . '/ChildrenList.CardRows.css';
                 $template = dirname(__FILE__) . '/ChildrenList.CardRows.html';
                 break;
+
+            case 'CSSGridCards':
+                $css      = dirname(__FILE__) . '/ChildrenList.CSSGridCards.css';
+                $template = dirname(__FILE__) . '/ChildrenList.CSSGridCards.html';
+                break;
         }
 
         $this->addCSSFile($css);

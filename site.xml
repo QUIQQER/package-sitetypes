@@ -250,6 +250,9 @@
                             <option value="cardRows">
                                 <locale group="quiqqer/sitetypes" var="list.template.cardRows"/>
                             </option>
+                            <option value="CSSGridCards">
+                                <locale group="quiqqer/sitetypes" var="list.template.CSSGridCards"/>
+                            </option>
                             <option value="imageTop">
                                 <locale group="quiqqer/sitetypes" var="list.template.imageTop"/>
                             </option>
@@ -279,9 +282,6 @@
                             </option>
                             <option value="3er">
                                 <locale group="quiqqer/sitetypes" var="list.template.3er"/>
-                            </option>
-                            <option value="4er">
-                                <locale group="quiqqer/sitetypes" var="list.template.4er"/>
                             </option>
                         </select>
 

@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+
+.qui-control-childrenlist-cssgridcards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-rows: auto;
+}
+
+.qui-control-childrenlist-cssgridcards-entry {
+    border: 1px solid #eee;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+    background: #ffffff;
+}
+
+
+/* hyphenate / word break */
+.qui-control-childrenlist-default-entry-content header {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: normal;
+    word-break: normal;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+@media screen and (max-width: 767px) {
+
+
+}
