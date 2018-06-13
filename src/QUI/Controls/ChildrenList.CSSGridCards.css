@@ -9,7 +9,7 @@
     display: grid;
     /*grid-template-columns: 1fr 1fr;*/
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-    grid-gap: 2em;
+    grid-column-gap: 2em;
     grid-template-rows: min-content;
 }
 
@@ -19,6 +19,7 @@
     background: #ffffff;
     display: flex;
     flex-direction: column;
+    margin-bottom: 2em;
 }
 
 /* Article cover (header) */
