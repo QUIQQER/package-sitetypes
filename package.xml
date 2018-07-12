@@ -8,7 +8,7 @@
             <locale group="quiqqer/sitetypes" var="package.description"/>
         </description>
 
-        <image src="URL_OPT_DIR/quiqqer/package-sitetypes/bin/images/Logo.jpg"/>
+        <image src="URL_OPT_DIR/quiqqer/sitetypes/bin/images/Logo.jpg"/>
 
         <support>
             <email><![CDATA[support@pcsg.de]]></email>
