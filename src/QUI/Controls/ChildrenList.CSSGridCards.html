@@ -1,0 +1,140 @@
+{assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
+
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
+<section itemscope itemtype="{$this->getAttribute('itemtype')}"
+         class="childrenlist-cardsCssGrid-wrapper control-template"
+>
+    {* because of edge / IE bug with CSS-Grid *}
+    {* the <link> musst be outside of the CSS-Grid container *}
+    <link property="mainEntityOfPage" href="{url site=$Site}">
+    <div class="childrenlist-cardsCssGrid">
+
+        {assign var=counter value=1}
+
+        {foreach from=$children item=Child}
+        {assign var=_Child value=$Child->load()}
+        <article itemscope
+                 itemprop="itemListElement"
+                 itemtype="{$this->getAttribute('child-itemtype')}"
+                 class="childrenlist-cardsCssGrid-entry"
+        >
+            <meta itemprop="position" content="{$counter}"/>
+            {assign var=counter value=$counter+1}
+
+            <!-- entry image -->
+            {assign var=noImageClass value=" qui-control-childrenlist-default-entry-short-noImage"}
+            {assign var=noShortClass value=" qui-control-childrenlist-default-entry-image-noShort"}
+
+            {if $this->getAttribute('showImages')}
+            {assign var=noImageClass value=""}
+            {/if}
+
+            {if $this->getAttribute('showShort')}
+            {assign var=noShortClass value=""}
+            {/if}
+
+            {* Entry header / image *}
+            {if $this->getAttribute('showImages')}
+            <a itemprop="url" href="{url site=$Child}"
+               title="{$Child->getAttribute('title')}"
+               class="childrenlist-cardsCssGrid-entry-cover"
+               style="background-image: url({image src=$Child->getAttribute('image_site') width=550 onlysrc=true});">
+                <div class="childrenlist-cardsCssGrid-entry-cover-overlay">
+                    {if $this->getAttribute('showHeader')}
+                    <header class="childrenlist-cardsCssGrid-entry-cover-overlay-header">
+                        <h2 itemprop="name">
+                            {$Child->getAttribute('title')}
+                        </h2>
+                    </header>
+                    {/if}
+                </div>
+            </a>
+            {/if}
+
+            {* Entry content *}
+            <div class="childrenlist-cardsCssGrid-entry-content">
+
+                {if $this->getAttribute('showCreator') || $this->getAttribute('showDate') ||
+                $this->getAttribute('showTime')}
+                <div class="childrenlist-cardsCssGrid-entry-content-info">
+                    {if $this->getAttribute('showCreator')}
+                    <span class="childrenlist-cardsCssGrid-entry-content-info-author">
+                        {user id=$Child->getAttribute('c_user') var=User}
+                        <span class="fa fa-user"></span>
+                        {if $User->getId() && $User->getAttribute('firstname')}
+                            {$User->getAttribute('firstname')}
+                        {else if $User->getId()}
+                            {$User->getname()}
+                        {/if}
+                    </span>
+                    {/if}
+
+                    {if $this->getAttribute('showDate')}
+                    <span class="childrenlist-cardsCssGrid-entry-content-info-date">
+                    {if $Child->getAttribute('release_from') &&
+                        $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
+                            <span class="fa fa-calendar"></span>
+                            <time datetime="{$Child->getAttribute('release_from')|date_format:" c"}"
+                            itemprop="datePublished">
+                                {locale_date date=$Child->getAttribute('release_from')}
+                        </time>
+                        {else}
+                            <span class="fa fa-calendar"></span>
+                            <time datetime="{$Child->getAttribute('c_date')|date_format:" c"}"
+                            itemprop="datePublished"
+                            >
+                                {locale_date date=$Child->getAttribute('c_date')}
+                        </time>
+                        {/if}
+                </span>
+                    {/if}
+
+                    {if $this->getAttribute('showTime')}
+                    <span class="childrenlist-cardsCssGrid-entry-content-info-time">
+                            <span class="fa fa-clock-o"></span>
+                            {$Child->getAttribute('release_from')|date_format:"%H:%M"}
+                        </span>
+                    {/if}
+                </div>
+                {/if}
+
+
+                {if $this->getAttribute('showShort')}
+                <div class="childrenlist-cardsCssGrid-entry-content-text">
+                    <p>
+                        {$Child->getAttribute('short')|nl2br}
+
+                    </p>
+                </div>
+                {/if}
+
+            </div>
+
+            {* Entry footer - button *}
+            <div class="childrenlist-cardsCssGrid-entry-content-footer">
+                <a itemprop="url" href="{url site=$Child}"
+                   class="button childrenlist-cardsCssGrid-entry-content-footer-button">
+                    {locale group="quiqqer/sitetypes" value="list.more"}
+                </a>
+            </div>
+
+        </article>
+
+        {/foreach}
+    </div>
+</section>
+
+{if $this->getAttribute('showSheets') && $sheets > 1}
+{$Pagination->create()}
+{/if}

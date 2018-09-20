@@ -139,6 +139,7 @@
             <attributes>
                 <attribute>quiqqer.settings.sitetypes.contact.email</attribute>
                 <attribute default="1">quiqqer.settings.sitetypes.contact.showPrivacyPolicyCheckbox</attribute>
+                <attribute default="0">quiqqer.settings.sitetypes.contact.useCaptcha</attribute>
             </attributes>
 
             <!-- contact settings -->
@@ -168,6 +169,19 @@
                             <description>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.contact.settings.showPrivacyPolicyCheckbox.description"
+                                />
+                            </description>
+                        </input>
+
+                        <input conf="quiqqer.settings.sitetypes.contact.useCaptcha" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.settings.sitetypes.contact.useCaptcha"
+                                />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.settings.sitetypes.contact.useCaptcha.description"
                                 />
                             </description>
                         </input>
@@ -250,6 +264,9 @@
                             <option value="cardRows">
                                 <locale group="quiqqer/sitetypes" var="list.template.cardRows"/>
                             </option>
+                            <option value="CSSGridCards">
+                                <locale group="quiqqer/sitetypes" var="list.template.CSSGridCards"/>
+                            </option>
                             <option value="imageTop">
                                 <locale group="quiqqer/sitetypes" var="list.template.imageTop"/>
                             </option>
@@ -279,9 +296,6 @@
                             </option>
                             <option value="3er">
                                 <locale group="quiqqer/sitetypes" var="list.template.3er"/>
-                            </option>
-                            <option value="4er">
-                                <locale group="quiqqer/sitetypes" var="list.template.4er"/>
                             </option>
                         </select>
 
