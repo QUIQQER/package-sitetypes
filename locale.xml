@@ -340,6 +340,14 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
             <de><![CDATA[Zeige Datenschutzbestimmungen-Checkbox im Kontaktformular (es empfiehlt sich, zusätzlich eine Seite vom Typ <b>"Datenschutz-Bestimmungen"</b> anzulegen!)]]></de>
             <en><![CDATA[Show Privacy Policy checkbox in the contact form (it is recommended to additionally create a Site of type <b>"Privacy Policy"</b>!)]]></en>
         </locale>
+        <locale name="quiqqer.settings.sitetypes.contact.useCaptcha">
+            <de><![CDATA[CAPTCHA verwenden]]></de>
+            <en><![CDATA[Use CAPTCHA]]></en>
+        </locale>
+        <locale name="quiqqer.settings.sitetypes.contact.useCaptcha.description" html="true">
+            <de><![CDATA[Absenden des Formulars mittels CAPTCHA vor Spam schützen (setzt voraus, dass <b>quiqqer/captcha</b> installiert ist!)]]></de>
+            <en><![CDATA[Protect form submit from spam with a CAPTCHA (requires <b>quiqqer/captcha</b> to be installed!)]]></en>
+        </locale>
         <locale name="quiqqer.sitetypes.forwarding.settings.title">
             <de><![CDATA[Weiterleitungs-Einstellungen]]></de>
             <en><![CDATA[Forwarding settings]]></en>

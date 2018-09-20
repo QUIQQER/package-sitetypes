@@ -139,6 +139,7 @@
             <attributes>
                 <attribute>quiqqer.settings.sitetypes.contact.email</attribute>
                 <attribute default="1">quiqqer.settings.sitetypes.contact.showPrivacyPolicyCheckbox</attribute>
+                <attribute default="0">quiqqer.settings.sitetypes.contact.useCaptcha</attribute>
             </attributes>
 
             <!-- contact settings -->
@@ -168,6 +169,19 @@
                             <description>
                                 <locale group="quiqqer/sitetypes"
                                         var="quiqqer.sitetypes.contact.settings.showPrivacyPolicyCheckbox.description"
+                                />
+                            </description>
+                        </input>
+
+                        <input conf="quiqqer.settings.sitetypes.contact.useCaptcha" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.settings.sitetypes.contact.useCaptcha"
+                                />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.settings.sitetypes.contact.useCaptcha.description"
                                 />
                             </description>
                         </input>
