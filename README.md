@@ -22,6 +22,7 @@ Features
 - Standard Block Sitemap
 - Imprint
 - Simple Contact
+  - Optionally with CAPTCHA protection (requires `quiqqer/captcha >= 1.1.0`)
 - Forwarding
 
 
