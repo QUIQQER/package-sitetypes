@@ -13,6 +13,7 @@
 .qui-control-childrenlist-3er-entry {
     display: flex;
     flex-direction: column;
+    flex: 1 1 0;
 }
 
 .qui-control-childrenlist-3er-entry:hover .qui-control-childrenlist-3er-entry-footer-button {
