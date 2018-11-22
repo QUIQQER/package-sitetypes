@@ -20,9 +20,13 @@
 
 .qui-control-childrenlist-cardRows-entry-image a {
     color: inherit;
-    font-size: 120px;
     text-align: center;
     display: block;
+}
+
+.qui-control-childrenlist-cardRows-entry-image a .fa {
+    font-size: 120px;
+
 }
 
 .qui-control-childrenlist-cardRows-entry:hover {
