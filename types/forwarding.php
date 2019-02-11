@@ -33,6 +33,12 @@ try {
 } catch (QUI\Exception $Exception) {
 }
 
+if (strpos($siteUrl, '#') !== '#') {
+    $anchor = explode('#', $siteUrl);
+    $anchor = $anchor[1];
+
+    $url .= '#' . $anchor;
+}
 
 if ($url) {
     $Redirect = new RedirectResponse($url);
