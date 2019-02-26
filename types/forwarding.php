@@ -33,7 +33,7 @@ try {
 } catch (QUI\Exception $Exception) {
 }
 
-if (strpos($siteUrl, '#') !== '#') {
+if (strpos($siteUrl, '#') !== false) {
     $anchor = explode('#', $siteUrl);
     $anchor = $anchor[1];
 
