@@ -147,7 +147,7 @@ class ChildrenList extends QUI\Control
         } else {
             // for site types
             if ($this->getAttribute('byType')) {
-                // get all sites, not only directly children of a site
+                // get all sites, not just the direct children of a site
                 $childIds = $Project->getSitesIds([
                     'where' => [
                         'type' => $this->getAttribute('byType'),
