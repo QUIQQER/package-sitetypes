@@ -111,6 +111,10 @@ class ChildrenList extends QUI\Control
                         'type' => $this->getAttribute('byType')
                     ]
                 ]);
+
+                if (is_array($count_children[0])) {
+                    $count_children = $count_children[0]['count'];
+                }
             } else {
                 $count_children = $Site->getChildren([
                     'count' => 'count',
@@ -155,7 +159,7 @@ class ChildrenList extends QUI\Control
                     'order' => 'release_from DESC',
                     'limit' => $start . ',' . $limit
                 ]);
-
+                
                 foreach ($childIds as $id) {
                     $children[] = $Project->get($id['id']);
                 }
