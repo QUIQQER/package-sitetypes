@@ -156,10 +156,9 @@ class ChildrenList extends QUI\Control
                     'limit' => $start . ',' . $limit
                 ]);
 
-                foreach($childIds as $id) {
+                foreach ($childIds as $id) {
                     $children[] = $Project->get($id['id']);
                 }
-
             } else {
                 // get only directly children of a site
                 $children = $Site->getChildren([
