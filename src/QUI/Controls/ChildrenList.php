@@ -21,10 +21,10 @@ class ChildrenList extends QUI\Control
      *
      * @param array $attributes
      */
-    public function __construct($attributes = array())
+    public function __construct($attributes = [])
     {
         // default options
-        $this->setAttributes(array(
+        $this->setAttributes([
             'class'                      => 'qui-control-list',
             'limit'                      => 2,
             'showSheets'                 => true,
@@ -37,6 +37,8 @@ class ChildrenList extends QUI\Control
             'showCreator'                => false,
             'Site'                       => false,
             'parentInputList'            => false,
+            // if true returns all sites of certain type
+            'byType'                     => false,
             'where'                      => false,
             'itemtype'                   => 'http://schema.org/ItemList',
             'child-itemtype'             => 'https://schema.org/ListItem',
@@ -52,7 +54,7 @@ class ChildrenList extends QUI\Control
             'children'                   => false,
             // load all children of list site if the 'children' attribute is empty
             'loadAllChildrenOnEmptyList' => true
-        ));
+        ]);
 
         parent::__construct($attributes);
     }
@@ -96,18 +98,26 @@ class ChildrenList extends QUI\Control
 
         if ($this->getAttribute('parentInputList')) {
             // for bricks
-            $count_children = Utils::getSitesByInputList($Project, $parents, array(
+            $count_children = Utils::getSitesByInputList($Project, $parents, [
                 'count' => 'count',
                 'order' => $this->getAttribute('order')
-            ));
+            ]);
         } else {
             // for site types
-            $count_children = $Site->getChildren(array(
-                'count' => 'count',
-                'where' => $this->getAttribute('where')
-            ));
+            if ($this->getAttribute('byType')) {
+                $count_children = $Project->getSitesIds([
+                    'count' => 'count',
+                    'where' => [
+                        'type' => $this->getAttribute('byType')
+                    ]
+                ]);
+            } else {
+                $count_children = $Site->getChildren([
+                    'count' => 'count',
+                    'where' => $this->getAttribute('where')
+                ]);
+            }
         }
-
 
         if (is_array($count_children)) {
             $count_children = count($count_children);
@@ -119,40 +129,56 @@ class ChildrenList extends QUI\Control
         $where                      = $this->getAttribute('where');
 
         if (empty($where)) {
-            $where = array();
+            $where = [];
         }
 
         $where['active'] = 1;
 
         if ($this->getAttribute('parentInputList')) {
             // for bricks
-            $children = Utils::getSitesByInputList($Project, $parents, array(
+            $children = Utils::getSitesByInputList($Project, $parents, [
                 'where' => $where,
                 'limit' => $start . ',' . $limit,
                 'order' => $this->getAttribute('order')
-            ));
+            ]);
         } elseif ($this->getAttribute('children')
-                  || !$loadAllChildrenOnEmptyList) {
+            || !$loadAllChildrenOnEmptyList) {
             $children = $this->getAttribute('children');
         } else {
             // for site types
-            $children = $Site->getChildren(array(
-                'where' => $where,
-                'limit' => $start . ',' . $limit
-            ));
+            if ($this->getAttribute('byType')) {
+                // get all sites, not just the direct children of a site
+                $childIds = $Project->getSitesIds([
+                    'where' => [
+                        'type' => $this->getAttribute('byType'),
+                    ],
+                    'order' => 'release_from DESC',
+                    'limit' => $start . ',' . $limit
+                ]);
+
+                foreach ($childIds as $id) {
+                    $children[] = $Project->get($id['id']);
+                }
+            } else {
+                // get only directly children of a site
+                $children = $Site->getChildren([
+                    'where' => $where,
+                    'limit' => $start . ',' . $limit
+                ]);
+            }
         }
 
         $Pagination->setAttribute('limit', $limit);
         $Pagination->setAttribute('sheets', $sheets);
 
-        $Engine->assign(array(
+        $Engine->assign([
             'this'       => $this,
             'Site'       => $this->getSite(),
             'Project'    => $this->getProject(),
             'sheets'     => $sheets,
             'children'   => $children,
             'Pagination' => $Pagination
-        ));
+        ]);
 
         // load custom template (if set)
         if ($this->getAttribute('displayTemplate')
@@ -264,9 +290,9 @@ class ChildrenList extends QUI\Control
             $sheet = (int)$_REQUEST['sheet'];
         }
 
-        $count_children = $Site->getChildren(array(
+        $count_children = $Site->getChildren([
             'count' => 'count'
-        ));
+        ]);
 
         $sheets = ceil($count_children / $limit);
 
