@@ -154,6 +154,7 @@ class ChildrenList extends QUI\Control
                 // get all sites, not just the direct children of a site
                 $childIds = $Project->getSitesIds([
                     'where' => [
+                        'active' => 1,
                         'type' => $this->getAttribute('byType'),
                     ],
                     'order' => 'release_from DESC',
@@ -164,7 +165,7 @@ class ChildrenList extends QUI\Control
                     $children[] = $Project->get($id['id']);
                 }
             } else {
-                // get only directly children of a site
+                // get only direct children of a site
                 $children = $Site->getChildren([
                     'where' => $where,
                     'limit' => $start . ',' . $limit
