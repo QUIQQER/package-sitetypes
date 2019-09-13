@@ -13,18 +13,18 @@ try {
         // so, we get the site with vhosts, and url dir
         $Output = new QUI\Output();
 
-        $url = $Output->getSiteUrl(array(
+        $url = $Output->getSiteUrl([
             'site' => $Wanted
-        ));
+        ]);
     } else {
-        $parts = parse_url($siteUrl);
+        $parts = \parse_url($siteUrl);
 
         if (!isset($parts['host']) || empty($parts['host'])) {
-            $siteUrl = HOST . $siteUrl;
+            $siteUrl = HOST.$siteUrl;
         }
 
-        if (!isset($parts['scheme']) && strpos($siteUrl, '//') !== 0) {
-            $siteUrl = '//' . $siteUrl;
+        if (!isset($parts['scheme']) && \strpos($siteUrl, '//') !== 0) {
+            $siteUrl = '//'.$siteUrl;
         }
 
         // external
@@ -33,11 +33,11 @@ try {
 } catch (QUI\Exception $Exception) {
 }
 
-if (strpos($siteUrl, '#') !== false) {
-    $anchor = explode('#', $siteUrl);
+if (\strpos($siteUrl, '#') !== false) {
+    $anchor = \explode('#', $siteUrl);
     $anchor = $anchor[1];
 
-    $url .= '#' . $anchor;
+    $url .= '#'.$anchor;
 }
 
 if ($url) {

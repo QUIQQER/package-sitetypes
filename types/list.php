@@ -4,7 +4,7 @@
  * Site list
  */
 
-$ChildrenList = new QUI\Controls\ChildrenList(array(
+$ChildrenList = new QUI\Controls\ChildrenList([
     'showTitle'      => false,
     'Site'           => $Site,
     'limit'          => $Site->getAttribute('quiqqer.settings.sitetypes.list.max'),
@@ -19,7 +19,7 @@ $ChildrenList = new QUI\Controls\ChildrenList(array(
     'itemtype'       => 'http://schema.org/ItemList',
     'child-itemtype' => 'http://schema.org/ListItem',
     'display'        => $Site->getAttribute('quiqqer.settings.sitetypes.list.template')
-));
+]);
 
 try {
     $ChildrenList->checkLimit();
@@ -27,6 +27,6 @@ try {
     QUI\System\Log::addWarning($Exception->getMessage());
 }
 
-$Engine->assign(array(
+$Engine->assign([
     'ChildrenList' => $ChildrenList
-));
+]);
