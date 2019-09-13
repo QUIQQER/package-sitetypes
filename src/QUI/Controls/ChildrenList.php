@@ -152,11 +152,11 @@ class ChildrenList extends QUI\Control
             // for bricks
             $children = Utils::getSitesByInputList($Project, $parents, [
                 'where' => $where,
-                'limit' => $start . ',' . $limit,
+                'limit' => $start.','.$limit,
                 'order' => $this->getAttribute('order')
             ]);
         } elseif ($this->getAttribute('children')
-            || !$loadAllChildrenOnEmptyList) {
+                  || !$loadAllChildrenOnEmptyList) {
             $children = $this->getAttribute('children');
         } else {
             // for site types
@@ -168,7 +168,7 @@ class ChildrenList extends QUI\Control
                         'type'   => $this->getAttribute('byType'),
                     ],
                     'order' => 'release_from DESC',
-                    'limit' => $start . ',' . $limit
+                    'limit' => $start.','.$limit
                 ]);
 
                 foreach ($childIds as $id) {
@@ -178,7 +178,7 @@ class ChildrenList extends QUI\Control
                 // get only direct children of a site
                 $children = $Site->getChildren([
                     'where' => $where,
-                    'limit' => $start . ',' . $limit
+                    'limit' => $start.','.$limit
                 ]);
             }
         }
@@ -211,68 +211,68 @@ class ChildrenList extends QUI\Control
         switch ($this->getAttribute('display')) {
             default:
             case 'childrenList':
-                $css      = \dirname(__FILE__) . '/ChildrenList.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.css';
+                $template = \dirname(__FILE__).'/ChildrenList.html';
                 break;
 
             case 'longFooter':
-                $css      = \dirname(__FILE__) . '/ChildrenList.LongFooter.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.LongFooter.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.LongFooter.css';
+                $template = \dirname(__FILE__).'/ChildrenList.LongFooter.html';
                 break;
 
             case 'authorTop':
-                $css      = \dirname(__FILE__) . '/ChildrenList.AuthorTop.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.AuthorTop.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.AuthorTop.css';
+                $template = \dirname(__FILE__).'/ChildrenList.AuthorTop.html';
                 break;
 
             case '1er':
-                $css      = \dirname(__FILE__) . '/ChildrenList.1er.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.1er.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.1er.css';
+                $template = \dirname(__FILE__).'/ChildrenList.1er.html';
                 break;
 
             case '2er':
-                $css      = \dirname(__FILE__) . '/ChildrenList.2er.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.2er.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.2er.css';
+                $template = \dirname(__FILE__).'/ChildrenList.2er.html';
                 break;
 
             case '3er':
-                $css      = \dirname(__FILE__) . '/ChildrenList.3er.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.3er.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.3er.css';
+                $template = \dirname(__FILE__).'/ChildrenList.3er.html';
                 break;
 
             case '4er':
-                $css      = \dirname(__FILE__) . '/ChildrenList.4er.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.4er.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.4er.css';
+                $template = \dirname(__FILE__).'/ChildrenList.4er.html';
                 break;
 
             case 'simpleArticleList':
-                $css      = \dirname(__FILE__) . '/ChildrenList.SimpleArticleList.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.SimpleArticleList.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.SimpleArticleList.css';
+                $template = \dirname(__FILE__).'/ChildrenList.SimpleArticleList.html';
                 break;
 
             case 'advancedArticleList':
-                $css      = \dirname(__FILE__) . '/ChildrenList.AdvancedArticleList.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.AdvancedArticleList.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.AdvancedArticleList.css';
+                $template = \dirname(__FILE__).'/ChildrenList.AdvancedArticleList.html';
                 break;
 
             case 'imageTopBorder':
-                $css      = \dirname(__FILE__) . '/ChildrenList.ImageTopBorder.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.ImageTopBorder.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.ImageTopBorder.css';
+                $template = \dirname(__FILE__).'/ChildrenList.ImageTopBorder.html';
                 break;
 
             case 'imageTop':
-                $css      = \dirname(__FILE__) . '/ChildrenList.ImageTop.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.ImageTop.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.ImageTop.css';
+                $template = \dirname(__FILE__).'/ChildrenList.ImageTop.html';
                 break;
 
             case 'cardRows':
-                $css      = \dirname(__FILE__) . '/ChildrenList.CardRows.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.CardRows.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.CardRows.css';
+                $template = \dirname(__FILE__).'/ChildrenList.CardRows.html';
                 break;
 
             case 'CSSGridCards':
-                $css      = \dirname(__FILE__) . '/ChildrenList.CSSGridCards.css';
-                $template = \dirname(__FILE__) . '/ChildrenList.CSSGridCards.html';
+                $css      = \dirname(__FILE__).'/ChildrenList.CSSGridCards.css';
+                $template = \dirname(__FILE__).'/ChildrenList.CSSGridCards.html';
                 break;
         }
 

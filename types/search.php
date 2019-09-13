@@ -6,10 +6,16 @@
 
 use QUI\Utils\Security\Orthos;
 
+if (isset($_REQUEST['sheet'])
+    && \is_numeric($_REQUEST['sheet'])
+    && (int)$_REQUEST['sheet'] > 1) {
+    $Site->setAttribute('meta.robots', 'noindex,follow');
+}
+
 if (QUI::getRewrite()->getHeaderCode() === 404) {
     if (isset($_REQUEST['_url'])) {
         $requestUrl = $_REQUEST['_url'];
-        $path       = pathinfo($requestUrl);
+        $path       = \pathinfo($requestUrl);
 
         if (isset($path['dirname'])) {
             $_REQUEST['search'] = $path['dirname'].' '.$path['filename'];
@@ -17,6 +23,8 @@ if (QUI::getRewrite()->getHeaderCode() === 404) {
             $_REQUEST['search'] = $path['filename'];
         }
     }
+
+    $Site->setAttribute('meta.robots', 'noindex,nofollow');
 }
 
 /**
@@ -27,7 +35,7 @@ $searchValue = '';
 $start       = 0;
 $max         = $Site->getAttribute('quiqqer.settings.sitetypes.list.max');
 
-$children = array();
+$children = [];
 $sheets   = 0;
 $count    = 0;
 
@@ -40,67 +48,67 @@ if (isset($_REQUEST['sheet'])) {
 }
 
 if (isset($_REQUEST['search'])) {
-    if (is_array($_REQUEST['search'])) {
-        $searchValue = implode(' ', $_REQUEST['search']);
+    if (\is_array($_REQUEST['search'])) {
+        $searchValue = \implode(' ', $_REQUEST['search']);
     } else {
         $searchValue = $_REQUEST['search'];
     }
 
-    $searchValue = preg_replace("/[^a-zA-Z0-9äöüß]/", " ", $searchValue);
+    $searchValue = \preg_replace("/[^a-zA-Z0-9äöüß]/", " ", $searchValue);
     $searchValue = Orthos::clear($searchValue);
-    $searchValue = preg_replace('#([ ]){2,}#', "$1", $searchValue);
-    $searchValue = trim($searchValue);
+    $searchValue = \preg_replace('#([ ]){2,}#', "$1", $searchValue);
+    $searchValue = \trim($searchValue);
 }
 
 
 // search
 if (!empty($searchValue)) {
-    $whereOr = array(
-        'title'   => array(
+    $whereOr = [
+        'title'   => [
             'value' => $searchValue,
             'type'  => '%LIKE%'
-        ),
-        'short'   => array(
+        ],
+        'short'   => [
             'value' => $searchValue,
             'type'  => '%LIKE%'
-        ),
-        'content' => array(
+        ],
+        'content' => [
             'value' => $searchValue,
             'type'  => '%LIKE%'
-        )
-    );
+        ]
+    ];
 
-    $children = $Project->getSites(array(
+    $children = $Project->getSites([
         'where_or' => $whereOr,
         'limit'    => $start.','.$max
-    ));
+    ]);
 
     // sheets and count
-    $count = $Project->getSites(array(
+    $count = $Project->getSites([
         'count'    => 'count',
         'where_or' => $whereOr
-    ));
+    ]);
 
-    if (is_array($count)) {
-        $count = count($count);
+    if (\is_array($count)) {
+        $count = \count($count);
     }
 
-    $sheets = ceil($count / $max);
+    $sheets = \ceil($count / $max);
 }
 
 
-$Pagination = new QUI\Bricks\Controls\Pagination(array(
+$Pagination = new QUI\Controls\Navigating\Pagination([
     'Site'      => $Site,
     'count'     => $count,
     'showLimit' => false,
     'limit'     => $max,
     'useAjax'   => false
-));
+]);
 
 $Pagination->loadFromRequest();
 $Pagination->setGetParams('search', $searchValue);
 
-$ChildrenList = new QUI\Controls\ChildrenList(array(
+$ChildrenList = new QUI\Controls\ChildrenList([
     'showTitle'      => false,
     'Site'           => $Site,
     'limit'          => $max,
@@ -116,12 +124,12 @@ $ChildrenList = new QUI\Controls\ChildrenList(array(
     'child-itemtype' => 'http://schema.org/ListItem',
     'display'        => $Site->getAttribute('quiqqer.settings.sitetypes.list.template'),
     'children'       => $children,
-));
+]);
 
-$Engine->assign(array(
+$Engine->assign([
     'Pagination'   => $Pagination,
     'sheets'       => $sheets,
     'children'     => $children,
     'searchValue'  => $searchValue,
     'ChildrenList' => $ChildrenList
-));
+]);

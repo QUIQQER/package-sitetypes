@@ -79,12 +79,12 @@ class EventHandler
             /* @var $Project QUI\Projects\Project */
             $Project = $TemplateManager->getAttribute('Project');
 
-            $sites = $Project->getSites(array(
-                'where' => array(
+            $sites = $Project->getSites([
+                'where' => [
                     'type' => 'quiqqer/sitetypes:types/privacypolicy'
-                ),
+                ],
                 'limit' => 1
-            ));
+            ]);
 
             if (isset($sites[0])) {
                 $privacyPolicyUrl = $sites[0]->getUrlRewritten();
@@ -93,7 +93,7 @@ class EventHandler
         }
 
         $header = '<script type="text/javascript">';
-        $header .= 'var QUIQQER_PRIVACY_POLICY_URL = "' . $privacyPolicyUrl . '";';
+        $header .= 'var QUIQQER_PRIVACY_POLICY_URL = "'.$privacyPolicyUrl.'";';
         $header .= '</script>';
 
         $TemplateManager->extendHeader($header);

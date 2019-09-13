@@ -2,5 +2,5 @@
 
 $Engine->assign(
     'childTpl',
-    dirname(__FILE__) . '/sitemapChildren.html'
+    \dirname(__FILE__).'/sitemapChildren.html'
 );
