@@ -6,10 +6,16 @@
 
 use QUI\Utils\Security\Orthos;
 
+if (isset($_REQUEST['sheet'])
+    && \is_numeric($_REQUEST['sheet'])
+    && (int)$_REQUEST['sheet'] > 1) {
+    $Site->setAttribute('meta.robots', 'noindex,follow');
+}
+
 if (QUI::getRewrite()->getHeaderCode() === 404) {
     if (isset($_REQUEST['_url'])) {
         $requestUrl = $_REQUEST['_url'];
-        $path       = pathinfo($requestUrl);
+        $path       = \pathinfo($requestUrl);
 
         if (isset($path['dirname'])) {
             $_REQUEST['search'] = $path['dirname'].' '.$path['filename'];
@@ -17,6 +23,8 @@ if (QUI::getRewrite()->getHeaderCode() === 404) {
             $_REQUEST['search'] = $path['filename'];
         }
     }
+
+    $Site->setAttribute('meta.robots', 'noindex,nofollow');
 }
 
 /**
