@@ -23,8 +23,6 @@ if (QUI::getRewrite()->getHeaderCode() === 404) {
             $_REQUEST['search'] = $path['filename'];
         }
     }
-
-    $Site->setAttribute('meta.robots', 'noindex,nofollow');
 }
 
 /**
