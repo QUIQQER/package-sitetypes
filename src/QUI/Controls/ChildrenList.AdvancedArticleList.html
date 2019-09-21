@@ -1,4 +1,3 @@
-
 {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
 <header class="control-header">
     <h1>{$this->getAttribute('frontendTitle')}</h1>
@@ -21,18 +20,18 @@
         <time class="qui-control-childrenlist-advancedArticleList-time
                     {if !$this->getAttribute('showDate')} qui-control-childrenlist-advancedArticleList-time-no-date{/if}
                     mainColorHover"
-              datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
+              datetime="{$Child->getAttribute('release_from')|date_format:'c'}"
               itemprop="datePublished"
-              >
+        >
             {if $this->getAttribute('showDate')}
-                <span class="qui-control-childrenlist-advancedArticleList-day">
-                    {$Child->getAttribute('release_from')|date_format:"%d"}
-                </span>
-                <span class="qui-control-childrenlist-advancedArticleList-month">
-                    {$Child->getAttribute('release_from')|date_format:"%b"}
-                </span>
+            <span class="qui-control-childrenlist-advancedArticleList-day">
+                {$Child->getAttribute('release_from')|date_format:"%d"}
+            </span>
+            <span class="qui-control-childrenlist-advancedArticleList-month">
+                {$Child->getAttribute('release_from')|date_format:"%b"}
+            </span>
             {else}
-                <br />
+            <br/>
             {/if}
         </time>
 
@@ -40,8 +39,9 @@
             <header class="qui-control-childrenlist-advancedArticleList-header">
                 <h1>
                     <a href="{url site=$Child}"
-                       title="{$Child->getAttribute('title')|escape:"html"}"
-                       class="qui-control-childrenlist-advancedArticleList-header-link">
+                       title="{$Child->getAttribute('title')|escape:'html'}"
+                       class="qui-control-childrenlist-advancedArticleList-header-link"
+                    >
                         {$Child->getAttribute('title')}
                     </a>
                 </h1>
@@ -64,8 +64,9 @@
     <div class="qui-control-childrenlist-advancedArticleList-short">
         {$Child->getAttribute('short')}
         <a itemprop="url" href="{url site=$Child}"
-           title="{$Child->getAttribute('title')|escape:"html"}"
-           class="qui-control-childrenlist-advancedArticleList-show-more">
+           title="{$Child->getAttribute('title')|escape:'html'}"
+           class="qui-control-childrenlist-advancedArticleList-show-more"
+        >
             {locale group="quiqqer/sitetypes" value="list.more"} <i class="fa fa-angle-double-right"></i>
         </a>
     </div>

@@ -35,16 +35,16 @@
         {assign var=noShortClass value=" qui-control-childrenlist-default-entry-image-noShort"}
 
         {if $this->getAttribute('showImages')}
-            {assign var=noImageClass value=""}
+        {assign var=noImageClass value=""}
         {/if}
 
         {if $this->getAttribute('showShort')}
-            {assign var=noShortClass value=""}
+        {assign var=noShortClass value=""}
         {/if}
 
         {if $this->getAttribute('showImages')}
         <div class="qui-control-childrenlist-default-entry-image grid-40 grid-container">
-            <a itemprop="url" href="{url site=$Child}">
+            <a href="{url site=$Child}">
                 {image src=$Child->getAttribute('image_site') width="500" type="resize"
                 title="{$Child->getAttribute('title')}"}
             </a>
@@ -57,8 +57,10 @@
             {if $this->getAttribute('showHeader')}
             <header>
                 <h1 itemprop="name">
-                    <a itemprop="url" href="{url site=$Child}" title="{$Child->getAttribute('title')}"
-                       class="qui-control-childrenlist-default-entry-content-headerLink">
+                    <a href="{url site=$Child}"
+                       title="{$Child->getAttribute('title')}"
+                       class="qui-control-childrenlist-default-entry-content-headerLink"
+                    >
                         {$Child->getAttribute('title')}
                     </a>
                 </h1>
@@ -73,11 +75,11 @@
 
             <div class="qui-control-childrenlist-default-entry-content-footer"
                  {if !$this->getAttribute('showCreator') && !$this->getAttribute('showDate') &&
-                     !$this->getAttribute('showDate')}
-                    style="border-bottom: none; border-top: none;"
+                !$this->getAttribute('showDate')}
+                style="border-bottom: none; border-top: none;"
                 {/if}>
                 {if $this->getAttribute('showCreator') || $this->getAttribute('showDate') ||
-                    $this->getAttribute('showTime')}
+                $this->getAttribute('showTime')}
                 <div class="qui-control-childrenlist-default-entry-content-footer-wrapper">
 
                     {if $this->getAttribute('showCreator')}
@@ -94,25 +96,24 @@
 
                     {if $this->getAttribute('showDate')}
                     <span class="qui-control-childrenlist-default-entry-content-footer-date">
-                        {if $Child->getAttribute('release_from') &&
-                        $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
+                        {if $Child->getAttribute('release_from') && $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
                             <span class="fa fa-calendar"></span>
-                            <time datetime="{$Child->getAttribute('release_from')|date_format:" c"}"
-                            itemprop="datePublished">
+                            <time datetime="{$Child->getAttribute('release_from')|date_format:'c'}"
+                                  itemprop="datePublished">
                                 {locale_date date=$Child->getAttribute('release_from')}
-                            </time>
+                        </time>
                         {else}
-                            <time datetime="{$Child->getAttribute('c_date')|date_format:" c"}"
-                            itemprop="datePublished"
+                            <time datetime="{$Child->getAttribute('c_date')|date_format:'c'}"
+                                  itemprop="datePublished"
                             >
                                 {locale_date date=$Child->getAttribute('c_date')}
-                            </time>
+                        </time>
                         {/if}
                     </span>
                     {/if}
 
                     {if $this->getAttribute('showTime')}
-                        <span class="qui-control-childrenlist-default-entry-content-footer-time">
+                    <span class="qui-control-childrenlist-default-entry-content-footer-time">
                             <span class="fa fa-clock-o"></span>
                             {$Child->getAttribute('release_from')|date_format:"%H:%M"}
                         </span>
@@ -120,7 +121,11 @@
                 </div>
                 {/if}
 
-                <a itemprop="url" href="{url site=$Child}" class="button qui-control-childrenlist-default-entry-content-footer-link">
+                <a itemprop="url"
+                   href="{url site=$Child}"
+                   title="{$Child->getAttribute('title')}"
+                   class="button qui-control-childrenlist-default-entry-content-footer-link"
+                >
                     {locale group="quiqqer/sitetypes" value="list.more"}
                 </a>
             </div>
