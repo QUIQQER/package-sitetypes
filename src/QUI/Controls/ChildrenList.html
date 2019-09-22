@@ -26,7 +26,12 @@
              itemtype="{$this->getAttribute('child-itemtype')}"
              class="qui-control-childrenlist-default-entry"
     >
+        {$tmp = $MetaList->clear()}
+        {$tmp = $Events->fireEvent('metaList', [$this, $Child, $MetaList])}
+        {$MetaList->create()}
+
         <meta itemprop="position" content="{$counter}"/>
+        <meta itemprop="name" content="{$Child->getAttribute('title')}"/>
         {assign var=counter value=$counter+1}
 
         <!-- entry image -->
@@ -52,11 +57,11 @@
         {/if}
         <!-- entry content -->
         <div class="qui-control-childrenlist-default-entry-content
-                    {if !$noImageClass}grid-60{/if} grid-container {$noImageClass}">
-
+                    {if !$noImageClass}grid-60{/if} grid-container {$noImageClass}"
+        >
             {if $this->getAttribute('showHeader')}
             <header>
-                <h1 itemprop="name">
+                <h1>
                     <a href="{url site=$Child}"
                        title="{$Child->getAttribute('title')}"
                        class="qui-control-childrenlist-default-entry-content-headerLink"
@@ -89,7 +94,7 @@
                         {if $User->getId() && $User->getAttribute('firstname')}
                             {$User->getAttribute('firstname')}
                         {else if $User->getId()}
-                            {$User->getname()}
+                            {$User->getName()}
                         {/if}
                     </span>
                     {/if}

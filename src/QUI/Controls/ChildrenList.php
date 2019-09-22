@@ -87,10 +87,11 @@ class ChildrenList extends QUI\Control
         $Pagination->loadFromRequest();
         $Pagination->setAttribute('Site', $Site);
 
-        $start   = 0;
-        $limit   = $this->getAttribute('limit');
-        $parents = $this->getAttribute('parentInputList');
-        $Project = $this->getProject();
+        $start    = 0;
+        $limit    = $this->getAttribute('limit');
+        $parents  = $this->getAttribute('parentInputList');
+        $Project  = $this->getProject();
+        $children = [];
 
         if (!$parents) {
             $parents = $Site->getId();
@@ -155,8 +156,7 @@ class ChildrenList extends QUI\Control
                 'limit' => $start.','.$limit,
                 'order' => $this->getAttribute('order')
             ]);
-        } elseif ($this->getAttribute('children')
-                  || !$loadAllChildrenOnEmptyList) {
+        } elseif ($this->getAttribute('children') || !$loadAllChildrenOnEmptyList) {
             $children = $this->getAttribute('children');
         } else {
             // for site types
@@ -192,7 +192,9 @@ class ChildrenList extends QUI\Control
             'Project'    => $this->getProject(),
             'sheets'     => $sheets,
             'children'   => $children,
-            'Pagination' => $Pagination
+            'Pagination' => $Pagination,
+            'MetaList'   => new QUI\Controls\Utils\MetaList(),
+            'Events'     => $this->Events
         ]);
 
         // load custom template (if set)
