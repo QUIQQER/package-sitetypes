@@ -10,67 +10,84 @@
 </div>
 {/if}
 
+{assign var=counter value=1}
 {assign var=noDateClass value="-no-date"}
-{foreach from=$children item=Child}
 
-<div class="qui-control-childrenlist-advancedArticleList-wrapper mainFontColor">
-    <div class="qui-control-childrenlist-advancedArticleList
+<section itemscope itemtype="{$this->getAttribute('itemtype')}">
+    {foreach from=$children item=Child}
+
+    <article itemscope
+             itemprop="itemListElement"
+             itemtype="{$this->getAttribute('child-itemtype')}"
+             class="qui-control-childrenlist-advancedArticleList-wrapper mainFontColor"
+    >
+        {$tmp = $MetaList->clear()}
+        {$tmp = $Events->fireEvent('metaList', [$this, $Child, $MetaList])}
+        {$MetaList->create()}
+
+        <meta itemprop="name" content="{$Child->getAttribute('title')}"/>
+        <meta itemprop="url" content="{url site=$Child rewritten=true}"/>
+        <meta itemprop="position" content="{$counter}"/>
+        {assign var=counter value=$counter+1}
+
+        <div class="qui-control-childrenlist-advancedArticleList
                 {if $this->getAttribute('showShort')} qui-control-childrenlist-advancedArticleList-show-short {/if}"
-         {if !$this->getAttribute('showDate')}style="align-items: stretch;"{/if}>
-        <time class="qui-control-childrenlist-advancedArticleList-time
+             {if !$this->getAttribute('showDate')}style="align-items: stretch;"{/if}>
+            <time class="qui-control-childrenlist-advancedArticleList-time
                     {if !$this->getAttribute('showDate')} qui-control-childrenlist-advancedArticleList-time-no-date{/if}
                     mainColorHover"
-              datetime="{$Child->getAttribute('release_from')|date_format:'c'}"
-              itemprop="datePublished"
-        >
-            {if $this->getAttribute('showDate')}
-            <span class="qui-control-childrenlist-advancedArticleList-day">
+                  datetime="{$Child->getAttribute('release_from')|date_format:'c'}"
+            >
+                {if $this->getAttribute('showDate')}
+                <span class="qui-control-childrenlist-advancedArticleList-day">
                 {$Child->getAttribute('release_from')|date_format:"%d"}
             </span>
-            <span class="qui-control-childrenlist-advancedArticleList-month">
+                <span class="qui-control-childrenlist-advancedArticleList-month">
                 {$Child->getAttribute('release_from')|date_format:"%b"}
             </span>
-            {else}
-            <br/>
-            {/if}
-        </time>
+                {else}
+                <br/>
+                {/if}
+            </time>
 
-        <span href="{url site=$Child}" class="mainFontColor qui-control-childrenlist-advancedArticleList-link">
-            <header class="qui-control-childrenlist-advancedArticleList-header">
-                <h1>
-                    <a href="{url site=$Child}"
-                       title="{$Child->getAttribute('title')|escape:'html'}"
-                       class="qui-control-childrenlist-advancedArticleList-header-link"
-                    >
-                        {$Child->getAttribute('title')}
-                    </a>
-                </h1>
-            </header>
-            {if $this->getAttribute('showCreator')}
-            <span class="qui-control-childrenlist-advancedArticleList-author">
+            <div href="{url site=$Child}" class="mainFontColor qui-control-childrenlist-advancedArticleList-link">
+                <header class="qui-control-childrenlist-advancedArticleList-header">
+                    <h1>
+                        <a href="{url site=$Child}"
+                           title="{$Child->getAttribute('title')|escape:'html'}"
+                           class="qui-control-childrenlist-advancedArticleList-header-link"
+                        >
+                            {$Child->getAttribute('title')}
+                        </a>
+                    </h1>
+                </header>
+                {if $this->getAttribute('showCreator')}
+                <span class="qui-control-childrenlist-advancedArticleList-author">
                 {user id=$Child->getAttribute('c_user') var=User}
                 <span class="fa fa-user"></span>
                 {if $User->getId() && $User->getAttribute('firstname')}
                     {$User->getAttribute('firstname')}
                 {else if $User->getId()}
-                    {$User->getname()}
+                    {$User->getName()}
                 {/if}
             </span>
-            {/if}
-        </span>
-    </div>
+                {/if}
+            </div>
+        </div>
 
-    {if $this->getAttribute('showShort')}
-    <div class="qui-control-childrenlist-advancedArticleList-short">
-        {$Child->getAttribute('short')}
-        <a itemprop="url" href="{url site=$Child}"
-           title="{$Child->getAttribute('title')|escape:'html'}"
-           class="qui-control-childrenlist-advancedArticleList-show-more"
-        >
-            {locale group="quiqqer/sitetypes" value="list.more"} <i class="fa fa-angle-double-right"></i>
-        </a>
-    </div>
-    {/if}
+        {if $this->getAttribute('showShort')}
+        <div class="qui-control-childrenlist-advancedArticleList-short">
+            {$Child->getAttribute('short')}
+            <a itemprop="url" href="{url site=$Child}"
+               title="{$Child->getAttribute('title')|escape:'html'}"
+               class="qui-control-childrenlist-advancedArticleList-show-more"
+            >
+                {locale group="quiqqer/sitetypes" value="list.more"} <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+        {/if}
 
-</div>
-{/foreach}
+    </article>
+    {/foreach}
+
+</section>

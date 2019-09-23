@@ -1,4 +1,3 @@
-
 {if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
 <header class="control-header">
     <h1>{$this->getAttribute('frontendTitle')}</h1>
@@ -13,7 +12,19 @@
 
 {foreach from=$children item=Child}
 
-<article class="qui-control-childrenlist-imageTop">
+<article itemscope
+         itemprop="itemListElement"
+         itemtype="{$this->getAttribute('child-itemtype')}"
+         class="qui-control-childrenlist-imageTop"
+>
+    {$tmp = $MetaList->clear()}
+    {$tmp = $Events->fireEvent('metaList', [$this, $Child, $MetaList])}
+    {$MetaList->create()}
+
+    <meta itemprop="name" content="{$Child->getAttribute('title')}"/>
+    <meta itemprop="url" content="{url site=$Child rewritten=true}"/>
+    <meta itemprop="position" content="{$counter}"/>
+    {assign var=counter value=$counter+1}
 
     <!-- entry image -->
     {if $this->getAttribute('showImages')}
@@ -23,11 +34,11 @@
             {assign var=noShortClass value=" qui-control-childrenlist-imageTop-entry-image-noShort"}
 
             {if $this->getAttribute('showImages')}
-                {assign var=noImageClass value=""}
+            {assign var=noImageClass value=""}
             {/if}
 
             {if $this->getAttribute('showShort')}
-                {assign var=noShortClass value=""}
+            {assign var=noShortClass value=""}
             {/if}
 
             {image src=$Child->getAttribute('image_site')
@@ -41,7 +52,8 @@
         <h1>
             <a href="{url site=$Child}"
                class="qui-control-childrenlist-imageTop-entry-headerLink"
-               title="{$Child->getAttribute('title')|escape:"html"}">
+               title="{$Child->getAttribute('title')|escape:'html'}"
+            >
                 {$Child->getAttribute('title')}
             </a>
         </h1>
@@ -50,16 +62,17 @@
     {if $this->getAttribute('showShort')}
     <div class="qui-control-childrenlist-imageTop-short">
         {$Child->getAttribute('short')}
-        <a itemprop="url" href="{url site=$Child}"
+        <a href="{url site=$Child}"
            class="qui-control-childrenlist-imageTop-show-more"
-           title="{$Child->getAttribute('title')|escape:"html"}">
-            {locale group="quiqqer/sitetypes" value="list.more"} <i class="fa fa-angle-double-right"></i>
+           title="{$Child->getAttribute('title')|escape:'html'}"
+        >
+            {locale group="quiqqer/sitetypes" value="list.more"}
+            <i class="fa fa-angle-double-right"></i>
         </a>
     </div>
     {/if}
 
-    {if $this->getAttribute('showCreator') || $this->getAttribute('showDate') ||
-    $this->getAttribute('showTime')}
+    {if $this->getAttribute('showCreator') || $this->getAttribute('showDate') || $this->getAttribute('showTime')}
     <div class="qui-control-childrenlist-imageTop-footer">
 
         {if $this->getAttribute('showCreator')}
@@ -70,7 +83,7 @@
                 {if $User->getId() && $User->getAttribute('firstname')}
                     {$User->getAttribute('firstname')}
                 {else if $User->getId()}
-                    {$User->getname()}
+                    {$User->getName()}
                 {/if}
             </span>
         </div>
@@ -80,28 +93,26 @@
         <div class="qui-control-childrenlist-imageTop-footer-wrapper-time">
             {if $Child->getAttribute('release_from') &&
             $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
-            <time datetime="{$Child->getAttribute('release_from')|date_format:"c"}"
-                itemprop="datePublished">
+            <time datetime="{$Child->getAttribute('release_from')|date_format:'c'}">
                 {if $this->getAttribute('showDate')}
-                    <span class="qui-control-childrenlist-imageTop-footer-wrapper-date">
-                        <span class="fa fa-calendar"></span>
-                        {locale_date date=$Child->getAttribute('release_from')}
-                    </span>
+                <span class="qui-control-childrenlist-imageTop-footer-wrapper-date">
+                    <span class="fa fa-calendar"></span>
+                    {locale_date date=$Child->getAttribute('release_from')}
+                </span>
                 {/if}
 
                 {if $this->getAttribute('showTime')}
-                    <span class="qui-control-childrenlist-imageTop-footer-wrapper-time">
-                        <span class="fa fa-clock-o"></span>
-                        {$Child->getAttribute('release_from')|date_format:"%H:%M"}
-                    </span>
+                <span class="qui-control-childrenlist-imageTop-footer-wrapper-time">
+                    <span class="fa fa-clock-o"></span>
+                    {$Child->getAttribute('release_from')|date_format:"%H:%M"}
+                </span>
                 {/if}
             </time>
             {else}
-            <time datetime="{$Child->getAttribute('c_date')|date_format:"c"}" itemprop="datePublished">
+            <time datetime="{$Child->getAttribute('c_date')|date_format:'c'}">
                 <span class="fa fa-calendar qui-control-childrenlist-imageTop-time-icon"></span>
                 {locale_date date=$Child->getAttribute('c_date')}
             </time>
-
             {/if}
         </div>
         {/if}
@@ -109,5 +120,4 @@
     </div>
     {/if}
 </article>
-
 {/foreach}
