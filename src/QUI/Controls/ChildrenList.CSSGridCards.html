@@ -27,7 +27,7 @@
         {foreach from=$children item=Child}
         {assign var=_Child value=$Child->load()}
         <article itemscope
-                 itemprop="itemListElement"
+                 itemprop="{$this->getAttribute('child-itemprop')}"
                  itemtype="{$this->getAttribute('child-itemtype')}"
                  class="childrenlist-cardsCssGrid-entry"
         >

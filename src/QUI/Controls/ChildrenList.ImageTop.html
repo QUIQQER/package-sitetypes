@@ -13,7 +13,7 @@
 {foreach from=$children item=Child}
 
 <article itemscope
-         itemprop="itemListElement"
+         itemprop="{$this->getAttribute('child-itemprop')}"
          itemtype="{$this->getAttribute('child-itemtype')}"
          class="qui-control-childrenlist-imageTop"
 >
