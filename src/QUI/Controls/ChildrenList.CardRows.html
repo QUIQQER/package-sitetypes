@@ -26,13 +26,19 @@
              itemtype="{$this->getAttribute('child-itemtype')}"
              class="qui-control-childrenlist-cardRows-entry grid-100 grid-parent"
     >
+        {$tmp = $MetaList->clear()}
+        {$tmp = $Events->fireEvent('metaList', [$this, $Child, $MetaList])}
+        {$MetaList->create()}
+
+        <meta itemprop="name" content="{$Child->getAttribute('title')}"/>
+        <meta itemprop="url" content="{url site=$Child rewritten=true}"/>
         <meta itemprop="position" content="{$counter}"/>
         {assign var=counter value=$counter+1}
 
         <!-- entry image -->
         {if $this->getAttribute('showImages')}
         <div class="qui-control-childrenlist-cardRows-entry-image grid-25 grid-container">
-            <a itemprop="url" href="{url site=$Child}">
+            <a href="{url site=$Child}">
                 {image src=$Child->getAttribute('image_site')
                 width="500"
                 type="resize"
@@ -47,18 +53,17 @@
 
             {if $this->getAttribute('showHeader')}
             <header class="qui-control-childrenlist-cardRows-entry-content-header
-                           {if !$this->getAttribute('showShort')} no-padding {/if}">
-                <h2 itemprop="name">
-                    <a itemprop="url" href="{url site=$Child}"
-                       title="{$Child->getAttribute('title')|escape:"html"}">
-                    {$Child->getAttribute('title')}
+                           {if !$this->getAttribute('showShort')} no-padding {/if}"
+            >
+                <h2>
+                    <a href="{url site=$Child}" title="{$Child->getAttribute('title')|escape:'html'}">
+                        {$Child->getAttribute('title')}
                     </a>
-
                 </h2>
 
                 {if $this->getAttribute('showCreator') ||
-                    $this->getAttribute('showDate') ||
-                    $this->getAttribute('showDate')}
+                $this->getAttribute('showDate') ||
+                $this->getAttribute('showDate')}
                 <p class="qui-control-childrenlist-cardRows-entry-content-header-footprint">
                     {if $this->getAttribute('showCreator')}
                     <span class="footprint-author">
@@ -67,7 +72,7 @@
                         {if $User->getId() && $User->getAttribute('firstname')}
                             {$User->getAttribute('firstname')}
                         {else if $User->getId()}
-                            {$User->getname()}
+                            {$User->getName()}
                         {/if}
                     </span>
                     {/if}
@@ -76,16 +81,13 @@
                     <span class="footprint-date">
                         {if $Child->getAttribute('release_from') &&
                         $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
-                            <span class="fa fa-calendar"></span>
-                            <time datetime="{$Child->getAttribute('release_from')|date_format:" c"}"
-                            itemprop="datePublished">
-                                {locale_date date=$Child->getAttribute('release_from')}
+                        <span class="fa fa-calendar"></span>
+                        <time datetime="{$Child->getAttribute('release_from')|date_format:'c'}">
+                            {locale_date date=$Child->getAttribute('release_from')}
                         </time>
                         {else}
-                            <time datetime="{$Child->getAttribute('c_date')|date_format:" c"}"
-                            itemprop="datePublished"
-                            >
-                                {locale_date date=$Child->getAttribute('c_date')}
+                        <time datetime="{$Child->getAttribute('c_date')|date_format:'c'}">
+                            {locale_date date=$Child->getAttribute('c_date')}
                         </time>
                         {/if}
                     </span>
@@ -93,11 +95,10 @@
 
                     {if $this->getAttribute('showTime')}
                     <span class="footprint-time">
-                            <span class="fa fa-clock-o"></span>
-                            {$Child->getAttribute('release_from')|date_format:"%H:%M"}
-                        </span>
-                    {/if}
+                        <span class="fa fa-clock-o"></span>
+                        {$Child->getAttribute('release_from')|date_format:"%H:%M"}
                     </span>
+                    {/if}
                 </p>
                 {/if}
             </header>
@@ -106,17 +107,14 @@
             {if $this->getAttribute('showShort')}
             <div class="qui-control-childrenlist-cardRows-entry-content-short">
                 {$Child->getAttribute('short')|nl2br}
-                <a itemprop="url" href="{url site=$Child}" title="{$Child->getAttribute('title')|escape:"html"}">
+                <a href="{url site=$Child}" title="{$Child->getAttribute('title')|escape:'html'}">
                     <span>{locale group="quiqqer/sitetypes" value="list.more"}</span>
                 </a>
             </div>
             {/if}
-
-
         </div>
 
     </article>
-
     {/foreach}
 </section>
 

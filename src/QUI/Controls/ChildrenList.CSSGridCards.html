@@ -16,7 +16,9 @@
          class="childrenlist-cardsCssGrid-wrapper control-template"
 >
     {* because of edge / IE bug with CSS-Grid *}
-    {* the <link> musst be outside of the CSS-Grid container *}
+    {* the
+    <link>
+    musst be outside of the CSS-Grid container *}
     <link property="mainEntityOfPage" href="{url site=$Site}">
     <div class="childrenlist-cardsCssGrid">
 
@@ -29,6 +31,12 @@
                  itemtype="{$this->getAttribute('child-itemtype')}"
                  class="childrenlist-cardsCssGrid-entry"
         >
+            {$tmp = $MetaList->clear()}
+            {$tmp = $Events->fireEvent('metaList', [$this, $Child, $MetaList])}
+            {$MetaList->create()}
+
+            <meta itemprop="name" content="{$Child->getAttribute('title')}"/>
+            <meta itemprop="url" content="{url site=$Child rewritten=true}"/>
             <meta itemprop="position" content="{$counter}"/>
             {assign var=counter value=$counter+1}
 
@@ -46,14 +54,14 @@
 
             {* Entry header / image *}
             {if $this->getAttribute('showImages')}
-            <a itemprop="url" href="{url site=$Child}"
+            <a href="{url site=$Child}"
                title="{$Child->getAttribute('title')}"
                class="childrenlist-cardsCssGrid-entry-cover"
-               style="background-image: url({image src=$Child->getAttribute('image_site') width=550 onlysrc=true});">
+               style="background-image: url('{image src=$Child->getAttribute('image_site') width=550 onlysrc=true}');">
                 <div class="childrenlist-cardsCssGrid-entry-cover-overlay">
                     {if $this->getAttribute('showHeader')}
                     <header class="childrenlist-cardsCssGrid-entry-cover-overlay-header">
-                        <h2 itemprop="name">
+                        <h2>
                             {$Child->getAttribute('title')}
                         </h2>
                     </header>
@@ -75,7 +83,7 @@
                         {if $User->getId() && $User->getAttribute('firstname')}
                             {$User->getAttribute('firstname')}
                         {else if $User->getId()}
-                            {$User->getname()}
+                            {$User->getName()}
                         {/if}
                     </span>
                     {/if}
@@ -84,17 +92,14 @@
                     <span class="childrenlist-cardsCssGrid-entry-content-info-date">
                     {if $Child->getAttribute('release_from') &&
                         $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
-                            <span class="fa fa-calendar"></span>
-                            <time datetime="{$Child->getAttribute('release_from')|date_format:" c"}"
-                            itemprop="datePublished">
-                                {locale_date date=$Child->getAttribute('release_from')}
+                        <span class="fa fa-calendar"></span>
+                        <time datetime="{$Child->getAttribute('release_from')|date_format:'c'}">
+                            {locale_date date=$Child->getAttribute('release_from')}
                         </time>
                         {else}
-                            <span class="fa fa-calendar"></span>
-                            <time datetime="{$Child->getAttribute('c_date')|date_format:" c"}"
-                            itemprop="datePublished"
-                            >
-                                {locale_date date=$Child->getAttribute('c_date')}
+                        <span class="fa fa-calendar"></span>
+                        <time datetime="{$Child->getAttribute('c_date')|date_format:'c'}">
+                            {locale_date date=$Child->getAttribute('c_date')}
                         </time>
                         {/if}
                 </span>
@@ -102,9 +107,9 @@
 
                     {if $this->getAttribute('showTime')}
                     <span class="childrenlist-cardsCssGrid-entry-content-info-time">
-                            <span class="fa fa-clock-o"></span>
-                            {$Child->getAttribute('release_from')|date_format:"%H:%M"}
-                        </span>
+                        <span class="fa fa-clock-o"></span>
+                        {$Child->getAttribute('release_from')|date_format:"%H:%M"}
+                    </span>
                     {/if}
                 </div>
                 {/if}
@@ -123,14 +128,14 @@
 
             {* Entry footer - button *}
             <div class="childrenlist-cardsCssGrid-entry-content-footer">
-                <a itemprop="url" href="{url site=$Child}"
-                   class="button childrenlist-cardsCssGrid-entry-content-footer-button">
+                <a href="{url site=$Child}"
+                   class="button childrenlist-cardsCssGrid-entry-content-footer-button"
+                >
                     {locale group="quiqqer/sitetypes" value="list.more"}
                 </a>
             </div>
 
         </article>
-
         {/foreach}
     </div>
 </section>

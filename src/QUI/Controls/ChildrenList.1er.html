@@ -26,6 +26,12 @@
                  itemtype="{$this->getAttribute('child-itemtype')}"
                  class="qui-control-childrenlist-1er-entry grid-100"
         >
+            {$tmp = $MetaList->clear()}
+            {$tmp = $Events->fireEvent('metaList', [$this, $Child, $MetaList])}
+            {$MetaList->create()}
+
+            <meta itemprop="name" content="{$Child->getAttribute('title')}"/>
+            <meta itemprop="url" content="{url site=$Child rewritten=true}"/>
             <meta itemprop="position" content="{$counter}"/>
             {assign var=counter value=$counter+1}
 
@@ -44,7 +50,7 @@
 
                 {if $this->getAttribute('showHeader')}
                 <header>
-                    <h1 itemprop="name">
+                    <h1>
                         <a href="{url site=$Child}"
                            title="{$Child->getAttribute('title')|escape:'html'}"
                            class="qui-control-childrenlist-1er-entry-content-headerLink"
@@ -72,7 +78,7 @@
                                 {if $User->getId() && $User->getAttribute('firstname')}
                                     {$User->getAttribute('firstname')}
                                 {else if $User->getId()}
-                                    {$User->getname()}
+                                    {$User->getName()}
                                 {/if}
                             </span>
                         {/if}
@@ -81,14 +87,11 @@
                         <span class="qui-control-childrenlist-1er-entry-content-footer-date">
                             {if $Child->getAttribute('release_from') && $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
                                 <span class="fa fa-calendar"></span>
-                                <time datetime="{$Child->getAttribute('release_from')|date_format:'c'}"
-                                      itemprop="datePublished"
-                                >
+                                <time datetime="{$Child->getAttribute('release_from')|date_format:'c'}">
                                     {locale_date date=$Child->getAttribute('release_from')}
                                 </time>
                             {else}
-                                <time datetime="{$Child->getAttribute('c_date')|date_format:'c'}"
-                                      itemprop="datePublished">
+                                <time datetime="{$Child->getAttribute('c_date')|date_format:'c'}">
                                     {locale_date date=$Child->getAttribute('c_date')}
                                 </time>
                             {/if}
@@ -104,7 +107,6 @@
                     </p>
                     {/if}
                     <a href="{url site=$Child}"
-                       itemprop="url"
                        title="{$Child->getAttribute('title')|escape:'html'}"
                        class="qui-control-childrenlist-1er-entry-content-footer-button button"
                     >
