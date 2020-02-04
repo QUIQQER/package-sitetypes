@@ -106,6 +106,23 @@ $Pagination = new QUI\Controls\Navigating\Pagination([
 $Pagination->loadFromRequest();
 $Pagination->setGetParams('search', $searchValue);
 
+$children = \array_filter($children, function ($Child) {
+    /* @var $Child \QUI\Projects\Site */
+
+    if (!$Child->getAttribute('active')) {
+        return false;
+    }
+
+    // url check
+    try {
+        $Child->getUrlRewritten();
+    } catch (QUI\Exception $Exception) {
+        return false;
+    }
+
+    return true;
+});
+
 $ChildrenList = new QUI\Controls\ChildrenList([
     'showTitle'      => false,
     'Site'           => $Site,
