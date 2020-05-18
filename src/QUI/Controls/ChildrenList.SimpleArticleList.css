@@ -5,12 +5,12 @@
 }
 
 .qui-control-childrenlist-simpleArticleList {
-    font-size: 0.9em;
-    padding: 10px 0;
+    align-items: center;
     border-bottom: 1px solid #eee;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    font-size: 0.9em;
+    padding: 10px 0;
 }
 
 .qui-control-childrenlist-simpleArticleList header {
@@ -22,26 +22,28 @@
 }
 
 .qui-control-childrenlist-simpleArticleList:last-child {
-    padding-bottom: 0;
     border-bottom: none;
+    padding-bottom: 0;
 }
 
 .qui-control-childrenlist-simpleArticleList-time {
     margin-right: 10px;
+    min-width: 120px;
+    white-space: nowrap;
 }
 
 .qui-control-childrenlist-simpleArticleList-header {
-    padding: 0;
-    display: flex;
     align-content: space-between;
-    flex-grow: 1;
+    display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    padding: 0;
 }
 
 a.qui-control-childrenlist-simpleArticleList-link {
     color: inherit;
+    flex-grow: 1;
     line-height: 1.5em;
-    width: 100%;
 }
 
 .qui-control-childrenlist-simpleArticleList-header {
@@ -50,9 +52,9 @@ a.qui-control-childrenlist-simpleArticleList-link {
 
 .qui-control-childrenlist-simpleArticleList-author {
     font-size: 10px;
+    line-height: 1em;
     margin-top: 0;
     opacity: 0.6;
-    line-height: 1em;
 }
 
 .qui-control-childrenlist-simpleArticleList-icon {
@@ -67,13 +69,27 @@ a.qui-control-childrenlist-simpleArticleList-link {
 
 /* hyphenate / word break */
 .qui-control-childrenlist-simpleArticleList header {
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
     overflow-wrap: break-word;
-    word-wrap: break-word;
     -ms-word-break: normal;
     word-break: normal;
     word-break: break-word;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 767px) {
+    .qui-control-childrenlist-simpleArticleList {
+        flex-wrap: wrap;
+    }
+
+    .qui-control-childrenlist-simpleArticleList-link {
+        width: calc(100% - 10px);
+    }
+
+    .qui-control-childrenlist-simpleArticleList-icon {
+        width: 10px;
+    }
 }
