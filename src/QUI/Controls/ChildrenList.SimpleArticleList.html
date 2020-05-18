@@ -30,11 +30,13 @@
         <meta itemprop="position" content="{$counter}"/>
         {assign var=counter value=$counter+1}
 
+        {if $this->getAttribute('showDate')}
         <time class="qui-control-childrenlist-simpleArticleList-time"
               datetime="{$Child->getAttribute('release_from')|date_format:'c'}"
         >
-            {locale_date date=$Child->getAttribute('release_from') format="%d/%m/%Y"}
+            {locale_date date=$Child->getAttribute('release_from')}
         </time>
+        {/if}
 
         <a href="{url site=$Child}"
            class="qui-control-childrenlist-simpleArticleList-link"
