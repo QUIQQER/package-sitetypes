@@ -1,0 +1,137 @@
+{assign var=Placeholder value=$Project->getMedia()->getPlaceholderImage()}
+
+{if $this->getAttribute('showTitle') && $this->getAttribute('frontendTitle')}
+<header class="control-header">
+    <h1>{$this->getAttribute('frontendTitle')}</h1>
+</header>
+{/if}
+
+{if $this->getAttribute('content') != ""}
+<div class="control-content">
+    {$this->getAttribute('content')}
+</div>
+{/if}
+
+<section itemscope itemtype="{$this->getAttribute('itemtype')}">
+    <link property="mainEntityOfPage" href="{url site=$Site}">
+
+    <div class="qui-control-childrenlist-gallery control-template">
+        {assign var=counter value=1}
+
+        {foreach from=$children item=Child}
+        {assign var=_Child value=$Child->load()}
+        <article itemscope
+                 itemprop="{$this->getAttribute('child-itemprop')}"
+                 itemtype="{$this->getAttribute('child-itemtype')}"
+                 class="qui-control-childrenlist-gallery-entry"
+        >
+            {$tmp = $MetaList->clear()}
+            {$tmp = $Events->fireEvent('metaList', [$this, $Child, $MetaList])}
+            {$MetaList->create()}
+
+            <meta itemprop="name" content="{$Child->getAttribute('title')}"/>
+            <meta itemprop="url" content="{url site=$Child rewritten=true}"/>
+            <meta itemprop="position" content="{$counter}"/>
+            {assign var=counter value=$counter+1}
+
+            <!-- entry image -->
+            {assign var=noImage value=""}
+
+            {if !$this->getAttribute('showImages')}
+            {assign var=noImage value="qui-control-childrenlist-gallery-entry-content__noImage"}
+            {/if}
+
+            {if $this->getAttribute('showImages')}
+            <div class="qui-control-childrenlist-gallery-entry-image">
+                <a href="{url site=$Child}">
+                    {image src=$Child->getAttribute('image_site') width="500" type="resize"
+                    title="{$Child->getAttribute('title')}"}
+                </a>
+            </div>
+            {/if}
+
+            <!-- entry content -->
+            <div class="qui-control-childrenlist-gallery-entry-content {$noImage}">
+                {if $this->getAttribute('showHeader')}
+                <header>
+                    <h2>
+                        <a href="{url site=$Child}"
+                           title="{$Child->getAttribute('title')}"
+                           class="qui-control-childrenlist-gallery-entry-content-headerLink"
+                        >
+                            {$Child->getAttribute('title')}
+                        </a>
+                    </h2>
+                </header>
+                {/if}
+
+                {if $this->getAttribute('showShort')}
+                <div class="qui-control-childrenlist-gallery-entry-content-short">
+                    {$Child->getAttribute('short')|nl2br}
+                </div>
+                {/if}
+
+                <div class="qui-control-childrenlist-gallery-entry-content-footer"
+                     {if !$this->getAttribute('showCreator') && !$this->getAttribute('showDate') &&
+                    !$this->getAttribute('showDate')}
+                    style="border-bottom: none; border-top: none;"
+                    {/if}>
+                    {if $this->getAttribute('showCreator') || $this->getAttribute('showDate') ||
+                    $this->getAttribute('showTime')}
+                    <div class="qui-control-childrenlist-gallery-entry-content-footer-wrapper">
+
+                        {if $this->getAttribute('showCreator')}
+                        <span class="qui-control-childrenlist-gallery-entry-content-footer-author">
+                        {user id=$Child->getAttribute('c_user') var=User}
+                        <span class="fa fa-user"></span>
+                        {if $User->getId() && $User->getAttribute('firstname')}
+                            {$User->getAttribute('firstname')}
+                        {else if $User->getId()}
+                            {$User->getName()}
+                        {/if}
+                    </span>
+                        {/if}
+
+                        {if $this->getAttribute('showDate')}
+                        <span class="qui-control-childrenlist-gallery-entry-content-footer-date">
+                        {if $Child->getAttribute('release_from') && $Child->getAttribute('release_from') != '0000-00-00 00:00:00'}
+                            <span class="fa fa-calendar"></span>
+                            <time datetime="{$Child->getAttribute('release_from')|date_format:'c'}">
+                                {locale_date date=$Child->getAttribute('release_from')}
+                        </time>
+                        {else}
+                            <time datetime="{$Child->getAttribute('c_date')|date_format:'c'}">
+                                {locale_date date=$Child->getAttribute('c_date')}
+                        </time>
+                        {/if}
+                    </span>
+                        {/if}
+
+                        {if $this->getAttribute('showTime')}
+                        <span class="qui-control-childrenlist-gallery-entry-content-footer-time">
+                            <span class="fa fa-clock-o"></span>
+                            {$Child->getAttribute('release_from')|date_format:"%H:%M"}
+                        </span>
+                        {/if}
+                    </div>
+                    {/if}
+
+                    <a href="{url site=$Child}"
+                       title="{$Child->getAttribute('title')}"
+                       class="button qui-control-childrenlist-gallery-entry-content-footer-link"
+                    >
+                        {locale group="quiqqer/sitetypes" value="list.more"}
+                    </a>
+                </div>
+
+            </div>
+
+        </article>
+
+        {/foreach}
+    </div>
+</section>
+
+{if $this->getAttribute('showSheets') && $sheets > 1}
+{$Pagination->create()}
+{/if}
