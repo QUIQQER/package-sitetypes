@@ -94,6 +94,9 @@
                             <option value="cardRows">
                                 <locale group="quiqqer/sitetypes" var="list.template.cardRows"/>
                             </option>
+                            <option value="gallery">
+                                <locale group="quiqqer/sitetypes" var="list.template.gallery"/>
+                            </option>
                         </select>
 
                         <input conf="quiqqer.settings.sitetypes.list.max" type="number">
@@ -261,6 +264,9 @@
                             <text>
                                 <locale group="quiqqer/sitetypes" var="list.template"/>
                             </text>
+                            <option value="gallery">
+                                <locale group="quiqqer/sitetypes" var="list.template.gallery"/>
+                            </option>
                             <option value="cardRows">
                                 <locale group="quiqqer/sitetypes" var="list.template.cardRows"/>
                             </option>

@@ -220,6 +220,10 @@
             <en><![CDATA[Cards]]></en>
             <pl><![CDATA[Cards]]></pl>
         </locale>
+        <locale name="list.template.gallery">
+            <de><![CDATA[Galerie]]></de>
+            <en><![CDATA[Gallery]]></en>
+        </locale>
         <locale name="list.template.CSSGridCards">
             <de><![CDATA[Cards (CSS-Grid)]]></de>
             <en><![CDATA[Cards (CSS-Grid)]]></en>
