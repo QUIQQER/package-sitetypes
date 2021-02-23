@@ -11,7 +11,7 @@
         </locale>
         <locale name="quiqqer/sitetypes:types/contact.description">
             <de><![CDATA[Mit dem Kontaktformular bieten Sie Ihren Nutzern an, Sie schnell und einfach zu Kontaktieren.
-Dazu legen Sie diesen Seitentyp in Ihrem Projekt an und lassen diese Seite entweder in der Navigation anzeigen, sodass Sie oben im Menü zu sehen ist, 
+Dazu legen Sie diesen Seitentyp in Ihrem Projekt an und lassen diese Seite entweder in der Navigation anzeigen, sodass Sie oben im Menü zu sehen ist,
 oder verlinken beispielsweise im Footer auf die Seite. In den Einstellungen des Kontaktformulars legen Sie noch eine Support Email-Adresse fest, an welche die Anfragen gesendet werden sollen.]]></de>
             <en><![CDATA[]]></en>
         </locale>
@@ -111,6 +111,19 @@ Haben Sie z.B Ihre Community auf einer externen Webseite, leiten Sie den Nutzer 
         </locale>
     </groups>
     <groups name="quiqqer/sitetypes" datatype="php">
+        <locale name="quiqqer.sitetypes.privacypolicy.settings.title">
+            <de><![CDATA[Datenschutzbestimmungen Einstellungen]]></de>
+            <en><![CDATA[Privacy Policy Settings]]></en>
+        </locale>
+        <locale name="quiqqer.settings.privacypolicy.gdpr.showRevokeCookiesButton">
+            <de><![CDATA["Cookies Widerrufen"-Button anzeigen]]></de>
+            <en><![CDATA[Show "Revoke Cookies"-button]]></en>
+        </locale>
+        <locale name="quiqqer.settings.sitetypes.gdpr.showRevokeCookiesButton.description">
+            <de><![CDATA[Wenn das Paket "quiqqer/gdpr" installiert ist, einen Button zum Widerrufen aller Cookies am Ende der Datenschutzerklärung anzeigen]]></de>
+            <en><![CDATA[If the "quiqqer/gdpr" package is installed, display a button to revoke all cookies at the end of the privacy policy.]]></en>
+        </locale>
+
         <locale name="list.more">
             <de><![CDATA[mehr]]></de>
             <en><![CDATA[more]]></en>

@@ -38,6 +38,37 @@
             <desc>
                 <locale group="quiqqer/sitetypes" var="admin.types.privacypolicy.desc"/>
             </desc>
+
+            <!-- Datenschutzerklärung attributes -->
+            <attributes>
+                <attribute default="1">quiqqer.settings.sitetypes.privacypolicy.gdpr.showRevokeCookiesButton</attribute>
+            </attributes>
+
+            <!-- Datenschutzerklärung settings -->
+            <settings>
+                <category name="sitetypes-privacypolicy-settings">
+                    <settings>
+                        <title>
+                            <locale group="quiqqer/sitetypes"
+                                    var="quiqqer.sitetypes.privacypolicy.settings.title"
+                            />
+                        </title>
+
+                        <input conf="quiqqer.settings.sitetypes.privacypolicy.gdpr.showRevokeCookiesButton" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.settings.privacypolicy.gdpr.showRevokeCookiesButton"
+                                />
+                            </text>
+                            <description>
+                                <locale group="quiqqer/sitetypes"
+                                        var="quiqqer.settings.sitetypes.gdpr.showRevokeCookiesButton.description"
+                                />
+                            </description>
+                        </input>
+                    </settings>
+                </category>
+            </settings>
         </type>
 
         <!-- AGB / General terms and conditions -->
