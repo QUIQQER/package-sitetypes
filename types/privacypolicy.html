@@ -1,0 +1,23 @@
+{assign var=content value=$Site->getAttribute('content')}
+{assign var=isGdprInstalled value=QUI::getPackageManager()->isInstalled('quiqqer/gdpr')}
+
+{if $content || $isGdprInstalled}
+<div
+        data-editable="true"
+        data-editAttribute="content"
+        data-project="{$Project->getName()}"
+        data-lang="{$Project->getLang()}"
+        data-id="{$Site->getId()}"
+        class="content-body"
+>
+    {if $content}
+        {$Site->getAttribute('content')}
+    {/if}
+    {if $isGdprInstalled && $Site->getAttribute('quiqqer.settings.sitetypes.privacypolicy.gdpr.showRevokeCookiesButton')}
+        <div id="revoke-cookies-button-wrapper">
+            <div data-qui="package/quiqqer/gdpr/bin/controls/RevokeCookiesButton"></div>
+        </div>
+    {/if}
+</div>
+{/if}
+

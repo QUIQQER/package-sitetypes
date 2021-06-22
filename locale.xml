@@ -121,6 +121,19 @@
         </locale>
     </groups>
     <groups name="quiqqer/sitetypes" datatype="php">
+        <locale name="quiqqer.sitetypes.privacypolicy.settings.title">
+            <de><![CDATA[Datenschutzbestimmungen Einstellungen]]></de>
+            <en><![CDATA[Privacy Policy Settings]]></en>
+        </locale>
+        <locale name="quiqqer.settings.privacypolicy.gdpr.showRevokeCookiesButton">
+            <de><![CDATA["Cookies Widerrufen"-Button anzeigen]]></de>
+            <en><![CDATA[Show "Revoke Cookies"-button]]></en>
+        </locale>
+        <locale name="quiqqer.settings.sitetypes.gdpr.showRevokeCookiesButton.description">
+            <de><![CDATA[Wenn das Paket "quiqqer/gdpr" installiert ist, einen Button zum Widerrufen aller Cookies am Ende der Datenschutzerklärung anzeigen]]></de>
+            <en><![CDATA[If the "quiqqer/gdpr" package is installed, display a button to revoke all cookies at the end of the privacy policy.]]></en>
+        </locale>
+
         <locale name="list.more">
             <de><![CDATA[mehr]]></de>
             <en><![CDATA[more]]></en>
