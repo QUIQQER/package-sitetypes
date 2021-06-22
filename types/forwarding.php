@@ -34,10 +34,9 @@ try {
 }
 
 if (\strpos($siteUrl, '#') !== false) {
-    $anchor = \explode('#', $siteUrl);
-    $anchor = $anchor[1];
-
-    $url .= '#'.$anchor;
+    $urlParts = \explode('#', $siteUrl);
+    $anchor   = $urlParts[1];
+    $url      = $urlParts[0].'#'.$anchor;
 }
 
 if ($url) {
